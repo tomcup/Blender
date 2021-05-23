@@ -1,0 +1,521 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>实体化修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/solidify.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="表面细分修改器" href="subdivision_surface.html" />
+    <link rel="prev" title="蒙皮修改器" href="skin.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#modify">修改</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#generate">生成</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="array.html">阵列修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bevel.html">倒角修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="booleans.html">布尔修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html">建形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="decimate.html">精简修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edge_split.html">拆边修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mask.html">遮罩修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mirror.html">镜像修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiresolution.html">多级精度修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="remesh.html">重构网格修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="screw.html">螺旋修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="skin.html">蒙皮修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">实体化修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#normals">法向</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#materials">材质</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#edge-data">边数据</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#thickness-clamp">厚度钳制</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#output-vertex-groups">输出顶点组</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#known-limitations">已知局限</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#even-thickness">均衡厚度</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="subdivision_surface.html">表面细分修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triangulate.html">三角化修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weld.html">焊接修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wireframe.html">线框修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>实体化修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solidify-modifier">
+<span id="bpy-types-solidifymodifier"></span><h1>实体化修改器<a class="headerlink" href="#solidify-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>实体化</em> 修改器获取任意网格的表面，然后为之添加深度，使之变厚。</p>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<img alt="../../../_images/modeling_modifiers_generate_solidify_panel-simple.png" src="../../../_images/modeling_modifiers_generate_solidify_panel-simple.png" />
+<p class="caption"><span class="caption-text">简单模式下的实体化修改器。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<img alt="../../../_images/modeling_modifiers_generate_solidify_panel-complex.png" src="../../../_images/modeling_modifiers_generate_solidify_panel-complex.png" />
+<p class="caption"><span class="caption-text">复杂模式下的实体化修改器。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>模式</dt><dd><dl>
+<dt>简单模式</dt><dd><p>这是默认的实体化算法，它只是简单地挤出几何体。此算法不适用于边有两个以上相邻面的几何体。</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>如果相邻面的法线不指向同一个大方向，简单模式将无法固化这些面的边界。如果法线没有被重新计算，或者是在单面的表面上，如莫比乌斯带，这种情况就会发生。</p>
+</div>
+</dd>
+<dt>复杂模式</dt><dd><p>这是一个可以处理各种几何情况的实体化算法，以保证输出的几何体是流形的。这个算法能够对莫比乌斯环、克莱因瓶、建筑墙面布局等形状进行实体化，而 <em>简单模式</em> 无法做到。如果没有特殊情况，建议选择 <em>简单模式</em> ，因为额外的逻辑使得这个算法的速度要慢很多。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在修改器选项卡中没有折痕的选项，因为折痕是以动态方式处理的。修改器会将智能的原始网格的折痕转移到输出网格中，以配合 <a class="reference internal" href="subdivision_surface.html"><span class="doc">表面细分</span></a> 修改器工作。</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>厚度模式 <span class="guilabel">复杂模式</span></dt><dd><p>选择厚度处理方式(厚度解算器)。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/modeling_modifiers_generate_solidify_thickness-mode.png" src="../../../_images/modeling_modifiers_generate_solidify_thickness-mode.png" />
+<p class="caption"><span class="caption-text">对非流形网格的不同厚度选项。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>固定</dt><dd><p>这类似于没有启用 <em>均匀</em> 选项的 <em>简单模式</em> 。新顶点与旧顶点之间的距离总是固定的。</p>
+</dd>
+<dt>均匀</dt><dd><p>这类似于启用 <em>均匀厚度</em> 和 <em>高质量法线</em> 的 <em>简单模式</em> 。它可以调整尖角，但当三个以上的面一起出现时，可能并不总是有效。</p>
+</dd>
+<dt>约束</dt><dd><p>这是一个更高级的模型，试图在所有地方都能得到最佳厚度。对于最多三个面，它总能保证找到最优解。</p>
+</dd>
+</dl>
+</dd>
+<dt>边界范围 <span class="guilabel">复杂模式</span></dt><dd><p>选择最适合模型的边界范围。</p>
+<div class="figure align-default" id="id4">
+<img alt="../../../_images/modeling_modifiers_generate_solidify_boundary-shape.png" src="../../../_images/modeling_modifiers_generate_solidify_boundary-shape.png" />
+<p class="caption"><span class="caption-text">同一种Matcap下，不同边界范围选项带来的效果。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>无</dt><dd><p>没有应用任何边界修正。结果稳定。</p>
+</dd>
+<dt>圆(四舍五入)</dt><dd><p>调整开口的边界，使其朝向内侧(如鸡蛋上的孔)。</p>
+</dd>
+<dt>平展</dt><dd><p>将平面开口的边界调整为平面（如切割一个球）。</p>
+</dd>
+</dl>
+</dd>
+<dt>厚度</dt><dd><p>待实体化的深度。</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>修改器的厚度是用局部顶点坐标计算的。如果物体有非均匀缩放，厚度在物体不同的面上会有所变化。</p>
+<p>要解决这个问题，可以使用 <a class="reference internal" href="../../../scene_layout/object/editing/apply.html#bpy-ops-object-transform-apply"><span class="std std-ref">应用缩放</span></a> 或 <a class="reference internal" href="../../../scene_layout/object/editing/clear.html#bpy-ops-object-clear"><span class="std std-ref">清除缩放</span></a> 。</p>
+</div>
+</dd>
+<dt>偏移量</dt><dd><p>介于(-1到1)之间的值，用于定位原始网格内外的实体化输出。内部和外部是由面法向决定的。设置为0.0时，实体化后的输出将以原始网格为中心。</p>
+</dd>
+<dt>均匀厚度 <span class="guilabel">简单模式</span></dt><dd><p>过调整尖角来保持厚度。有时提高质量，但也增加了计算时间。</p>
+</dd>
+<dt>合并阈值 <span class="guilabel">复杂模式</span></dt><dd><p>几何体会合并的距离。</p>
+</dd>
+<dt>框</dt><dd><dl>
+<dt>填充</dt><dd><p>填充内部和外部边之间的间隙。</p>
+</dd>
+<dt>仅边沿</dt><dd><p>在 <em>简单模式下</em> ：不会挤出与原表面平行的表面，而只增加垂直的边沿。</p>
+<p>在 <em>复杂模式</em> 下：将只留下生成的垂直边沿。</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>填充边沿</em> 和 <em>仅边沿</em> 仅在 <a class="reference internal" href="../../../glossary/index.html#term-Non-manifold"><span class="xref std std-term">非流形</span></a> 物体上有区别，因为 <em>边沿</em> 是从原几何形体的边界产生的。</p>
+</div>
+</dd>
+<dt>顶点组</dt><dd><p>仅该组的顶点进行实体化.权重系数会乘上厚度，所以低权重的顶点会更薄。</p>
+<dl class="simple">
+<dt>反转</dt><dd><p>反转顶点组，让 <strong>不</strong> 属于顶点组的顶点实体化。</p>
+</dd>
+<dt>系数</dt><dd><p>有多少顶点权重会被考虑在内。</p>
+<ul class="simple">
+<li><p>取 0.0 时，权重为 0 的顶点将没有厚度(创建重合的顶点)。</p></li>
+<li><p>取 0.5 时，权重为 0 的顶点的厚度是那些有最大权重顶点厚度的一半。</p></li>
+<li><p>取 1.0 时，权重被忽略，每个顶点都会使用 <em>厚度</em> 值。</p></li>
+</ul>
+</dd>
+<dt>平直面 <span class="guilabel">复杂模式</span></dt><dd><p>使用分配给面的顶点的最小顶点权重来确保新面保持与原面平行。这很慢，所以在不需要的时候要禁用它。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="normals">
+<h3>法向<a class="headerlink" href="#normals" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>翻转法线</dt><dd><p>翻转所有几何形体的法线(包括内部和外部表面)。</p>
+</dd>
+<dt>高质量法线 <span class="guilabel">简单模式</span></dt><dd><p>通过计算法线来获取更均匀的厚度。这样做有时可以提升质量，但也增加了计算时间。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="materials">
+<h3>材质<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>材质偏移</dt><dd><p>对新的几何体使用不同的材质。这作为实体化面的原始材质的偏移量而使用。</p>
+<ul class="simple">
+<li><p>值为 0 则使用相同的材质。</p></li>
+<li><p>值为 1 则使用原始材料正下方的材质。</p></li>
+<li><p>值为 -2 则使用原始材料上方两个单位的材质。</p></li>
+</ul>
+<p>这些是夹在最顶部和底部材料槽。</p>
+</dd>
+<dt>框</dt><dd><p>同样的，你也可以赋予边沿面另一个材质。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="edge-data">
+<h3>边数据<a class="headerlink" href="#edge-data" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>内部 <span class="guilabel">简单模式</span></dt><dd><p>给内侧边设置 <a class="reference internal" href="../../meshes/editing/edge/edge_data.html#modeling-edges-crease-subdivision"><span class="std std-ref">折痕</span></a> 。</p>
+</dd>
+<dt>外部 <span class="guilabel">简单模式</span></dt><dd><p>给外侧边设置 <a class="reference internal" href="../../meshes/editing/edge/edge_data.html#modeling-edges-crease-subdivision"><span class="std std-ref">折痕</span></a> 。</p>
+</dd>
+<dt>边沿 <span class="guilabel">简单模式</span></dt><dd><p>给边沿设置 <a class="reference internal" href="../../meshes/editing/edge/edge_data.html#modeling-edges-crease-subdivision"><span class="std std-ref">折痕</span></a> 。</p>
+</dd>
+<dt>凸壳倒角</dt><dd><p>边 <a class="reference internal" href="../../meshes/editing/edge/edge_data.html#modeling-edges-bevel-weight"><span class="std std-ref">倒角权重</span></a> 要添加到外侧边。</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_solidify_rims.png"><img alt="../../../_images/modeling_modifiers_generate_solidify_rims.png" src="../../../_images/modeling_modifiers_generate_solidify_rims.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">会被折痕标记的边。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="thickness-clamp">
+<h3>厚度钳制<a class="headerlink" href="#thickness-clamp" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>钳制</dt><dd><p>用以限制偏移量的(0到2) 之间的值，可以避免自相交。这个值由最邻近边的长度决定。</p>
+<div class="figure align-default" id="id6">
+<img alt="../../../_images/modeling_modifiers_generate_solidify_clamp.png" src="../../../_images/modeling_modifiers_generate_solidify_clamp.png" />
+<p class="caption"><span class="caption-text">钳制偏移量。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>角度钳制</dt><dd><p>如果启用，钳制也会考虑几何体中的角度，而不仅仅是长度。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="output-vertex-groups">
+<h3>输出顶点组<a class="headerlink" href="#output-vertex-groups" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>外壳</dt><dd><p>生成的外壳几何体将被加权到顶点组。您可以使用其他修改器的顶点组影响控件，只影响外壳几何体。</p>
+</dd>
+<dt>框</dt><dd><p>与 <em>壳顶点组</em> 相同，但这是相对于生成的边沿几何体。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="known-limitations">
+<h2>已知局限<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="even-thickness">
+<h3>均衡厚度<a class="headerlink" href="#even-thickness" title="Permalink to this headline">¶</a></h3>
+<p>实体化厚度是近似值。 虽然 <em>均匀厚度</em> 和 <em>高质量法线</em> 应该产生良好的结果，但最终的壁厚不能得到保证，并且可能根据网格拓扑结构而变化。</p>
+<p>为了在每种情况下都能维持精确的壁厚，可能需要添加或移除偏移外壳上的面，这是修改器不会做的事，因为这样会添加很多复杂性。保持壁厚最好的方法是使用复杂模式及其下的约束厚度模式，但这也不保证每种情况下都能有较好的效果。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="subdivision_surface.html" class="btn btn-neutral float-right" title="表面细分修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="skin.html" class="btn btn-neutral float-left" title="蒙皮修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/generate/solidify.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/generate/solidify%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

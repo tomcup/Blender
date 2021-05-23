@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Transformation Constraint 自设变换约束 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/constraints/transform/transformation.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="Transform Cache Constraint 变换缓存约束" href="transform_cache.html" />
+    <link rel="prev" title="Maintain Volume Constraint 维持体积约束" href="maintain_volume.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../armatures/index.html">骨架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lattice.html">晶格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">约束</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#interface">界面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#motion-tracking">运动追踪</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#transform">变换</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="copy_location.html">Copy Location Constraint 复制位置约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copy_rotation.html">Copy Rotation Constraint 复制旋转约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copy_scale.html">Copy Scale Constraint 复制缩放约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copy_transforms.html">复制变换约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="limit_distance.html">Limit Distance Constraint 限定距离约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="limit_location.html">Limit Location Constraint 限定位置约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="limit_rotation.html">Limit Rotation Constraint 限定旋转约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="limit_scale.html">Limit Scale Constraint 限定缩放约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="maintain_volume.html">Maintain Volume Constraint 维持体积约束</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Transformation Constraint 自设变换约束</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#map-from">Map From</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#map-to">Map To</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="transform_cache.html">Transform Cache Constraint 变换缓存约束</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#tracking">跟踪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#relationship">关系</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../index.html">约束</a> &raquo;</li>
+        
+      <li>Transformation Constraint 自设变换约束</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transformation-constraint">
+<span id="bpy-types-transformconstraint"></span><h1>Transformation Constraint 自设变换约束<a class="headerlink" href="#transformation-constraint" title="Permalink to this headline">¶</a></h1>
+<p>此约束比其他&quot;变换&quot;约束更加复杂、强大。它允许在给定取值范围内(视目标和约束对象属性类型有所不同)，将目标的某个变换属性(即位置、旋转或缩放)，映射到约束对象同一或其他类型的变换属性。你也可以切换轴向，并使用没有限制的范围值，而是作为&quot;标记&quot;来定义输入(目标)和输出(约束对象)值之间的映射。</p>
+<p>所以，例如你可以使用目标在X 轴的位置来控制绕约束目标的Z轴旋转，规定目标X 轴的一个单位对应于约束对象Z 轴旋转10个单位。这通常用在齿轮(见下面的说明)，和基于位置的旋转。</p>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/animation_constraints_transform_transformation_panel.png" src="../../../_images/animation_constraints_transform_transformation_panel.png" />
+<p class="caption"><span class="caption-text">Transformation panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>Target 目标</dt><dd><p><a class="reference internal" href="../../../interface/controls/templates/data_block.html#ui-data-id"><span class="std std-ref">数据ID</span></a> used to select the constraints target, and is not functional (red state) when it has none.
+See <a class="reference internal" href="../interface/common.html#rigging-constraints-interface-common-target"><span class="std std-ref">common constraint properties</span></a> for more information.</p>
+</dd>
+<dt>延伸</dt><dd><p>By default, the <em>Min</em> and <em>Max</em> values bound the input and output values;
+all values outside these ranges are clipped to them.
+When you enable this button, the <em>Min</em> and <em>Max</em> values are no longer strict limits,
+but rather &quot;markers&quot; defining a proportional (linear) mapping between input and corresponding output values.
+Let us illustrate that with two graphs Fig. <a class="reference internal" href="#fig-constraints-transformation-extrapolate"><span class="std std-ref">延伸原理。</span></a>.
+In these pictures, the input range (in abscissa) is set to (1.0 to 4.0),
+and its corresponding output range (in ordinate), to (1.0 to 2.0).
+The yellow curve represents the mapping between input and output.</p>
+<span id="fig-constraints-transformation-extrapolate"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">延伸原理。</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../../_images/animation_constraints_transform_transformation_extrapolate-1.png" src="../../../_images/animation_constraints_transform_transformation_extrapolate-1.png" />
+<p class="caption"><span class="caption-text">禁用延伸: 输出值都被限制在 (1.0 至 2.0) 范围内。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../../_images/animation_constraints_transform_transformation_extrapolate-2.png" src="../../../_images/animation_constraints_transform_transformation_extrapolate-2.png" />
+<p class="caption"><span class="caption-text">启用延伸：输出值是按输入值等比例得出的 “自由”值。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Target/Owner</dt><dd><p>Standard conversion between spaces.
+See <a class="reference internal" href="../interface/common.html#rigging-constraints-interface-common-space"><span class="std std-ref">common constraint properties</span></a> for more information.</p>
+</dd>
+<dt>Influence</dt><dd><p>Controls the percentage of affect the constraint has on the object.
+See <a class="reference internal" href="../interface/common.html#bpy-types-constraint-influence"><span class="std std-ref">common constraint properties</span></a> for more information.</p>
+</dd>
+</dl>
+<div class="section" id="map-from">
+<h3>Map From<a class="headerlink" href="#map-from" title="Permalink to this headline">¶</a></h3>
+<p>包含输入(目标)设置。</p>
+<dl>
+<dt>Location, Rotation, Scale</dt><dd><p>单选按钮，用于选择要使用的属性类型。</p>
+</dd>
+<dt>模式(旋转)</dt><dd><p>指定旋转输入要使用的 <a class="reference internal" href="../../../glossary/index.html#term-Euler"><span class="xref std std-term">欧拉</span></a> 顺序， <a class="reference internal" href="../../../glossary/index.html#term-Quaternion"><span class="xref std std-term">四元数</span></a> 和其他 <a class="reference internal" href="../../drivers/drivers_panel.html#drivers-variables-rotation-modes"><span class="std std-ref">旋转通道模式</span></a>。 默认使用约束物体的 <a class="reference internal" href="../../../glossary/index.html#term-Euler"><span class="xref std std-term">欧拉</span></a> 顺序。</p>
+<p>在 <em>四元数</em> 模式下，通道将被转换为加权角和 <a class="reference internal" href="../../drivers/drivers_panel.html#drivers-variables-rotation-modes"><span class="std std-ref">摆动角和X/Y/Z扭转</span></a> 模式相同。</p>
+</dd>
+<dt>X/Y/Z Min, Max</dt><dd><p>每个轴(X，Y和Z)独立地控制输入值范围的下限和上限。 请注意，如果最小值高于其对应的最大值，则约束的行为就像它具有与最大值相同的值。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="map-to">
+<h3>Map To<a class="headerlink" href="#map-to" title="Permalink to this headline">¶</a></h3>
+<p>包含输出(至约束对象)的设置。</p>
+<dl>
+<dt>Location, Rotation, Scale</dt><dd><p>三个单选按钮用于选择要控制的属性类型。</p>
+</dd>
+<dt>顺序</dt><dd><p>指定在旋转约束期间使用哪种 <a class="reference internal" href="../../../glossary/index.html#term-Euler"><span class="xref std std-term">欧拉</span></a> 顺序。默认为约束对象的顺序。</p>
+</dd>
+<dt>X/Y/Z Source Axis</dt><dd><p>The three axis selectors allow you to select which input axis to map to,
+respectively (from top to bottom), the X, Y and Z output (owner) axes.</p>
+</dd>
+<dt>Min, Max</dt><dd><p>The <em>Min</em> and <em>Max</em> number fields control the lower and upper bounds of the output value range,
+independently for each mapped axis.
+Note that if a min value is higher than its corresponding max value,
+the constraint behaves as if it had the same value as the max one.</p>
+</dd>
+<dt>混合</dt><dd><p>指定如何混合约束结果和现有值。可用选项的菜单因转换类型而异。</p>
+<dl class="simple">
+<dt>替换</dt><dd><p>约束的结果替换现有的值。</p>
+</dd>
+<dt>相乘(缩放)</dt><dd><p>约束的结果将与现有值相乘。</p>
+</dd>
+<dt>相加(位置、旋转)</dt><dd><p>约束的值与现有的值相加。</p>
+</dd>
+<dt>Before Original (Rotation)现有值之前</dt><dd><p>约束的值将在现有值之前添加，就像已将其应用于约束对象的父级一样。</p>
+</dd>
+<dt>After Original (Rotation)现有值之后</dt><dd><p>约束的值将在现有值之后添加，就像已将其应用于约束对象的子级一样。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>由于历史原因， <em>混合*模式在位置和旋转中默认为 *添加</em> ，缩放中默认为 <em>替换</em> 。</p></li>
+<li><p>当使用目标的旋转变换属性作为输入，无论真正的值是什么，约束将始终&quot;重置回&quot; (-180, 180)范围。例如，如果目标绕 X 轴旋转420°，约束实际使用的 &quot;X&quot; 输入值将是：</p>
+<p><span class="math notranslate nohighlight">\(((420 + 180) modulo 360) - 180 = 60 - ...\)</span></p>
+<p>这就是为什么此约束不是真的适合齿轮 ！</p>
+</li>
+<li><p>类似地，当使用目标缩放变换属性作为输入，无论真正的值是什么，约束将始终使用其绝对值(即对负值取负)。</p></li>
+<li><p>当 <em>最小值</em> 高于其相应的 <em>最大值</em> 时，两个值都会取为 <em>最大值</em> 。这意味着不能创建&quot;反向&quot;映射...</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<iframe src="https://player.vimeo.com/video/171275353" style="border: 0; height: 345px; width: 560px">
+</iframe></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="transform_cache.html" class="btn btn-neutral float-right" title="Transform Cache Constraint 变换缓存约束" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="maintain_volume.html" class="btn btn-neutral float-left" title="Maintain Volume Constraint 维持体积约束" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/constraints/transform/transformation.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/constraints/transform/transformation%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

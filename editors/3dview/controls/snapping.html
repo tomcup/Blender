@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>吸附 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/3dview/controls/snapping.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="Proportional Editing" href="proportional_editing.html" />
+    <link rel="prev" title="活动元素" href="pivot_point/active_element.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3D视图</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../startup_scene.html">启动场景</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modes.html">物体模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigate/index.html">漫游</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3d_cursor.html">3D游标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">控件</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="orientation.html">Transform Orientations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot_point/index.html">轴心点</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">吸附</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#snap-element">吸附元素</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#snap-target">吸附目标</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#additional-snap-options">其他吸附选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#multiple-snap-targets">多个吸附目标</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="proportional_editing.html">Proportional Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../display/index.html">Display</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolbar/index.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viewport_render.html">视图渲染</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texture_node/index.html">纹理节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nla/index.html">非线性动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preferences/index.html">偏好设置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../index.html">3D视图</a> &raquo;</li>
+        
+          <li><a href="index.html">控件</a> &raquo;</li>
+        
+      <li>吸附</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="snapping">
+<span id="transform-snap"></span><h1>吸附<a class="headerlink" href="#snapping" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式、编辑模式、姿态模式</p>
+</dd>
+<dt class="field-even">标题栏</dt>
+<dd class="field-even"><p><span class="menuselection">吸附</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>The ability to snap objects and mesh element to various types of scene elements during
+a transformation is available by toggling the magnet icon in the 3D Viewport's header buttons.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/editors_3dview_controls_snapping_header-magnet-icon.png" src="../../../_images/editors_3dview_controls_snapping_header-magnet-icon.png" />
+<p class="caption"><span class="caption-text">Magnet icon in the 3D Viewport header (blue when enabled).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="snap-element">
+<span id="transform-snap-element"></span><h2>吸附元素<a class="headerlink" href="#snap-element" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式、编辑模式、姿态模式</p>
+</dd>
+<dt class="field-even">标题栏</dt>
+<dd class="field-even"><p><span class="menuselection">吸附 ‣ 吸附到</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<div class="figure align-right" id="id2">
+<img alt="../../../_images/editors_3dview_controls_snapping_element-menu.png" src="../../../_images/editors_3dview_controls_snapping_element-menu.png" />
+<p class="caption"><span class="caption-text">吸附元素菜单。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>增量</dt><dd><p>吸附到栅格点。在正交视图中，吸附增量根据缩放级别而变化。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在这种情况下，栅格并不意味着显示可视栅格线。吸附将使用显示的栅格的分辨率，但是所有变换都是相对于初始位置(吸附操作之前)。</p>
+</div>
+</dd>
+<dt>顶点</dt><dd><p>吸附到网格物体的顶点。</p>
+</dd>
+<dt>边</dt><dd><p>吸附到网格物体的边。</p>
+</dd>
+<dt>面</dt><dd><p>吸附到网格物体中的面的表面，可用于重拓扑。</p>
+</dd>
+<dt>体积</dt><dd><p>吸附到鼠标光标下方第一个物体的体积内的区块。与其他选项不同，这一个控制变换元素的深度(即当前视图空间中的Z坐标)。通过切换吸附目标(见下文)菜单右侧的按钮，会在确定体积中心时，将目标物体视为一个整体。</p>
+</dd>
+<dt>边中点</dt><dd><p>吸附到边的中点。该吸附元素仅适用于网格物体。</p>
+</dd>
+<dt>垂直交线</dt><dd><p>吸附至一条边的最近点，即与基准点连线构成垂直交线的交点。该吸附元素仅适用于网格物体。</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> 点击多个吸附元素可以开启吸附多项模式。</p>
+</div>
+</div>
+<div class="section" id="snap-target">
+<h2>吸附目标<a class="headerlink" href="#snap-target" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式、编辑模式、姿态模式</p>
+</dd>
+<dt class="field-even">标题栏</dt>
+<dd class="field-even"><p><span class="menuselection">吸附 ‣ 吸附基准点</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>如果将 <em>顶点</em> 、 <em>边</em> 、 <em>面</em> 或 <em>体积</em> 选为吸附元素，则吸附目标选项将变为活动状态。这些将决定选择什么部分吸附到目标物体。</p>
+<dl class="simple">
+<dt>活动项</dt><dd><p>将活动元素(编辑模式中的顶点，物体模式中的物体)移动到目标。</p>
+</dd>
+<dt>质心</dt><dd><p>将选中项的质心移至目标位置。</p>
+</dd>
+<dt>中心</dt><dd><p>将当前变换中心移动到目标。可与3D光标一起使用以吸附偏移。</p>
+</dd>
+<dt>最近</dt><dd><p>将选中项的最近点移动到目标。</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../../_images/editors_3dview_controls_snapping_target-closest.png" src="../../../_images/editors_3dview_controls_snapping_target-closest.png" />
+<p class="caption"><span class="caption-text">最近。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../../_images/editors_3dview_controls_snapping_target-active.png" src="../../../_images/editors_3dview_controls_snapping_target-active.png" />
+<p class="caption"><span class="caption-text">活动。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../../_images/editors_3dview_controls_snapping_target-median.png" src="../../../_images/editors_3dview_controls_snapping_target-median.png" />
+<p class="caption"><span class="caption-text">质心。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-snap-options">
+<span id="bpy-types-toolsettings-use-snap-backface-culling"></span><h2>其他吸附选项<a class="headerlink" href="#additional-snap-options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<img alt="../../../_images/editors_3dview_controls_snapping_options.png" src="../../../_images/editors_3dview_controls_snapping_options.png" />
+</div>
+<p>如上图中黄色突出显示的区域所示，除了吸附目标外，还有其他控件可用于更改吸附行为。 这些选项在模式(物体和编辑)以及吸附元素之间有所不同。 可用的四个选项是：</p>
+<dl class="simple">
+<dt>绝对栅格吸附</dt><dd><p>仅适用于增加选项。吸附到栅格，而不是以相对于当前位置的增量进行吸附。</p>
+</dd>
+<dt>背面剔除</dt><dd><p>从吸附中排除背面朝向的几何元素。</p>
+</dd>
+<dt>投射到自身</dt><dd><p>仅适用于编辑模式中处理点、线、面和体积的情况下。吸附元素到自身的网格。</p>
+</dd>
+<dt>将旋转与吸附目标对齐</dt><dd><p>仅适用于点、线、面和体积。当吸附影响旋转，将吸附目标对齐到旋转。</p>
+</dd>
+<dt>投射到独立元素</dt><dd><p>适用于吸附到面。投射独立元素到其它物体表面上。</p>
+</dd>
+<dt>吸附剥落物体</dt><dd><p>适用于吸附到体积。当寻找体积中心时将剥落的多个物体视为一个整体。</p>
+</dd>
+<dt>影响</dt><dd><p>限制吸附到变换类型的影响。</p>
+</dd>
+</dl>
+<div class="section" id="multiple-snap-targets">
+<h3>多个吸附目标<a class="headerlink" href="#multiple-snap-targets" title="Permalink to this headline">¶</a></h3>
+<p>一旦用吸附变换一个选择(不只是当按住 <kbd class="kbd docutils literal notranslate">Ctrl</kbd>)，可以按 <kbd class="kbd docutils literal notranslate">A</kbd> 来标记当前的吸附点，然后进行标记尽可能多的其他吸附点，选择物体将被吸附到所有标记点的平均位置。</p>
+<p>多次标记一个点会使其在平均位置中的权重更大。</p>
+<div class="figure align-default">
+<img alt="../../../_images/editors_3dview_controls_snapping_target-multiple.png" src="../../../_images/editors_3dview_controls_snapping_target-multiple.png" />
+</div>
+<p>多个吸附目标。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="proportional_editing.html" class="btn btn-neutral float-right" title="Proportional Editing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pivot_point/active_element.html" class="btn btn-neutral float-left" title="活动元素" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/3dview/controls/snapping.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/3dview/controls/snapping%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

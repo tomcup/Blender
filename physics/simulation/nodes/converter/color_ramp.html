@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>颜色渐变节点 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/simulation/nodes/converter/color_ramp.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>颜色渐变节点</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="color-ramp-node">
+<h1>颜色渐变节点<a class="headerlink" href="#color-ramp-node" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1">
+<img alt="../../../../_images/compositing_node-types_CompositorNodeValToRGB.png" src="../../../../_images/compositing_node-types_CompositorNodeValToRGB.png" />
+<p class="caption"><span class="caption-text">颜色渐变节点。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>颜色渐变节点使用渐变的方式进行颜色值的匹配。</p>
+<div class="section" id="inputs">
+<h2>输入<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>系数</dt><dd><p>系数输入连接端口用于颜色渐变的索引（即需要此节点处理的输入素材图片）。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties">
+<h2>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>渐变色</dt><dd><p>渐变条控制项功能参见 <a class="reference internal" href="../../../../interface/controls/templates/color_ramp.html#ui-color-ramp-widget"><span class="std std-ref">颜色渐变部件</span></a>。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="outputs">
+<h2>输出<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>图像</dt><dd><p>标准图像输出。</p>
+</dd>
+<dt>Alpha</dt><dd><p>标准化遮罩输出。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h2>例子<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-an-alpha-mask">
+<h3>Alpha遮罩<a class="headerlink" href="#creating-an-alpha-mask" title="Permalink to this headline">¶</a></h3>
+<p>An often overlooked use case of the Color Ramp is to create an alpha mask,
+or a mask that is overlaid on top of another image.
+Such a mask allows you to select parts of the background to be show through.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_converter_color-ramp_create-alpha-mask.png"><img alt="../../../../_images/compositing_types_converter_color-ramp_create-alpha-mask.png" src="../../../../_images/compositing_types_converter_color-ramp_create-alpha-mask.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-text">使用颜色渐变节点来创建alpha遮罩。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the map above, a black-and-white swirl image, which is lacking an alpha channel,
+is fed into the Color Ramp node as a <em>Factor</em>.</p>
+<p>The Color Ramp node is set to a purely transparent color on the left end of the gradient,
+and a fully red color on the right. As you can see in the Viewer node,
+the Color Ramp node puts out a mask that is fully transparent where the image is black.
+Black is zero, so Color Ramp outputs the color at the left end of the gradient,
+which is set to transparent.
+The Color Ramp image is fully red and opaque where the image is white (which is 1).</p>
+<p>You can verify that the output image mask is indeed transparent
+by overlaying it on top of another image.</p>
+</div>
+<div class="section" id="colorizing-an-image">
+<h3>彩色化图像<a class="headerlink" href="#colorizing-an-image" title="Permalink to this headline">¶</a></h3>
+<p>In this example multiple colors are added to the color gradient
+converting a black-and-white image into a flaming swirl.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_converter_color-ramp_colorizing-image.png"><img alt="../../../../_images/compositing_types_converter_color-ramp_colorizing-image.png" src="../../../../_images/compositing_types_converter_color-ramp_colorizing-image.png" style="width: 600px;" /></a>
+</div>
+<p>The shades of gray in the input image are mapped to three colors:
+blue, yellow, and red, all fully opaque (alpha of 1). Where the image is black,
+Color Ramp substitutes blue (the first color stop). Where it is some shade of gray,
+Color Ramp outputs a corresponding color from the gradient (bluish, yellow, to reddish).
+Where the image is fully white, the Color Ramp outputs red.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/simulation/nodes/converter/color_ramp.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/simulation/nodes/converter/color_ramp%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

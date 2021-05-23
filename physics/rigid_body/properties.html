@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>刚体属性 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/rigid_body/properties.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="刚体世界环境" href="world.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">刚体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">刚体属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rigid-body">刚体</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rigid-body-collisions">刚体碰撞</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#shape">Shape</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#source">Source</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#surface-response">表面响应</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sensitivity">灵敏度</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#collections">Collections</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#dynamics">动力</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">刚体世界环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constraints/index.html">刚体约束</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html">提示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">物理</a> &raquo;</li>
+        
+          <li><a href="index.html">刚体</a> &raquo;</li>
+        
+      <li>刚体属性</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rigid-body-properties">
+<h1>刚体属性<a class="headerlink" href="#rigid-body-properties" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rigid-body">
+<h2>刚体<a class="headerlink" href="#rigid-body" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 刚体</span></p>
+</dd>
+</dl>
+</div>
+<dl>
+<dt>类型</dt><dd><p>刚体在模拟中的作用。活动项可以被用来模拟动态。被动项可以保持静态。</p>
+<dl class="simple">
+<dt>活动</dt><dd><p>对象由仿真结果直接控制。选择此类型的可能性也可通过工具栏的物理选项卡中的 <em>添加活动</em> 按钮获得。</p>
+</dd>
+<dt>被动</dt><dd><p>对象由动画系统直接控制。因此，这种类型不适用于 <a class="reference internal" href="#dynamics">动态</a>.选择此类型的可能性也可通过工具栏的物理选项卡中的 <em>添加被动</em> 按钮获得。</p>
+</dd>
+</dl>
+</dd>
+<dt>质量</dt><dd><p>指定对象有多重和 &quot;重量&quot; 与重力无关。使用工具栏的物理选项卡中的 <em>计算质量</em> 按钮可以预定义质量预设。</p>
+<dl>
+<dt>计算质量</dt><dd><p>根据体积自动计算刚体物体的质量值。菜单中有许多有用的预设，列出了许多实际常见物体。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>您还可以使用 <em>自定义</em> 质量材料类型，这可以通过设置自定义密度值 (kg/m<sup>3</sup>)。</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>动态</dt><dd><p>启用/禁用物体的刚体模拟。</p>
+</dd>
+<dt>动画</dt><dd><p>允许刚体还由动画系统控制。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="rigid-body-collisions">
+<h2>刚体碰撞<a class="headerlink" href="#rigid-body-collisions" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 刚体 ‣ 碰撞</span></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="shape">
+<h3>Shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h3>
+<p>形状选项决定对象的碰撞类型。</p>
+<p class="rubric">原始形状</p>
+<p>These are best in terms of memory/performance but do not
+necessarily reflect the actual shape of the object.
+They are calculated based on the object's bounding box.
+The center of gravity is always in the middle for now.
+Primitive shapes can be shown in the viewport by
+enabling <em>Bounds</em> in the <span class="menuselection">Properties ‣ Object Properties ‣ Viewport Display</span> panel.</p>
+<dl class="simple">
+<dt>方框</dt><dd><p>箱形形状 (如立方体)，包括平面 (如地平面)。每个轴的大小是从边界框计算的。</p>
+</dd>
+<dt>球形</dt><dd><p>球形形状。半径是边界框的最大轴。</p>
+</dd>
+<dt>胶囊</dt><dd><p>指向Z轴。</p>
+</dd>
+<dt>柱体</dt><dd><p>指向Z轴。高度取自Z轴，而半径是X轴或Y轴中较大的一个。</p>
+</dd>
+<dt>锥形</dt><dd><p>指向Z轴。高度取自Z轴，而半径是X轴或Y轴中较大的一个。</p>
+</dd>
+</dl>
+<p class="rubric">基础网格的形状</p>
+<p>这些是基于物体的几何形状计算的，因此它们是物体的更好表现。这些形状的重心是物体起源。</p>
+<dl class="simple">
+<dt>凸壳</dt><dd><p>一种类似于网格的曲面 (如外侧缩裹) 包含了所有的定点 (较少的点可获得理想效果)。物体的凸面近似值，具有良好的性能和稳定性。</p>
+</dd>
+<dt>网格</dt><dd><p><a class="reference internal" href="../../glossary/index.html#term-Mesh"><span class="xref std std-term">网格</span></a> 仅包含三角形网格，与凸包相比，可允许更复杂的交互。允许模拟凹面物体，但相当缓慢且不稳定。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="source">
+<h3>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h3>
+<p>用户现在可以为基础碰撞外形 <em>网格</em> 指定 <em>源</em> ：</p>
+<dl>
+<dt>基础(基数)</dt><dd><p>物体的基础网格。</p>
+</dd>
+<dt>形变</dt><dd><p>包括添加到网格中的任何变形 (形状键，变形修改器)。</p>
+<dl class="simple">
+<dt>塑形</dt><dd><p>网格形状在模拟过程中会变形。</p>
+</dd>
+</dl>
+</dd>
+<dt>最终</dt><dd><p>包括所有变形和修改器。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="surface-response">
+<h3>表面响应<a class="headerlink" href="#surface-response" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>摩擦</dt><dd><p>物体抵抗运动。指定当对象互相碰撞时丢失的速度。</p>
+</dd>
+<dt>弹跳力</dt><dd><p>物体在与另一个物体碰撞后弹跳的趋势 (0 到 1) (刚性到完全弹性)。指定碰撞后可以弹跳的物体数量。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sensitivity">
+<h3>灵敏度<a class="headerlink" href="#sensitivity" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>边距</dt><dd><p>近表面的间距阈值，那里的表面仍会考虑碰撞 (使用非零值事效果最佳)。</p>
+</dd>
+</dl>
+<p>碰撞间距用于改善刚体的性能和稳定性。根据形状，它的行为所有不同：某些形状嵌入它，而其他形状周围有可见的间隙。</p>
+<p>这些形状的边距是 <em>嵌入</em> ：</p>
+<ul class="simple">
+<li><p>球形</p></li>
+<li><p>方框</p></li>
+<li><p>胶囊</p></li>
+<li><p>柱体</p></li>
+<li><p>凸壳：仅在嵌入时允许均匀刻度。</p></li>
+</ul>
+<p>这些形状的边距是 <em>未嵌入</em> ：</p>
+<ul class="simple">
+<li><p>锥形</p></li>
+<li><p>活动三角网格</p></li>
+<li><p>被动三角网格：大部分时间都可以设置为0。</p></li>
+</ul>
+</div>
+<div class="section" id="collections">
+<h3>Collections<a class="headerlink" href="#collections" title="Permalink to this headline">¶</a></h3>
+<p>允许在不同组上分配刚体碰撞 (最多20个)。</p>
+</div>
+</div>
+<div class="section" id="dynamics">
+<h2>动力<a class="headerlink" href="#dynamics" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 刚体 ‣动力</span></p>
+</dd>
+</dl>
+</div>
+<p>用于控制刚体模拟的物理特性。此面板仅适用于 <em>活动项</em> 类型的刚体。</p>
+<dl class="simple">
+<dt>阻尼</dt><dd><dl class="simple">
+<dt>转换</dt><dd><p>随时间流失的线速度量。</p>
+</dd>
+<dt>旋转</dt><dd><p>随时间损失的角速度量。</p>
+</dd>
+</dl>
+</dd>
+<dt>失活性</dt><dd><dl class="simple">
+<dt>启用失活性</dt><dd><p>启用静止刚体的失活性。允许在模拟期间去活化物体(提高性能和稳定性，但可能导致故障)。</p>
+</dd>
+<dt>开始去活化</dt><dd><p>开始物体去活化。它们在与其它物体碰撞时被激活。</p>
+</dd>
+<dt>线性速率</dt><dd><p>指定失活性线速度低于该刚体失活性和仿真停止模拟物体的速度。</p>
+</dd>
+<dt>棱角速率</dt><dd><p>指定失活性角速度低于该刚体失活化和仿真停止模拟物理的速度。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="world.html" class="btn btn-neutral float-right" title="刚体世界环境" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/rigid_body/properties.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/rigid_body/properties%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

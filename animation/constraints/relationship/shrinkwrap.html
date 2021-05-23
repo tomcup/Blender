@@ -1,0 +1,418 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shrinkwrap Constraint 缩裹约束 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/constraints/relationship/shrinkwrap.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="动作" href="../../actions.html" />
+    <link rel="prev" title="Pivot Constraint 轴心约束" href="pivot.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../armatures/index.html">骨架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lattice.html">晶格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">约束</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#interface">界面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#motion-tracking">运动追踪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#transform">变换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#tracking">跟踪</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#relationship">关系</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="action.html">Action Constraint  动作关系约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="armature.html">骨架约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="child_of.html">Child Of Constraint 子级约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="floor.html">Floor Constraint 基面约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="follow_path.html">Follow Path Constraint 跟随路径约束</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot.html">Pivot Constraint 轴心约束</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Shrinkwrap Constraint 缩裹约束</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mode">Mode</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#nearest-surface-point">最近的表面点</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#projection">投影</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#nearest-vertex">最近的点</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#target-normal-projection">法向</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#snap-mode">吸附模式</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#align-to-normal">Align To Normal</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../index.html">约束</a> &raquo;</li>
+        
+      <li>Shrinkwrap Constraint 缩裹约束</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shrinkwrap-constraint">
+<span id="bpy-types-shrinkwrapconstraint"></span><h1>Shrinkwrap Constraint 缩裹约束<a class="headerlink" href="#shrinkwrap-constraint" title="Permalink to this headline">¶</a></h1>
+<p><em>缩裹</em> 约束对应的是  <a class="reference internal" href="../../../modeling/modifiers/deform/shrinkwrap.html"><span class="doc">缩裹修改器</span></a> 。它移动约束对象的原点并使其移到其目标对象的表面。</p>
+<p>这意味着目标 <em>必须</em> 有表面。 事实上，约束更具选择性，因为它只能使用网格作为目标。 因此，当所选的非活动对象是网格时，<em>缩裹</em> 选项仅显示在 <em>添加物体约束</em> 菜单中 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd>，(或其骨骼等效物)。</p>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/animation_constraints_relationship_shrinkwrap_panel.png" src="../../../_images/animation_constraints_relationship_shrinkwrap_panel.png" />
+<p class="caption"><span class="caption-text">Shrinkwrap panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>Target 目标</dt><dd><p><a class="reference internal" href="../../../interface/controls/templates/data_block.html#ui-data-id"><span class="std std-ref">数据ID</span></a> used to select the constraint's target, which <em>must</em> be a mesh object,
+and is not functional (red state) when it has none.
+See <a class="reference internal" href="../interface/common.html#rigging-constraints-interface-common-target"><span class="std std-ref">common constraint properties</span></a> for more information.</p>
+</dd>
+<dt>距离</dt><dd><p>该数值控制约束对象从目标对象表面计算起的偏移量</p>
+</dd>
+<dt>Influence</dt><dd><p>Controls the percentage of affect the constraint has on the object.
+See <a class="reference internal" href="../interface/common.html#bpy-types-constraint-influence"><span class="std std-ref">common constraint properties</span></a> for more information.</p>
+</dd>
+</dl>
+<div class="section" id="mode">
+<h3>Mode<a class="headerlink" href="#mode" title="Permalink to this headline">¶</a></h3>
+<p>此选顶允许您选择使用哪种方法计算目标表面上要移动约束对象原点的点。 你有这些选择：</p>
+<div class="section" id="nearest-surface-point">
+<h4>最近的表面点<a class="headerlink" href="#nearest-surface-point" title="Permalink to this headline">¶</a></h4>
+<p>所选择的目标表面的点将与原始自身的位置最接近。这是默认和最常用的选项。</p>
+</div>
+<div class="section" id="projection">
+<h4>投影<a class="headerlink" href="#projection" title="Permalink to this headline">¶</a></h4>
+<p>通过沿着给定的轴投射约束对象的原心确定目标对象表面的点。</p>
+<dl>
+<dt>Project Axis</dt><dd><p>此轴由选择此类型时显示的单选按钮控制。 这意味着投影轴只能与三个轴中的一个或它们的对立面对齐。 当约束对对象的原点沿所选方向的投影未到达目标的表面时，约束对象的位置保持不变。</p>
+<p>+X, +Y, +Z, -X, -Y, -Z</p>
+</dd>
+<dt>Space</dt><dd><p>坐标指定轴方向的空间。</p>
+</dd>
+<dt>距离</dt><dd><p>假设投影失败后停止移动的距离，并保持位置不变。</p>
+</dd>
+<dt>反向投影</dt><dd><p>除了选定的投影轴外，投影方向相反，并选择最接近的投影。</p>
+</dd>
+<dt>Face Cull</dt><dd><p>此单选按钮可以阻止在目标表面的“正面”(或者“背面”)上进行任何投影。 表面的“侧面”由其法线确定(从正面投射法线的“侧面”)。</p>
+<p>关闭，前，后</p>
+<dl class="simple">
+<dt>反向剔除</dt><dd><p>当和 <em>反向投影</em> 和 <em>面剔除</em> 一起使用时，它会反转 <em>前</em> 或者 <em>后</em> 剔除选项的方向。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="nearest-vertex">
+<h4>最近的点<a class="headerlink" href="#nearest-vertex" title="Permalink to this headline">¶</a></h4>
+<p>该方法非常类似于 <em>最近的表面点</em>，除了自身可能的收缩位置被限制在目标的顶点之外。</p>
+<p>此类型不支持下面描述的 <em>吸附模式</em> 设置。</p>
+</div>
+<div class="section" id="target-normal-projection">
+<h4>法向<a class="headerlink" href="#target-normal-projection" title="Permalink to this headline">¶</a></h4>
+<p>此方法类似于*最近的表面点*，但能产生更平滑的投影，但作为代价，计算速度会很慢。</p>
+<p>它不是找到最近的点，而是搜索最近的点，使其内插平滑法线指向或远离原始所有者位置。 非流形边界边缘被特别处理为无限薄的圆柱体，其在所有垂直方向上发射法线。 它无视平直着色和自动平滑的设置。</p>
+</div>
+</div>
+<div class="section" id="snap-mode">
+<h3>吸附模式<a class="headerlink" href="#snap-mode" title="Permalink to this headline">¶</a></h3>
+<p>大多数缩裹类型支持其他设置来控制约束对象如何移动到上述类型选择的目标点。 如果 <em>距离</em> 不为零，则某些选项仅有所不同。</p>
+<dl class="simple">
+<dt>曲面上</dt><dd><p>始终变换约束对象的位置。 沿着将约束对象位置和所选目标点连接到原始位置的投影线施加偏移。</p>
+</dd>
+<dt>表面外围</dt><dd><p>与 <em>曲面上</em> 类似，但偏移始终应用于目标对象曲面外部。</p>
+</dd>
+<dt>表面上方</dt><dd><p>与 <em>曲面上</em> 类似，但偏移量沿目标对象表面的平滑法线施加。</p>
+</dd>
+<dt>内向</dt><dd><p>如果约束对象已经在目标内，则不会移动它。 偏移量沿着投影线向内部缩小到合适的体积。</p>
+</dd>
+<dt>外向</dt><dd><p>如果约束对象已经在目标对象以外时不会移动所有者。 偏移沿着投影线向外扩展排除体积。</p>
+</dd>
+</dl>
+<p><em>内向</em> 和 <em>外向</em> 选项可用于非常粗糙的碰撞检测。内向和外向的确定是基于目标对象表面的法线完成的，但法线偏移计算结果在网格中面夹角小于90度的附近不是很靠谱。</p>
+</div>
+<div class="section" id="align-to-normal">
+<h3>Align To Normal<a class="headerlink" href="#align-to-normal" title="Permalink to this headline">¶</a></h3>
+<p>每当 <em>吸附模式</em> 选项可用时，也可以通过单选按钮选择轴将约束对象的指定局部轴与所选点处的目标对象表面的平滑法线对齐。</p>
+<p>对齐是通过最小旋转量执行的，就像 <a class="reference internal" href="../tracking/damped_track.html"><span class="doc">阻尼跟踪</span></a> 约束.</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<iframe src="https://player.vimeo.com/video/171554427" style="border: 0; height: 345px; width: 560px">
+</iframe></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../actions.html" class="btn btn-neutral float-right" title="动作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pivot.html" class="btn btn-neutral float-left" title="Pivot Constraint 轴心约束" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/constraints/relationship/shrinkwrap.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/constraints/relationship/shrinkwrap%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

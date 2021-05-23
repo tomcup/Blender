@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>发射器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/particles/emitter/emission.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="缓存" href="cache.html" />
+    <link rel="prev" title="发射体" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Particle System</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../particle_system_panel.html">粒子系统面板</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">发射体</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">发射器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#source">源</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">缓存</a></li>
+<li class="toctree-l4"><a class="reference internal" href="velocity.html">速度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rotation.html">旋转</a></li>
+<li class="toctree-l4"><a class="reference internal" href="physics/index.html">物理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="render.html">渲染</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html">视图显示</a></li>
+<li class="toctree-l4"><a class="reference internal" href="children.html">子级</a></li>
+<li class="toctree-l4"><a class="reference internal" href="force_field.html">力场</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vertex_groups.html">顶点组</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../hair/index.html">毛发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../texture_influence.html">纹理影响</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mode.html">粒子编辑模式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../index.html">Particle System</a> &raquo;</li>
+        
+          <li><a href="index.html">发射体</a> &raquo;</li>
+        
+      <li>发射器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="emission">
+<h1>发射器<a class="headerlink" href="#emission" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">粒子系统 ‣ 发射器</span></p>
+</dd>
+</dl>
+</div>
+<p>The <em>Emitter</em> system works just like its name says: it emits/produces particles for a certain amount of time.
+In such a system, particles are emitted from the selected object from the <em>Start</em>
+frame to the <em>End</em> frame and have a certain lifespan.
+These particles are rendered default as <a class="reference internal" href="render.html#particle-halo"><span class="std std-ref">Halos</span></a>,
+but you may also render this kind of particles as objects
+(depending on the particle system's render settings,
+see <a class="reference internal" href="render.html"><span class="doc">Visualization</span></a>).</p>
+<p><em>发射</em> 面板中的按钮控制粒子随时间发射的方式：</p>
+<dl class="simple">
+<dt>数量</dt><dd><p>模拟中使用的最大父粒子数量。</p>
+</dd>
+<dt>种子</dt><dd><p>Blender使用它作为起点在模拟过程中产生随机数。</p>
+</dd>
+<dt>帧开始</dt><dd><p>粒子发射的起始框架。您可以设置负值，这使您可以在实际渲染之前开始模拟。</p>
+</dd>
+<dt>结束</dt><dd><p>粒子发射的终结帧。</p>
+</dd>
+<dt>生命周期</dt><dd><p>颗粒的寿命(以帧为单位)。</p>
+</dd>
+<dt>生命周期的随机性</dt><dd><p>给定粒子寿命的随机变化。可能的最短寿命是寿命 ×(1 - 随机)。不允许高于1.0的值。例如，默认的Lifetime值为50，随机设置为0.5将为您提供范围从50帧到50的实时范围的粒子50×(1.0−0.5)=25 如果帧数和随机设置为0.75，您将获得具有50帧到50秒的实时跨度的粒子50×(1.0−0.75)=12.5 帧。</p>
+</dd>
+</dl>
+<div class="section" id="source">
+<h2>源<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">粒子系统 ‣ 发射器 ‣ 源</span></p>
+</dd>
+</dl>
+</div>
+<dl>
+<dt>发射源</dt><dd><p>定义粒子的发射方式和位置，精确控制粒子的分布。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>可以使用顶点组控制发射，这在 <em>顶点组</em> 面板中完成。</p>
+</div>
+<dl>
+<dt>顶点</dt><dd><p>从网格的顶点发出粒子。</p>
+</dd>
+<dt>面</dt><dd><p>从网格的表面发射粒子。</p>
+</dd>
+<dt>体积</dt><dd><p>从封闭网格的体积中释放粒子。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Your mesh must be <a class="reference internal" href="../../../glossary/index.html#term-Manifold"><span class="xref std std-term">Manifold</span></a> to emit particles from the volume.
+Some modifiers like the Edge Split Modifier break up the surface,
+in which case volume emission will not work correctly!</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>使用修改器堆栈。</dt><dd><p>在发射粒子时考虑 <a class="reference internal" href="../../../modeling/modifiers/introduction.html#modifier-stack"><span class="std std-ref">修改堆栈</span></a> 中粒子修改器上方的任何 <a class="reference internal" href="../../../modeling/modifiers/introduction.html"><span class="doc">修改器</span></a> ，否则它使用原始网格形状。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>请注意，如果这些修改器在视口和渲染之间生成不同的几何体，则粒子在最终渲染中可能会有所不同。</p>
+</div>
+</dd>
+<dt>分布</dt><dd><p>这些设置控制从任何 <em>面</em> 或 <em>体积</em> 发射时粒子的发射如何分布在整个发射位置。</p>
+<dl>
+<dt>抖动</dt><dd><p>粒子以抖动的间隔防止在发射器元上。</p>
+<dl class="simple">
+<dt>颗粒/面</dt><dd><p>每面的排放数量(0 = 自动)。</p>
+</dd>
+<dt>抖动量</dt><dd><p>应用于采用的抖动量。</p>
+</dd>
+</dl>
+</dd>
+<dt>随机</dt><dd><p>粒子从发射器元中的随机位置发射。</p>
+</dd>
+<dt>网格</dt><dd><p>粒子设置在3D网格中，并且保持元素附近/中间的粒子。</p>
+<dl class="simple">
+<dt>网格反转</dt><dd><p>反转什么被认为是对象，什么不是。</p>
+</dd>
+<dt>六角形</dt><dd><p>使用六边形网格而不是四边形网格。</p>
+</dd>
+<dt>解析度</dt><dd><p>网格的分辨率。</p>
+</dd>
+<dt>随机</dt><dd><p>向网格位置添加随机偏移。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>随机排列</dt><dd><p>发射器元索引以随机顺序而不是线性的(一个接一个)经过。</p>
+<p>不适用于 <em>网格</em> 分发。</p>
+</dd>
+<dt>均匀分布</dt><dd><p>基于元素的表面积进行粒子分布，即小元素比大元素发射更少的粒子，因此粒子密度是均匀的。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cache.html" class="btn btn-neutral float-right" title="缓存" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="发射体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/particles/emitter/emission.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/particles/emitter/emission%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

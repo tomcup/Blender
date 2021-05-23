@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>介绍 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/files/linked_libraries/introduction.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="代理" href="library_proxies.html" />
+    <link rel="prev" title="关联库" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">文件 &amp; 数据系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blend/index.html">Blender 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_blocks.html">数据块</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">关联库</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#append-link">Append &amp; Link</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#library-reload-relocate">关联库的重新加载和重新定位</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#broken-library">损坏的库</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#make-local">转为本地项</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id1">选项</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#known-limitations">已知的局限</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#circular-dependencies">循环依赖</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#object-rigid-body-constraints">物体刚体约束</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#compression-memory-use">压缩和内存使用</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="library_proxies.html">代理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="library_overrides.html">库覆盖</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../media/index.html">媒体格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../import_export.html">导入 &amp; 导出文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">文件 &amp; 数据系统</a> &raquo;</li>
+        
+          <li><a href="index.html">关联库</a> &raquo;</li>
+        
+      <li>介绍</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>介绍<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>这些功能可以帮助你重复使用材质、物体和外部 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中的 <a class="reference internal" href="../data_blocks.html"><span class="doc">数据块</span></a>。你可以建立通用内容库，并跨文件引用它们。</p>
+<div class="section" id="append-link">
+<h2>Append &amp; Link<a class="headerlink" href="#append-link" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">编辑器</dt>
+<dd class="field-odd"><p>顶栏</p>
+</dd>
+<dt class="field-even">模式</dt>
+<dd class="field-even"><p>所有模式</p>
+</dd>
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">文件 ‣ 追加 或 关联</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">F4</kbd>, <kbd class="kbd docutils literal notranslate">A</kbd> or <kbd class="kbd docutils literal notranslate">L</kbd></p>
+</dd>
+</dl>
+</div>
+<p><em>关联</em> 创建对源文件中数据的引用，如果源文件中的数据被改变，那么引用该数据的文件将在下次打开的时候更新数据内容。但关联的数据不可编辑(在某种程度上，见 <a class="reference internal" href="library_proxies.html#object-proxy"><span class="std std-ref">代理</span></a>)。</p>
+<p>而 <em>追加</em> 会将数据的完整副本复制到blend文件中，不保留对原始数据的任何引用。 可对本地数据副本进行进一步编辑，但外部来源文件中的更改不会反映在引用文件中。</p>
+<p>在 <a class="reference internal" href="../../editors/file_browser.html"><span class="doc">文件浏览器</span></a> 浏览外部来源的blend文件， 选择需要重用的数据块。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>也可以通过把 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件拖放到 Blender 窗口的方式进行关联或追加。</p>
+</div>
+<div class="section" id="options">
+<h3>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>相对路径</dt><dd><p>只适用于关联，见 <a class="reference internal" href="../blend/open_save.html#files-blend-relative-paths"><span class="std std-ref">相对路径</span></a> 。</p>
+</dd>
+<dt>选择</dt><dd><p>使物体在加载后处于 <em>激活</em> 状态。</p>
+</dd>
+<dt>活动的集合</dt><dd><p>该物体将添加到活动视图层的活动集合中。 否则，它将被添加到活动视图层中的新集合中。</p>
+</dd>
+<dt>实体化集合</dt><dd><p>此选项将关联集合实例化为物体，并将其添加到活动场景中。 否则，关联集合将直接添加到活动视图层。</p>
+</dd>
+<dt>伪用户</dt><dd><p>将添加的数据块定义为 <a class="reference internal" href="../data_blocks.html#data-system-datablock-fake-user"><span class="std std-ref">保护</span></a>。</p>
+</dd>
+<dt>全部本地化</dt><dd><p>追加所有间接关联的数据。</p>
+</dd>
+</dl>
+<p>关联物体时，它将被放置在场景中的3D游标位置。 许多其他数据类型，比如相机，曲线和材质，想要在场景中可见必须先关联到一个物体。</p>
+<p>Newly added collections types are available in <span class="menuselection">Add ‣ Collection Instance</span> in the 3D Viewport.</p>
+<p>在 <em>大纲视图</em> 将显示模式设置为 <em>Blender File</em>，可以查看所有关联和追加的数据块。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>追加已关联的数据会将物体/集合添加到场景中，但会保持关联状态(并且不可编辑)。</p>
+<p>这样做是为了让现有的关联关系保持不变。</p>
+</div>
+</div>
+</div>
+<div class="section" id="library-reload-relocate">
+<span id="bpy-ops-outliner-lib-operation"></span><h2>关联库的重新加载和重新定位<a class="headerlink" href="#library-reload-relocate" title="Permalink to this headline">¶</a></h2>
+<p>从 <em>大纲视图</em> 的 <em>Blender 文件</em> 视图中的库项目的上下文菜单中，你可以重新加载和重定位整个库。</p>
+<p>如果你更改库 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中的某些内容并希望在当前 <code class="docutils literal notranslate"><span class="pre">blend`</span></code> 文件中查看这些更改而无需重新打开它，则重新加载非常有用。</p>
+<p>重定位用于从新文件路径重新加载库。 这可用于修复损坏的关联库(比如，因为库文件在从其被关联后被移动或重命名)，或者在不同库文件中的同一组数据的变体之间切换。</p>
+<div class="section" id="broken-library">
+<h3>损坏的库<a class="headerlink" href="#broken-library" title="Permalink to this headline">¶</a></h3>
+<p>加载blend文件时，如果Blender无法找到对应的库，将创建一个占位符数据块来替代缺失的关联数据块。这样，对丢失数据的引用不会丢失，通过重新定位丢失的库，可以自动恢复丢失的数据。</p>
+</div>
+</div>
+<div class="section" id="make-local">
+<span id="bpy-ops-object-make-local"></span><h2>转为本地项<a class="headerlink" href="#make-local" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">编辑器</dt>
+<dd class="field-odd"><p>3D视图</p>
+</dd>
+<dt class="field-even">模式</dt>
+<dd class="field-even"><p>物体模式</p>
+</dd>
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">物体 ‣ 关系 ‣ 转为本地项...</span></p>
+</dd>
+</dl>
+</div>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">编辑器</dt>
+<dd class="field-odd"><p>大纲视图</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">上下文菜单 ‣ ID 数据 ‣ 转为本地项</span></p>
+</dd>
+</dl>
+</div>
+<p>本地化当前 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中选中的或者是所有的外部物体。与原始库文件的关联将完全消失，但这些数据块完全可编辑，就像直接在这个 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中创建的那样。</p>
+<div class="section" id="id1">
+<h3>选项<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><em>大纲视图</em> 的上下文菜单中的本地化操作没有选项，只影响选中的数据块。</p>
+<p><em>3D 视图</em> 中可用的操作仅直接影响所选物体，但它也可以使物体的本地化依赖于：</p>
+<dl>
+<dt>类型</dt><dd><p>可选择性取消关联物体数据和材质数据。</p>
+<p>选定的物体, + 物体数据, + 材质, 全部(即包含所有场景)</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="known-limitations">
+<h2>已知的局限<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
+<p>大部分情况下关联数据能发挥预期作用，但仍有一些特殊情况是不支持的。</p>
+<div class="section" id="circular-dependencies">
+<h3>循环依赖<a class="headerlink" href="#circular-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>通常，依赖不应当是双向的。尝试关联或追加的数据是在当前文件中，其操作结果会无效。</p>
+</div>
+<div class="section" id="object-rigid-body-constraints">
+<h3>物体刚体约束<a class="headerlink" href="#object-rigid-body-constraints" title="Permalink to this headline">¶</a></h3>
+<p>将物体 <em>直接</em> 关联至blend文件时， <em>刚体</em> 设置 <strong>不会</strong> 被关联，因为它们是从属于场景世界的。替代的方法是将整个场景关联进来，并将其设置为 <a class="reference internal" href="../../scene_layout/scene/properties.html#scene-background-set"><span class="std std-ref">场景集合</span></a>。</p>
+</div>
+<div class="section" id="compression-memory-use">
+<span id="files-linked-libraries-known-limitations-compression"></span><h3>压缩和内存使用<a class="headerlink" href="#compression-memory-use" title="Permalink to this headline">¶</a></h3>
+<p>关联到启用压缩的 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件可能会在读取文件的明显增加内存使用量。</p>
+<p>在允许压缩的情况下不支持按需读取数据 <em>(这只会影响加载时间，一旦加载，内存使用没有差异)</em>。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="library_proxies.html" class="btn btn-neutral float-right" title="代理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="关联库" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/files/linked_libraries/introduction.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60files/linked_libraries/introduction%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

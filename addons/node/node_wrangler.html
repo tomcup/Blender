@@ -1,0 +1,815 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Node Wrangler &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/node/node_wrangler.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Node Presets" href="node_presets.html" />
+    <link rel="prev" title="Node Arrange" href="node_arrange.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_mesh/index.html">添加网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">节点</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="node_arrange.html">Node Arrange</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Node Wrangler</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">使用方法(Usage)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#description">描述</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#lazy-connect">懒人连接(Lazy Connect)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#lazy-mix">懒人混合(Lazy Mix)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#merge">合并(Merge)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#merge-with-automatic-type-detection">与自动类型检测合并</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#merge-using-mix-node">使用混合节点进行合并</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#merge-using-z-combine-node">使用Z-Combine节点合并</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#merge-using-alpha-over-node">使用Alpha Over Node合并</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#merge-using-math-node">使用数学节点进行合并</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#batch-change-blend-mode-math-operation">批量改变混合模式/数学操作</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#change-mix-factor">变化混合系数</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#delete-unused-nodes">删除未使用的节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#swap-links">交换链接(Swap Links)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#reset-backdrop">重置背景墙(Reset Backdrop)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-uv-layout-attribute-node">添加UV布局属性节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-vertex-color-attribute-node">添加顶点颜色属性节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#shader-viewer">着色器查看器(Shader Viewer)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#frame-selected">选定的框架(Frame Selected)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#reload-images">重载图片(Reload Images)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#switch-node-type">切换节点类型</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#copy-settings">复制设置(Copy Settings)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#copy-label">复制标签(Copy Label)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#clear-label">清除标签(Clear Label)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#modify-label">修改标签(Modify Label)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-texture-setup">添加纹理设置</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-reroutes-to-outputs">在输出中添加重路由</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#link-active-to-selected">活动链接到选定的</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#align-nodes">节点对齐(Align Nodes)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#select-within-frame-parent-children">框架内选择（父母/子女）</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#detach-outputs">分离输出(Detach Outputs)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#link-to-output-node">链接到输出节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-image-sequence">添加图像序列</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#add-multiple-images">添加多个图像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="node_presets.html">Node Presets</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">节点</a> &raquo;</li>
+        
+      <li>Node Wrangler</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="node-wrangler">
+<h1>Node Wrangler<a class="headerlink" href="#node-wrangler" title="Permalink to this headline">¶</a></h1>
+<p>这个插件为你提供了几个工具，帮助你快速有效地处理节点。许多功能可以同时适用于合成和着色器节点，有些功能还可以将合成中的功能带到着色器节点中。有些工具是为特定的功能而设计的，但是我们的目标是让你在任何情况下都能完全灵活地使用这些工具，即使是我们不打算使用的地方。</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>选择 Node 然后选择 Node Wrangler 以启用插件。</p></li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>使用方法(Usage)<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>使用节点编辑器侧边栏中的面板或 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Spacebar</kbd></kbd> 键盘快捷键或单独的工具快捷键。</p>
+</div>
+<div class="section" id="description">
+<h2>描述<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lazy-connect">
+<h3>懒人连接(Lazy Connect)<a class="headerlink" href="#lazy-connect" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd>-drag, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>在节点之间建立链接，而不需要精确地选择插座。只需按住 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> 从一个节点拖动到另一个节点即可。使用的是离鼠标最近的节点，所以你甚至不需要精确地点击一个节点。</p>
+<p>另外，使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> 来显示输入和输出的菜单，这样可以更准确地进行连接。这在处理大节点树时非常有用，因为你可以很容易地进行连接，而不需要放大和缩小。</p>
+</div>
+<div class="section" id="lazy-mix">
+<h3>懒人混合(Lazy Mix)<a class="headerlink" href="#lazy-mix" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> -drag</p>
+</dd>
+</dl>
+</div>
+<p>在按住 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> 的同时，通过从一个节点拖动到另一个节点，合并两个节点的输出。一个Mix节点或Mix Shader节点将被添加，并且节点的输出将被连接到它。</p>
+</div>
+<div class="section" id="merge">
+<h3>合并(Merge)<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h3>
+<p>快速添加Mix、Math、Z-Combine、Alpha Over、Mix Shader或Add Shader节点，这些节点将合并所选节点的输出。</p>
+<div class="section" id="merge-with-automatic-type-detection">
+<h4>与自动类型检测合并<a class="headerlink" href="#merge-with-automatic-type-detection" title="Permalink to this headline">¶</a></h4>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Minus</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">斜杠</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">逗号</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">句号</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>所选节点的输出将根据所选节点的类型，使用Mix、Math、Mix Shader或Add Shader节点进行合并。</p>
+<dl class="simple">
+<dt>添加 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd></dt><dd><p>将混合模式或数学操作设置为添加。选择了着色器后，将使用 Add 着色器。</p>
+</dd>
+<dt>乘 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd></dt><dd><p>乘法混合模式或数学运算。</p>
+</dd>
+<dt>减去 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Minus</kbd></kbd></dt><dd><p>减去混合模式或数学操作。</p>
+</dd>
+<dt>除以 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">斜杠</kbd></kbd></dt><dd><p>除法混合模式或数学运算。</p>
+</dd>
+<dt>混合 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd></dt><dd><p>混合混合模式或选择着色器时，将使用混合着色器节点。</p>
+</dd>
+<dt>大于 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">逗号</kbd></kbd></dt><dd><p>大于数学运算。</p>
+</dd>
+<dt>小于 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">句号</kbd></kbd></dt><dd><p>少于数学操作。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="merge-using-mix-node">
+<h4>使用混合节点进行合并<a class="headerlink" href="#merge-using-mix-node" title="Permalink to this headline">¶</a></h4>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">减号</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">斜杠</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd></kbd> 和正确的键，无论选择什么类型的节点，都可以强制使用Mix节点进行合并。</p>
+</div>
+<div class="section" id="merge-using-z-combine-node">
+<h4>使用Z-Combine节点合并<a class="headerlink" href="#merge-using-z-combine-node" title="Permalink to this headline">¶</a></h4>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">小键盘句号</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Z-Combine节点将被用于合并。如果可能的话 -- -- 图像和Z-深度输出将被连接起来。</p>
+</div>
+<div class="section" id="merge-using-alpha-over-node">
+<h4>使用Alpha Over Node合并<a class="headerlink" href="#merge-using-alpha-over-node" title="Permalink to this headline">¶</a></h4>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Alpha Over节点将被用于合并。</p>
+</div>
+<div class="section" id="merge-using-math-node">
+<h4>使用数学节点进行合并<a class="headerlink" href="#merge-using-math-node" title="Permalink to this headline">¶</a></h4>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Minus</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">斜杠</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">逗号</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">句号</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl键</kbd></kbd> ，无论选择什么类型的节点，都可以强制使用Math节点进行合并。</p>
+</div>
+</div>
+<div class="section" id="batch-change-blend-mode-math-operation">
+<h3>批量改变混合模式/数学操作<a class="headerlink" href="#batch-change-blend-mode-math-operation" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">上</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">下</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Minus</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">8</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">斜杠</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">逗号</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">句号</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择混合节点或数学节点，同时改变其混合模式或数学操作。使用上面指定的键。它们将相应地改变混合模式或操作。混合、加、减、除、小于、大于。使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">上</kbd></kbd> 或 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">下</kbd></kbd> 来查看所有可用的混合模式或数学操作。</p>
+</div>
+<div class="section" id="change-mix-factor">
+<h3>变化混合系数<a class="headerlink" href="#change-mix-factor" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择的混合节点或混合着色器节点的变化系数。</p>
+<ul class="simple">
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">右</kbd></kbd> 将其增加0.1。</p></li>
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">左</kbd></kbd> 将其减少0.1。</p></li>
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">右</kbd></kbd> 将其增加0.01。</p></li>
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">左</kbd></kbd> 将其降低0.01。</p></li>
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">左</kbd></kbd> 将系数设置为0.0。附加快捷键是 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">0</kbd></kbd> 。</p></li>
+<li><p>使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">右</kbd></kbd> 将系数设置为1.0。附加的快捷键是 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">1</kbd></kbd> 。</p></li>
+</ul>
+</div>
+<div class="section" id="delete-unused-nodes">
+<h3>删除未使用的节点<a class="headerlink" href="#delete-unused-nodes" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>清理你的节点树。删除所有对最终结果没有贡献的节点。</p>
+</div>
+<div class="section" id="swap-links">
+<h3>交换链接(Swap Links)<a class="headerlink" href="#swap-links" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择两个输出有链接的节点， <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> 将交换输出。原来链接到第一个节点的输出的东西现在会链接到第二个节点的输出，反之亦然。</p>
+<p>Or, select one node with a single linked input --
+<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> will cycle the link through the available input sockets.
+Or, select one node with two linked inputs -- <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> will swap the two links.
+If more than two inputs are linked, the two with matching types will be swapped
+(such as a Mix node's two color inputs).</p>
+</div>
+<div class="section" id="reset-backdrop">
+<h3>重置背景墙(Reset Backdrop)<a class="headerlink" href="#reset-backdrop" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">Z</kbd></p>
+</dd>
+</dl>
+</div>
+<p>重新设置背景墙的位置和比例。</p>
+</div>
+<div class="section" id="add-uv-layout-attribute-node">
+<h3>添加UV布局属性节点<a class="headerlink" href="#add-uv-layout-attribute-node" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单(Menu)</dt>
+<dd class="field-odd"><p><span class="menuselection">Header ‣ Add menu</span></p>
+</dd>
+</dl>
+</div>
+<p>添加属性节点，属性设置为UV Layout。</p>
+</div>
+<div class="section" id="add-vertex-color-attribute-node">
+<h3>添加顶点颜色属性节点<a class="headerlink" href="#add-vertex-color-attribute-node" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单(Menu)</dt>
+<dd class="field-odd"><p><span class="menuselection">Header ‣ Add menu</span></p>
+</dd>
+</dl>
+</div>
+<p>添加一个属性节点，属性设置为顶点颜色。</p>
+</div>
+<div class="section" id="shader-viewer">
+<h3>着色器查看器(Shader Viewer)<a class="headerlink" href="#shader-viewer" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>着色器的查看节点。 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> ，该节点的输出将被链接到新创建的Emission着色器和Material 输出。这是预览纹理的一个简单方法。</p>
+</div>
+<div class="section" id="frame-selected">
+<h3>选定的框架(Frame Selected)<a class="headerlink" href="#frame-selected" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择节点并通过点击 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 将其 &quot;包裹 &quot;在Frame节点中。紧接着点击 <kbd class="kbd docutils literal notranslate">F6</kbd> 来设置Frame的颜色和标签。</p>
+</div>
+<div class="section" id="reload-images">
+<h3>重载图片(Reload Images)<a class="headerlink" href="#reload-images" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">R</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>节点树中使用的所有图像（图像输入、纹理）都可以通过点击 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">R</kbd></kbd> 重新加载。</p>
+</div>
+<div class="section" id="switch-node-type">
+<h3>切换节点类型<a class="headerlink" href="#switch-node-type" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>将所选节点的类型改成其他类型。点击 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> ，你会得到与 <span class="menuselection">Add ‣ Node</span> 菜单完全相同的菜单排序。选择新的类型。</p>
+</div>
+<div class="section" id="copy-settings">
+<h3>复制设置(Copy Settings)<a class="headerlink" href="#copy-settings" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>将活动节点的设置复制到所有选中的同类型节点。</p>
+</div>
+<div class="section" id="copy-label">
+<h3>复制标签(Copy Label)<a class="headerlink" href="#copy-label" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Copy labels all selected nodes based on various criteria.
+Labels can be copied from labels (names) of active node <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">V</kbd></kbd>,
+or from names (labels) of nodes that are linked to selected ones or
+from the names of sockets that the selected nodes are linked to.
+All options will be revealed in submenu after hitting <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd>.</p>
+</div>
+<div class="section" id="clear-label">
+<h3>清除标签(Clear Label)<a class="headerlink" href="#clear-label" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>清除所选节点的标签。</p>
+</div>
+<div class="section" id="modify-label">
+<h3>修改标签(Modify Label)<a class="headerlink" href="#modify-label" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>批量更改所选节点的标签。添加文字到开头，到结尾，替换部分文字。</p>
+</div>
+<div class="section" id="add-texture-setup">
+<h3>添加纹理设置<a class="headerlink" href="#add-texture-setup" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">T</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择任何一个着色器节点， <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">T</kbd></kbd> ，就会添加一个带有控制坐标的图像纹理节点。如果你选择了任何一个纹理节点，只添加纹理坐标和贴图节点。背景着色器将获得一个环境纹理节点，并生成映射。</p>
+</div>
+<div class="section" id="add-reroutes-to-outputs">
+<h3>在输出中添加重路由<a class="headerlink" href="#add-reroutes-to-outputs" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">斜杠</kbd></p>
+</dd>
+</dl>
+</div>
+<p>重路由节点将被添加并链接到每个选定节点的每个输出。</p>
+</div>
+<div class="section" id="link-active-to-selected">
+<h3>活动链接到选定的<a class="headerlink" href="#link-active-to-selected" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">Backslash</kbd> , <kbd class="kbd docutils literal notranslate">K</kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">K</kbd></kbd> , <kbd class="kbd docutils literal notranslate">'</kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">'</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">;</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">;</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>根据各种标准将活动节点与选定的节点连接起来。</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">反斜线</kbd> -- -- 调用主 <em>链接活动到所选</em> 菜单。</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">K</kbd> ----所有选中的链接都是活动的。使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">K</kbd></kbd> 强制替换现有链接。</p></li>
+<li><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">'</kbd></kbd> -- 仅链接到与活动节点名称/标签相同的选定节点（ <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">'</kbd></kbd> 替换现有链接）。</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">;</kbd> -- 当输出的名称与所选节点的名称或标签匹配时，选择链接。用于替换源的时候很方便。例如，将图层渲染成图像（多层EXR）。</p></li>
+</ul>
+</div>
+<div class="section" id="align-nodes">
+<h3>节点对齐(Align Nodes)<a class="headerlink" href="#align-nodes" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">=</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>节点的水平或垂直对齐。与 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">S</kbd> <kbd class="kbd docutils literal notranslate">X</kbd> <kbd class="kbd docutils literal notranslate">0</kbd></kbd> 或 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">S</kbd> <kbd class="kbd docutils literal notranslate">Y</kbd> <kbd class="kbd docutils literal notranslate">0</kbd></kbd> 相同，但节点之间的间距要均匀。</p>
+</div>
+<div class="section" id="select-within-frame-parent-children">
+<h3>框架内选择（父母/子女）<a class="headerlink" href="#select-within-frame-parent-children" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">]</kbd> -- 选择被选中的Frame节点中的所有节点。</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">[</kbd> -- 选择所选节点被包裹的框架节点。</p></li>
+</ul>
+</div>
+<div class="section" id="detach-outputs">
+<h3>分离输出(Detach Outputs)<a class="headerlink" href="#detach-outputs" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选定节点的输出离开链接的输入。</p>
+</div>
+<div class="section" id="link-to-output-node">
+<h3>链接到输出节点<a class="headerlink" href="#link-to-output-node" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键(Hotkey)</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">O</kbd></p>
+</dd>
+</dl>
+</div>
+<p>在合成中--链接到合成输出。在材料中 -- -- 链接到材料输出节点。</p>
+</div>
+<div class="section" id="add-image-sequence">
+<h3>添加图像序列<a class="headerlink" href="#add-image-sequence" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单(Menu)</dt>
+<dd class="field-odd"><p><span class="menuselection">Add ‣ Input</span> 菜单用于合成节点，或 <span class="menuselection">Add ‣ Texture</span> 菜单用于着色器节点</p>
+</dd>
+</dl>
+</div>
+<p>只需在文件浏览器中选择一个序列中的图像，它将自动检测序列的长度，并适当设置节点。</p>
+</div>
+<div class="section" id="add-multiple-images">
+<h3>添加多个图像<a class="headerlink" href="#add-multiple-images" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单(Menu)</dt>
+<dd class="field-odd"><p><span class="menuselection">Add ‣ Input</span> 菜单用于合成节点，或 <span class="menuselection">Add ‣ Texture</span> 菜单用于着色器节点</p>
+</dd>
+</dl>
+</div>
+<p>简单地允许你选择一个以上的图像，并为每个图像添加一个节点。(对于导入多张渲染图或叠加图像的渲染图很有用。)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>请参见 <a class="reference external" href="https://archive.blender.org/wiki/index.php/Extensions:2.6/Py/Scripts/Nodes/Nodes_Efficiency_Tools/">旧维基</a>，以获取存档的原始文档。</p>
+</div>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">目录</dt>
+<dd class="field-odd"><p>节点</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>各种工具来增强和加快基于节点的工作流程。</p>
+</dd>
+<dt class="field-odd">位置</dt>
+<dd class="field-odd"><p><span class="menuselection">node editor ‣ Sidebar</span> 或查看单个工具的快捷键。</p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>node_wrangler.py</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Bartek Skorupa, Greg Hall, Sebastian Koenig, Christian Brinkmann, Florian Meyer</p>
+</dd>
+<dt class="field-even">许可证</dt>
+<dd class="field-even"><p>GPL</p>
+</dd>
+<dt class="field-odd">说明</dt>
+<dd class="field-odd"><p>该插件为Blender自带插件。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="node_presets.html" class="btn btn-neutral float-right" title="Node Presets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="node_arrange.html" class="btn btn-neutral float-left" title="Node Arrange" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/node/node_wrangler.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/node/node_wrangler%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

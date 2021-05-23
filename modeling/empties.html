@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>空物体 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/empties.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="修改器" href="modifiers/index.html" />
+    <link rel="prev" title="属性" href="volumes/properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">空物体</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#primitives">基本体</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plain-axes">纯轴</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arrows">箭头</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#single-arrow">单向箭头</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#circle">圆形</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cube">立方体</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sphere">球形</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cone">锥形</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image">图像</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#transparency">透明</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#editing">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">用法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">制作模型</a> &raquo;</li>
+        
+      <li>空物体</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="bpy-ops-object-empty"><span id="bpy-types-object-empty"></span></span><div class="section" id="empties">
+<h1>空物体<a class="headerlink" href="#empties" title="Permalink to this headline">¶</a></h1>
+<p>&quot;空物体&quot; 是一个没有附加任何几何体的单个坐标点。因为空物体没有体积和表面，所以无法渲染。尽管如此，它却有可以用作许多用途的手柄。</p>
+<div class="section" id="primitives">
+<h2>基本体<a class="headerlink" href="#primitives" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<img alt="../_images/modeling_empties_draw-types.png" src="../_images/modeling_empties_draw-types.png" />
+<p class="caption"><span class="caption-text">空物体显示类型。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="plain-axes">
+<h3>纯轴<a class="headerlink" href="#plain-axes" title="Permalink to this headline">¶</a></h3>
+<p>显示为六行，分别指向+ X，-X，+ Y，-Y，+ Z和-Z轴方向。</p>
+</div>
+<div class="section" id="arrows">
+<h3>箭头<a class="headerlink" href="#arrows" title="Permalink to this headline">¶</a></h3>
+<p>显示为箭头，最初指向X，Y和Z轴正方向，每个都有一个标签。</p>
+</div>
+<div class="section" id="single-arrow">
+<h3>单向箭头<a class="headerlink" href="#single-arrow" title="Permalink to this headline">¶</a></h3>
+<p>显示为单箭头，最初指向Z轴正方向。</p>
+</div>
+<div class="section" id="circle">
+<h3>圆形<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
+<p>在XZ平面上最初显示为一个圆圈。</p>
+</div>
+<div class="section" id="cube">
+<h3>立方体<a class="headerlink" href="#cube" title="Permalink to this headline">¶</a></h3>
+<p>显示为立方体，最初与XYZ轴对齐。</p>
+</div>
+<div class="section" id="sphere">
+<h3>球形<a class="headerlink" href="#sphere" title="Permalink to this headline">¶</a></h3>
+<p>显示为由三个圆圈定义的球体。圆圈分别与X，Y和Z轴对齐。</p>
+</div>
+<div class="section" id="cone">
+<h3>锥形<a class="headerlink" href="#cone" title="Permalink to this headline">¶</a></h3>
+<p>显示为锥体，最初指向Y轴正方向。</p>
+</div>
+<div class="section" id="image">
+<span id="bpy-types-object-empty-image"></span><h3>图像<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
+<p>空物体可以显示图像。 这可以用于创建参考图像，包括从其中建模的蓝图或角色表，而不是使用背景图像。无论3D显示模式如何，都会显示图像。</p>
+<p>空物体显示设置可在 <span class="menuselection">属性栏 ‣ 物体数据 ‣ 空物体</span> 查看。</p>
+<dl>
+<dt>X，Y偏移</dt><dd><p>偏移图像原点 (1.0代表图像的宽度/高度)。</p>
+<dl class="field-list simple">
+<dt class="field-odd">X=0.5, Y=0.5</dt>
+<dd class="field-odd"><p>空物体原点在图像中心。</p>
+</dd>
+<dt class="field-even">X=0.0, Y=0.0</dt>
+<dd class="field-even"><p>空物体原点在图像的底部的左边。</p>
+</dd>
+<dt class="field-odd">X=1.0, Y=1.0</dt>
+<dd class="field-odd"><p>空物体原点在图像的顶部的右边。</p>
+</dd>
+</dl>
+</dd>
+<dt>深度</dt><dd><dl class="field-list simple">
+<dt class="field-odd">默认</dt>
+<dd class="field-odd"><p>使用一般的深度行为。</p>
+</dd>
+<dt class="field-even">前</dt>
+<dd class="field-even"><p>总是在其他物体上方显示。</p>
+</dd>
+<dt class="field-odd">后</dt>
+<dd class="field-odd"><p>总是在其他物体下方显示。</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>当使用图像作为参考图时，设置深度为 <em>前</em> ，低 <em>不透明度</em> 很有用。</p>
+</div>
+</dd>
+<dt>边</dt><dd><dl class="field-list simple">
+<dt class="field-odd">两者</dt>
+<dd class="field-odd"><p>显示空物体的前后两面。</p>
+</dd>
+<dt class="field-even">前</dt>
+<dd class="field-even"><p>只显示图像的前面。</p>
+</dd>
+<dt class="field-odd">后</dt>
+<dd class="field-odd"><p>只显示图像的后面。</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>当你使用一张图像作为参考图时很有用。可以通过使用两个空物体图像分别设置为一面可见，这样这张参考图就有前面和后面。</p>
+</div>
+</dd>
+<dt>Show in</dt><dd><dl>
+<dt>显示正交</dt><dd><p>在正交视图中显示。</p>
+</dd>
+<dt>显示透视</dt><dd><p>在透视视图中显示
+。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>禁用该选项经常很有用，因为这样参考图就不会妨碍到观察模型。</p>
+</div>
+</dd>
+<dt>仅在轴向对齐时显示</dt><dd><p>仅在视图与物体的局部轴向对齐时显示图像内容。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="transparency">
+<span id="bpy-types-object-use-empty-image-alpha"></span><h4>透明<a class="headerlink" href="#transparency" title="Permalink to this headline">¶</a></h4>
+<p>使用alpha混合而非alpha-test (与背景混合，但是能够产生深度排序伪影)。</p>
+<dl class="simple">
+<dt>不透明度</dt><dd><p>淡化图像至透明 (使用物体 <em>颜色</em> 的Alpha分量)。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="editing">
+<h2>编辑<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h2>
+<p>空物体只能在 <em>物体模式</em> 下进行编辑，包括修改其变换属性和父级属性。其他工具请参考 <a class="reference internal" href="../scene_layout/object/index.html"><span class="doc">物体章节</span></a>。</p>
+<dl class="simple">
+<dt>应用缩放 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></dt><dd><p>虽然空物体完全没有附加任何物体数据到其上的，但是可用于支持 &quot;真实&quot; 应用缩放(即非均匀缩放)，它们具有 <em>显示尺寸</em> ，用于控制空物体显示的大小(缩放之前)。这可以通过在最大尺寸的轴上获取缩放因子，并将其与现有的空物体 <em>显示尺寸</em> 相结合，以在该轴上保持正确的尺寸。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties">
+<span id="bpy-types-object-empty-display-size"></span><span id="bpy-types-object-empty-display-type"></span><h2>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>显示为</dt><dd><p>要在 3D 视图中显示的 <a class="reference internal" href="#primitives">基本体</a>
+空类型。</p>
+</dd>
+<dt>尺寸</dt><dd><p>控制空物体可视化的大小。这不会改变它的缩放，而是作为一个偏移量起作用。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>空物体可以用作变换手柄。使用这些方法的一些例子包括：</p>
+<p class="rubric">一组物体的父级</p>
+<p>空物体可以是任何数量的其他物体的父级。这使得用户能够容易地控制一组物体，并且不影响渲染。</p>
+<p class="rubric">约束目标</p>
+<p>空物体的也可以用作正常的目标，或骨骼约束。这给了用户更多的控制权; 例如，可以容易地设置绑定以使照相机能够使用 <em>标准跟随</em> 约束指向空物体。</p>
+<p class="rubric">阵列偏移</p>
+<p>可以使用空物体来偏移阵列修改器，这意味着只需移动单个物体就可以实现复杂的变形。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/modeling_modifiers_generate_array_example-fractal-1.jpg"><img alt="../_images/modeling_modifiers_generate_array_example-fractal-1.jpg" src="../_images/modeling_modifiers_generate_array_example-fractal-1.jpg" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">用于控制阵列的空物体示例。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/modeling_empties_example-track-to-simple.png"><img alt="../_images/modeling_empties_example-track-to-simple.png" src="../_images/modeling_empties_example-track-to-simple.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">空物体控制标准跟随约束示例。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">其他常见用途：</p>
+<ul class="simple">
+<li><p>占位符</p></li>
+<li><p>绑定控制</p></li>
+<li><p>景深(DOF)距离</p></li>
+<li><p>参考图片</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modifiers/index.html" class="btn btn-neutral float-right" title="修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="volumes/properties.html" class="btn btn-neutral float-left" title="属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/empties.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/empties%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

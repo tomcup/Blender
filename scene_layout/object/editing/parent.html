@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>物体父子关系 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/scene_layout/object/editing/parent.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="Relations" href="relations.html" />
+    <link rel="prev" title="Join" href="join.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">场景 &amp; 物体</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../scene/index.html">场景</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">物体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../types.html">物体类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../origin.html">物体原点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">编辑</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="transform/index.html">变换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mirror.html">镜像</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clear.html">Clear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apply.html">Apply</a></li>
+<li class="toctree-l4"><a class="reference internal" href="snap.html">Snap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duplicate.html">Duplicate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duplicate_linked.html">Duplicate Linked</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">Join</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">物体父子关系</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#make-parent">创建父级</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#parent-inverse">父级反校正</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#parent-types">父级类型</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#object-parent">物体父级</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#object-keep-transform-parent">物体(保持变换)父级</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#bone-parent">骨骼父级</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#relative-parenting">相对父子关系</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#vertex-parent">顶点父级</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#vertex-parent-from-edit-mode">来自编辑模式的顶点父级</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#vertex-parent-from-object-mode">来自物体模式的顶点父级</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#move-child">移动子级</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#clear-parent">清空父级</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#known-limitations">已知局限</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#non-uniform-scale">非均匀缩放</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="relations.html">Relations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make_links.html">Make Links</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shading.html">Shading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="convert.html">Convert To</a></li>
+<li class="toctree-l4"><a class="reference internal" href="show_hide.html">Show/Hide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="delete.html">Delete</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolbar/index.html">工具栏</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../collections/index.html">集合</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../view_layers/index.html">视图层</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">场景 &amp; 物体</a> &raquo;</li>
+        
+          <li><a href="../index.html">物体</a> &raquo;</li>
+        
+          <li><a href="index.html">编辑</a> &raquo;</li>
+        
+      <li>物体父子关系</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="parenting-objects">
+<span id="bpy-types-object-parent"></span><h1>物体父子关系<a class="headerlink" href="#parenting-objects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="make-parent">
+<span id="bpy-ops-object-parent-set"></span><h2>创建父级<a class="headerlink" href="#make-parent" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">物体(Object) ‣ 父级(Parent)</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>When modeling a complex object, such as a watch,
+you may choose to model the different parts as separate objects.
+Yet all the parts may be attached to each other. In these cases,
+you want to designate one object as the parent of all the children. Movement,
+rotation or scaling of the parent also affects the children.</p>
+<p>要为物体设置父级，请至少选择两个物体(首先选择子物体，最后选择父物体)，然后按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 。将弹出 <em>设置父级目标</em> 菜单，允许你从几种可选的不同的父子类型中选择一种。选择 <em>设置父级目标</em> 中的一个条目进行确认，并创建父/子关系。</p>
+<p>所选的最后一个物体将为活动物体 (以亮橙色表示)，并且还将是父物体。如果你在选择父物体之前选定多个物体，则它们将全部是父物体的子物体，并且将处于层次结构的同一级别(它们是“同辈”)。</p>
+<p>弹出的 <em>设定父级目标</em> 菜单是上下文相关(语境)的菜单，这意味着它显示的条目数量是根据使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 快捷方式时选择的物体不同而不同。</p>
+<p>Moving, rotating or scaling the parent will also usually transform the child/children.
+Yet transforming the child/children of the parent will not affect the parent.
+In other words, the direction of influence is from parent to child and not child to parent.</p>
+<p>In general when using <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> or <span class="menuselection">3D Viewport ‣ Object ‣ Parent</span>
+to parent objects, the child objects can only have one parent object.
+If a child object already has a parent object and you give it another parent then
+Blender will remove the previous parent relationship.</p>
+<div class="section" id="parent-inverse">
+<h3>父级反校正<a class="headerlink" href="#parent-inverse" title="Permalink to this headline">¶</a></h3>
+<p>当物体以 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 建立父子关系时，父对象的当前变换存储在隐藏的父级反校正矩阵中。 通过使用它，只要父级不移动，就可以继续在世界空间中有效地解释子级的位置、旋转和缩放属性。</p>
+<p>For parenting without assigning the matrix, select the <em>Without Inverse</em> option in the <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> pop-up menu.
+This creates an alternative parent-child-relationship where child object's properties are
+evaluated in the parent's coordinate system. This is the better choice for CAD purposes,
+for example.</p>
+<p>在建立父级关联后也可以用 <a class="reference internal" href="#bpy-ops-object-parent-clear"><span class="std std-ref">清除父级反校正</span></a> 来清理矩阵。</p>
+</div>
+<div class="section" id="parent-types">
+<h3>父级类型<a class="headerlink" href="#parent-types" title="Permalink to this headline">¶</a></h3>
+<p>Blender支持许多不同类型的父子关系，如下所示：</p>
+<ul class="simple">
+<li><p>物体</p></li>
+<li><p>骨骼</p></li>
+<li><p>顶点</p></li>
+<li><p>顶点 (基于三点)</p></li>
+</ul>
+<p class="rubric">设置</p>
+<p>除了选择的物体父子关系之外，它还为子级物体添加了一个修改器或约束，并将父级作为目标物体或激活父级属性，例如 <em>跟随路径</em>。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../../animation/armatures/skinning/parenting.html"><span class="doc">骨架形变</span></a></p></li>
+<li><p><a class="reference internal" href="../../../modeling/modifiers/deform/curve.html"><span class="doc">曲线形变</span></a></p></li>
+<li><p><a class="reference internal" href="../../../modeling/curves/properties/path_animation.html#curve-path-animation"><span class="std std-ref">跟随路径</span></a></p></li>
+<li><p><a class="reference internal" href="../../../animation/constraints/relationship/follow_path.html"><span class="doc">路径约束</span></a></p></li>
+<li><p><a class="reference internal" href="../../../modeling/modifiers/deform/lattice.html"><span class="doc">晶格形变</span></a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="object-parent">
+<span id="object-parenting"></span><h2>物体父级<a class="headerlink" href="#object-parent" title="Permalink to this headline">¶</a></h2>
+<p><em>物体父级</em> 是Blender支持的最普遍的父子关系形式。如果使最后一个选定物体成为父级物体，而所有其他选定物体将成为子级物体。子级物体将继承父级物体的变换。父级物体可以是任何类型。</p>
+<div class="section" id="object-keep-transform-parent">
+<h3>物体(保持变换)父级<a class="headerlink" href="#object-keep-transform-parent" title="Permalink to this headline">¶</a></h3>
+<p><em>物体(保持变换)父级</em> 工作方式非常类似于 <em>物体父级</em>。 主要的区别在于子级物体是否会记住之前父级物体应用于它们的任何先前变换。</p>
+<p>由于难于以简单易懂的技术方式来解释，所以使用示例来演示。</p>
+<p>假设有一个由三个物体组成的场景，它们是名为“EmptyA”和“EmptyB”的两个空物体，以及一个猴头物体。图 <a class="reference internal" href="#fig-view3d-parent-scene-no"><span class="std std-ref">没有父子关系的场景。</span></a> 显示了三个没有父子关系的物体。</p>
+<div class="figure align-default" id="id1">
+<span id="fig-view3d-parent-scene-no"></span><img alt="../../../_images/scene-layout_object_editing_parent_keep-transform-a.png" src="../../../_images/scene-layout_object_editing_parent_keep-transform-a.png" />
+<p class="caption"><span class="caption-text">没有父子关系的场景。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you select the Monkey object by <kbd class="kbd docutils literal notranslate">LMB</kbd> click and then <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd>
+click &quot;EmptyA&quot; object and press <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> and finally select <em>Object</em>
+from the <em>Set Parent To</em> pop-up menu.
+This will result in &quot;EmptyA&quot; object being the parent object of the Monkey object.
+With only &quot;EmptyA&quot; selected rotating/scaling/moving it will result in
+the Monkey object being altered respectively.</p>
+<p>缩放“EmptyA”物体，使猴头变小并向左移动一点。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/scene-layout_object_editing_parent_keep-transform-b.png" src="../../../_images/scene-layout_object_editing_parent_keep-transform-b.png" />
+<p class="caption"><span class="caption-text">猴头是“EmptyA”的子级物体。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you select only the Monkey object by <kbd class="kbd docutils literal notranslate">LMB</kbd> click and then <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd>
+click &quot;EmptyB&quot; object and press <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> and select <em>Object</em> from
+the <em>Set Parent To</em> pop-up menu.
+This will result in &quot;EmptyB&quot; object being the parent object of the Monkey object.
+Notice that when you change the parent of the Monkey the scale of the Monkey changed.</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/scene-layout_object_editing_parent_keep-transform-c.png" src="../../../_images/scene-layout_object_editing_parent_keep-transform-c.png" />
+<p class="caption"><span class="caption-text">猴头是“EmptyB”的子级物体。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>发生这种情况是因为猴头物体从来没有直接改变其缩放，之所以变化是因为它是“EmptyA”的子级物体，跟随其缩放发生了变化。由于“EmptyB”没有改变其缩放，因此将猴头的父级更改为“EmptyB”导致这些间接的缩放变化被移除。</p>
+<p>This is often the required behavior, but it is also sometimes useful that if you change your
+parent object that the child object keep any previous transformations
+it got from the old parent object; If instead when changing the parent object of the Monkey
+from &quot;EmptyA&quot; to &quot;EmptyB&quot; we had chosen parenting type <em>Object (Keep Transform)</em>,
+the Monkey would keep its scale information it obtained from the old parent &quot;EmptyA&quot;
+when it is assigned to the new parent &quot;EmptyB&quot;.</p>
+<div class="figure align-default" id="id4">
+<img alt="../../../_images/scene-layout_object_editing_parent_keep-transform-d.png" src="../../../_images/scene-layout_object_editing_parent_keep-transform-d.png" />
+<p class="caption"><span class="caption-text">物体(保持变换)父级方法。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>如果想继续了解上面的描述，这里是用于描述 <em>物体(保持变换)</em> 父级方法的blend文件：</p>
+<p><a class="reference external" href="https://wiki.blender.org/wiki/File:Parent_-_Object_(Keep_Transform)_(Demo_File).blend">文件：设置物体(保持变换)父级(演示).blend</a> 。</p>
+</div>
+</div>
+<div class="section" id="bone-parent">
+<h2>骨骼父级<a class="headerlink" href="#bone-parent" title="Permalink to this headline">¶</a></h2>
+<p>骨骼父子关系允许将骨架上的某些骨骼设为另一个物体的父级物体。这意味着，当变换一个骨架时，子物体只会跟随着特定的骨骼移动。</p>
+<div class="figure align-default" id="id5">
+<span id="fig-view3d-parent-bone-parent"></span><img alt="../../../_images/scene-layout_object_editing_parent_bone1.png" src="../../../_images/scene-layout_object_editing_parent_bone1.png" />
+<p class="caption"><span class="caption-text">有四个骨骼的骨架的三个图片。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>在图 <a class="reference internal" href="#fig-view3d-parent-bone-parent"><span class="std std-ref">有四个骨骼的骨架的三个图片。</span></a> 中，第二个骨骼是立方体物体的父级。立方体只有在第一或第二块骨骼的情况下才会变形。注意改变第三和第四根骨头对立方体没有影响。</p>
+<p>To use bone parenting, you must first select all the child objects you wish to parent to a specific armature bone,
+then <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> select the armature object and switch it into Pose Mode and
+then select the specific bone you wish to be the parent bone by <kbd class="kbd docutils literal notranslate">LMB</kbd> selecting it.
+Once done press <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> and select bone from the <em>Set Parent To</em> pop-up menu.</p>
+<p>现在在姿态模式下变换骨骼会导致子物体也会发生变换。</p>
+<div class="section" id="relative-parenting">
+<h3>相对父子关系<a class="headerlink" href="#relative-parenting" title="Permalink to this headline">¶</a></h3>
+<p>骨骼相对父子关系是你可以为每个骨骼切换的选项。这和骨骼父子一样，但有一点不同。</p>
+<p>使用骨骼父级时，如果将骨骼作为某些子物体的父级并选择该骨骼，然后将其切换为编辑模式并移动该骨骼，当在该骨骼上切换回姿态模式时，作为该骨骼的子物体将在姿态模式中吸附回骨骼的位置。</p>
+<div class="figure align-default" id="id6">
+<span id="fig-view3d-parent-bone-parent-child"></span><img alt="../../../_images/scene-layout_object_editing_parent_bone2.png" src="../../../_images/scene-layout_object_editing_parent_bone2.png" />
+<p class="caption"><span class="caption-text">使用骨骼父级方法具有子级立方体物体的单个骨架骨骼。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>在图 <a class="reference internal" href="#fig-view3d-parent-bone-parent-child"><span class="std std-ref">使用骨骼父级方法具有子级立方体物体的单个骨架骨骼。</span></a> 中，第一张图片显示骨骼在编辑模式下移动之前立方体和骨架的位置。第二张照片显示了在编辑模式中选择骨骼，移动并切换回姿势模式后立方体和骨架的位置。注意，子级物体移动到姿态骨骼的新位置。</p>
+<p>骨骼相对父子关系的工作方式则不同：如果在编辑模式下移动父级骨骼，当切换回姿势模式时，子物体将不会移动到姿势骨骼的新位置。</p>
+<div class="figure align-default" id="id7">
+<span id="fig-view3d-parent-bone-parent-relative"></span><img alt="../../../_images/scene-layout_object_editing_parent_bone3.png" src="../../../_images/scene-layout_object_editing_parent_bone3.png" />
+<p class="caption"><span class="caption-text">立方体使用相对父子链接到单一骨骼。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>在图 <a class="reference internal" href="#fig-view3d-parent-bone-parent-relative"><span class="std std-ref">立方体使用相对父子链接到单一骨骼。</span></a> 中，第一张图片显示骨骼在编辑模式下移动之前立方体和骨架的位置。第二张照片显示了在编辑模式中选择骨骼后，移动并切换回姿势模式后立方体和骨架的位置。请注意，子物体不会移动到姿势骨骼的新位置。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 来设置父级时，选择&quot;骨骼&quot;或&quot;相对骨骼&quot;将分别清除和设置骨骼的&quot;相对父子关系&quot;选项。由于&quot;相对父子关系&quot;是每个骨骼设置的选项，这会同时影响该骨骼的所有子物体。</p>
+</div>
+</div>
+</div>
+<div class="section" id="vertex-parent">
+<h2>顶点父级<a class="headerlink" href="#vertex-parent" title="Permalink to this headline">¶</a></h2>
+<p>对于曲线、曲面、网格和晶格类型的物体，可以将其顶点或点用作其他物体的父级。你可以将一个物体设置父级到一个顶点或一组的三个顶点，这样，当父网格变形时，子级将会随之移动。</p>
+<div class="section" id="vertex-parent-from-edit-mode">
+<h3>来自编辑模式的顶点父级<a class="headerlink" href="#vertex-parent-from-edit-mode" title="Permalink to this headline">¶</a></h3>
+<p>在 <em>物体模式</em> 中，选择子级，然后选择父级物体。 <kbd class="kbd docutils literal notranslate">Tab</kbd> 切换到 <em>编辑模式</em> 并在父物体上选择一个定义单个点的顶点，或者选择三个顶点定义一个区域(三个顶点不必形成一个完整的面；它们可以是父物体的任意三个顶点)，然后按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 并确认。</p>
+<p>此时，如果选择了单个顶点，则将从顶点向子级绘制关系/父子线。如果选择了三个顶点，则从(父级物体的)三个点的平均中心向子级绘制关系/父子线。现在，当父级网格形变并且所选父顶点移动时，子级也将移动。</p>
+</div>
+<div class="section" id="vertex-parent-from-object-mode">
+<h3>来自物体模式的顶点父级<a class="headerlink" href="#vertex-parent-from-object-mode" title="Permalink to this headline">¶</a></h3>
+<p>可以在物体模式下执行顶点父级，方法类似普通物体父级。在物体模式中按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 并选择 <em>顶点</em> 或 <em>顶点(基于三点)</em>。</p>
+<p>将从每个物体使用最近的顶点，这通常也是您想要的。</p>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">顶点父级示例。</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id9">
+<a class="reference internal image-reference" href="../../../_images/scene-layout_object_editing_parent_object-mode-example-1.png"><img alt="../../../_images/scene-layout_object_editing_parent_object-mode-example-1.png" src="../../../_images/scene-layout_object_editing_parent_object-mode-example-1.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">使用设置父级上下文菜单中的“顶点(基于三点)”，每个小立方体都可以自动设置父级为棱角球上附近顶点三元组。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id10">
+<a class="reference internal image-reference" href="../../../_images/scene-layout_object_editing_parent_object-mode-example-2.png"><img alt="../../../_images/scene-layout_object_editing_parent_object-mode-example-2.png" src="../../../_images/scene-layout_object_editing_parent_object-mode-example-2.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">在编辑模式下重新塑造物体，意味着每个立方体都分别跟随其顶点父级变换。</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id11">
+<a class="reference internal image-reference" href="../../../_images/scene-layout_object_editing_parent_object-mode-example-3.png"><img alt="../../../_images/scene-layout_object_editing_parent_object-mode-example-3.png" src="../../../_images/scene-layout_object_editing_parent_object-mode-example-3.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">Scaling the parent icosphere in Object Mode means the child cubes are also scaled as expected.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>设定父级上下文菜单项意味着用户可以快速设置大量顶点父级关系，并避免单独建立每个父——子顶点关系的繁琐工作。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>它实际上是一种“反转”的 <a class="reference internal" href="../../../modeling/modifiers/deform/hooks.html"><span class="doc">钩挂</span></a> 。</p>
+</div>
+</div>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="move-child">
+<h3>移动子级<a class="headerlink" href="#move-child" title="Permalink to this headline">¶</a></h3>
+<p>通过清除它的原点，你可以将一个子物体 <em>移动</em> 到它的父物体上。父级与子级之间的关系不受影响。选择子物体并按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">O</kbd></kbd>。通过确认子物体将吸附到父级的位置。使用 <em>大纲</em> 视图来验证子物体是否仍然存在父级。</p>
+</div>
+<div class="section" id="clear-parent">
+<span id="bpy-ops-object-parent-clear"></span><h3>清空父级<a class="headerlink" href="#clear-parent" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">物体(Object) ‣ 父级(Parent)</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>你可以通过 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> 方式 <em>删除</em> 父级 - 子级关系。</p>
+<dl>
+<dt>清空父级</dt><dd><p>如果只选择组中的父级，则不做任何事情。如果选择了一个子级或多个子级，他们就会与父级分离，或者被释放，并且他们会返回他们原来的位置，旋转和大小。</p>
+</dd>
+<dt>清除并保持变换结果</dt><dd><p>从父级那里解散子级，但 <em>保留</em> 父级给他们的位置、旋转和大小。</p>
+<p>参见 <a class="reference internal" href="#non-uniform-scale">非均匀缩放</a> 可能适用于这里。</p>
+</dd>
+<dt>清除父级反校正</dt><dd><p>与剔除父子层级关系不同，此选项是从选择的物体中清理掉 <a class="reference internal" href="#parent-inverse">父级反校正</a> 矩阵。有了这个清空的矩阵，子物体的位置、旋转、缩放属性可以在父物体的世界坐标里表现。</p>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>使用大纲视图</p>
+<p>另一种观察组内父子关系的方式是使用 <a class="reference internal" href="../../../editors/outliner.html"><span class="doc">大纲编辑器</span></a> 的 <em>大纲</em> 视图。</p>
+</div>
+</div>
+</div>
+<div class="section" id="known-limitations">
+<h2>已知局限<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="non-uniform-scale">
+<h3>非均匀缩放<a class="headerlink" href="#non-uniform-scale" title="Permalink to this headline">¶</a></h3>
+<p>与其子级相比，父级的缩放和旋转不均匀可能会导致 <em>剪切</em> 效应。</p>
+<p>虽然父子关系支持这种做法，但是当父级被清除后，剪切将会丢失，因为它不能用位置，缩放和旋转。</p>
+<p>如果 <em>清除并保持变换结果</em> 移动物体，则非均匀缩放是最可能的原因。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="relations.html" class="btn btn-neutral float-right" title="Relations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="join.html" class="btn btn-neutral float-left" title="Join" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/scene_layout/object/editing/parent.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60scene_layout/object/editing/parent%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,529 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>笔刷 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/dynamic_paint/brush.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="画布" href="canvas.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../particles/index.html">Particle System</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">动态绘画</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">笔刷</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#source">源</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#paint-source">绘画源</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#common-options">通用选项</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#velocity">速度</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#waves">波浪</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="canvas.html">画布</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="index.html">动态绘画</a> &raquo;</li>
+        
+      <li>笔刷</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="brush">
+<span id="bpy-types-dynamicpaintbrushsettings"></span><h1>笔刷<a class="headerlink" href="#brush" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 动态绘画</span></p>
+</dd>
+<dt class="field-even">类型</dt>
+<dd class="field-even"><p>笔刷</p>
+</dd>
+</dl>
+</div>
+<p>笔刷类型用来使物体在画布上应用绘画。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/physics_dynamic-paint_brush_main-panel.png" src="../../_images/physics_dynamic-paint_brush_main-panel.png" />
+<p class="caption"><span class="caption-text">笔刷主面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>可以在最上面的笔刷面板定义画笔如何影响画布的表面颜色。</p>
+<dl class="simple">
+<dt>绘画颜色</dt><dd><p>绘画的颜色。</p>
+</dd>
+<dt>Alpha</dt><dd><p>定义笔刷alpha或可见性。 最终的湿度也受到alpha的影响。</p>
+</dd>
+<dt>湿度</dt><dd><p>定义新添加的绘制的 “湿润” 程度。 温度在“绘画”表面的“打湿贴图”上可以看出来。 “滴水”和“蔓延”效果的速度也取决于油漆的湿度。</p>
+</dd>
+<dt>绝对Alpha</dt><dd><p>此设置用于限制笔刷alpha影响。 没有它，笔刷会在每一帧上一遍又一遍地“叠加”，提高alpha，从而增加了画笔对画布的影响。 然而，在许多情况下，如果alpha已经达到笔刷本身的程度，则更倾向于不继续叠加笔刷alpha。</p>
+</dd>
+<dt>擦除绘画</dt><dd><p>使笔刷消融现有的绘画，而在其上添加。</p>
+</dd>
+</dl>
+<div class="section" id="source">
+<h2>源<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">类型</dt>
+<dd class="field-odd"><p>笔刷</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">物理 ‣ 动态绘画 ‣ 源</span></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="paint-source">
+<h3>绘画源<a class="headerlink" href="#paint-source" title="Permalink to this headline">¶</a></h3>
+<p>绘画源设置允许您定义笔刷影响/交互被如何定制。</p>
+<dl>
+<dt>网格体积</dt><dd><p>笔刷影响在网格体积内的所有表面点。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/physics_dynamic-paint_brush_source-mesh-volume.png" src="../../_images/physics_dynamic-paint_brush_source-mesh-volume.png" />
+<p class="caption"><span class="caption-text">源: 网格体积.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>邻近度</dt><dd><p>仅使用到画笔网格面上最近点的定义距离。 请注意，体积内部不一定受到影响，因为它不靠近表面。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/physics_dynamic-paint_brush_source-proximity.png" src="../../_images/physics_dynamic-paint_brush_source-proximity.png" />
+<p class="caption"><span class="caption-text">源：邻近度。 笔刷会影响它周围的所有画布像素。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>网格体积 + 邻近度</dt><dd><p>与体积类型相同，但也影响定义的距离。</p>
+<dl class="simple">
+<dt>内侧邻近度</dt><dd><p>在网格体积内应用邻近度。</p>
+</dd>
+<dt>抵消体积</dt><dd><p>抵消网格体积内侧的笔刷alpha。</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<img alt="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-1.png" src="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-1.png" />
+<p class="caption"><span class="caption-text">未勾选其他设置的网格体积 + 邻近度笔刷。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-2.png" src="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-2.png" />
+<p class="caption"><span class="caption-text">内侧邻近度。可以看到体积内部邻近度的衰减.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id6">
+<img alt="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-3.png" src="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-3.png" />
+<p class="caption"><span class="caption-text">抵消体积。体积内侧变得完全的透明。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-4.png" src="../../_images/physics_dynamic-paint_brush_source-mesh-volume-proximity-4.png" />
+<p class="caption"><span class="caption-text">内侧邻近度和抵消体积同时启用。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>物体中心</dt><dd><p>仅计算到中心的距离，而非与笔刷网格的邻近度(在某些情况下可能非常慢)。 这要快得多，通常也足够好。</p>
+<div class="figure align-default" id="id8">
+<img alt="../../_images/physics_dynamic-paint_brush_source-object-center.png" src="../../_images/physics_dynamic-paint_brush_source-object-center.png" />
+<p class="caption"><span class="caption-text">源: 物体中心.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>粒子系统</dt><dd><p>笔刷影响由来自选定粒子系统的粒子定义。</p>
+<div class="figure align-right">
+<img alt="../../_images/physics_dynamic-paint_solid_smooth_radius.png" src="../../_images/physics_dynamic-paint_solid_smooth_radius.png" />
+</div>
+<dl>
+<dt>Effect Solid Radius</dt><dd><p>Defines the distance, inside which paint is solid color.</p>
+</dd>
+<dt>使用粒子半径</dt><dd><p>Uses the settings in the particle panel to determine solid radius size.
+Solid Radius size disabled while Particle Radius enabled.</p>
+</dd>
+<dt>平滑半径</dt><dd><p>An additional radius outside Solid Radius to add a smooth falloff.</p>
+<p>If you set &quot;Smooth Radius&quot; to zero, particle will be painted as a solid sphere.
+If you set &quot;Solid Radius&quot; to zero, it gets painted as a smooth halo.</p>
+<div class="figure align-center">
+<img alt="../../_images/physics_dynamic-paint_solid_smooth_radius_values.jpg" src="../../_images/physics_dynamic-paint_solid_smooth_radius_values.jpg" />
+</div>
+<div class="figure align-default" id="id9">
+<img alt="../../_images/physics_dynamic-paint_brush_source-particle-system.png" src="../../_images/physics_dynamic-paint_brush_source-particle-system.png" />
+<p class="caption"><span class="caption-text">源：粒子系统。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="common-options">
+<h3>通用选项<a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>绘画距离</dt><dd><p>The maximum distance to mesh surface to affect paint.</p>
+</dd>
+<dt>投影</dt><dd><p>沿定义的方向将笔刷投影到画布上。基本上这可以当作是“方向对齐”临近度。</p>
+<div class="figure align-default" id="id10">
+<img alt="../../_images/physics_dynamic-paint_brush_source-project.png" src="../../_images/physics_dynamic-paint_brush_source-project.png" />
+<p class="caption"><span class="caption-text">已启用投影选项。可以看到画笔如何仅在法线方向影响画布。</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>衰减</dt><dd><dl class="simple">
+<dt>Sharp</dt><dd><p>Paints solid paint within the defined distance.</p>
+</dd>
+<dt>Smooth</dt><dd><p>Makes paint to linearly fade out until becoming completely invisible
+when it reaches the maximum distance.</p>
+</dd>
+<dt>Color Ramp</dt><dd><p>Allows you to manually make a custom falloff behavior.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="velocity">
+<h2>速度<a class="headerlink" href="#velocity" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">类型</dt>
+<dd class="field-odd"><p>笔刷</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">物理 ‣ 动态绘画 ‣ 速度</span></p>
+</dd>
+</dl>
+</div>
+<p>此面板显示基于物体速度的画笔选项。</p>
+<p>上侧是颜色渐变和几个相关的设置。基本上，颜色渐变表示画笔速度值：左侧为零速度，右侧为“最大速度”。速度以“单位每帧”衡量。</p>
+<p>上面的复选框可用于定义颜色渐变影响。</p>
+<dl>
+<dt>Alpha相乘</dt><dd><p>使用取决于当前速度的颜色渐变的alpha值，并将笔刷alpha与之相乘。</p>
+</dd>
+<dt>替换颜色</dt><dd><p>使用来自 <a class="reference internal" href="../../interface/controls/templates/color_ramp.html#ui-color-ramp-widget"><span class="std std-ref">颜色渐变部件</span></a> 的值替换笔刷的颜色。</p>
+</dd>
+<dt>乘以深度</dt><dd><p>倍增画笔“深度交集”效果。基本上，你可以根据刷速调整位移和波强度。</p>
+</dd>
+<dt>涂抹</dt><dd><p>启用涂抹可使画笔在移动时 “涂抹” (或 “涂抹” )表面上的现有颜色。可以从*涂抹强度*属性定义此效果的强度。</p>
+<p>即使启用涂抹，刷子仍然会起到正常的涂抹效果。如果你想要一个纯粹的涂抹刷使用零alpha。也可以启用 <em>抹去</em> 选项和涂抹。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="waves">
+<h2>波浪<a class="headerlink" href="#waves" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">类型</dt>
+<dd class="field-odd"><p>笔刷</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">Physics ‣ Dynamic Paint ‣ Waves</span></p>
+</dd>
+</dl>
+</div>
+<p>此面板用于将画笔影响调整为 “波浪” 曲面。</p>
+<dl>
+<dt>波浪类型</dt><dd><p>选择画笔在波浪模拟中创建的效果。</p>
+<dl>
+<dt>深度变化</dt><dd><p>此选项使画笔在该点上与曲面的交点深度 <em>更改</em> 时创建波形。如果刷子保持静止，则不会产生影响。</p>
+<p>使用此类型的负 “因子” 可以为移动物体(如船只)创建漂亮的 “唤醒” 。</p>
+</dd>
+<dt>阻力</dt><dd><p>交叉时不断影响表面。波浪也会从这种刷子类型中反射出来。然而，由于波浪模拟算法的性质，如果刷子保持静止，这种类型会在表面产生不自然的“凹痕”。</p>
+</dd>
+<dt>力</dt><dd><p>直接影响波浪运动的速度。因此，刷子交叉深度不是一对一的效果，而力的强度取决于它。</p>
+</dd>
+<dt>仅镜像</dt><dd><p>这种类型仅在表面上没有可见效果，但反射已经在表面上的波。</p>
+</dd>
+</dl>
+</dd>
+<dt>因子</dt><dd><p>调整画笔 “深度” 对模拟的影响程度。您还可以使用负值使画笔向上拉而不是向下拉水。</p>
+</dd>
+<dt>波浪限制</dt><dd><p>在某些情况下，刷子在表面内部非常深，弄乱整个模拟。您可以使用此设置将影响“限制”到仅一定深度。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="canvas.html" class="btn btn-neutral float-right" title="画布" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/dynamic_paint/brush.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/dynamic_paint/brush%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

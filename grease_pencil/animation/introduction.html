@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简介 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/animation/introduction.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="插值" href="interpolation.html" />
+    <link rel="prev" title="动画" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiframe.html">多帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">动画</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">简介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#animating-with-grease-pencil">使用蜡笔进行动画绘制</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-traditional-animation">2D传统动画</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#keyframes">关键帧</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#onion-skinning">洋葱皮</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#animation-options">动画选项</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#draw-mode">绘制模式</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#edit-mode">编辑模式</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">例子</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#traditional-animation">传统动画</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html">插值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html">动画工具</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modes">模式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">蜡笔</a> &raquo;</li>
+        
+          <li><a href="index.html">动画</a> &raquo;</li>
+        
+      <li>简介</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>简介<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="animating-with-grease-pencil">
+<h2>使用蜡笔进行动画绘制<a class="headerlink" href="#animating-with-grease-pencil" title="Permalink to this headline">¶</a></h2>
+<p>The main goal of Grease Pencil is to offer a 2D animation tool full immersed in a 3D environment.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/grease-pencil_animation_introduction_example.png" src="../../_images/grease-pencil_animation_introduction_example.png" />
+<p class="caption"><span class="caption-text">示例动画显示蜡笔在启用洋葱蒙皮的动画摄影表中的物体关键帧。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>在Blender中，蜡笔物体可以通过多种方式进行动画处理：</p>
+<dl class="simple">
+<dt>作为整个物体移动</dt><dd><p>及时改变他们的位置、方向或大小;</p>
+</dd>
+<dt>逐帧绘制</dt><dd><p>每次绘制一帧(传统动画)</p>
+</dd>
+<dt>将它们变形</dt><dd><p>为它们的点设置动画;</p>
+</dd>
+<dt>继承动画</dt><dd><p>导致物体根据另一个物体的移动(例如其父对象、挂钩、骨架等)而移动。例如，可用于剪纸动画。</p>
+</dd>
+</dl>
+<p>有关Blender中动画的完整概述，请参阅 <a class="reference internal" href="../../animation/index.html"><span class="doc">动画&amp;绑定</span></a> 章节。</p>
+</div>
+<div class="section" id="d-traditional-animation">
+<h2>2D传统动画<a class="headerlink" href="#d-traditional-animation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="keyframes">
+<h3>关键帧<a class="headerlink" href="#keyframes" title="Permalink to this headline">¶</a></h3>
+<p>蜡笔工具中的传统动画是使用能在特定帧中保存笔画信息的 <a class="reference internal" href="../../animation/keyframes/introduction.html"><span class="doc">关键帧</span></a> 来实现的。</p>
+<p>每次在蜡笔物体绘制模式下创建笔画时，都会在活动通道上的当前帧处添加新关键帧。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>摄影表中的通道对应于蜡笔物体的活动 2D 图层。</p>
+</div>
+<p>Grease Pencil has its own mode in the Dope Sheet to work with keyframes.
+See Grease Pencil mode in the <a class="reference internal" href="../../editors/dope_sheet/grease_pencil.html"><span class="doc">Dope Sheet</span></a>
+section for more information.</p>
+<p>&quot;笔画&quot;菜单上还有几个工具可用于关键帧和笔画。有关详细信息，见 <a class="reference internal" href="tools.html"><span class="doc">动画工具</span></a>。</p>
+</div>
+<div class="section" id="onion-skinning">
+<h3>洋葱皮<a class="headerlink" href="#onion-skinning" title="Permalink to this headline">¶</a></h3>
+<p>传统动画中的一个关键元素是使用洋葱蒙皮。蜡笔为这个工具提供了很多灵活性和选项。详细信息见 <a class="reference internal" href="../properties/onion_skinning.html"><span class="doc">洋葱皮</span></a>。</p>
+</div>
+</div>
+<div class="section" id="animation-options">
+<h2>动画选项<a class="headerlink" href="#animation-options" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="draw-mode">
+<h3>绘制模式<a class="headerlink" href="#draw-mode" title="Permalink to this headline">¶</a></h3>
+<p>在绘制模式中，有两个与动画工作流相关的选项，供您使用。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/grease-pencil_animation_introduction_drawing-options.png" src="../../_images/grease-pencil_animation_introduction_drawing-options.png" />
+<p class="caption"><span class="caption-text">常规绘图/动画选项。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>添加权重数据</dt><dd><p>启用后，将根据当前顶点组和权重添加新描边权重数据。如果未选择顶点组，则不添加权重数据。</p>
+<p>这在例如剪切动画中很有用，用于在同一顶点组上添加新图形，而无需随后创建它。</p>
+<p>更多信息见 <a class="reference internal" href="../modes/weight_paint/introduction.html"><span class="doc">权重绘制模式</span></a>。</p>
+</dd>
+<dt>添加绘画</dt><dd><p>当创建新帧时，前一个/活动帧中的笔画将作为基础包含在新帧中。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="edit-mode">
+<h3>编辑模式<a class="headerlink" href="#edit-mode" title="Permalink to this headline">¶</a></h3>
+<p>在绘制模式中，有两个与动画工作流相关的选项，供您使用。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/grease-pencil_animation_introduction_edit-options.png" src="../../_images/grease-pencil_animation_introduction_edit-options.png" />
+<p class="caption"><span class="caption-text">多帧编辑。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>多帧</dt><dd><p>有时，您可能需要使用编辑工具同时修改多个帧，例如在动画中重新定位图形。</p>
+<p>可以使用模式选择器旁边的&quot;多帧&quot;按钮(褪色线图标)激活多帧模式。更多信息请参阅 <a class="reference internal" href="../multiframe.html"><span class="doc">多帧</span></a>。</p>
+</dd>
+<dt>插值</dt><dd><p>使用具有相同点数的笔画对简单形状进行动画处理时，可以使用插值工具自动添加新的细分关键帧。有关详细信息，请参阅 <a class="reference internal" href="interpolation.html"><span class="doc">插值</span></a> 。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>例子<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="traditional-animation">
+<h3>传统动画<a class="headerlink" href="#traditional-animation" title="Permalink to this headline">¶</a></h3>
+<p>此示例演示如何使用传统的2D动画技术和蜡笔做一个弹跳小球动画。</p>
+<p>首先，转到菜单 <span class="menuselection">文件 ‣ 新建 ‣ 2D动画</span> 以从新的2D动画模板开始。该模板已创建了蜡笔物体，激活了洋葱蒙皮并激活了相机视图，准备好让您快速开始动画绘制。</p>
+<ol class="arabic simple">
+<li><p>将时间轴中的动画范围设置为 1 到 24。</p></li>
+<li><p>In the 3D Viewport draw a ball on the upper left corner with the Draw Tool (extreme).</p></li>
+<li><p>移动到第 12 帧，并在底部中心中绘制一个挤压的球(breakdown，间断帧)。</p></li>
+<li><p>Move to frame 24 and draw a ball in the top right corner of the 3D Viewport (extreme).</p></li>
+<li><p>继续绘制所有您想要的中间帧，使用洋葱皮作为参考。</p></li>
+</ol>
+<p>要测试动画，请按 <kbd class="kbd docutils literal notranslate">Spacebar</kbd> 进行播放。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interpolation.html" class="btn btn-neutral float-right" title="插值" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/animation/introduction.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/animation/introduction%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

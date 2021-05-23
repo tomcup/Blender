@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>形状 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/curves/properties/shape.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="几何" href="geometry.html" />
+    <link rel="prev" title="属性" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">曲线</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing/index.html">编辑</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">属性</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">形状</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geometry.html">几何</a></li>
+<li class="toctree-l4"><a class="reference internal" href="path_animation.html">路径动画</a></li>
+<li class="toctree-l4"><a class="reference internal" href="active_spline.html">活动样条线</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../curve_display.html">曲线显示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">曲线</a> &raquo;</li>
+        
+          <li><a href="index.html">属性</a> &raquo;</li>
+        
+      <li>形状</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shape">
+<h1>形状<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center" id="id1">
+<img alt="../../../_images/modeling_curves_properties_shape_curves-shape-panel.png" src="../../../_images/modeling_curves_properties_shape_curves-shape-panel.png" />
+<p class="caption"><span class="caption-text">形状面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple" id="bpy-types-curve-dimensions">
+<dt>维数</dt><dd><p>默认情况下，新曲线被设置为3D，这意味着控制点可以放置在3D空间的任何位置。曲线也可以设置为2D，这将控制点约束在曲线的局部XY轴上。</p>
+</dd>
+</dl>
+<span id="bpy-types-curve-resolution-u"></span><dl id="bpy-types-curve-render-resolution-u">
+<dt>U向预览/渲染分辨率</dt><dd><p><em>分辨率</em> 属性定义了在每对控制点之间计算的点的数量。通过分别增大和减小分辨率，可以使曲线变得或多或少平滑。 <em>U向预览</em> 设置确定3D视图中的分辨率，而 <em>U向渲染</em> 设置确定曲线的渲染分辨率。如果 <em>U向渲染</em> 设置为0(0)，那么 <em>U向预览</em> 设置用于3D视图和渲染的分辨率。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<img alt="../../../_images/modeling_curves_properties_shape_resolution-3.png" src="../../../_images/modeling_curves_properties_shape_resolution-3.png" />
+<p class="caption"><span class="caption-text">分辨率为3的曲线。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<img alt="../../../_images/modeling_curves_properties_shape_resolution-12.png" src="../../../_images/modeling_curves_properties_shape_resolution-12.png" />
+<p class="caption"><span class="caption-text">分辨率为12的曲线。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl id="bpy-types-curve-twist-mode">
+<dt>扭曲方法</dt><dd><p>三维曲线具有不在曲线的局部XY平面上的控制点。这给曲线一个扭曲，它可以影响曲线的法线。可以从选择菜单中的 <em>最小值</em> 、 <em>切向</em> 和 <em>Z朝上</em> 选项中选择，从而更改曲线的扭曲度的计算方式。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<img alt="../../../_images/modeling_curves_properties_shape_resolution-12.png" src="../../../_images/modeling_curves_properties_shape_resolution-12.png" />
+<p class="caption"><span class="caption-text">具有最小值扭曲的曲线。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../../_images/modeling_curves_properties_shape_twisting.png" src="../../../_images/modeling_curves_properties_shape_twisting.png" />
+<p class="caption"><span class="caption-text">具有切向扭曲的曲线。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-curve-twist-smooth">
+<dt>平滑</dt><dd><p>以交互方式从曲线中移除扭曲。 如果曲线因过度扭曲而出现明显的“扭结”，则此功能非常有用；将网格转换为曲线时可能会出现这种情况。</p>
+</dd>
+</dl>
+<dl id="bpy-types-curve-fill-mode">
+<dt>填充模式</dt><dd><p>填充决定曲线倒角时的显示方式(有关倒角的详细信息，请参阅下面)。当设置为 <em>一半</em> (默认值)时，曲线显示为半个圆柱体。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id6">
+<img alt="../../../_images/modeling_curves_properties_shape_fill-half.png" src="../../../_images/modeling_curves_properties_shape_fill-half.png" />
+<p class="caption"><span class="caption-text">曲线填充了一半。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../../_images/modeling_curves_properties_shape_fill-full.png" src="../../../_images/modeling_curves_properties_shape_fill-full.png" />
+<p class="caption"><span class="caption-text">曲线填充了全部。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-curve-use-fill-deform">
+<dt>填充形变</dt><dd><p>应用所有可能使曲线形变的修改(即形态键和修改器)后填充曲线。</p>
+</dd>
+</dl>
+<span id="curve-shape-path-curve-deform"></span><dl class="simple" id="bpy-types-curve-use-radius">
+<dt>半径</dt><dd><p>使形变物体按设定的曲线半径缩放。可在当使用曲线作为路径或使用 <a class="reference internal" href="../../modifiers/deform/curve.html"><span class="doc">曲线函数修改器</span></a> 时使用。</p>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-curve-use-stretch">
+<dt>拉伸</dt><dd><p><em>拉伸</em> 曲线选项允许网格物体拉伸或挤压整个曲线。要获得预期的结果，请将其与 <em>边界钳制</em> 选项一起使用。当在使用 <a class="reference internal" href="../../modifiers/deform/curve.html"><span class="doc">曲线函数修改器</span></a> 时使用。</p>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-curve-use-deform-bounds">
+<dt>边界钳制</dt><dd><p>启用此选项时，物体和网格沿形变轴的偏移量将被忽略。这对于 <em>拉伸</em> 选项或使用负轴时非常有用。当使用 <a class="reference internal" href="../../modifiers/deform/curve.html"><span class="doc">曲线函数修改器</span></a> 时使用。</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="geometry.html" class="btn btn-neutral float-right" title="几何" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/curves/properties/shape.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/curves/properties/shape%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简易形变修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/deform/simple_deform.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="平滑修改器" href="smooth.html" />
+    <link rel="prev" title="缩裹修改器" href="shrinkwrap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#modify">修改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#deform">形变</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">骨架修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cast.html">铸型修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curve.html">曲线函数修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="displace.html">置换修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hooks.html">钩挂修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="laplacian_deform.html">拉普拉斯形变修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lattice.html">晶格修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_deform.html">网格变形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shrinkwrap.html">缩裹修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">简易形变修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#restrictions">限制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="smooth.html">平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corrective_smooth.html">矫正平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="laplacian_smooth.html">拉普拉斯平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_deform.html">表面变形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="warp.html">弯绕修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wave.html">波浪修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>简易形变修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simple-deform-modifier">
+<span id="bpy-types-simpledeformmodifier"></span><h1>简易形变修改器<a class="headerlink" href="#simple-deform-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>简易形变</em> 修改器允许对物体进行简单变形。网格、晶格、曲线、曲面和文本都是支持的对象。变形可以是旋转(扭曲、弯曲)或缩放(锥形、拉伸)。变形量由变形角（旋转）或变形系数（缩放）指定。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_intro.png" src="../../../_images/modeling_modifiers_deform_simple-deform_intro.png" />
+<p class="caption"><span class="caption-text">简易形变修改器。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>形变是在 <em>局部</em> 坐标空间计算的。要知道，物体的局部坐标轴可能与全局坐标轴不同。在上图中，全局Z轴指向上，局部Z轴指向45°。变形是沿着变形轴施加的，可以通过从列表中选择设置（X、Y或Z）。通过使用 <em>Limits</em> 值，可以将修改器的影响限制在变形轴的子集上。所有的距离都是从物体的原点开始测量的。在变形轴上离原点最远的顶点代表上限和下限。对象的原点和局部轴的方向可以由外部形变物体（大多数情况下是空物体）来定义。</p>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>模式</dt><dd><p>定义将被应用的变形类型。下图显示了应用于文本物体的四种模式。物体的原点在文本的最左边。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_twist.png" src="../../../_images/modeling_modifiers_deform_simple-deform_twist.png" />
+<p class="caption"><span class="caption-text">绕X轴扭曲（180°）。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_bend.png" src="../../../_images/modeling_modifiers_deform_simple-deform_bend.png" />
+<p class="caption"><span class="caption-text">绕Z轴弯曲（180°）。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id4">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_taper.png" src="../../../_images/modeling_modifiers_deform_simple-deform_taper.png" />
+<p class="caption"><span class="caption-text">沿 X 轴锥化（系数 = 2）。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_stretch.png" src="../../../_images/modeling_modifiers_deform_simple-deform_stretch.png" />
+<p class="caption"><span class="caption-text">沿X轴拉伸（系数 = 0.3）。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>扭曲</dt><dd><p>绕着指定的 <em>轴向</em> 旋转网格。沿着变形轴的每个顶点都会绕着对象的原点旋转。如果原点在物体内部，则会产生扭曲的形状。在原点下方，是负旋转，在原点上方，是正旋转或顺时针旋转。与原点在同一平面的顶点不旋转。</p>
+<p>旋转总量由角度指定，每个顶点的旋转量由顶点到物体原点的距离加权。离物体原点最远的顶点有最大的旋转量，无论正负。</p>
+</dd>
+<dt>弯曲</dt><dd><p>在指定的 <em>轴向</em> 上弯曲网格。弯曲模式比较复杂，也不太直观。下图是同一个平面，但形变轴和弯曲轴不同。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id6">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_bend-1.png" src="../../../_images/modeling_modifiers_deform_simple-deform_bend-1.png" />
+<p class="caption"><span class="caption-text">X轴或Y轴为形变轴（a）。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_bend-2.png" src="../../../_images/modeling_modifiers_deform_simple-deform_bend-2.png" />
+<p class="caption"><span class="caption-text">Z轴为形变轴（b）。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id8">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_bend-3.png" src="../../../_images/modeling_modifiers_deform_simple-deform_bend-3.png" />
+<p class="caption"><span class="caption-text">X轴为形变轴。局部Y轴向下（c）。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<img alt="../../../_images/modeling_modifiers_deform_simple-deform_bend-4.png" src="../../../_images/modeling_modifiers_deform_simple-deform_bend-4.png" />
+<p class="caption"><span class="caption-text">X轴为形变轴。局部Y轴向上（c）。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>使用网格平面并将变形轴设置为X或Y不会产生任何变形（图a）。您希望弯曲应该是类似图(c)或(d)。然而，在三维世界中，选择X轴会带来二义性，因为沿X轴弯曲可能会导致图(c)或(d)。以下对描述所选形变轴与所需弯曲轴：X和Z，Y和Z，Z和X。</p>
+<p>在图(a)中，由于X轴为形变轴，弯曲是沿Z方向进行的，但所有顶点的Z坐标都与局部原点相同。因此，不会发生变形。在图(d)中，局部轴围绕形变轴X轴旋转，使弯曲轴Z轴指向左边。所以，所有顶点的Z坐标都是弯曲的。离局部原点越远，弯曲程度越大。</p>
+<p>这也解释了图（b）的意外结果。形变轴在这里被设置为Z轴（指向上方）。因此，根据上面的两组结果，弯曲轴默认为X轴，平面的所有顶点都在其X轴坐标上弯曲。距离越远，旋转程度越大。负的X轴坐标会逆时针旋转。</p>
+</dd>
+<dt>锥化</dt><dd><p>沿着指定的 <em>轴</em> 进行线性缩放。缩放系数由变形轴上物体与原点的距离加权。在物体原点的平面上不会发生缩放。最大缩放发生在离原点最远的顶点。这可以是正的或负的缩放，取决于原点的位置。如果局部原点在物体内部，变形后的物体会呈现出锥形。</p>
+</dd>
+<dt>拉伸</dt><dd><p>沿着指定的 <em>轴向</em> 拉伸物体。如果局部原点在物体内，变形后的网格看起来就像从两边拉橡皮一样。如果系数为正，则变形后的网格在形变轴上变长，边界变宽，物体在原点处变细。如果系数为负，则网格在变形轴上被压扁，物体在原点处变厚，在边界处变薄。</p>
+</dd>
+</dl>
+</dd>
+<dt>角度(扭曲和弯曲)/系数(锥形和拉伸)</dt><dd><p>总变形量。可使用负值来反转形变。</p>
+</dd>
+<dt>轴向，原点</dt><dd><p>定义变形的原点和轴的对象的名称(通常为空)。这个对象可以是:</p>
+<ul class="simple">
+<li><p>用其旋转来控制变形的轴向(其局部 <em>轴</em> 现在用作变形轴)。</p></li>
+<li><p>用其平移来控制变形的参考点。</p></li>
+<li><p>用其缩放来改变变形的系数。</p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="restrictions">
+<h3>限制<a class="headerlink" href="#restrictions" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>限制</dt><dd><p>这些设置允许您设置变形的上限和下限。上限不能低于下限。这些限制会映射在形变轴上。</p>
+</dd>
+<dt>锁定轴(只适用于扭曲、锥化和拉伸模式)</dt><dd><p>这些控件控制是否允许沿另外两个轴的坐标更改。例如，如果你沿着对象的Z轴 <em>拉伸</em> ，它有可能通过锁定Y轴，使得只沿着X轴挤压。</p>
+</dd>
+<dt>顶点组</dt><dd><p>顶点组的名称，表示每个顶点是否受变形影响并受到多大影响，以及权重绘制映射控制的影响程度。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="smooth.html" class="btn btn-neutral float-right" title="平滑修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="shrinkwrap.html" class="btn btn-neutral float-left" title="缩裹修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/deform/simple_deform.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/deform/simple_deform%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

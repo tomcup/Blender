@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>形态键面板 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/shape_keys/shape_keys_panel.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="工作流程" href="workflow.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../armatures/index.html">骨架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markers.html">标记</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">形态键</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">形态键面板</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#settings">设置</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#relative-shape-keys">相对形态键</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#absolute-shape-keys">绝对形态键</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="workflow.html">工作流程</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="index.html">形态键</a> &raquo;</li>
+        
+      <li>形态键面板</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="shape-keys-panel">
+<h1>形态键面板<a class="headerlink" href="#shape-keys-panel" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1">
+<img alt="../../_images/animation_shape-keys_shape-keys-panel_basis.png" src="../../_images/animation_shape-keys_shape-keys-panel_basis.png" />
+<p class="caption"><span class="caption-text">形态键面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">编辑器</dt>
+<dd class="field-odd"><p>Properties</p>
+</dd>
+<dt class="field-even">模式</dt>
+<dd class="field-even"><p>所有模式</p>
+</dd>
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物体数据 ‣ 形态键</span></p>
+</dd>
+</dl>
+</div>
+<p>形态键面板用于创建形态键。</p>
+<div class="section" id="settings">
+<h2>设置<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>活动的形态键编号</dt><dd><p><a class="reference internal" href="../../interface/controls/templates/list_presets.html#ui-list-view"><span class="std std-ref">列表视图</span></a> 。</p>
+<dl>
+<dt>值(数值)</dt><dd><p>在相对模式中：值是用于在形态(值= 1.0)和其参考键(值= 0.0)之间进行混合的形态键的当前影响值。 参考键通常是基型形态。 混合的权重可以在1.0以上和0.0以下推算。</p>
+<p>在绝对模式中：值是 <em>估算时刻</em> ，形态将在此时产生最大影响。</p>
+</dd>
+<dt>开关(复选标记)</dt><dd><p>如果未选中，则在混合形态键堆栈到3D视图中的结果可见时，不会考虑该形态键。</p>
+</dd>
+<dt>专用项</dt><dd><dl>
+<dt>New Shape from Mix</dt><dd><p>添加一个具有该物体当前形变形态的新形态键。 这与列表的 <code class="docutils literal notranslate"><span class="pre">+</span></code> 按钮不同，因为它总是独立于当前混合形态复制基型形态。</p>
+</dd>
+<dt>镜像形态键</dt><dd><p>如果在 <em>对象模式</em> 中，网格是对称的，您可以镜像X轴上的形态键。 除非网格顶点完全对称，否则这将不起作用。 在 <em>编辑模式</em> 中使用 <span class="menuselection">网格 ‣ 对称</span> 工具。</p>
+</dd>
+<dt>镜像形态键(拓扑)</dt><dd><p>同 <em>镜像形态键</em> 类似，但是它根据网格的拓扑检测镜像顶点。这种情况下，网格的顶点不用完全对称也可以。</p>
+</dd>
+<dt>合并为形态</dt><dd><p>从不同的物体转移当前结果的形态。</p>
+<p>选择要复制的物体，然后选择要复制到的物体。 使用此操作，一个新的具有第一个物体的当前混合形态的形态键将被添加到活动物体。</p>
+</dd>
+<dt>传递形态键</dt><dd><p>从其他物体转移活动形态键而不管它的当前影响值。</p>
+<p>选择要复制的物体，然后选择要复制到的物体。 使用此操作，一个新的具有第一个对象的活动形态键的形态键将被添加到的活动物体。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>相对</dt><dd><p>将形态键设置为 <em>相对</em> 或 <em>绝对</em> 。 请参阅 <a class="reference internal" href="introduction.html#animation-shapekeys-relative-vs-absolute"><span class="std std-ref">相对或绝对形态键</span></a>。</p>
+</dd>
+<dt>形状键锁定(图钉图标)</dt><dd><p>在不混合的情况下显示在3D视图中的活动形态。当对象处于 <em>编辑模式</em> 时，<em>形态键锁定</em> 自动启用。</p>
+</dd>
+<dt>形态键编辑模式(编辑模式图标)</dt><dd><p>如果启用，则在进入 <em>编辑模式</em> 时，活动形态键将 <strong>不会</strong> 作为默认值产生最大影响。 相反，当前形态键的混合形态将是可见的，并且可以从该状态进行编辑。</p>
+</dd>
+</dl>
+<div class="section" id="relative-shape-keys">
+<h3>相对形态键<a class="headerlink" href="#relative-shape-keys" title="Permalink to this headline">¶</a></h3>
+<p>请参阅 <a class="reference internal" href="introduction.html#animation-shapekeys-relative-vs-absolute"><span class="std std-ref">相对或绝对形态键</span></a>。</p>
+<p>使用绝对形态键时，列表中每个形态显示的值表示当前 <em>混合</em> 中该形状的当前权重或影响。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/animation_shape-keys_shape-keys-panel_relative.png" src="../../_images/animation_shape-keys_shape-keys-panel_relative.png" />
+<p class="caption"><span class="caption-text">相对形态键选项。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>清除形态键 <code class="docutils literal notranslate"><span class="pre">X</span></code></dt><dd><p>将所有影响值或权重设置为零。 快速保证3D视图中显示的结果不受形态影响时有用。</p>
+</dd>
+</dl>
+<dl id="animation-shapekey-relative-value">
+<dt>值</dt><dd><p>形态键与其参考键(通常为基型形态)之间的混合权重。</p>
+<p>值 0.0 表示参考键的 100％ 影响和形态键的 1.0。</p>
+</dd>
+<dt>范围</dt><dd><p>活动形状键的影响值的最小和最大范围。 当 <em>值</em> 低于0.0或高于1.0时，Blender可以推断结果。</p>
+</dd>
+<dt>顶点组</dt><dd><p>将活动形状键形变限制为顶点组。 通过将临时顶点组指定给复杂形态并将结果复制到新的更简单形态，可以将复杂形态分解为组件。</p>
+</dd>
+<dt>相对于</dt><dd><p>选择要形变的形态键。 这称为该形态的 <em>参考键</em>。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="absolute-shape-keys">
+<h3>绝对形态键<a class="headerlink" href="#absolute-shape-keys" title="Permalink to this headline">¶</a></h3>
+<p>请参阅 <a class="reference internal" href="introduction.html#animation-shapekeys-relative-vs-absolute"><span class="std std-ref">相对或绝对形态键</span></a>。</p>
+<p>使用绝对形态键时，列表中每个形态显示的值表示该形态键将处于活动状态的 <em>估算时刻</em>。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/animation_shape-keys_shape-keys-panel_absolute.png" src="../../_images/animation_shape-keys_shape-keys-panel_absolute.png" />
+<p class="caption"><span class="caption-text">绝对形态键选项。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>重置形态键时序(时钟图标)</dt><dd><p>绝对形态键按列表中的顺序以恒定间隔计时。 此按钮可重置形态键的时间。 如果删除或重新排序帧，则非常有用。</p>
+</dd>
+<dt>插值类型</dt><dd><p>控制形态键间的插值。</p>
+<p>线性，原始，凯特摩-若门，插值样条</p>
+<div class="figure align-default" id="id4">
+<span id="fig-interpolation-type"></span><img alt="../../_images/animation_shape-keys_shape-keys-panel_interpolation-types.png" src="../../_images/animation_shape-keys_shape-keys-panel_interpolation-types.png" />
+<p class="caption"><span class="caption-text">不同类型的插值。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>红色线表示键(黑色点)间的插值。</p>
+</div>
+</div>
+</dd>
+<dt>估算时刻</dt><dd><p>控制形态键的影响。 拖动以查看当前配置的效果。 通常，此属性可以插帧动画或绑定驱动器。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="workflow.html" class="btn btn-neutral float-right" title="工作流程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/shape_keys/shape_keys_panel.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/shape_keys/shape_keys_panel%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

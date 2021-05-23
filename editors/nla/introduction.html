@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简介 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/nla/introduction.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="轨道" href="tracks.html" />
+    <link rel="prev" title="非线性动画" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../3dview/index.html">3D视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texture_node/index.html">纹理节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">非线性动画</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">简介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#header">标题栏</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#view-menu">视图菜单</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select-menu">选择菜单</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#markers-menu">标记菜单</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#edit-menu">编辑菜单</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#add">添加</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tracks.html">轨道</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strips.html">片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">Editing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties_modifiers.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../preferences/index.html">偏好设置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">非线性动画</a> &raquo;</li>
+        
+      <li>简介</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>简介<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>NLA编辑器，非线性动画的缩写，可以操作和重新规划 <a class="reference internal" href="../../animation/actions.html"><span class="doc">动作</span></a>，免去处理关键帧的枯燥乏味。它通常用于相对轻松地对场景动画进行广泛而重要的更改。 它还可以重新规划，将一系列运动和“分层”动作链接在一起，这样可以更轻松地组织动画并对其进行版本控制。</p>
+<div class="section" id="header">
+<h2>标题栏<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="view-menu">
+<h3>视图菜单<a class="headerlink" href="#view-menu" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>实时更新</dt><dd><p>转换NLA轨道时，对动画的修改将同步到其他视图。</p>
+</dd>
+<dt>显示函数曲线的控制</dt><dd><p>覆盖轨道顶部的NLA轨道影响图形。</p>
+</dd>
+<dt>显示标记</dt><dd><p>显示标记区域。禁用后， <a class="reference internal" href="#markers-menu">标记菜单</a> 也将隐藏，且标记操作在编辑器中不再可用。</p>
+</dd>
+<dt>显示自身标记</dt><dd><p>在轨道上显示动作局部标记，在跨轨道同步计时时非常有用。</p>
+</dd>
+<dt>设置预览范围 <kbd class="kbd docutils literal notranslate">P</kbd></dt><dd><p>通过在NLA编辑器中拖动来选择预览范围。</p>
+</dd>
+<dt>清除预览范围 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></dt><dd><p>取消设置预览范围</p>
+</dd>
+<dt>Auto Select Preview Range <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></dt><dd><p>基于关键帧范围自动选择预览范围。</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>参见时间线的 <a class="reference internal" href="../timeline.html#timeline-view-menu"><span class="std std-ref">视图菜单</span></a>。</p>
+</div>
+</div>
+<div class="section" id="select-menu">
+<h3>选择菜单<a class="headerlink" href="#select-menu" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>全部 <kbd class="kbd docutils literal notranslate">A</kbd></dt><dd><p>选择全部NLA片段。</p>
+</dd>
+<dt>None <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></dt><dd><p>取消选择全部 NLA 片段。</p>
+</dd>
+<dt>反转 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">I</kbd></kbd></dt><dd><p>反转NLA片段的当前选择。</p>
+</dd>
+<dt>框选 <kbd class="kbd docutils literal notranslate">B</kbd></dt><dd><p>通过画框选择NLA片段。 与框相交的所有NLA片段都将添加到当前选择中。</p>
+</dd>
+<dt>框选(轴范围) <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">B</kbd></kbd></dt><dd><p>通过画框选择NLA片段。 与所画框的帧相交的所有NLA片段将添加到当前选择中。</p>
+</dd>
+<dt>当前帧之前 <kbd class="kbd docutils literal notranslate">[</kbd></dt><dd><p>在当前帧之前选择所有NLA片段。</p>
+</dd>
+<dt>当前帧之后 <kbd class="kbd docutils literal notranslate">]</kbd></dt><dd><p>在当前帧之后选择所有NLA片段。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="markers-menu">
+<h3>标记菜单<a class="headerlink" href="#markers-menu" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../../animation/markers.html"><span class="doc">标记</span></a> 用于表示动画中具有关键点或重要事件的帧。 与大多数动画编辑器一样，标记显示在编辑器的底部。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/editors_graph-editor_introduction_markers.png" src="../../_images/editors_graph-editor_introduction_markers.png" />
+<p class="caption"><span class="caption-text">动画编辑器中的标记。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>有关不同标记工具的说明，请参阅 <a class="reference internal" href="../../animation/markers.html#animation-markers-editing"><span class="std std-ref">编辑标记</span></a>。</p>
+</div>
+<div class="section" id="edit-menu">
+<h3>编辑菜单<a class="headerlink" href="#edit-menu" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>变换</dt><dd><dl class="simple">
+<dt>移动</dt><dd><p>移动所选NLA片段到不同时刻或到不同的NLA片段。</p>
+</dd>
+<dt>扩展 <kbd class="kbd docutils literal notranslate">E</kbd></dt><dd><p>扩展所选NLA片段。</p>
+</dd>
+<dt>缩放 <kbd class="kbd docutils literal notranslate">S</kbd></dt><dd><p>缩放所选NLA片段。</p>
+</dd>
+</dl>
+</dd>
+<dt>吸附</dt><dd><dl class="simple">
+<dt>当前帧</dt><dd><p>移动所选NLA片段的起点到当前帧。</p>
+</dd>
+<dt>最近帧</dt><dd><p>移动所选NLA片段的起点到最近帧。</p>
+</dd>
+<dt>最近整秒</dt><dd><p>移动所选NLA片段的起点到最近整秒。</p>
+</dd>
+<dt>最近标记</dt><dd><p>移动所选NLA片段的起点到最近标记。</p>
+</dd>
+</dl>
+</dd>
+<dt>复制 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd></kbd></dt><dd><p>创建所选NLA片段的一个拷贝。</p>
+</dd>
+<dt>关联复制 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd></kbd></dt><dd><p>创建所选NLA片段的一个浅拷贝。</p>
+</dd>
+<dt>分离片段 <kbd class="kbd docutils literal notranslate">Y</kbd></dt><dd><p>NLA分离将所选片段拆分成两个NLA片段。 拆分发生在当前帧。</p>
+</dd>
+<dt>删除片段 <kbd class="kbd docutils literal notranslate">X</kbd></dt><dd><p>删除所选NLA片段。</p>
+</dd>
+<dt>Delete Tracks</dt><dd><p>Delete the selected NLA track and all strips that it contains.</p>
+</dd>
+<dt>切换静默 <kbd class="kbd docutils literal notranslate">H</kbd></dt><dd><p>静默或取消静默所选NLA片段。 静默NLA片段不会影响动画。</p>
+</dd>
+<dt>应用缩放 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></dt><dd><p>应用所选NLA片段的缩放到其引用的动作。</p>
+</dd>
+<dt>缩放归零 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></dt><dd><p>重置所选NLA片段的缩放。</p>
+</dd>
+<dt>同步动作块长度</dt><dd><p>同步动作的长度到NLA片段中使用的长度。</p>
+</dd>
+<dt>单一化 <kbd class="kbd docutils literal notranslate">U</kbd></dt><dd><p>此工具可确保所选片段均不使用任何其他片段也使用的动作。</p>
+</dd>
+<dt>交换片段 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">F</kbd></kbd></dt><dd><p>交换所选NLA片段在NLA轨道中的顺序。</p>
+</dd>
+<dt>上移片段 <kbd class="kbd docutils literal notranslate">PageUp</kbd></dt><dd><p>将所选NLA片段向上移动一个轨道(如果有空间)。</p>
+</dd>
+<dt>下移片段 <kbd class="kbd docutils literal notranslate">PageDown</kbd></dt><dd><p>将所选NLA片段向下移动一个轨道(如果有空间)。</p>
+</dd>
+<dt>轨道排序</dt><dd><dl class="simple">
+<dt>到顶部</dt><dd><p>移动所选轨道到轨道顶部。</p>
+</dd>
+<dt>向上</dt><dd><p>将所选轨道向上移动一个轨道。</p>
+</dd>
+<dt>向下</dt><dd><p>将所选轨道向下移动一个轨道。</p>
+</dd>
+<dt>到底部</dt><dd><p>移动所选轨道到轨道底部。</p>
+</dd>
+</dl>
+</dd>
+<dt>删除空白动画数据</dt><dd><p>当所选物体不包含任何动画时，从中删除动画数据。</p>
+</dd>
+<dt>开始编辑暂存的(Stashed)动作 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd></dt><dd><p>它将像往常一样进入和退出调整模式，但也将确保可以单独编辑动作(通过将动作片段所在的NLA轨道标记为“单放”)。 这对于编辑暂存的动作非常有用，因为不会干扰NLA堆栈的其余部分。</p>
+</dd>
+<dt>开始调节片段动作 <kbd class="kbd docutils literal notranslate">Tab</kbd></dt><dd><p>动作片段的内容可以编辑，但你必须在 <em>调整模式</em> 中才能这样做。该动作的关键帧可以在动画摄影表中编辑。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="add">
+<h3>添加<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>Add Action Strip <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></dt><dd><p>添加引用动作的NLA片段到活动轨道。</p>
+</dd>
+<dt>添加过渡 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">T</kbd></kbd></dt><dd><p>添加NLA片段以在所选两个相邻NLA片段之间创建过渡。</p>
+</dd>
+<dt>添加声音片段 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">K</kbd></kbd></dt><dd><p>Add an NLA-strip controlling when the speaker object plays its sound clip.</p>
+</dd>
+<dt>新增复合片段 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd></dt><dd><p>将所选NLA片段分组到复合片段中。复合片段将对相同NLA轨道的所选NLA片段进行分组。</p>
+</dd>
+<dt>移除复合片段 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd></dt><dd><p>解散所选复合片段的分组。</p>
+</dd>
+<dt>添加轨道</dt><dd><p>添加新的NLA轨道到所选物体的顶部。</p>
+</dd>
+<dt>在选中项上方添加轨道</dt><dd><p>添加新的NLA轨道到所选NLA轨道的上方。</p>
+</dd>
+<dt>包含所选物体</dt><dd><p>让选定的物体出现在NLA编辑器中。 这是通过向所选物体添加空动画数据对象来完成的。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tracks.html" class="btn btn-neutral float-right" title="轨道" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="非线性动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/nla/introduction.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/nla/introduction%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>图像/影片 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/materials/legacy_textures/types/image_movie.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="幻彩" href="magic.html" />
+    <link rel="prev" title="畸变噪波" href="distorted_noise.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lights/index.html">Lights</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">材质</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../components/index.html">组件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../assignment.html">指定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../preview.html">预览</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../settings.html">设置</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">传统</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#types">类型</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="blend.html">混合</a></li>
+<li class="toctree-l5"><a class="reference internal" href="clouds.html">云絮</a></li>
+<li class="toctree-l5"><a class="reference internal" href="distorted_noise.html">畸变噪波</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">图像/影片</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#about-image-based-texturing">关于基于图像的纹理</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#alpha">透明通道</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#mapping">映射</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#sampling">采样</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="magic.html">幻彩</a></li>
+<li class="toctree-l5"><a class="reference internal" href="marble.html">大理石纹</a></li>
+<li class="toctree-l5"><a class="reference internal" href="musgrave.html">马氏分形</a></li>
+<li class="toctree-l5"><a class="reference internal" href="noise.html">噪波</a></li>
+<li class="toctree-l5"><a class="reference internal" href="stucci.html">斯氏分型</a></li>
+<li class="toctree-l5"><a class="reference internal" href="voronoi.html">沃罗诺伊</a></li>
+<li class="toctree-l5"><a class="reference internal" href="wood.html">木纹</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../../index.html">材质</a> &raquo;</li>
+        
+          <li><a href="../index.html">传统</a> &raquo;</li>
+        
+      <li>图像/影片</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="image-or-movie">
+<h1>图像/影片<a class="headerlink" href="#image-or-movie" title="Permalink to this headline">¶</a></h1>
+<p><em>图像纹理</em> 就是图形图片，即由RGB构成的像素阵列，有的包含Alpha值(透明通道)。它被用于纹理的输入源。与其他类型纹理一样，它可以用于多个用途，而不仅仅是作为&quot;贴花&quot;.</p>
+<p><em>影片纹理</em> 即基于影片文件或被连续分割成序列化的图片。它们的添加方式和图像纹理一样。</p>
+<p>当选择了 <em>图像/影片</em> ，将弹出三个面板用于控制图像如何被应用: <em>图像</em>, <em>图像采样</em>, 和 <em>图像映射</em>.</p>
+<div class="section" id="about-image-based-texturing">
+<h2>关于基于图像的纹理<a class="headerlink" href="#about-image-based-texturing" title="Permalink to this headline">¶</a></h2>
+<p>纹理图像将增加内存占用，通常被加载到一个运行非常快速和宝贵的特殊的视频内存仓库，因此图像纹理经常很小。所以图像要尽可能地小，一个64*64像素的图片仅占用128*128像素图片的1/4的内存。</p>
+<p>为了动画中物体的照片级渲染，通常使用更大的图像纹理，因为镜头的推拉可能会使物体放大。通常，你希望纹理的尺寸所包含的像素数量适合最终渲染的需要。最终，当你渲染图像的时候你需要足够的物理RAM(内存)来支持纹理和模型的工作。</p>
+<p>为了最大效率利用内存，图像纹理通常都是正方形，且边长像素数是2的N次方。例如32×32, 64×64, 128×128, 256×256, 1024×1024, 2048×2048, and 4096×4096.</p>
+<p>如果在多个网格中重复利用图像，将大大节省内存。你可以在映射某些网格的贴图时将觉得像的地方作为输出从而重复利用图像。</p>
+<p>When using file textures, it is very important that you have
+<a class="reference internal" href="../../../../modeling/meshes/uv/unwrapping/index.html"><span class="doc">Mapped the UVs</span></a>
+of the mesh, and they are laid out appropriately.</p>
+<p>你无需将 <em>整个</em> 网格都分好UV。左边的球体有一些面做好了映射，但有些面使用了程序化的材质和纹理。你只需要为这些想得到绘画效果和精准细节表现的部分而使用UV纹理。例如一个花瓶仅仅需要在插入了装饰的环形处加入UV纹理。一个抱枕通常只需要一张与背面不同的图片，因为很多抱枕背面表现为可用程序化材质处理的织物。</p>
+<p>另一个例子，给一个头部的两只眼睛分UV通常用同一张贴图映射(除非你想要一只眼睛正常而另一只在流血)。而脸部的左右两边UV用贴图的相同位置可能不太合适，因为实际上两边的斑点和皱纹之类的东西并不会对称。你当然也可以稍微偏移一下UV位置但那样做有点明显。而两只耳朵等位置却通常可以用同UV同一位置映射。</p>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>图像</dt><dd><p>图像 <a class="reference internal" href="../../../../interface/controls/templates/data_block.html#ui-data-block"><span class="std std-ref">数据块菜单</span></a>.</p>
+</dd>
+</dl>
+<div class="section" id="alpha">
+<h3>透明通道<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>透明通道</dt><dd><p>与透明度相关的选项。</p>
+<dl>
+<dt>使用</dt><dd><p>使用图片中储存的透明通道信息。当Alpha值低于1.0时，物体将会部分呈现透明且原本挡住的物体会变得可见。只有在存储了透明信息的 <a class="reference internal" href="../../../../files/media/image_formats.html#files-media-image-formats"><span class="std std-ref">图片格式</span></a> 下才能生效.</p>
+</dd>
+<dt>计算</dt><dd><p>基于RGB值的图像的alpha计算，纯黑 (0, 0, 0) 即透明，纯白(1, 1, 1) 为不透明。如果图片需要作为遮罩那就必须开启此选项。而遮罩图片为灰色时结果将为半透明，例如鬼魂，火焰，烟/雾之类。</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">包含了多种透明值和灰度值的图片。</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-use.png"><img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-use.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-use.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text"><em>使用</em> alpha的图片. 像素的alpha值被计入.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-calculate.png"><img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-calculate.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_alpha-calculate.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">仅适用于有 <em>计算</em> Alpha的图片, <em>图片</em> 面板中 <em>使用Alpha</em> 关闭.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>反转</dt><dd><p>反转alpha值。若想让遮罩图像的白色的地方实现透明效果就可以使用此选项。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="mapping">
+<h3>映射<a class="headerlink" href="#mapping" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id4">
+<img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_image-mapping-panel.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_image-mapping-panel.png" />
+<p class="caption"><span class="caption-text">图像映射面板。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>在 <em>图像</em> 面板中,你可以控制图像映射或投射到3D模型上的方式。</p>
+<dl>
+<dt>翻转X/Y轴</dt><dd><p>渲染时逆时针方向旋转图像90度。</p>
+</dd>
+<dt>扩展</dt><dd><dl>
+<dt>扩展</dt><dd><p>图像之外的边的颜色被扩展。</p>
+</dd>
+<dt>裁切</dt><dd><p>裁切图像尺寸并设置被裁掉的像素部分为透明。图像之外，返还的alpha值为0.0.这将方便你在一个大物体上 '粘贴' 一个小Logo.</p>
+</dd>
+<dt>切边方盒</dt><dd><p>裁剪图片周边的方形区域并设置裁掉的像素为透明区。和裁剪一样，但现在 'Z' 坐标也纳入计算。图片周边方形区域将返还alpha值为0.0。</p>
+</dd>
+<dt>重复</dt><dd><p>图片从纵向和横向重复。</p>
+<dl class="simple">
+<dt>重复</dt><dd><p>X/Y方向重复数量</p>
+</dd>
+<dt>镜像</dt><dd><p>X/Y轴镜像。这些按钮可以镜像映射纹理，或自动翻转图片，在相应的X 和/或 Y方向。</p>
+</dd>
+</dl>
+</dd>
+<dt>棋盘格</dt><dd><p>快速创建棋盘格。你可以使用 <em>映射</em> 面板里的 <em>尺寸</em> 的选项来创建想要的棋盘格子数量。</p>
+<dl class="simple">
+<dt>均匀/不规律</dt><dd><p>设置均匀/不归路的排列。</p>
+</dd>
+<dt>距离</dt><dd><p>管理纹理中的格子之间的距离。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>最小化裁切/最大化裁切</dt><dd><p>在相关的纹理空间中的纹理偏移和尺寸。此空间外的像素被忽略，使用这些来裁剪，或选择更大的图片的局部作为纹理。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sampling">
+<h3>采样<a class="headerlink" href="#sampling" title="Permalink to this headline">¶</a></h3>
+<p>在 <em>采样</em> 面板中你可以控制图片如何返回信息。</p>
+<div class="figure align-default" id="id5">
+<img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_image-sampling-panel.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_image-sampling-panel.png" />
+<p class="caption"><span class="caption-text">图像采样面板。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>插值类型</dt><dd><p>此选项为图片的像素插值类型。当你放大图片将会变得明显。默认情况下，此选项开启。关闭此选项并保持独立的像素可见(当它们被正确地进行了抗锯齿处理)，它最后的特征对常规的图案很有用，例如线条和地砖；即使放大很多它们仍然保持 '锐利' 。当你使用数码照片时请关闭该选项来保留锐度。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-off.png"><img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-off.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-off.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">在没有 <em>插值类型</em> 的情况下放大图片。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-on.png"><img alt="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-on.png" src="../../../../_images/render_materials_legacy-textures_types_image-movie_interpolation-on.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">在有 <em>插值类型</em> 的情况下放大图片。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>多级纹理</dt><dd><p><a class="reference internal" href="../../../../glossary/index.html#term-Mip-map"><span class="xref std std-term">Mip-maps</span></a> are precalculated, smaller, filtered textures for a certain size.
+A series of pictures is generated, each half the size of the former one.
+This optimizes the filtering process. By default, this option is enabled and speeds up rendering.
+When this option is off,
+you generally get a sharper image, but this can significantly increase calculation time if the filter dimension
+(see below) becomes large. Without mip-maps you may get varying pictures from slightly different camera angles,
+when the textures become very small. This would be noticeable in an animation.</p>
+<dl class="simple">
+<dt>多级纹理高斯过滤</dt><dd><p>使用多级纹理结合，它允许多级纹理基于近似颜色而生成得更小。在游戏引擎中，你通常希望纹理，特别是多级纹理尽可能的小从而提高渲染运行速度。</p>
+</dd>
+</dl>
+</dd>
+<dt>过滤</dt><dd><p>渲染中使用的过滤尺寸，同时也是 <em>多级纹理</em> 和 <em>插值类型</em> 中的选项。如果你注意到产生了灰色线条或者纹理物体周边的轮廓，特别是图片透明的地方，请将此值从1.0调低到0.1.</p>
+<dl>
+<dt>纹理过滤类型</dt><dd><p>用于图像采样的纹理过滤。类似像素代表图像和元素，纹理代表纹路和元素。当一张纹理(2D纹理空间)映射到一个3D模型(3D模型空间)，不同的算法将用于计算基于若干纹理元素的每个像素的值。</p>
+<dl>
+<dt>方框</dt><dd><p>一种快速类似于蒙特卡洛积分的近似插值类</p>
+</dd>
+<dt>EWA (椭圆加权平均)</dt><dd><p>一种由Paul Heckbert 和Ned Greene在80年代发明的最高效直接的弯曲算法。对于椭圆区域内每个纹理元素，EWA采样，权重和增长纹理元素以并处以权重之和的结果。</p>
+<dl class="simple">
+<dt>偏移</dt><dd><p>最大化偏移。更高的数值意味着在远处/倾斜角度呈现更少的模糊。</p>
+</dd>
+</dl>
+</dd>
+<dt>FELINE (快速椭圆线)</dt><dd><p>沿着纹理空间的直线上的点使用等方性的探头产生一个各异向形滤镜来减少锯齿效应且没有明显增加渲染时间。</p>
+<dl class="simple">
+<dt>探头</dt><dd><p>Number of probes to use. An integer between 1 and 256.
+Further reading: McCormack, J; Farkas, KI; Perry, R; Jouppi, NP (1999)
+<a class="reference external" href="https://www.hpl.hp.com/techreports/Compaq-DEC/WRL-99-1.pdf">Simple and Table Feline: Fast Elliptical Lines for Anisotropic Texture Mapping</a>, WRL</p>
+</dd>
+</dl>
+</dd>
+<dt>区域</dt><dd><p>用于图像采样的区域滤镜。</p>
+<dl class="simple">
+<dt>偏移</dt><dd><p>最大化偏移。更高的数值意味着在远处/倾斜角度呈现更少的模糊。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>滤镜尺寸</dt><dd><p>用于多级纹理和插值的滤镜尺寸。</p>
+</dd>
+<dt>最小滤镜尺寸</dt><dd><p>在像素中作为最小滤镜值来使用滤镜尺寸。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="magic.html" class="btn btn-neutral float-right" title="幻彩" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="distorted_noise.html" class="btn btn-neutral float-left" title="畸变噪波" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/materials/legacy_textures/types/image_movie.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/materials/legacy_textures/types/image_movie%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

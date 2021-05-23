@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>区域 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/interface/window_system/areas.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="区块" href="regions.html" />
+    <link rel="prev" title="状态栏" href="status_bar.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">用户界面</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../splash.html">启动画面</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#window-system">窗口系统</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="topbar.html">顶栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workspaces.html">工作区</a></li>
+<li class="toctree-l3"><a class="reference internal" href="status_bar.html">状态栏</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">区域</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#resizing">改变大小</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#splitting">拆分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#joining">合并</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#area-options">区域选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#swapping-contents">互换内容</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-area-into-new-window">复制区域到新窗口</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toggle-maximize-area">切换区域最大化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#toggle-fullscreen-area">切换全屏区域</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="regions.html">区块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tabs_panels.html">选项卡 &amp; 面板</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#keymap">键位映射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#interface-controls">界面控件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#tools">工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">用户界面</a> &raquo;</li>
+        
+      <li>区域</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="areas">
+<span id="bpy-types-areaspaces"></span><span id="bpy-types-area"></span><h1>区域<a class="headerlink" href="#areas" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1" style="width: 250px">
+<a class="reference internal image-reference" href="../../_images/interface_window-system_areas_borders.png"><img alt="../../_images/interface_window-system_areas_borders.png" src="../../_images/interface_window-system_areas_borders.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">区域边界由圆角(黄色高光)表示。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Blender窗口由多个长方形的区域组成。区域里面是各种 <a class="reference internal" href="../../editors/index.html"><span class="doc">编辑器</span></a> ,如 3D 视口或大纲等。作为Blender的一部分，通常每个编辑器会在某一方面有自己的功能定位。用户按下的快捷键首先将影响鼠标所在的区域中的编辑器，区域边界由圆角(倒角)区分。</p>
+<p>可以为不同的项目任务自定义组合出各种区域的 <a class="reference internal" href="workspaces.html"><span class="doc">工作区</span></a> ,命名并保存这些工作区供以后使用。</p>
+<div class="section" id="resizing">
+<h2>改变大小<a class="headerlink" href="#resizing" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" style="width: 250px">
+<a class="reference internal image-reference" href="../../_images/interface_window-system_areas_resize.png"><img alt="../../_images/interface_window-system_areas_resize.png" src="../../_images/interface_window-system_areas_resize.png" style="width: 250px;" /></a>
+</div>
+<p>可以通过按住 <kbd class="kbd docutils literal notranslate">LMB</kbd> 并拖动边界调整区域大小。移动鼠标光标移到两个区域之间的边界，直到它变成一个双向箭头，然后按下并拖动。</p>
+</div>
+<div class="section" id="splitting">
+<h2>拆分<a class="headerlink" href="#splitting" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" style="width: 250px">
+<a class="reference internal image-reference" href="../../_images/interface_window-system_areas_split.png"><img alt="../../_images/interface_window-system_areas_split.png" src="../../_images/interface_window-system_areas_split.png" style="width: 250px;" /></a>
+</div>
+<p>拆分一个区域将创建一个新区域。 将鼠标光标放在区域角落会将光标更改为十字(+)，表示按下 <kbd class="kbd docutils literal notranslate">LMB</kbd> 将激活拆分或连接操作。 从区域角落 <strong>向内</strong> 拖动将 <em>拆分</em> 区域。 可以通过水平或垂直拖动来定义拆分方向。</p>
+</div>
+<div class="section" id="joining">
+<h2>合并<a class="headerlink" href="#joining" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id2" style="width: 250px">
+<a class="reference internal image-reference" href="../../_images/interface_window-system_areas_join.png"><img alt="../../_images/interface_window-system_areas_join.png" src="../../_images/interface_window-system_areas_join.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-text">The Properties is being joined to the Outliner.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>从区域角落 <strong>向外</strong> 拖动将 <em>合并</em> 两个区域。 将要关闭的区域会出现一个黑色的重叠箭头。 您可以通过将鼠标移动到区域来选择要关闭的区域。 释放 <kbd class="kbd docutils literal notranslate">LMB</kbd> 以完成合并。 如果在释放鼠标之前按 <kbd class="kbd docutils literal notranslate">Esc</kbd> 或 <kbd class="kbd docutils literal notranslate">RMB</kbd> ，操作将被中止。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>合并拖拽的方向必须有相同尺寸(等宽或高)的区域，否则不会有任何改变，这样合并后的区域才能是矩形的。</p>
+</div>
+<div class="section" id="area-options">
+<h3>区域选项<a class="headerlink" href="#area-options" title="Permalink to this headline">¶</a></h3>
+<p>在区域边界按 <kbd class="kbd docutils literal notranslate">RMB</kbd> 打开 <em>区域选项</em> 。</p>
+<dl class="simple">
+<dt>拆分区域</dt><dd><p>显示一条指示线用于选择分割的区域和位置，按 <kbd class="kbd docutils literal notranslate">Tab</kbd> 切换水平/垂直分割。</p>
+</dd>
+<dt>合并区域</dt><dd><p>覆盖显示合并方向。</p>
+</dd>
+</dl>
+<div class="section" id="swapping-contents">
+<h4>互换内容<a class="headerlink" href="#swapping-contents" title="Permalink to this headline">¶</a></h4>
+<p>用户可以在区域的拐角上按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> ，向目标区域拖动，然后释放鼠标，交换两个区域的内容。两个窗口不一定要相邻，但必须位于同一窗口内。</p>
+</div>
+</div>
+</div>
+<div class="section" id="duplicate-area-into-new-window">
+<span id="bpy-ops-screen-area-dupli"></span><h2>复制区域到新窗口<a class="headerlink" href="#duplicate-area-into-new-window" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">视图(View) ‣ 区域(Area) ‣ 将区域复制到新窗口(Duplicate Area into new Window)</span></p>
+</dd>
+</dl>
+</div>
+<p>A new floating window containing an area can be created from
+<span class="menuselection">View ‣ Area ‣ Duplicate Area into new Window</span>. (Not available in some editors.)</p>
+<p>新窗口是一个全功能窗口，是Blender相同实例的一部分。这在用户使用多显示器时很有用。</p>
+<p>用户还可以在区域拐角按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> ，然后轻轻向外拖拽，创建新窗口。</p>
+<p>可以使用系统的 <em>关闭窗口</em> 按钮关闭。</p>
+</div>
+<div class="section" id="toggle-maximize-area">
+<span id="bpy-ops-screen-screen-full-area"></span><h2>切换区域最大化<a class="headerlink" href="#toggle-maximize-area" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">视图(View) ‣ 区域(Area) ‣ 区域最大化(Toggle Maximize Area)</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Spacebar</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>The maximized area fill the whole application window. You can maximize an area
+with <span class="menuselection">View ‣ Area ‣ Toggle Maximize Area</span> menu entry or keyboard shortcut.
+To return to normal size, use the keyboard shortcut again or the <em>Back to Previous</em> button on the Topbar.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当使用快捷键时，是对鼠标停留的区域做最大化操作。</p>
+</div>
+</div>
+<div class="section" id="toggle-fullscreen-area">
+<h2>切换全屏区域<a class="headerlink" href="#toggle-fullscreen-area" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">视图(View) ‣ 区域(Area) ‣ 切换全屏模式(Toggle Fullscreen Area)</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Spacebar</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>The fullscreen area contains only the main region of the editor.
+To exit fullscreen use the keyboard shortcut or move the mouse to the top right corner
+of the area to reveal the return icon.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="regions.html" class="btn btn-neutral float-right" title="区块" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="status_bar.html" class="btn btn-neutral float-left" title="状态栏" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/interface/window_system/areas.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60interface/window_system/areas%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

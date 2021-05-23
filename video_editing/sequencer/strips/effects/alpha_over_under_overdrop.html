@@ -1,0 +1,371 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Alpha在上，Alpha在下&amp;向下覆盖 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/video_editing/sequencer/strips/effects/alpha_over_under_overdrop.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="颜色混合" href="color_mix.html" />
+    <link rel="prev" title="相乘(正片叠底)" href="multiply.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">视频编辑</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">序列编辑器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../toolbar/tools.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../navigating.html">导航</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">片段</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html#types">类型</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../scene.html">场景片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../clip_mask.html">剪辑片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../clip_mask.html#mask-strips">遮罩片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../movie_image.html">影片片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../movie_image.html#image-sequence-strips">图像/序列片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../sound.html">声音片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../color.html">颜色片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../text.html">文本片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../adjustment.html">调整层片段</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="index.html">效果(特效)片段</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="add.html">添加(叠加)效果</a></li>
+<li class="toctree-l6"><a class="reference internal" href="subtract.html">相减效果</a></li>
+<li class="toctree-l6"><a class="reference internal" href="multiply.html">相乘(正片叠底)</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Alpha在上，Alpha在下&amp;向下覆盖</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#alpha-over">Alpha 在上</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#example">示例</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#alpha-under">Alpha 在下</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#over-drop">向下覆盖</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="color_mix.html">颜色混合</a></li>
+<li class="toctree-l6"><a class="reference internal" href="multicam.html">多机位选择器</a></li>
+<li class="toctree-l6"><a class="reference internal" href="transform.html">变换</a></li>
+<li class="toctree-l6"><a class="reference internal" href="speed_control.html">速度控制</a></li>
+<li class="toctree-l6"><a class="reference internal" href="glow.html">辉光</a></li>
+<li class="toctree-l6"><a class="reference internal" href="blur.html">高斯模糊</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../transitions/index.html">过渡</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../meta.html">复合片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../preview/index.html">预览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">视频编辑</a> &raquo;</li>
+        
+          <li><a href="../../index.html">序列编辑器</a> &raquo;</li>
+        
+          <li><a href="../index.html">片段</a> &raquo;</li>
+        
+          <li><a href="index.html">效果(特效)片段</a> &raquo;</li>
+        
+      <li>Alpha在上，Alpha在下&amp;向下覆盖</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="alpha-over-under-over-drop">
+<h1>Alpha在上，Alpha在下&amp;向下覆盖<a class="headerlink" href="#alpha-over-under-over-drop" title="Permalink to this headline">¶</a></h1>
+<p>使用alpha(透明度通道)，该效果将基于主图像的透明区域来合成一个结果。如果使用场景片段，图像中没有任何实体的区域是透明的；它们的alpha值为0。如果使用影片片段，该影片的alpha值为1(完全不透明) 。</p>
+<p>因此，你可以使用 <em>Alpha在上</em> / <em>Alpha在下</em> 效果将CGI场景合成到影片上。结果为你的模型就如它是电影的一部分一样。 <span class="menuselection">Adjust ‣ Compositing ‣ Opacity</span> 控制前景在背景中的混合程度，在背景上的前景淡化。透明前景图像区域的颜色被忽略，不会改变背景的颜色。</p>
+<div class="section" id="alpha-over">
+<span id="bpy-types-alphaoversequence"></span><h2>Alpha 在上<a class="headerlink" href="#alpha-over" title="Permalink to this headline">¶</a></h2>
+<p>使用 <em>Alpha在上</em> 时，片段按所选顺序分层；所选的第一个片段是背景，第二个片段则在选择的第一个片段之 <em>上</em>。 <em>不透明度</em> 控制 <em>前景</em> 的透明度，即0.0的 <em>不透明度</em> 将仅会显示背景，而1.0的 <em>不透明度</em> 会使用前景完全覆盖背景(当然除了这个是透明区域的情况！)</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>通过单击前景片段侧栏中的预乘Alpha按钮，两个片段的alpha值不会相乘或相加。在具有平滑不透明(alpha=1.0或更大)通道的片段上添加具有可变alpha通道的前景片段(某些不透明区域，某些透明区域，某些介于两种状态间的区域)时使用此效果。 当使用 <em>alpha向上</em> 时，如果发现前景物体周围有微光或前景物体的奇怪透明区域，请启用 <em>预乘</em> 。</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>示例<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/video-editing_sequencer_strips_effects_alpha-over-under-overdrop_example.png" src="../../../../_images/video-editing_sequencer_strips_effects_alpha-over-under-overdrop_example.png" />
+<p class="caption"><span class="caption-text">Alpha在上效果。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="alpha-under">
+<span id="bpy-types-alphaundersequence"></span><h2>Alpha 在下<a class="headerlink" href="#alpha-under" title="Permalink to this headline">¶</a></h2>
+<p>使用 <em>Alpha在下</em> 时，这是相反的：所选的第一个片段是前景，第二个片段是背景。此外，<em>不透明度</em> 控制 <em>背景</em> 的透明度，即 <em>不透明度</em> 为0.0；将仅显示前景(背景是完全透明的)，1.0的 <em>不透明度</em> 的效果与 <em>Alpha在上</em> 一样。</p>
+</div>
+<div class="section" id="over-drop">
+<span id="bpy-types-overdropsequence"></span><h2>向下覆盖<a class="headerlink" href="#over-drop" title="Permalink to this headline">¶</a></h2>
+<p><em>向下覆盖</em> 效果是介于另外两个之间：与 <em>Alpha在下</em> 一样，所选的第一个片段将成为前景，但与 <em>Alpha在上</em> 一样，<em>不透明度</em> 控制此前景的透明度。</p>
+<p><em>向下覆盖</em> 效果与过渡效果十分相似，但将设置为顶部或第二个图像，给予更多的渐进覆盖效果，而非像过渡那样的混合效果。当然，所有的Alpha效果都遵从alpha(透明度)通道，而过渡则不是。</p>
+<p>可以通过F曲线控制应用Alpha的程度以及颜色混合。创建正弦波可产生前景淡入淡出的效果。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="color_mix.html" class="btn btn-neutral float-right" title="颜色混合" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="multiply.html" class="btn btn-neutral float-left" title="相乘(正片叠底)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/video_editing/sequencer/strips/effects/alpha_over_under_overdrop.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60video_editing/sequencer/strips/effects/alpha_over_under_overdrop%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

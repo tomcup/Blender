@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>标注工具 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/interface/annotate_tool.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="选择" href="selecting.html" />
+    <link rel="prev" title="撤销 &amp; 重做" href="undo_redo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">用户界面</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="splash.html">启动画面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#window-system">窗口系统</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#keymap">键位映射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#interface-controls">界面控件</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#tools">工具</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="tool_system.html">工具系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="undo_redo.html">撤销 &amp; 重做</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">标注工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#settings">设置</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#common">通用</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#d-editor">3D 编辑器</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#d-editors">2D编辑器</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="selecting.html">选择</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">用户界面</a> &raquo;</li>
+        
+      <li>标注工具</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="annotate-tool">
+<span id="tool-annotate"></span><span id="bpy-types-toolsettings-annotation"></span><h1>标注工具<a class="headerlink" href="#annotate-tool" title="Permalink to this headline">¶</a></h1>
+<p>标注工具可以同时在多个编辑器使用，比如，可以向三维物体或者节点编辑器中添加标注。</p>
+<p>标注工具可以在左侧工具栏启用，有以下几个子工具。</p>
+<dl>
+<dt>标注</dt><dd><p>Draw free-hand strokes in the main area.</p>
+</dd>
+<dt>直线标注</dt><dd><p>Click and drag to create a line.
+Optionally, you can select the arrow style for the start and end of the line.</p>
+</dd>
+<dt>多线段标注</dt><dd><p>Click multiple times to create multiple connected lines.
+The current polygon is finished when <kbd class="kbd docutils literal notranslate">Esc</kbd> is pressed.</p>
+<dl class="simple">
+<dt>Style Start, End</dt><dd><p>The decoration to use at the beginning or end of the line segment.
+This can be used for example to create arrows to point out specific details in a scene.</p>
+</dd>
+</dl>
+</dd>
+<dt>标注橡皮檫</dt><dd><p>Click and drag to remove lines.
+The eraser has a <em>Radius</em> setting found in <span class="menuselection">Tool Settings ‣ Eraser</span>.</p>
+</dd>
+</dl>
+<div class="section" id="settings">
+<h2>设置<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="common">
+<h3>通用<a class="headerlink" href="#common" title="Permalink to this headline">¶</a></h3>
+<p>可以在 <span class="menuselection">侧栏 ‣ 视图 ‣ 标注</span> 面板里管理多层标注。</p>
+<dl>
+<dt>颜色</dt><dd><p>调整线条的颜色。</p>
+</dd>
+<dt>厚度</dt><dd><p>调整线段的厚度。</p>
+</dd>
+<dt>洋葱皮</dt><dd><p>显示当前帧前后在帧中拍摄的描边的鬼影图像。洋葱蒙皮仅适用于 3D 视图和序列编辑器。蜡笔文档中有关于 <a class="reference internal" href="../grease_pencil/properties/onion_skinning.html"><span class="doc">洋葱皮</span></a> 的解释。</p>
+</dd>
+<dt>Stabilize Stroke</dt><dd><p>Helps to reduce jitter of the strokes while drawing by delaying and correcting the location of points.</p>
+<dl class="simple">
+<dt>Radius</dt><dd><p>Minimum distance from the last point before the stroke continues.</p>
+</dd>
+<dt>Factor</dt><dd><p>A smooth factor, where higher values result in smoother strokes
+but the drawing sensation feels like as if you were pulling the stroke.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="d-editor">
+<h3>3D 编辑器<a class="headerlink" href="#d-editor" title="Permalink to this headline">¶</a></h3>
+<p>When creating new annotations in the 3D Viewport, there is one tool setting.</p>
+<dl>
+<dt>放置</dt><dd><p><em>放置</em> 选项表示你的标注绘制在3D空间的什么位置。</p>
+<dl class="simple">
+<dt>3D游标</dt><dd><p>Draw on an imaginary plane that goes through the 3D cursor and is aligned to your view.</p>
+</dd>
+<dt>视图</dt><dd><p>Draw in screen space instead of in 3D space.
+That means, that the line will stay on the same position in the screen,
+even when the camera moves or rotates.</p>
+</dd>
+<dt>表面</dt><dd><p>在你鼠标所处位置的物体上绘制线条。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="d-editors">
+<h3>2D编辑器<a class="headerlink" href="#d-editors" title="Permalink to this headline">¶</a></h3>
+<p>在2D编辑器上没有 <em>放置</em> 选项，当启用标注工具时，可以在侧栏里的 <span class="menuselection">工具 ‣ 活动工具</span> 面板里管理多层标注。</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/interface_annotate-tool_node-editor.png" src="../_images/interface_annotate-tool_node-editor.png" />
+<p class="caption"><span class="caption-text">在节点编辑器里的标注工具。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="selecting.html" class="btn btn-neutral float-right" title="选择" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="undo_redo.html" class="btn btn-neutral float-left" title="撤销 &amp; 重做" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/interface/annotate_tool.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60interface/annotate_tool%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

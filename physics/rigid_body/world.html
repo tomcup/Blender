@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>刚体世界环境 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/rigid_body/world.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="刚体约束" href="constraints/index.html" />
+    <link rel="prev" title="刚体属性" href="properties.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">刚体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties.html">刚体属性</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">刚体世界环境</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#settings">设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rigid-body-cache">刚体缓存</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rigid-body-field-weights">刚体力场权重</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="constraints/index.html">刚体约束</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tips.html">提示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">物理</a> &raquo;</li>
+        
+          <li><a href="index.html">刚体</a> &raquo;</li>
+        
+      <li>刚体世界环境</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rigid-body-world">
+<span id="bpy-ops-rigidbody-world"></span><span id="bpy-types-rigidbodyworld"></span><h1>刚体世界环境<a class="headerlink" href="#rigid-body-world" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">场景 ‣刚体世界环境</span></p>
+</dd>
+</dl>
+</div>
+<p><em>刚体世界环境</em> 是一组刚体物体，它保存适用于此模拟中所有刚体的设置。</p>
+<p>当您在物体上添加物理刚体时，主要创建一组具有默认 &quot;刚体世界环境&quot; 名称的物体。当您为它们添加刚体物理时，会自动将刚体物体添加到该组中。</p>
+<p>您可以创建多个刚体世界环境组，并使用 <em>物体</em> 选项卡中的 <em>组</em> 面板分配刚体物体。</p>
+<p>如果刚体物体和约束位于 <em>场景</em> 选项卡中 <em>刚体世界环境</em> 面板的 <em>集合</em> 中指定的集合，则它们仅被模拟考虑在内。</p>
+<div class="section" id="settings">
+<h2>设置<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>刚体世界环境</dt><dd><p>启用/禁用刚体模拟评估，基于参与指定的刚体世界环境的刚体物体。</p>
+</dd>
+<dt>移除刚体世界</dt><dd><p>从当前帧中移除模拟刚体环境。</p>
+</dd>
+<dt>集合</dt><dd><p>包含参与模拟的刚体物体集合。</p>
+</dd>
+<dt>约束</dt><dd><p>包含参与模拟的刚体物体约束。</p>
+</dd>
+</dl>
+<p>模拟的质量和时间设置：</p>
+<dl class="simple">
+<dt>速率</dt><dd><p>可以用来增加/降低模拟速度。</p>
+</dd>
+<dt>分离冲量</dt><dd><p>启用/禁用移除可加强碰撞时机的额外速度 (将使模拟稳定性略降低，因此在必要时使用)。限制物体碰撞时分离的力，通常产生更好的结果，但是使模拟更不稳定 (尤其是当堆叠许多物体时)。</p>
+</dd>
+<dt>Steps per Second</dt><dd><p>每秒的模拟步数 (值越高越精确，但速度越慢)。这仅影响精确度而不影响模拟速度。</p>
+</dd>
+<dt>解算器迭代次数</dt><dd><p>约束解算器在每步模拟中的迭代次数(值越高越精确，但速度越慢)。增加这项使约束和物体堆积更稳定。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="rigid-body-cache">
+<h2>刚体缓存<a class="headerlink" href="#rigid-body-cache" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">场景 ‣ 刚体世界环境 ‣ 缓存</span></p>
+</dd>
+</dl>
+</div>
+<p>The <em>Cache</em> subpanel specifies the frame range in which the simulation is active.
+Can be used to bake the simulation.</p>
+<dl>
+<dt>起始/结束</dt><dd><p>模拟的第一和最后一帧。</p>
+</dd>
+<dt>烘焙</dt><dd><p>对仿真进行计算并保护缓存。您需要进入 <em>物体模式</em> 才能烘焙。</p>
+<dl class="simple">
+<dt>清除所有烘焙</dt><dd><p>模拟烘焙后有效。清除烘焙缓存。</p>
+</dd>
+</dl>
+</dd>
+<dt>计算至帧</dt><dd><p>将物理烘焙到当前帧。</p>
+</dd>
+<dt>当前烘焙缓存</dt><dd><p>从缓存烘焙。</p>
+</dd>
+<dt>烘焙所有动力学结算结果</dt><dd><p>烘焙所有物理运算结果。</p>
+</dd>
+<dt>清除所有烘焙</dt><dd><p>删除当前场景中所有物体的烘焙缓存。</p>
+</dd>
+<dt>Update All to Frame</dt><dd><p>更新缓存到当前帧。</p>
+</dd>
+</dl>
+<p>如果您尚未将文件保存成blend文件，则会在内存中创建的缓存，因此请先保存文件，否则缓存可能会丢失。</p>
+</div>
+<div class="section" id="rigid-body-field-weights">
+<h2>刚体力场权重<a class="headerlink" href="#rigid-body-field-weights" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">场景 ‣ 刚体世界环境 ‣ 力场权重</span></p>
+</dd>
+</dl>
+</div>
+<p>与其它物理动力学系统一样，刚体仿真也受外力效应的影响。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="constraints/index.html" class="btn btn-neutral float-right" title="刚体约束" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="properties.html" class="btn btn-neutral float-left" title="刚体属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/rigid_body/world.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/rigid_body/world%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

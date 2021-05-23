@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>世界设置 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/cycles/world_settings.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="物体设置" href="object_settings/index.html" />
+    <link rel="prev" title="调试" href="render_settings/debug.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Cycles</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render_settings/index.html">渲染设置</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">世界设置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ambient-occlusion">环境光遮蔽</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mist-pass">雾场通道</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#settings">设置</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#surface">表(曲)面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#volume">体积(音量)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#ray-visibility">射线可见性</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#tricks">小技巧</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="object_settings/index.html">物体设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="material_settings.html">材质设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="light_settings.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpu_rendering.html">GPU渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="features.html">试验特性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="baking.html">渲染烘焙</a></li>
+<li class="toctree-l3"><a class="reference internal" href="optimizations/index.html">渲染优化</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="index.html">Cycles</a> &raquo;</li>
+        
+      <li>世界设置</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="world-settings">
+<span id="bpy-types-cyclesworldsettings"></span><h1>世界设置<a class="headerlink" href="#world-settings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ambient-occlusion">
+<h2>环境光遮蔽<a class="headerlink" href="#ambient-occlusion" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">世界属性 ‣ 环境光遮蔽</span></p>
+</dd>
+</dl>
+</div>
+<p>环境光遮蔽是一种基于点被附近的表面遮蔽程度的光照算法。通过伪造在角落，网格交叉点，折痕和裂缝等对环境光产生遮蔽和阻挡的地方感知的黑暗来模拟柔和的环境光照阴影。这只是一个技巧，物理上是不正确的，但可以用来强调物体表面的形状，或者作为一种简单的方法获得类似于间接光的效果。</p>
+<dl class="simple">
+<dt>系数</dt><dd><p>环境光遮蔽的强度;值为1时类似于白色的世界着色器。</p>
+</dd>
+<dt>距离</dt><dd><p>从着色点到追踪线的距离，较短的距离会强调附近的特征，较大的值会将较远处的物体加入环境光遮蔽的计算。</p>
+</dd>
+</dl>
+<p>环境光遮蔽的光线仅适用于漫反射BSDF，光泽和透射BSDF不受影响。考虑表面的透明度，例如半透明的表面将仅遮挡一半。</p>
+<p>在每个着色器上使用环境光遮蔽的另一种方法是使用 <a class="reference internal" href="../shader_nodes/input/ao.html"><span class="doc">环境光遮蔽</span></a> 节点。</p>
+</div>
+<div class="section" id="mist-pass">
+<span id="bpy-types-worldmistsettings"></span><span id="render-cycles-integrator-world-mist"></span><h2>雾场通道<a class="headerlink" href="#mist-pass" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">世界属性 ‣雾场通道</span></p>
+</dd>
+</dl>
+</div>
+<p>雾场可以极大地增强渲染中的深度感。创建雾场后，Blender会生成深度范围在0.0到1.0之间的渲染层，可在合成器中使用该渲染层来生成雾效果。</p>
+<dl>
+<dt>起始</dt><dd><p>从相机位置雾场开始淡入的距离。</p>
+</dd>
+<dt>深度</dt><dd><p>从雾场的 <em>起始</em> 到雾场消失的距离。距离相机比 <em>起始+深度</em> 更远的物体将会被雾场完全隐藏。</p>
+</dd>
+<dt>衰减</dt><dd><p>控制雾场强度随距离原來越大的曲线函数。</p>
+<dl class="simple">
+<dt>二次型</dt><dd><p>使用与光衰减相同的计算 (<span class="math notranslate nohighlight">\(1\over{x^2}\)</span>) ，并提供从透明 (0.0) 到不透明 (1.0)的最平滑的过渡。</p>
+</dd>
+<dt>线性</dt><dd><p>起始处比二次型更加陡峭 (<span class="math notranslate nohighlight">\(1\over{x}\)</span>) 。</p>
+</dd>
+<dt>反向二次型</dt><dd><p>起始处最陡峭 (<span class="math notranslate nohighlight">\(1\over{\sqrt{x}}\)</span>) ，并且比以上两种函数更快地达到1。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>可以在 <span class="menuselection">相机 ‣ 视图显示</span> 实现可视化。</p>
+</div>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/render_cycles_world-settings_mist-example1-BI.jpg" src="../../_images/render_cycles_world-settings_mist-example1-BI.jpg" />
+<p class="caption"><span class="caption-text">雾场示例 (<a class="reference external" href="https://wiki.blender.org/wiki/File:25-Manual-World-Mist-Example1.blend">blend-file</a>).</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="settings">
+<span id="render-cycles-integrator-world-settings"></span><h2>设置<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">世界属性‣ 设置</span></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="surface">
+<h3>表(曲)面<a class="headerlink" href="#surface" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>采样</dt><dd><p>控制世界材料的采样方法。选择自动或手动会启用 <em>多重重要性采样</em> ，而选择无会禁用它。 <em>多重重要性采样</em> 是一种对背景纹理进行采样的方法，以便偏爱较轻的部分，从而创建重要性图。以伪像 (<a class="reference internal" href="../../glossary/index.html#term-Fireflies"><span class="xref std std-term">闪点</span></a>) 为代价在渲染中产生较少的噪声。当使用带有小面积灯光(例如太阳)的图像纹理时，请启用此功能，否则噪点可能需要很长时间才能收敛。</p>
+<p>下面是启用和禁用多重重要性示例之间的比较。两种图像均渲染25秒（关闭：1,500个样本，打开：1,000个样本）。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<img alt="../../_images/render_cycles_world-settings_mis-off.jpg" src="../../_images/render_cycles_world-settings_mis-off.jpg" />
+<p class="caption"><span class="caption-text">多重重要性采样关闭。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<img alt="../../_images/render_cycles_world-settings_mis-on.jpg" src="../../_images/render_cycles_world-settings_mis-on.jpg" />
+<p class="caption"><span class="caption-text">多重重要性采样开启。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>贴图精度</dt><dd><p>设置重要性图的分辨率。较高的分辨率将更好地检测地图中的细小特征，并提供更准确的采样，但是相反会占用更多内存，并且渲染速度稍慢。使用高分辨率图像时，较高的值也可能产生较少的噪点。</p>
+</dd>
+<dt>最多反弹次数</dt><dd><p>被计入渲染的背景光的最大反弹次数。</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>参见 <a class="reference internal" href="optimizations/reducing_noise.html"><span class="doc">降噪</span></a> 降低噪点数量。</p>
+</div>
+</div>
+<div class="section" id="volume">
+<h3>体积(音量)<a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>采样</dt><dd><dl class="simple">
+<dt>距离</dt><dd><p>对于在远处照明的密集体积，<em>距离</em> 在大多数情况下采样效率更高。通常不应将其用于世界卷。</p>
+</dd>
+<dt>等角</dt><dd><p>如果有一个灯光在体积的内部或附近，<em>等角</em> 是最佳的采样方式。</p>
+</dd>
+<dt>多重重要性采样</dt><dd><p>如果是以上两种情况的结合，多重重要性采样是最佳的选择。</p>
+</dd>
+</dl>
+</dd>
+<dt>插值类型</dt><dd><p>用于体积的插值类型。</p>
+<dl class="simple">
+<dt>线性</dt><dd><p>简单插值可为薄体积提供良好的结果。</p>
+</dd>
+<dt>三次型</dt><dd><p>平滑的高质量插值需要更密集的体积，但速度较慢。</p>
+</dd>
+</dl>
+</dd>
+<dt>均质</dt><dd><p>假设体积在每个地方都具有相同的密度(不使用任何纹理)，以便更快地渲染。通常这是由渲染器自动确定的。此设置为未检测到的情况提供了手动控制。</p>
+</dd>
+<dt>步长尺寸</dt><dd><p>世界体积着色器的体积着色器样本之间的距离。有关更多信息，请参见 <a class="reference internal" href="render_settings/volumes.html"><span class="doc">体积渲染设置</span></a> 。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="ray-visibility">
+<h2>射线可见性<a class="headerlink" href="#ray-visibility" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">世界属性 ‣ 射线可见性</span></p>
+</dd>
+</dl>
+</div>
+<p>与其他对象一样，<em>射线可见性</em> 允许您控制哪些其他着色器可以“看到”环境。</p>
+<div class="section" id="tricks">
+<h3>小技巧<a class="headerlink" href="#tricks" title="Permalink to this headline">¶</a></h3>
+<p>有时直接照明对象的背景与直接可见的背景不同可能会很有用。一个简单的解决方案是添加一个混合节点，并将 <em>混合系数</em> 设置为 <em>是相机射线</em> 。那么，第一种输入颜色是间接颜色，第二种是直接可见颜色。当将高分辨率图像用作背景，而将低分辨率图像用作实际照明时，此功能很有用。</p>
+<p>同样的，将 <em>是相机射线</em> 和 <em>是光泽射线</em> 二者相加意味着高分辨率图像将在反射中可见。</p>
+<div class="figure align-default" id="id4">
+<img alt="../../_images/render_cycles_world-settings_tricks.png" src="../../_images/render_cycles_world-settings_tricks.png" />
+<p class="caption"><span class="caption-text">以上技巧的节点。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="object_settings/index.html" class="btn btn-neutral float-right" title="物体设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="render_settings/debug.html" class="btn btn-neutral float-left" title="调试" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/cycles/world_settings.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/cycles/world_settings%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

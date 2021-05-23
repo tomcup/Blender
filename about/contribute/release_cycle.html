@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>发布周期 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/about/contribute/release_cycle.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="待办事项清单" href="todo_list.html" />
+    <link rel="prev" title="补丁 &amp; 提交" href="patch_commit.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">贡献文档</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#getting-started">入门</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="install/index.html">安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build/index.html">编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patch_commit.html">补丁 &amp; 提交</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">发布周期</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#branches">Branches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bcon-phases">Bcon Phases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="todo_list.html">待办事项清单</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#guidelines">指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#translations">翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#contacts">联系</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">贡献文档</a> &raquo;</li>
+        
+      <li>发布周期</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="release-cycle">
+<h1>发布周期<a class="headerlink" href="#release-cycle" title="Permalink to this headline">¶</a></h1>
+<p>A new Blender version is targeted to be released every 3 months.
+The actual <a class="reference external" href="https://wiki.blender.org/wiki/Process/Release_Cycle">release cycle</a> for a specific release is longer,
+and overlaps the previous and next release cycle.</p>
+<div class="figure align-default">
+<img alt="../../_images/about_contribute_release_cycle.png" src="../../_images/about_contribute_release_cycle.png" />
+</div>
+<div class="section" id="branches">
+<h2>Branches<a class="headerlink" href="#branches" title="Permalink to this headline">¶</a></h2>
+<p>Work is done in two branches:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">blender-v{VERSION}-release</span></code> branch: fixes and other incremental improvements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code> branch: documentation for new features and improvements for the release after that.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">blender-v{VERSION}-release</span></code> branch will be available for 5 weeks prior to the release date.
+At the same time <code class="docutils literal notranslate"><span class="pre">master</span></code> will be open for the next release,
+giving 2 months to add documentation for new features of the next release, and another month to make improvements.</p>
+</div>
+<div class="section" id="bcon-phases">
+<h2>Bcon Phases<a class="headerlink" href="#bcon-phases" title="Permalink to this headline">¶</a></h2>
+<p>Each Blender version has its own Bcon phase,
+indicating which types of changes are allowed to be committed and what writers are focusing on.</p>
+<p>That means for example that Blender 2.90 can be in Bcon3 (wrapping up),
+while Blender 2.91 is in Bcon1 (new features and changes).</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 50%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>相位</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>持续时间</p></th>
+<th class="head"><p>细节</p></th>
+<th class="head"><p>分支</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bcon1</p></td>
+<td><p>New features and changes</p></td>
+<td><p>4-5 weeks</p></td>
+<td><p>The first 5 weeks overlap with the Bcon3 and Bcon4 phases of the previous release,
+Writing focus will be split on fixes for the previous release
+and writing documentation for features already added or likely to be added to Blender.
+This is also the perfect time to make any larger or more disruptive improvements to the manual.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">master</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bcon2</p></td>
+<td><p>Improve and stabilize</p></td>
+<td><p>4 weeks</p></td>
+<td><p>Work to improve, optimize and fix bugs in new and existing features.
+All big or disruptive changes must be finished at the end of this stage.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">master</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Bcon3</p></td>
+<td><p>Wrapping up</p></td>
+<td><p>4 weeks</p></td>
+<td><p>Focus should be on fixes and other incremental improvements.
+All new Blender features should be documented by the end of this stage.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blender-v{VERSION}-release</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Bcon4</p></td>
+<td><p>Prepare release</p></td>
+<td><p>1 week</p></td>
+<td><p>Focus should be wrapping up fixes and other incremental improvements.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blender-v{VERSION}-release</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Bcon5</p></td>
+<td><p>松开</p></td>
+<td><p>1-2 days</p></td>
+<td><p>The manual is archived on the server and redirects / symlinks are updated.
+See the <a class="reference internal" href="guides/maintenance_guide.html#about-contribute-guides-release"><span class="std std-ref">Release Guide</span></a> for more information.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Bcon6</p></td>
+<td><p>Long-term release</p></td>
+<td><p>2 years</p></td>
+<td><p>In case a major error is found in the manual the patch will be committed to the release branch.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">blender-v{VERSION}-release</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="todo_list.html" class="btn btn-neutral float-right" title="待办事项清单" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="patch_commit.html" class="btn btn-neutral float-left" title="补丁 &amp; 提交" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/about/contribute/release_cycle.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60about/contribute/release_cycle%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

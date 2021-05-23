@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>选择 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/selecting.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="多帧" href="multiframe.html" />
+    <link rel="prev" title="基本体" href="primitives.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="primitives.html">基本体</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">选择</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#select-menu">选择菜单</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-linked">选择关联项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-alternated">选择相间的</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-grouped">选择组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-vertex-color">Select Vertex Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-first-last">起始/结尾选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-more-less">扩展/缩减选择</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="multiframe.html">多帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties/index.html">属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="animation/index.html">动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modes">模式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">蜡笔</a> &raquo;</li>
+        
+      <li>选择</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="selecting">
+<span id="bpy-ops-gpencil-select"></span><span id="bpy-types-toolsettings-gpencil-selectmode"></span><h1>选择<a class="headerlink" href="#selecting" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">3D Viewport Header ‣ Select Mode</span></p>
+</dd>
+<dt class="field-odd">热键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">1</kbd>, <kbd class="kbd docutils literal notranslate">2</kbd>, <kbd class="kbd docutils literal notranslate">3</kbd></p>
+</dd>
+</dl>
+</div>
+<div class="figure align-right" id="id1">
+<img alt="../_images/grease-pencil_selecting_mode-buttons.png" src="../_images/grease-pencil_selecting_mode-buttons.png" />
+<p class="caption"><span class="caption-text">选择编辑模式按钮。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>在编辑模式中有三种不同的选择模式。您可以通过选择标题中的三个按钮的某个按钮来进入不同的模式。</p>
+<dl class="simple">
+<dt>点</dt><dd><p>选择单独的点。</p>
+</dd>
+<dt>笔画</dt><dd><p>选取整个笔画。</p>
+</dd>
+<dt>两者间的点</dt><dd><p>选取其他笔画之间的所有点。</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id2">
+<img alt="../_images/grease-pencil_selecting_example.png" src="../_images/grease-pencil_selecting_example.png" />
+<p class="caption"><span class="caption-text">点、笔画和笔画之间的选择。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="select-menu">
+<h2>选择菜单<a class="headerlink" href="#select-menu" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>框/圆/全部/无/反转选择</dt><dd><p>所有的这些选项都拥有与以下相同的含义和行为 <a class="reference internal" href="../scene_layout/object/selecting.html"><span class="doc">对象模式</span></a>。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-linked">
+<h2>选择关联项<a class="headerlink" href="#select-linked" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 关联项</span></p>
+</dd>
+<dt class="field-odd">热键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">L</kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p><kbd class="kbd docutils literal notranslate">L</kbd> (或者 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd> 全部) 将向光标最近的控制点和所有链接的控制点添加选择，即属于同一笔划的所有点。</p>
+</div>
+<div class="section" id="select-alternated">
+<h2>选择相间的<a class="headerlink" href="#select-alternated" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 相间</span></p>
+</dd>
+<dt class="field-odd">热键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>在选择的笔画上选择相间的点。</p>
+</div>
+<div class="section" id="select-grouped">
+<h2>选择组<a class="headerlink" href="#select-grouped" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Select ‣ Grouped</span></p>
+</dd>
+<dt class="field-odd">热键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<dl class="simple">
+<dt>图层</dt><dd><p>在相同的图层上选择全部的点或者笔画。</p>
+</dd>
+<dt>材质</dt><dd><p>选择共享相同材质的所有点/笔画。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-vertex-color">
+<span id="bpy-ops-gpencil-select-vertex-color"></span><h2>Select Vertex Color<a class="headerlink" href="#select-vertex-color" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>Vertex Paint Mode</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Select ‣ Vertex Color</span></p>
+</dd>
+</dl>
+</div>
+<p>Selects all points with a similar vertex color as the current selection.</p>
+<dl class="simple">
+<dt>Tolerance</dt><dd><p>How similar colors are allowed to be; higher values select a wider range of colors.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-first-last">
+<h2>起始/结尾选择<a class="headerlink" href="#select-first-last" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 起始/结尾</span></p>
+</dd>
+</dl>
+</div>
+<p>这些操作将在物体笔画选择的起始或者结尾的点间切换。 这对于快速找到一个笔画的起点很有用。</p>
+</div>
+<div class="section" id="select-more-less">
+<h2>扩展/缩减选择<a class="headerlink" href="#select-more-less" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 扩展/缩减选择</span></p>
+</dd>
+<dt class="field-odd">热键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">NumpadPlus</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">NumpadMinus</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>这些工具的目的是减少或扩大目前笔画中的选择 (即它们绝不会从笔画上 &quot;移出&quot; 或者 &quot;跳到&quot; 别的笔画，在同一个对象上)。</p>
+<dl class="simple">
+<dt>扩展选区</dt><dd><p>对于每个选定点, 选择 <em>全部</em> 它的关联点 (i.e. 1个或者2个...)。</p>
+</dd>
+<dt>缩减选区</dt><dd><p>对于每个选定的点，如果选择了与此点关联的 <em>全部</em> 点，请保持此选择。 否则，对其取消选择。</p>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>当选择笔画上 <em>全部</em> 的点时, 什么都不会发生 (至于 <em>减选</em> , 所有衔接的点总是被选择, 同样, <em>多选</em> 什么也不会选择)。相反，当没有选择点时也是如此。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="multiframe.html" class="btn btn-neutral float-right" title="多帧" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="primitives.html" class="btn btn-neutral float-left" title="基本体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/selecting.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/selecting%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

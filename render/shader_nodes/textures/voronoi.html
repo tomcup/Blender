@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>沃罗诺伊纹理着色器节点 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/shader_nodes/textures/voronoi.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="波浪纹理着色器节点" href="wave.html" />
+    <link rel="prev" title="天空纹理着色器节点" href="sky.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">着色器节点</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../input/index.html">输入节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../output/index.html">输出节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shader/index.html">着色器</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">纹理节点</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="brick.html">砖墙纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="checker.html">棋盘格纹理节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html">环境纹理节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gradient.html">渐变纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ies.html">IES纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html">图像纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="magic.html">迷幻纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="musgrave.html">马氏分形纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="noise.html">噪波纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="point_density.html">点密度着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sky.html">天空纹理着色器节点</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">沃罗诺伊纹理着色器节点</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#inputs">输入选项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#properties">属性</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#outputs">输出选项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#notes">注意事项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#examples">举例</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="wave.html">波浪纹理着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="white_noise.html">白噪波纹理节点</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../color/index.html">颜色节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vector/index.html">矢量着色器节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../converter/index.html">转换器节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../groups.html">节点组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../osl.html">开放式着色语言 (OSL)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">着色器节点</a> &raquo;</li>
+        
+          <li><a href="index.html">纹理节点</a> &raquo;</li>
+        
+      <li>沃罗诺伊纹理着色器节点</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="voronoi-texture-node">
+<span id="bpy-types-shadernodetexvoronoi"></span><h1>沃罗诺伊纹理着色器节点<a class="headerlink" href="#voronoi-texture-node" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_node.png" src="../../../_images/render_shader-nodes_textures_voronoi_node.png" />
+<p class="caption"><span class="caption-text">沃罗诺伊纹理着色器节点。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>沃罗诺伊纹理</em> 节点在输入纹理坐标处评估 <a class="reference external" href="https://en.wikipedia.org/wiki/Worley_noise">Worley噪波</a>。</p>
+<div class="section" id="inputs">
+<h2>输入选项<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>输入是动态的，下面的输入端口会在选择的节点属性需要时出现。</p>
+<dl>
+<dt>矢量</dt><dd><p>Texture coordinate to evaluate the noise at;
+defaults to <em>Generated</em> texture coordinates if the socket is left unconnected.</p>
+</dd>
+<dt>W</dt><dd><p>Texture coordinate to evaluate the noise at.</p>
+</dd>
+<dt>缩放</dt><dd><p>Scale of the noise.</p>
+</dd>
+<dt>平滑度</dt><dd><p>噪波的平滑度。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-zero.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-zero.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.0.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-quarter.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-quarter.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.25.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-half.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-half.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.5.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-one.png" />
+<p class="caption"><span class="caption-text">平滑度: 1.0.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id6">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-zero.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-zero.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.0.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-quarter.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-quarter.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.25.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id8">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-half.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-half.png" />
+<p class="caption"><span class="caption-text">平滑度: 0.5.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-one.png" />
+<p class="caption"><span class="caption-text">平滑度: 1.0.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>指数</dt><dd><p>闵可夫斯基距离度量指数。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id10">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-half.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-half.png" />
+<p class="caption"><span class="caption-text">指数: 0.5.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id11">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-one.png" />
+<p class="caption"><span class="caption-text">指数: 1.0.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id12">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-two.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-two.png" />
+<p class="caption"><span class="caption-text">指数: 2.0.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id13">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-32.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-32.png" />
+<p class="caption"><span class="caption-text">指数: 32.0.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>随机性</dt><dd><p>噪波的随机性。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id14">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_randomness-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_randomness-one.png" />
+<p class="caption"><span class="caption-text">随机性: 1.0.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id15">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_randomness-half.png" src="../../../_images/render_shader-nodes_textures_voronoi_randomness-half.png" />
+<p class="caption"><span class="caption-text">Randomness: 0.5.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id16">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_randomness-quarter.png" src="../../../_images/render_shader-nodes_textures_voronoi_randomness-quarter.png" />
+<p class="caption"><span class="caption-text">Randomness: 0.25.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id17">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_randomness-zero.png" src="../../../_images/render_shader-nodes_textures_voronoi_randomness-zero.png" />
+<p class="caption"><span class="caption-text">Randomness: 0.0.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties">
+<h2>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>规格尺寸</dt><dd><p>用于计算噪波的空间维度。</p>
+<dl class="simple">
+<dt>1D</dt><dd><p>Evaluate the noise in 1D space at the input W.</p>
+</dd>
+<dt>2D</dt><dd><p>Evaluate the noise in 2D space at the input Vector. The Z component is ignored.</p>
+</dd>
+<dt>3D</dt><dd><p>Evaluate the noise in 3D space at the input Vector.</p>
+</dd>
+<dt>4D</dt><dd><p>Evaluate the noise in 4D space at the input Vector and the input W as the fourth dimension.</p>
+</dd>
+</dl>
+<p>Higher dimensions corresponds to higher render time,
+so lower dimensions should be used unless higher dimensions are necessary.</p>
+</dd>
+<dt>特性</dt><dd><p>The Voronoi feature that the node will compute and return.</p>
+<dl>
+<dt>F1</dt><dd><p>Compute and return the distance to the closest feature point as well as its position and color.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id18">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-zero.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-zero.png" />
+<p class="caption"><span class="caption-text">距离。</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id19">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-zero.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-zero.png" />
+<p class="caption"><span class="caption-text">颜色。</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id20">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_f1-position.png" src="../../../_images/render_shader-nodes_textures_voronoi_f1-position.png" />
+<p class="caption"><span class="caption-text">位置。</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>F2</dt><dd><p>Compute and return the distance to the second closest feature point as well as its position and color.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id21">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_f2-distance.png" src="../../../_images/render_shader-nodes_textures_voronoi_f2-distance.png" />
+<p class="caption"><span class="caption-text">距离。</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id22">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_f2-color.png" src="../../../_images/render_shader-nodes_textures_voronoi_f2-color.png" />
+<p class="caption"><span class="caption-text">颜色。</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id23">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_f2-position.png" src="../../../_images/render_shader-nodes_textures_voronoi_f2-position.png" />
+<p class="caption"><span class="caption-text">位置。</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>平滑 F1</dt><dd><p>Compute and return a smooth version of F1.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id24">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-distance-one.png" />
+<p class="caption"><span class="caption-text">距离。</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id25">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_smoothness-color-one.png" />
+<p class="caption"><span class="caption-text">颜色。</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id26">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_smooth-f1-position.png" src="../../../_images/render_shader-nodes_textures_voronoi_smooth-f1-position.png" />
+<p class="caption"><span class="caption-text">位置。</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Distance to Edge</dt><dd><p>Compute and return the distance to the edges of the Voronoi cells.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id27">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_distance-to-edge.png" src="../../../_images/render_shader-nodes_textures_voronoi_distance-to-edge.png" />
+<p class="caption"><span class="caption-text">距离。</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id28">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_distance-to-edge-less-than.png" src="../../../_images/render_shader-nodes_textures_voronoi_distance-to-edge-less-than.png" />
+<p class="caption"><span class="caption-text">距离 &lt; 0.05。</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>N 球体半径</dt><dd><p>Compute and return the radius of the n-sphere inscribed in the Voronoi cells.
+In other words, it is half the distance between the closest feature point and the feature point closest to it.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id29">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_n-sphere-radius.png" src="../../../_images/render_shader-nodes_textures_voronoi_n-sphere-radius.png" />
+<p class="caption"><span class="caption-text">The n-sphere radius can be used to create tightly packed n-spheres.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id30">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_n-sphere-radius-nodetree.png" src="../../../_images/render_shader-nodes_textures_voronoi_n-sphere-radius-nodetree.png" />
+<p class="caption"><span class="caption-text">Node tree for the shader to the left.</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</dd>
+<dt>间距度量</dt><dd><p>The distance metric used to compute the texture.</p>
+<dl class="simple">
+<dt>欧几里德</dt><dd><p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean distance metric</a>.</p>
+</dd>
+<dt>曼哈顿点距</dt><dd><p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan distance metric</a>.</p>
+</dd>
+<dt>切比雪夫</dt><dd><p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Chebyshev_distance">Chebychev distance metric</a>.</p>
+</dd>
+<dt>闵可夫斯基</dt><dd><p>Use the <a class="reference external" href="https://en.wikipedia.org/wiki/Minkowski_distance">Minkowski distance metric</a>.
+The Minkowski distance is a generalization of the aforementioned metrics with an <em>Exponent</em> as a parameter.
+Minkowski with an exponent of one is equivalent to the <em>Manhattan</em> distance metric.
+Minkowski with an exponent of two is equivalent to the <em>Euclidean</em> distance metric.
+Minkowski with an infinite exponent is equivalent to the <em>Chebychev</em> distance metric.</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id31">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-half.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-half.png" />
+<p class="caption"><span class="caption-text">闵可夫斯基指数: 0.5(闵可夫斯基 1/2)。</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id32">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-one.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-one.png" />
+<p class="caption"><span class="caption-text">闵可夫斯基指数: 1.0(曼哈顿)。</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id33">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-two.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-two.png" />
+<p class="caption"><span class="caption-text">闵可夫斯基指数: 2.0(欧几里得)。</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id34">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_minkowski-32.png" src="../../../_images/render_shader-nodes_textures_voronoi_minkowski-32.png" />
+<p class="caption"><span class="caption-text">闵可夫斯基指数: 32.0(切比雪夫近似)。</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="outputs">
+<h2>输出选项<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>距离</dt><dd><p>距离。</p>
+</dd>
+<dt>颜色</dt><dd><p>单元格颜色。颜色是任意的。</p>
+</dd>
+<dt>位置</dt><dd><p>特征点的位置。</p>
+</dd>
+<dt>W</dt><dd><p>特征点的位置。</p>
+</dd>
+<dt>半径</dt><dd><p>N维球面半径。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="notes">
+<h2>注意事项<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In some configurations of the node, especially for low values of <em>Randomness</em>,
+rendering artifacts may occur. This happens due to the same reasons described
+in the <a class="reference internal" href="white_noise.html#shader-white-noise-notes"><span class="std std-ref">Notes section</span></a> in the White Noise Texture page
+and can be fixed in a similar manner as described there.</p>
+</div>
+<div class="section" id="examples">
+<h2>举例<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id35">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_example-beveled-cells.png" src="../../../_images/render_shader-nodes_textures_voronoi_example-beveled-cells.png" />
+<p class="caption"><span class="caption-text">The difference between <em>F1</em> and <em>Smooth F1</em> can be used to create beveled Voronoi cells.</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id36">
+<img alt="../../../_images/render_shader-nodes_textures_voronoi_example-hammered-metal.jpg" src="../../../_images/render_shader-nodes_textures_voronoi_example-hammered-metal.jpg" />
+<p class="caption"><span class="caption-text">Creating a hammered metal shader using the <em>Voronoi Texture</em> node.</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="wave.html" class="btn btn-neutral float-right" title="波浪纹理着色器节点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sky.html" class="btn btn-neutral float-left" title="天空纹理着色器节点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/shader_nodes/textures/voronoi.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/shader_nodes/textures/voronoi%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

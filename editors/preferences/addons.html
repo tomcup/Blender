@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>插件 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/preferences/addons.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="输入" href="input.html" />
+    <link rel="prev" title="动画" href="animation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../3dview/index.html">3D视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texture_node/index.html">纹理节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nla/index.html">非线性动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">偏好设置</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html">界面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="themes.html">主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viewport.html">视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lights.html">灯光</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html">动画</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">插件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#finding-add-ons">查找插件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-and-disabling">启用和禁用</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#rd-party-add-ons">第三方插件</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#add-on-information">插件信息</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#add-on-preferences">插件设置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">输入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation.html">视图切换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keymap.html">键位映射</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="save_load.html">保存和加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_paths.html">文件路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experimental.html">试验特性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">偏好设置</a> &raquo;</li>
+        
+      <li>插件</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="add-ons">
+<span id="bpy-ops-preferences-addon"></span><span id="bpy-types-windowmanager-addon"></span><span id="bpy-ops-wm-addon"></span><span id="bpy-types-addon"></span><h1>插件<a class="headerlink" href="#add-ons" title="Permalink to this headline">¶</a></h1>
+<p><em>插件 (Add-ons)</em> 选项用于管理辅助的脚本，也称作 <em>插件</em> ，用于扩展Blender的功能。在该选项下，你可以搜索、安装、启用和禁用插件。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/editors_preferences_section_addons.png" src="../../_images/editors_preferences_section_addons.png" />
+<p class="caption"><span class="caption-text">Blender设置插件选项。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="finding-add-ons">
+<h2>查找插件<a class="headerlink" href="#finding-add-ons" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>搜索</dt><dd><p>Blender自带一些有用的插件，必要时可以启用。用户也可以添加自己的插件，或从网络上找到的任意有趣的插件。</p>
+</dd>
+<dt>支持的层级</dt><dd><p>Blender中的插件根据作者/支持方，被划分为两组：</p>
+<ul class="simple">
+<li><p>官方：Blender开发人员写的插件。</p></li>
+<li><p>社区：Blender社区用户写的插件。</p></li>
+</ul>
+</dd>
+<dt>仅已启用插件</dt><dd><p>仅显示当前 <em>类别</em> 中已启用的插件。</p>
+</dd>
+<dt>分类</dt><dd><p>根据在Blender中的作用范围，对插件进行了分类。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="enabling-and-disabling">
+<h2>启用和禁用<a class="headerlink" href="#enabling-and-disabling" title="Permalink to this headline">¶</a></h2>
+<p>如下图所示，通过勾选或取消勾选插件左侧的复选框，可以启用和禁用插件。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/editors_preferences_addons_enable.png" src="../../_images/editors_preferences_addons_enable.png" />
+<p class="caption"><span class="caption-text">启用插件。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>插件功能应该立即可用。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>现在，激活或者修改多个快捷键的插件有了一个特殊的激活系统。比如， &quot;UI: Pie Menu Official&quot; 插件的每个菜单右侧都有一个复选框，用于激活对应的菜单和快捷键。</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果启用后，没有激活插件功能，请打开 <a class="reference internal" href="../../advanced/command_line/introduction.html"><span class="doc">控制台窗口</span></a> ，检查是否有错误发生。</p>
+</div>
+<div class="section" id="rd-party-add-ons">
+<h3>第三方插件<a class="headerlink" href="#rd-party-add-ons" title="Permalink to this headline">¶</a></h3>
+<p>还有数以百计由其他开发者开发的的插件未能随Blender一起分发。要将它们添加到其他插件列表中，必须将它们安装到Blender中。</p>
+<p>要安装这些文件，请使用 <em>安装…</em> 按钮，然后使用文件浏览器选择 <code class="docutils literal notranslate"><span class="pre">.zip</span></code> 或 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 插件文件。</p>
+<p>插件安装之后，不会自动启用。搜索框会自动调整为新安装插件名(避免查找)。勾选复选框，就可以启用插件了。</p>
+<dl class="simple">
+<dt>刷新</dt><dd><p>扫描 <a class="reference internal" href="../../advanced/blender_directory_layout.html"><span class="doc">Add-on Directory</span></a> ，查找新插件。</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>用户自定义插件路径</p>
+<p>用户还可以创建个人目录，存放新插件，然后在 <em>用户设置</em> 的 <em>文件路径</em> 标签页配置文件路径。创建个人脚本目录，请执行以下操作：</p>
+<ol class="arabic simple">
+<li><p>在选择的位置创建一个空文件夹 (如 <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code>)。</p></li>
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code> 下创建子目录 <code class="docutils literal notranslate"><span class="pre">addons</span></code> (<em>必须</em> 使用这个名称，Blender才能识别)。</p></li>
+<li><p>打开 <em>用户设置</em> 的 <em>文件路径</em> 标签页。</p></li>
+<li><p>设置 <em>脚本</em> 目录指向新建的脚本目录 (如 <code class="docutils literal notranslate"><span class="pre">my_scripts</span></code>)。</p></li>
+<li><p>保存用户设置，重启Blender，这样就可以识别新的插件目录了。</p></li>
+</ol>
+<p>现在，安装插件时，可以在安装第三方脚本时选择 <em>目标路径</em> 。Blender会将新安装的插件复制到用户设置中的目标路径下。</p>
+</div>
+</div>
+</div>
+<div class="section" id="add-on-information">
+<h2>插件信息<a class="headerlink" href="#add-on-information" title="Permalink to this headline">¶</a></h2>
+<p>单击插件复选框左侧的箭头，可以查看更多信息，如位置、描述和文档链接，还可以通过按钮上报该插件的bug。</p>
+<div class="section" id="add-on-preferences">
+<span id="bpy-types-addonpreferences"></span><span id="prefs-addons-prefs"></span><h3>插件设置<a class="headerlink" href="#add-on-preferences" title="Permalink to this headline">¶</a></h3>
+<p>某些插件可能有自己的设置，可以在插件信息框的 <em>偏好设置</em> 部分找到。</p>
+<p>例如，一些插件使用此部分启用/禁用附加插件的某些功能。有时，这些甚至可能都默认为关闭。因此，检查启用的插件是否具有任何特定的设置非常重要。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="input.html" class="btn btn-neutral float-right" title="输入" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="animation.html" class="btn btn-neutral float-left" title="动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/preferences/addons.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/preferences/addons%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

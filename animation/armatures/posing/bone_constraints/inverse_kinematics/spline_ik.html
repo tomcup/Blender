@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spline IK 样条IK &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/armatures/posing/bone_constraints/inverse_kinematics/spline_ik.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../../copyright.html" />
+    <link rel="next" title="晶格" href="../../../../lattice.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">骨架</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../bones/index.html">骨骼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../skinning/index.html">蒙皮</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">姿态</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../selecting.html">选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../editing/index.html">Editing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tool_settings.html">Tool Settings</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">骨骼约束</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="../index.html#inverse-kinematics">Inverse Kinematics  反向运动学</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Spline IK 样条IK</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#basic-setup">基本设置</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#settings-and-controls">Settings and Controls 设置和控制</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#roll-control">Roll Control 扭转控制</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#offset-controls">Offset Controls 偏移量控制</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#length-control">Length Control 链长控制</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#thickness-controls">Thickness Controls 厚度控制</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#tips-for-nice-setups">关于好的设置提示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">骨架</a> &raquo;</li>
+        
+          <li><a href="../../index.html">姿态</a> &raquo;</li>
+        
+          <li><a href="../index.html">骨骼约束</a> &raquo;</li>
+        
+      <li>Spline IK 样条IK</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spline-ik">
+<h1>Spline IK 样条IK<a class="headerlink" href="#spline-ik" title="Permalink to this headline">¶</a></h1>
+<p>样条线IK是约束一条骨骼链沿曲线对齐。通过利用曲线的易用性和灵活性实现了美观形状和为骨骼提供可预测性以及良好的综合控制，样条线IK是绑定工具箱中非常宝贵的工具。它特别适用于绑定柔软的身体部位，如尾巴，触手和脊椎，以及无机物品如绳索。</p>
+<p>对样条IK的设置充分说明在详细的文档 <a class="reference internal" href="../../../../constraints/tracking/spline_ik.html"><span class="doc">样条线 IK</span></a> 页。</p>
+<div class="section" id="basic-setup">
+<h2>基本设置<a class="headerlink" href="#basic-setup" title="Permalink to this headline">¶</a></h2>
+<p>样条线IK约束不是严格的“反向运动学”约束(即IK约束)，而是一种“正向运动学”的方式(即正常的骨骼摆姿势)。然而，它仍然具有IK约束的一些特性，如对多个不适用于物体的骨骼操作，以及在所有其他约束被计算之后进行计算。需要注意的是，如果标准的IK链和样条IK链同时影响一根骨头，标准的IK链优先。不过，最好避免这种设置，因为结果可能很难控制。</p>
+<p>建立样条线IK，它必须有一个连接的骨骼链和曲线来约束这些骨骼:</p>
+<ol class="arabic simple">
+<li><p>With the last bone in the chain selected,
+add a <a class="reference internal" href="../../../../constraints/tracking/spline_ik.html"><span class="doc">Spline IK</span></a>
+Constraint from the Bone Constraints tab in the Properties.</p></li>
+<li><p>将 <em>Chain Length链长</em> 设置设置为应受曲线影响的链中骨骼数(从所选骨骼开始并包括所选骨骼)。</p></li>
+<li><p>最后，将“目标”选项设置为用来控制的曲线。</p></li>
+</ol>
+<p>恭喜，骨骼链现在由曲线控制。</p>
+</div>
+<div class="section" id="settings-and-controls">
+<h2>Settings and Controls 设置和控制<a class="headerlink" href="#settings-and-controls" title="Permalink to this headline">¶</a></h2>
+<p>有关选项的详细列表，请参阅 <a class="reference internal" href="../../../../constraints/tracking/spline_ik.html"><span class="doc">样条线 IK</span></a> 约束。 本节旨在介绍工作流程。</p>
+<div class="section" id="roll-control">
+<h3>Roll Control 扭转控制<a class="headerlink" href="#roll-control" title="Permalink to this headline">¶</a></h3>
+<p>To control the <a class="reference internal" href="../../../../../glossary/index.html#term-Roll"><span class="xref std std-term">Roll</span></a> of the Spline IK chain,
+the standard methods of rotating the bones in the chain along their local Y axes still apply.
+For example, start at the farthest bone and simply rotate the bones in the chain around their
+local Y axes to adjust the roll of the chain from that point onward.</p>
+<p>对骨骼应用复制旋转约束也有效。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>需要考虑以下几个限制：</p>
+<ul class="simple">
+<li><p>Bones do not inherit a curve's <a class="reference internal" href="../../../../../modeling/curves/editing/control_points.html#modeling-curve-tilt"><span class="std std-ref">tilt</span></a> value to control their roll.</p></li>
+<li><p>无法自动创建在链上继承阻尼旋转的扭曲效果，。请考虑使用 <a class="reference internal" href="../../../bones/properties/bendy_bones.html"><span class="doc">柔性骨骼</span></a> 替代。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="offset-controls">
+<h3>Offset Controls 偏移量控制<a class="headerlink" href="#offset-controls" title="Permalink to this headline">¶</a></h3>
+<p>当启用 <em>偏移量控制</em> 选项时，可以使整个骨骼链遵循曲线的形状，同时仍然可以放置在3D空间中的任意点。 默认情况下，此选项未启用，并且将使骨骼在未转换位置跟随曲线。</p>
+</div>
+<div class="section" id="length-control">
+<h3>Length Control 链长控制<a class="headerlink" href="#length-control" title="Permalink to this headline">¶</a></h3>
+<p><em>Y比例模式</em> 设置可用于选择骨骼长度缩放的方式。 可用选项允许拉伸骨链以适应曲线，使用IK前缩放，或两者都不做。 此外，曲线对象的比例会影响结果。</p>
+</div>
+<div class="section" id="thickness-controls">
+<h3>Thickness Controls 厚度控制<a class="headerlink" href="#thickness-controls" title="Permalink to this headline">¶</a></h3>
+<p>链中骨头的厚度通过使用约束的 ‘XZ缩放模式’ 设置控制的。该设置决定着用于确定每个骨头链中的 X 和 Z 轴上的缩放的方法。</p>
+<p>可用的模式有：</p>
+<dl class="simple">
+<dt>None 无</dt><dd><p>此选项使x和z缩放系数保持为1。</p>
+</dd>
+<dt>Volume Preserve  体积保持</dt><dd><p>将X和Z缩放系数视为Y缩放系数(骨的长度)的倒数来保持骨骼的“体积”。</p>
+</dd>
+<dt>Bone Original 骨骼原点</dt><dd><p>这个选项只是使用骨骼标准方式计算后的X和Z缩放系数。</p>
+</dd>
+</dl>
+<p>除了这些模式，还有一个选项，<em>Use Curve Radius使用曲线半径</em>。当启用此选项时，将使用放置每个骨骼的关节的曲线上的点的半径的平均半径来推导X和Z缩放因子。这允许使用上述模式确定的缩放效果根据艺术控制的需要进行调整。</p>
+</div>
+</div>
+<div class="section" id="tips-for-nice-setups">
+<h2>关于好的设置提示<a class="headerlink" href="#tips-for-nice-setups" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>为了最佳的变形，建议骨骼有大致相同的长度，并且它们不会太长，以便于更好地适应曲线。此外，理想情况下，骨骼应该以“重置姿势”形状的跟随曲线形状的方式创建，以最大程度地减少曲线具有尖锐弯曲的区域中的问题，这在拉伸被禁用时尤其明显。</p></li>
+<li><p>为了控制曲线，建议使用控制柄(特别是骨骼控制柄)来控制曲线的控制顶点，每个控制顶点有一个控制柄。一般来说，曲线应该只需要几个控制顶点(例如，每3-5个骨骼可以提供一个合适的控制)。</p></li>
+<li><p>所使用的曲线的类型并不重要，只要可以从中挤出也可以被跟随路径约束使用。这真的取决于控制柄控制的水平。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../../lattice.html" class="btn btn-neutral float-right" title="晶格" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/armatures/posing/bone_constraints/inverse_kinematics/spline_ik.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/armatures/posing/bone_constraints/inverse_kinematics/spline_ik%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

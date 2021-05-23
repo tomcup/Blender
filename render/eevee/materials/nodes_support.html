@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>支持的节点 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/eevee/materials/nodes_support.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="材质设置" href="settings.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Eevee</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render_settings/index.html">渲染设置</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">材质</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">支持的节点</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#eevee-only-nodes">Eevee专用节点</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#shader-to-rgb">Shader(着色数据) --&gt; RGB</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#specular-bsdf">高光 BSDF</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#other-nodes-support">其他节点支持</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#shader-nodes">着色节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#input-nodes">输入节点</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#other-nodes">其他节点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="settings.html">材质设置</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../world.html">世界环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../light_probes/index.html">光照探头</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../limitations.html">限制</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">Eevee</a> &raquo;</li>
+        
+          <li><a href="index.html">材质</a> &raquo;</li>
+        
+      <li>支持的节点</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="supported-nodes">
+<h1>支持的节点<a class="headerlink" href="#supported-nodes" title="Permalink to this headline">¶</a></h1>
+<p>大多数节点来自Cycles。 但功能支持不全，将来可能(也可能不会)在Eevee中逐个修复。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../shader_nodes/index.html"><span class="doc">着色节点</span></a>.</p>
+</div>
+<div class="section" id="eevee-only-nodes">
+<h2>Eevee专用节点<a class="headerlink" href="#eevee-only-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Eevee是激活的渲染引擎时，这些节点才可用。 但他们在Cycles中不起作用。</p>
+<div class="section" id="shader-to-rgb">
+<h3>Shader(着色数据) --&gt; RGB<a class="headerlink" href="#shader-to-rgb" title="Permalink to this headline">¶</a></h3>
+<p>Eevee支持使用 <a class="reference internal" href="../../shader_nodes/converter/shader_to_rgb.html"><span class="doc">Shader to RGB节点</span></a> 将BSDF输出转换为颜色输入，以进行任何类型的自定义着色。</p>
+</div>
+<div class="section" id="specular-bsdf">
+<h3>高光 BSDF<a class="headerlink" href="#specular-bsdf" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../../shader_nodes/shader/specular_bsdf.html"><span class="doc">高光节点</span></a> 能实现在其他渲染引擎中找到的高光工作流。</p>
+</div>
+</div>
+<div class="section" id="other-nodes-support">
+<h2>其他节点支持<a class="headerlink" href="#other-nodes-support" title="Permalink to this headline">¶</a></h2>
+<p>如果此处未列出某些内容，则表示支持。</p>
+<div class="section" id="shader-nodes">
+<h3>着色节点<a class="headerlink" href="#shader-nodes" title="Permalink to this headline">¶</a></h3>
+<p>在一般情况下，着色节点的处理与Cycles一样。 所以一定要查看Cycles手册。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../shader_nodes/shader/index.html"><span class="doc">材质</span></a>.</p>
+</div>
+<p>虽然大多数BSDF都能支持，但其中许多只是效果接近，并且功能不完整。</p>
+<dl class="simple">
+<dt>漫射 BSDF</dt><dd><p>不支持粗糙度。 仅支持Lambertian 扩散。</p>
+</dd>
+<dt>自发光</dt><dd><p>它将被作为间接照明处理，在 <abbr title="屏幕空间反射">SSR</abbr> 和探头中可见。</p>
+</dd>
+<dt>玻璃/折射BSDF</dt><dd><p>不折射灯光。不支持贝克曼和多重散射GGX。参见 <a class="reference internal" href="../limitations.html#eevee-limitations-refraction"><span class="std std-ref">折射率限制</span></a>。</p>
+</dd>
+<dt>光泽 BSDF</dt><dd><p>不支持贝克曼、Ashikhmin-Shirley和多重散射GGX。</p>
+</dd>
+<dt>次表面散射</dt><dd><p>不支持随机游取采样。每个颜色通道半径由默认接口值指定。连入此接口的任何连线都将被忽略。纹理模糊对于 0.0 和 1.0 以外的任何值都不准确。</p>
+</dd>
+<dt>透明BSDF</dt><dd><p>透明仅在材质的混合模式不是不透明的情况下才起作用。上色与累加透明仅兼容 &quot;Alpha混合&quot; 模式。</p>
+</dd>
+<dt>半透明BSDF</dt><dd><p>不扩散物体内部的光。它只用反向法线照亮物体。</p>
+</dd>
+<dt>原理化 BSDF</dt><dd><p>相当于漫射 BSDF，光泽 BSDF，折射 BSDF和次表面散射的所有限制，并不支持各向异性。不支持透射的粗糙度。发光只是粗略近似。</p>
+</dd>
+<dt>体积吸收</dt><dd><p>参阅 <a class="reference internal" href="../limitations.html#eevee-limitations-volumetrics"><span class="std std-ref">体积限制。</span></a>。</p>
+</dd>
+<dt>体积散射</dt><dd><p>各向异性参数将对所有重叠的体积对象进行混合和平均，Cycles不同，这不符合物理规律。请参阅 <a class="reference internal" href="../limitations.html#eevee-limitations-volumetrics"><span class="std std-ref">体积限制</span></a>.</p>
+</dd>
+<dt>原理化 体积</dt><dd><p>和体积散射一样。参见 <a class="reference internal" href="../limitations.html#eevee-limitations-volumetrics"><span class="std std-ref">体积限制</span></a>。</p>
+</dd>
+<dt>阻隔</dt><dd><p>部分支持，使用 <a class="reference internal" href="settings.html#bpy-types-material-blend-method"><span class="std std-ref">混合模式</span></a> 除 <em>Alpha</em> 之外可能会给出不正确的结果。</p>
+</dd>
+<dt>各向异性BSDF</dt><dd><p>不支持。</p>
+</dd>
+<dt>卡通BSDF</dt><dd><p>不支持。</p>
+</dd>
+<dt>毛发BSDF</dt><dd><p>不支持。</p>
+</dd>
+<dt>丝绒BSDF</dt><dd><p>不支持。</p>
+</dd>
+<dt>原理化 毛发BSDF</dt><dd><p>不支持。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="input-nodes">
+<h3>输入节点<a class="headerlink" href="#input-nodes" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>AO(环境光遮蔽)</dt><dd><p>除法线和颜色外，调节其余参数都没有任何效果。 这是因为在评估此节点之前计算AO并且它使用场景设置。</p>
+</dd>
+<dt>摄像机数据</dt><dd><p>都兼容的。</p>
+</dd>
+<dt>几何数据</dt><dd><p>不支持尖锐度。</p>
+</dd>
+<dt>Random per Island</dt><dd><p>Random per Island is not supported.</p>
+</dd>
+<dt>属性</dt><dd><p>默认为激活UV图层。 仅支持“density密度”，“color颜色”，“flame火焰”和“temperature温度”内置属性。 支持UV和顶点颜色图层。</p>
+</dd>
+<dt>倒角</dt><dd><p>不支持。</p>
+</dd>
+<dt>菲涅尔</dt><dd><p>都兼容的。</p>
+</dd>
+<dt>毛发信息</dt><dd><p>随机输出使用不同的 <abbr title="随机数生成器">RNG</abbr> 算法。 值的范围和统计分布应该相同，但是值是不同的。</p>
+</dd>
+<dt>层权重</dt><dd><p>都兼容的。</p>
+</dd>
+<dt>光程</dt><dd><p>Eevee没有射线的真正概念。但是为了简化cycles和Eevee之间的工作流，有些输出在特定情况下是支持的。此节点可以调整着色器中的间接光照明。</p>
+<p>只支持输出的子集，射线深度的含义并不完全相同:</p>
+<ul class="simple">
+<li><p><em>是相机射线</em> : 支持。</p></li>
+<li><p><em>是阴影射线</em> : 支持。</p></li>
+<li><p><em>是漫射射线</em> : 支持。</p></li>
+<li><p><em>是光泽射线</em> : 支持。</p></li>
+<li><p><em>是单一射线</em> : 不支持。 与光泽度相同。</p></li>
+<li><p><em>是反射射线</em> : 不支持。 与光泽度相同。</p></li>
+<li><p><em>是透射射线</em> : 不支持。 与光泽度相同。</p></li>
+<li><p><em>射线长度</em> : 不支持，默认1.0。</p></li>
+<li><p><em>射线深度</em> : 表示烘焙光缓存时的反弹。</p></li>
+<li><p><em>漫射尝试</em> : 与射线深度相同，但仅在烘焙漫反射光照时。</p></li>
+<li><p><em>光泽深度</em> : 与射线深度相同，但仅在烘焙镜面光照时。</p></li>
+<li><p><em>透明深度</em> : 不支持，默认0.</p></li>
+<li><p><em>透射深度</em> : 不支持. 与光泽深度相同.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>光泽度不适合用于屏幕空间反射/折射，但适用于反射平面(无论是否与SSR一起使用)。</p>
+</div>
+</dd>
+<dt>物体信息</dt><dd><p>都兼容的。</p>
+</dd>
+<dt>粒子信息</dt><dd><p>不支持。</p>
+</dd>
+<dt>切向</dt><dd><p>都兼容的。</p>
+</dd>
+<dt>纹理坐标</dt><dd><p>不支持来自 <em>实例(副本)</em> 。</p>
+</dd>
+<dt>UV 贴图</dt><dd><p>不支持来自 <em>实例(副本)</em> 。</p>
+</dd>
+<dt>线框</dt><dd><p>像素大小选项输出结果可能会和Cycles不同，宽度可能不一样。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="other-nodes">
+<h3>其他节点<a class="headerlink" href="#other-nodes" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>光线衰减</dt><dd><p>不支持。</p>
+</dd>
+<dt>凹凸</dt><dd><p>由于衍生物不太精确而导致不精确。</p>
+</dd>
+<dt>置换/矢量置换</dt><dd><p>不支持。</p>
+</dd>
+<dt><abbr title="Illuminating Engineering Society">IES</abbr> 纹理</dt><dd><p>不支持。</p>
+</dd>
+<dt>图像纹理</dt><dd><p>最好始终使用矩形插值。 因为硬件mip映射和各向异性的过滤，使用线性插值的管形或球形投影会呈现伪像。如果提供的纹理坐标不连续，更容易见到伪像。 方框投影不支持 <em>扩展(名)</em> 设置为扩展或剪辑的，它将始终使用重复。</p>
+</dd>
+<dt>材质输出</dt><dd><p>与Cycles相比，置换输出效果是残缺不全的。</p>
+</dd>
+<dt>波长</dt><dd><p>不支持。</p>
+</dd>
+<dt>点密度</dt><dd><p>不支持。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="settings.html" class="btn btn-neutral float-right" title="材质设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/eevee/materials/nodes_support.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/eevee/materials/nodes_support%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,419 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>添加/移除约束 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/constraints/interface/adding_removing.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="Header 标题栏" href="header.html" />
+    <link rel="prev" title="简介" href="../introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../armatures/index.html">骨架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lattice.html">晶格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">约束</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#interface">界面</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">添加/移除约束</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#tab">选项卡</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#menu">菜单</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#add-constraint-with-targets">添加约束(带目标 )</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#copy-constraints-to-selected-objects">Copy Constraints to Selected Objects</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#clear-object-constraints">Clear Object Constraints</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#track">Track 跟踪</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="header.html">Header 标题栏</a></li>
+<li class="toctree-l4"><a class="reference internal" href="common.html">Common 常用选项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stack.html">堆栈</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#motion-tracking">运动追踪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#transform">变换</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#tracking">跟踪</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#relationship">关系</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../index.html">约束</a> &raquo;</li>
+        
+      <li>添加/移除约束</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adding-removing-a-constraint">
+<h1>添加/移除约束<a class="headerlink" href="#adding-removing-a-constraint" title="Permalink to this headline">¶</a></h1>
+<p>关于本页所描述的物体约束使用方法也可以用在骨骼约束中。</p>
+<div class="section" id="tab">
+<h2>选项卡<a class="headerlink" href="#tab" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Properties ‣ Constraint tab</span></p>
+</dd>
+</dl>
+</div>
+<p>若要添加约束在Constraints(约束)选项卡点击 <em>Add Object Constraint(添加对象约束)</em> 菜单。</p>
+<div class="figure align-default">
+<img alt="../../../_images/animation_constraints_interface_adding-removing_add-menu.png" src="../../../_images/animation_constraints_interface_adding-removing_add-menu.png" />
+</div>
+<p>移除约束 点击在 <a class="reference internal" href="header.html"><span class="doc">标题栏</span></a> 右边的&quot;X&quot; 按钮。</p>
+</div>
+<div class="section" id="menu">
+<h2>菜单<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add-constraint-with-targets">
+<span id="bpy-ops-object-constraint-add-with-targets"></span><h3>添加约束(带目标 )<a class="headerlink" href="#add-constraint-with-targets" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式和姿态模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Object ‣ Constraint ‣ Add Constraint (with Targets)</span></p>
+</dd>
+</dl>
+</div>
+<p>必须从弹出窗口选择约束类型来向激活物体添加约束。它稍后可以从*添加约束(带目标)* <a class="reference internal" href="../../../interface/undo_redo.html#ui-undo-redo-adjust-last-operation"><span class="std std-ref">调整上一步操作</span></a> 操作面板改变。如果选中对象中还有非激活物体，那该物体将是约束的目标对象(如果所选择的约束需要指定目标)。</p>
+<p>姿势模式下，当使用另一个骨架的骨骼作为约束的目标时，该工具将查看非活动骨架内部并使用其活动骨骼。</p>
+</div>
+<div class="section" id="copy-constraints-to-selected-objects">
+<span id="bpy-ops-object-constraints-copy"></span><h3>Copy Constraints to Selected Objects<a class="headerlink" href="#copy-constraints-to-selected-objects" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式和姿态模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">物体 ‣ 约束 ‣ 将约束复制到当前所选</span></p>
+</dd>
+</dl>
+</div>
+<p>将激活物体的约束复制给非激活的选择物体</p>
+</div>
+<div class="section" id="clear-object-constraints">
+<span id="bpy-ops-object-constraints-clear"></span><h3>Clear Object Constraints<a class="headerlink" href="#clear-object-constraints" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式和姿态模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">物体 ‣ 约束 ‣ 清除物体约束</span></p>
+</dd>
+</dl>
+</div>
+<p>删除选定对象的所有约束。</p>
+</div>
+</div>
+<div class="section" id="track">
+<span id="bpy-ops-object-track-clear"></span><span id="bpy-ops-object-track-set"></span><h2>Track 跟踪<a class="headerlink" href="#track" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">物体 ‣ 跟踪</span></p>
+</dd>
+</dl>
+</div>
+<p>为非激活的选择物体添加约束，目标对象是激活选择物体。而激活选择物体不会被添加约束。</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../tracking/damped_track.html"><span class="doc">阻尼跟踪约束(Damped Track Constraint)</span></a></p></li>
+<li><p><a class="reference internal" href="../tracking/track_to.html"><span class="doc">标准跟踪约束(Track To Constraint)</span></a></p></li>
+<li><p><a class="reference internal" href="../tracking/locked_track.html"><span class="doc">锁定跟踪约束(Lock Track Constraint)</span></a></p></li>
+</ul>
+<dl class="simple">
+<dt>Clear Track 清除跟踪</dt><dd><p>从选定的对象中删除所有阻尼跟踪，标准跟踪和锁定跟踪约束。</p>
+</dd>
+<dt>清除跟踪并保持当前变换(取消跟随)</dt><dd><p>移除选定对象的所有跟踪约束，并保持由跟踪引起的最终变换。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="header.html" class="btn btn-neutral float-right" title="Header 标题栏" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/constraints/interface/adding_removing.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/constraints/interface/adding_removing%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>通道 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/layers/passes.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="降噪" href="denoising.html" />
+    <link rel="prev" title="视图层" href="layers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">层 &amp; 通道</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="layers.html">视图层</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">通道</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cycles">Cycles</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#data">数据</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#light">低压缩率</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#combining">合成</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#cryptomatte">Cryptomatte</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#typical-workflow">典型工作流程</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#shader-aov">着色AOV</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#eevee">Eevee</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id1">数据</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id2">低压缩率</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#effects">效果</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id3">合成</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="denoising.html">降噪</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="index.html">层 &amp; 通道</a> &raquo;</li>
+        
+      <li>通道</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="passes">
+<span id="bpy-types-renderlayer"></span><h1>通道<a class="headerlink" href="#passes" title="Permalink to this headline">¶</a></h1>
+<p>通道可将渲染图像分为颜色，直接光和间接光来分别编辑它们，以及提取深度或法线等数据。</p>
+<div class="section" id="cycles">
+<span id="render-cycles-passes"></span><h2>Cycles<a class="headerlink" href="#cycles" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">视图层 ‣ 通道</span></p>
+</dd>
+</dl>
+</div>
+<p>通道可将渲染图像分为颜色，直接光和间接光来分别编辑它们，以及提取深度或法线等数据。</p>
+<div class="section" id="data">
+<h3>数据<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>包括</dt><dd><dl>
+<dt>合成结果</dt><dd><p>包含所有渲染通道的最终合成的渲染通道。</p>
+</dd>
+<dt>Z</dt><dd><p>与任何可见表面的距离。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Z仅使用一采样次数。如果在运动模糊或 <a class="reference internal" href="../../glossary/index.html#term-Depth-of-Field"><span class="xref std std-term">景深</span></a> 的情况下需要混合深度值，请使用雾场。</p>
+</div>
+</dd>
+<dt>雾场</dt><dd><p>Distance to visible surfaces, mapped to the 0.0 - 1.0 range.
+When enabled, settings are in <a class="reference internal" href="../cycles/world_settings.html#render-cycles-integrator-world-mist"><span class="std std-ref">World tab</span></a>.
+This pass can be used in compositing to fade out objects that are farther away.</p>
+</dd>
+<dt>法线(正常)</dt><dd><p>用于着色的表面法线。</p>
+</dd>
+<dt>矢量</dt><dd><p>用于矢量模糊结点的运动矢量。其四个分量由在像素空间内朝向前一帧和后一帧位置的二维矢量组成。</p>
+</dd>
+<dt>UV</dt><dd><p>Mapped UV coordinates, used to represent where on a mesh a texture gets mapped too.
+This is represented through the red and green channels of the image.
+The blue channel is encoded with a constant value of 1 but does not hold any information.</p>
+</dd>
+<dt>降噪数据</dt><dd><p>Passes needed by the denoiser, for performing animation denoising
+in a second pass after rendering the entire animation.
+For still image denoising as part of the render process these are not needed.
+This also includes a render pass of the original combined pass before denoising.
+Note, the passes adapt to the <a class="reference internal" href="../cycles/render_settings/sampling.html#render-cycles-settings-viewport-denoising"><span class="std std-ref">denoiser</span></a>
+selected for rendering.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Z、对象编号和材料编号通道不消除锯齿。</p>
+</div>
+</dd>
+<dt>Indexes</dt><dd><dl class="simple">
+<dt>物体编号</dt><dd><p>创建物体的遮罩，稍后可以由合成器中的 <a class="reference internal" href="../../compositing/types/converter/id_mask.html"><span class="doc">ID遮罩节点</span></a> 读取。</p>
+</dd>
+<dt>材质编号</dt><dd><p>创建材质的蒙版，稍后可以通过合成器中的 <a class="reference internal" href="../../compositing/types/converter/id_mask.html"><span class="doc">ID蒙版节点</span></a> 读取该蒙版。</p>
+</dd>
+</dl>
+</dd>
+<dt>调试</dt><dd><dl class="simple">
+<dt>渲染时间</dt><dd><p>Render time in milliseconds per sample and pixel.</p>
+</dd>
+<dt>采样数量</dt><dd><p>Number of samples/camera rays per pixel.</p>
+</dd>
+</dl>
+</dd>
+<dt>Alpha 阀值</dt><dd><p>Z通道、索引通道、法线通道、UV通道以及向量通道在表面的alpha透明值等于或者大于该阀值的时候才受影响。该值为0.0的时候，首次被光线碰到的表面会立即写入这些通道而不管透明度如何。 如果存在更高的值的透明表面会在遇到不透明的表面的时候跳过写入。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="light">
+<h3>低压缩率<a class="headerlink" href="#light" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>漫反射</dt><dd><dl class="simple">
+<dt>直接光</dt><dd><p>Direct lighting from diffuse and subsurface BSDFs.
+We define direct lighting as coming from lights, emitting surfaces,
+the background, or ambient occlusion after a single reflection or transmission off a surface.
+BSDF color is not included in this pass.</p>
+</dd>
+<dt>间接光</dt><dd><p>Indirect lighting from diffuse and subsurface BSDFs. We define indirect lighting as coming from lights,
+emitting surfaces or the background after more than one reflection or transmission off a surface.
+BSDF color is not included in this pass.</p>
+</dd>
+<dt>颜色</dt><dd><p>Color weights of diffuse and subsurface BSDFs.
+These weights are the color input socket for BSDF nodes, modified by any Mix and Add Shader nodes.</p>
+</dd>
+</dl>
+</dd>
+<dt>光泽</dt><dd><dl class="simple">
+<dt>Direct, Indirect, Color</dt><dd><p>同上，而这是针对光泽BSDF。</p>
+</dd>
+</dl>
+</dd>
+<dt>发射</dt><dd><dl class="simple">
+<dt>Direct, Indirect, Color</dt><dd><p>同上，这是针对透射BSDF。</p>
+</dd>
+</dl>
+</dd>
+<dt>音量</dt><dd><dl class="simple">
+<dt>Direct, Indirect</dt><dd><p>Same as above, but for volumetric BSDFs.</p>
+</dd>
+</dl>
+</dd>
+<dt>其他</dt><dd><dl class="simple">
+<dt>自发光(发射)</dt><dd><p>直接从可见表面发出的光。</p>
+</dd>
+<dt>环境</dt><dd><p>直接来自可见背景的光。当胶片设置为透明时，可以使用它来获取环境颜色并将其合成回来。</p>
+</dd>
+<dt>阴影</dt><dd><p>Shadows from light objects. Mostly useful for compositing objects with shadows into existing footage.</p>
+</dd>
+<dt>环境光遮蔽(AO)</dt><dd><p>来自直接可见表面的环境光遮蔽。它不含BSDF颜色或AO系数，换句话说，它给出介于0到1 “归一化” 数值值。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>注意， <a class="reference internal" href="../cycles/render_settings/light_paths.html"><span class="doc">透明BSDF需要单独对待</span></a> ，完全透明的表面被视作没有任何表面存在。半透明表面被视作仅有部分光线能够穿过。也就是说，它并未包含在透射通道中，这样，可以使用折射率为1.0的玻璃BSDF。</p>
+</div>
+<div class="section" id="combining">
+<h4>合成<a class="headerlink" href="#combining" title="Permalink to this headline">¶</a></h4>
+<p>可以组合所有这些照明通道以产生如下的最终图像：</p>
+<div class="figure align-default">
+<img alt="../../_images/render_layers_passes_combine.svg" src="../../_images/render_layers_passes_combine.svg" /></div>
+</div>
+</div>
+<div class="section" id="cryptomatte">
+<h3>Cryptomatte<a class="headerlink" href="#cryptomatte" title="Permalink to this headline">¶</a></h3>
+<p>Cryptomatte是一种有效创建合成遮罩的标准。Cycles输出所需的渲染通道，然后可以在Blender合成器或具备Cryptomatte支持的其他合成器中使用它来为指定物体创建遮罩。</p>
+<p>与材质编号和对象编号通道不同，要在合成中选择要隔离的物品，并且遮罩将消除锯齿并考虑运动模糊和透明度等效果。</p>
+<dl class="simple">
+<dt>包括</dt><dd><dl class="simple">
+<dt>物体</dt><dd><p>渲染Cryptomatte材质通道，用于在合成中孤立物体。</p>
+</dd>
+<dt>材质</dt><dd><p>渲染Cryptomatte材质通道，用于在合成中孤立材质。</p>
+</dd>
+<dt>资产</dt><dd><p>Render cryptomatte asset pass, for isolating groups of objects with the same
+<a class="reference internal" href="../../scene_layout/object/editing/parent.html"><span class="doc">parent</span></a> in compositing.</p>
+</dd>
+</dl>
+</dd>
+<dt>层级</dt><dd><p>设置每个像素可以区分多少个唯一对象。</p>
+</dd>
+<dt>精确模式</dt><dd><p>生成更准确的Cryptomatte传递。对于CPU渲染，可能渲染较慢并使用更多内存。</p>
+</dd>
+</dl>
+<div class="section" id="typical-workflow">
+<h4>典型工作流程<a class="headerlink" href="#typical-workflow" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>在通道面板中启用Cryptomatte物体渲染通道，然后渲染。</p></li>
+<li><p>在合成节点中，创建一个Cryptomatte节点，并将之与匹配图形和Cryptomatte通道的渲染层相连。</p></li>
+<li><p>将预览器节点添加到Cryptomatte节点的拾取输出。</p></li>
+<li><p>使用Cryptomatte“添加/移除”按钮对拾取预览器节点中的对象进行采样。</p></li>
+<li><p>使用Cryptomatte节点的蒙版输出来获取Alpha遮罩。</p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../compositing/types/matte/cryptomatte.html"><span class="doc">Cryptomatte节点</span></a>。</p>
+</div>
+</div>
+</div>
+<div class="section" id="shader-aov">
+<span id="render-cycles-passes-aov"></span><h3>着色AOV<a class="headerlink" href="#shader-aov" title="Permalink to this headline">¶</a></h3>
+<p>着色AOV(任意输出变量)为任意着色器节点组件提供自定义渲染通道。作为艺术家，这可能是一个很好的调试或调整一个场景在后期处理非常精细的细节的方法。要使用着色AOV，先在 <em>着色AOV</em> 面板创建通道，然后使用 <a class="reference internal" href="../shader_nodes/output/aov.html"><span class="doc">AOV输出</span></a> 着色节点引用此通道。可以在 <em>着色AOV</em> 面板中添加或删除着色AOV。在此面板中是所有AOV通道的列表；列表中的每个 AOV 由 <em>名称</em> 和 <em>数据类型</em> 组成。</p>
+<dl class="simple">
+<dt>名称</dt><dd><p>渲染通道的名称；这是 <em>AOV 输出</em> 节点中引用的 <em>名称</em>。可为这些通道命名为任意名称，只要它们不与启用的内置通道冲突即可。</p>
+</dd>
+<dt>数据类型</dt><dd><p>着色AOV可以表示 <em>颜色</em> 或 <em>数值</em> 变量。顾名思义， <em>颜色</em> 变量可用于颜色，但也可以用于正常值。 <em>数值</em> 变量可用于任何单个数值。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="eevee">
+<span id="render-eevee-passes"></span><h2>Eevee<a class="headerlink" href="#eevee" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">视图层 ‣ 通道</span></p>
+</dd>
+</dl>
+</div>
+<p>Passes can be used to split rendered images into colors and light to edit them individually,
+and also to extract data such as depth or normals.</p>
+<div class="section" id="id1">
+<h3>数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>包括</dt><dd><dl class="simple">
+<dt>合成结果</dt><dd><p>包含所有渲染通道的最终合成的渲染通道。</p>
+</dd>
+<dt>Z</dt><dd><p>与任何可见表面的距离。</p>
+</dd>
+<dt>雾场</dt><dd><p>到可见曲面的距离，映射至0.0 - 1.0范围。</p>
+</dd>
+<dt>法线(正常)</dt><dd><p>用于着色的表面法线。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>低压缩率<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>漫反射</dt><dd><dl class="simple">
+<dt>低压缩率</dt><dd><p>Direct lighting from diffuse BSDFs. We define lighting as coming from lights,
+the background, or ambient occlusion off a surface.
+BSDF color is not included in this pass.</p>
+</dd>
+<dt>颜色</dt><dd><p>漫射BSDF的Color weights(色重值)。这些值供BSDF节点的颜色输入接口使用。可通过 Mix(混合)以及Add(添加)着色器结点进行修改。</p>
+</dd>
+</dl>
+</dd>
+<dt>镜面反射</dt><dd><dl class="simple">
+<dt>Light, Color</dt><dd><p>Same as above, but for specular BSDFs.</p>
+</dd>
+</dl>
+</dd>
+<dt>音量</dt><dd><dl class="simple">
+<dt>透射</dt><dd><p>The transmittance pass from volume objects or world.</p>
+</dd>
+<dt>散射</dt><dd><p>The scattering pass from volume objects or world.</p>
+</dd>
+</dl>
+</dd>
+<dt>其他</dt><dd><dl class="simple">
+<dt>自发光(发射)</dt><dd><p>直接从可见表面发出的光。</p>
+</dd>
+<dt>环境</dt><dd><p>直接来自可见背景的光。当胶片设置为透明时，可以使用它来获取环境颜色并将其合成回来。</p>
+</dd>
+<dt>阴影</dt><dd><p>来自灯光物体的阴影。对于将阴影合成到现有素材中非常有用。</p>
+</dd>
+<dt>环境光遮蔽(AO)</dt><dd><p>来自直接可见表面的环境光遮蔽。它不含BSDF颜色或AO系数，换句话说，它给出介于0到1 “归一化” 数值值。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="effects">
+<h3>效果<a class="headerlink" href="#effects" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>辉光</dt><dd><p>The influence of the Bloom effect.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="id3">
+<h3>合成<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>The passes can be combined to produce the final image as follows:</p>
+<div class="figure align-default">
+<img alt="../../_images/render_layers_passes_eevee-combine.svg" src="../../_images/render_layers_passes_eevee-combine.svg" /></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>限制:</p>
+<ul class="simple">
+<li><p>Alpha blended materials are not rendered in render passes except the combined pass.
+Use the <em>Alpha Clip</em> or <em>Alpha Hashed</em> as <a class="reference internal" href="../eevee/materials/settings.html#bpy-types-material-blend-method"><span class="std std-ref">Blending Mode</span></a>
+to render transparent materials in render passes.</p></li>
+<li><p>Depth of field is not rendered in render passes except the combined pass.
+It is possible to add the depth of field back in the Compositor using
+the <a class="reference internal" href="../../compositing/types/filter/defocus.html#bpy-types-compositornodedefocus"><span class="std std-ref">Defocus node</span></a>.</p></li>
+<li><p>EEVEE render passes hides part of the BSDF equation.
+<a class="reference internal" href="../shader_nodes/converter/shader_to_rgb.html"><span class="doc">Shader to RGB</span></a> is not supported as it needs
+the full BSDF equation.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="denoising.html" class="btn btn-neutral float-right" title="降噪" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="layers.html" class="btn btn-neutral float-left" title="视图层" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/layers/passes.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/layers/passes%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

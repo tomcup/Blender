@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简介 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/compositing/introduction.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="侧栏" href="sidebar.html" />
+    <link rel="prev" title="合成" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">合成</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">入门</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">示例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-size">图像尺寸</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#saving-your-composite-image">保存合成图像</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html">侧栏</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#node-types">节点类型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">合成</a> &raquo;</li>
+        
+      <li>简介</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>简介<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>合成节点允许用户对一张图片(或视频)进行自由的组合和增强处理。运用合成节点，用户可以将两段素材粘附在一起并同时对整个序列进行润色。在剪辑过程中，我们可以运用一种静态的方法或动态的方式来加强单帧图像或整个视频片段的色调。用这种方法，用户可以运用合成节点同时对视频素材进行随意组合和效果调整。(译者说明：个人水平有限，难免有翻译不准确之处，欢迎指正。个人邮箱： <a class="reference external" href="mailto:jinqifei&#37;&#52;&#48;126">jinqifei<span>&#64;</span>126</a>.com或 www.52cg.art 按照博客指明联系方式反馈)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>术语：图像</p>
+<p>在涉及一幅图像，序列帧图像中的单独一张图片，或视频片段中的一帧画面，我们使用术语 <em>Image(图像)</em> 来定义。无论用户导入以上三种中的哪类合成素材，一个节点图标只能容纳其中的一种素材形式。</p>
+</div>
+<p>用户处理图像的过程，就是用一个节点来容纳导入到Blender里的图像，并对它进行随意的更改及和其他图像进行合并处理，最终保存操作的结果的这样一个流程。</p>
+<div class="figure align-default" id="id1">
+<img alt="../_images/compositing_types_distort_map-uv_example-2.png" src="../_images/compositing_types_distort_map-uv_example-2.png" />
+<p class="caption"><span class="caption-text">合成示例。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="../_images/compositing_types_color_hue-saturation_example.jpg" src="../_images/compositing_types_color_hue-saturation_example.jpg" />
+<p class="caption"><span class="caption-text">颜色校正示例。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="getting-started">
+<h2>入门<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>通过单击软件界面顶部，菜单栏右侧的“合成”模块选项卡，进入 <em>合成</em> 模块，通过单击贴临合成选项卡下方的合成模块窗口菜单栏 <em>使用节点</em> 复选框（位置在整个窗口菜单栏左侧区域），可激活节点在工作区域的显示 (请参见  <a class="reference internal" href="../interface/controls/nodes/introduction.html"><span class="doc">简介</span></a>)。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在合成模块通过单击 <em>使用节点</em> 复选框激活它之后，也可以在blender右侧面板组中的输出(output)选项卡中“后期处理”标签的“合成处理”复选框进行禁用。 <a class="reference internal" href="../render/output/settings.html#render-output-postprocess"><span class="std std-ref">后处理面板</span></a>.</p>
+</div>
+<p>现在，视图上已经有了默认的一组节点，一个renderlayer(渲染层)输入节点和由一条连线联结的output(合成输出)节点。在这两者之间(一组合成节点组成的节点流程图)，用户还可自行添加blender提供的各种 <a class="reference internal" href="index.html"><span class="doc">不同类型的合成节点</span></a> 来实现心中所要达到的视觉效果(忘了说一点，用户实现创意是受机器安装内存容量的限制的，不知是创意枯竭和硬件限制哪个来的早一点)。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>关于节点集和节点更多的详情内容请参考 <a class="reference internal" href="../interface/controls/nodes/index.html"><span class="doc">节点编辑器</span></a>。</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>示例<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>用户可以运用节点来实现几乎头脑中所能想象的一切效果。</p>
+<p>演员在蓝色抠像布前表演的一段合成素材，和已渲染的一些其他道具物体，可以分别叠放在背景图层上方，并将两者和背景结合在一起，就获得了最终的合成后影像。</p>
+<p>用户也可以调整图像的调性(给观众的视觉情绪变化)：</p>
+<ul class="simple">
+<li><p>比如让一幅图像看起来比本身颜色更冷一些，就可以添加一些蓝色凋。</p></li>
+<li><p>向观众传达倒叙或回忆的情绪，可能画面的调性会比实际颜色暖一些更能让观众接受。</p></li>
+<li><p>表达仇恨或挫败的情绪，常常在已有素材上加入一些红颜色改变画面的调性。</p></li>
+<li><p>表达一些令人震惊的心里情绪大多数情况会增强画面的对比度。</p></li>
+<li><p>若要传达开心的心理情绪，(也许你已经猜到了)可添加暖黄色调(等同于光学三原色除去蓝色后的颜色)。
+(附注：光学三原色是电子显示设备的基础色，分别为红 绿 蓝 用以区分印刷和绘画所使用的红 黄 蓝 三原色)。</p></li>
+<li><p>在充满灰尘和空气中夹杂着尘土的场景，添加云状贴图叠放在背景素材之上会让整个画面看起来更加真实可信。</p></li>
+</ul>
+</div>
+<div class="section" id="image-size">
+<h2>图像尺寸<a class="headerlink" href="#image-size" title="Permalink to this headline">¶</a></h2>
+<p>当混合图像或匹配图像素材时，建议重点关注图像的分辨率和颜色位深。<a class="reference internal" href="../glossary/index.html#term-Anti-Aliasing"><span class="xref std std-term">抗锯齿</span></a> (减弱粗糙的边缘)，颜色 <em>平滑度</em>，或者图像畸变，这些参数可能会因混合不同的分辨率和颜色位深图像被用到改善图像融合不自然的情况。</p>
+<p>合成器可以混合任意尺寸的图像，在素材之间发生重叠地方才会计算应用的效果。当输入节点接收到不同尺寸的图像素材时，将采取如下的规则进行素材融合：</p>
+<ul class="simple">
+<li><p>按照第一幅或最上层的图像输入尺寸来定义图像素材从此节点输出的图像尺寸大小。</p></li>
+<li><p>合成的图像素材默认是居中显示，除非用 <em>平移节点</em> 指定其他的设置参数。</p></li>
+</ul>
+<p>因此在合成中的每个节点都可以处理其自身的输入节点定义的不同尺寸的图像。只有 <em>合成</em> 输出节点的图像尺寸是固定的，取决于面板属性编辑器 <span class="menuselection">渲染 ‣ 尺寸大小</span> 中的设置。<em>Viewer查看器</em> 节点在自身的输入上显示其图像尺寸大小，但当其未与其他节点相连，或连接到一个数值，它仅显示为 320×256 像素的图片。</p>
+</div>
+<div class="section" id="saving-your-composite-image">
+<h2>保存合成图像<a class="headerlink" href="#saving-your-composite-image" title="Permalink to this headline">¶</a></h2>
+<p><em>渲染</em> 按钮渲染一张序列帧或单幅图像。保存图像使用 <span class="menuselection">图像 ‣ 保存图像</span> 或者 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd>。图像将按照渲染面板指定的图像格式设置进行输出保存。</p>
+<p>若要保存序列帧图片，比如，用户导入一段视频片段或者在视频文件上使用时间节点获取每帧图像，采用默认设置然后点击 <em>动画</em> 按钮即可。如果以后要在此输出结果上叠加其他素材，输出时要选择支持Alpha通道的格式(比如PNG格式)。如果以后想通过改变前景和背景的排列进而达到图片景深的效果，输出时使用支持Z通道的图像格式(比如EXR格式)。</p>
+<p>保存合成作为影片片段(所有的序列帧图片合为一个单一视频文件)，使用 <code class="docutils literal notranslate"><span class="pre">AVI</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">Quicktime</span></code> 格式，然后保持默认设置单击 <em>动画</em> 按钮即可。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sidebar.html" class="btn btn-neutral float-right" title="侧栏" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="合成" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/compositing/introduction.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60compositing/introduction%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

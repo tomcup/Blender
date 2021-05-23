@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>工具栏 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/tools/toolbar.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="工具设置" href="tool_settings.html" />
+    <link rel="prev" title="工具" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">工具</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">工具栏</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tool_settings.html">工具设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#types">类型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting/index.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing/index.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UVs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../retopology.html">重拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">网格</a> &raquo;</li>
+        
+          <li><a href="index.html">工具</a> &raquo;</li>
+        
+      <li>工具栏</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="toolbar">
+<span id="mesh-toolbar-index"></span><h1>工具栏<a class="headerlink" href="#toolbar" title="Permalink to this headline">¶</a></h1>
+<p>网格编辑模式工具:</p>
+<dl>
+<dt><a class="reference internal" href="../../../interface/selecting.html#tool-select-tweak"><span class="std std-ref">选择</span></a></dt><dd><p>选择或移动。</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../../interface/selecting.html#tool-select-box"><span class="std std-ref">框选</span></a></dt><dd><p>通过拖拉方框选择几何元素。</p>
+</dd>
+<dt><a class="reference internal" href="../../../interface/selecting.html#tool-select-circle"><span class="std std-ref">刷选</span></a></dt><dd><p>通过拖拉圆形选择几何元素。</p>
+</dd>
+<dt><a class="reference internal" href="../../../interface/selecting.html#tool-select-lasso"><span class="std std-ref">套索选择</span></a></dt><dd><p>通过拖拉曲线选择几何元素。</p>
+</dd>
+</dl>
+</dd>
+<dt>Cursor 游标</dt><dd><p>更改3D游标的位置。</p>
+</dd>
+<dt>移动</dt><dd><p>变换工具。</p>
+</dd>
+<dt>旋转</dt><dd><p>旋转工具。</p>
+</dd>
+<dt>比例</dt><dd><p>缩放工具。</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../../../scene_layout/object/editing/transform/basics.html#tool-scale-cage"><span class="std std-ref">缩放罩体</span></a></dt><dd><p>通过控制罩体来改变物体的比例。</p>
+</dd>
+</dl>
+</dd>
+<dt>变换</dt><dd><p>调整物体移动、旋转和缩放的工具。</p>
+</dd>
+<dt><a class="reference internal" href="../../../interface/annotate_tool.html#tool-annotate"><span class="std std-ref">注释</span></a></dt><dd><p>手绘标注。</p>
+<dl class="simple">
+<dt>标注直线</dt><dd><p>绘制直线标注。</p>
+</dd>
+<dt>标注多段线</dt><dd><p>绘制多段线标注。</p>
+</dd>
+<dt>标注橡皮擦</dt><dd><p>擦除之前绘制的标注。</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../../../editors/3dview/toolbar/measure.html#tool-measure"><span class="std std-ref">测量</span></a></dt><dd><p>测量场景中的距离。</p>
+</dd>
+<dt><a class="reference internal" href="extrude_region.html#tool-mesh-extrude-region"><span class="std std-ref">整体挤出</span></a></dt><dd><p>随意或者沿着轴向整体挤出选择的区域.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="extrude_manifold.html"><span class="doc">Extrude Manifold</span></a></dt><dd><p>Extrudes region and dissolves overlapping geometry.</p>
+</dd>
+<dt><a class="reference internal" href="../editing/face/extrude_faces_normal.html"><span class="doc">Extrude Along Normals</span></a></dt><dd><p>沿自身法向挤出区域。</p>
+</dd>
+<dt><a class="reference internal" href="../editing/face/extrude_individual_faces.html#tool-mesh-extrude-individual"><span class="std std-ref">挤出各个面</span></a></dt><dd><p>沿自身法向各自挤出元素。</p>
+</dd>
+<dt><a class="reference internal" href="extrude_cursor.html#tool-mesh-extrude-cursor"><span class="std std-ref">挤出到游标</span></a></dt><dd><p>沿着鼠标光标挤出选择的顶点,线或者面.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/face/inset_faces.html#tool-mesh-inset-faces"><span class="std std-ref">内插面</span></a></dt><dd><p>在选择的面内插面.</p>
+</dd>
+<dt><a class="reference internal" href="../editing/edge/bevel.html#tool-mesh-bevel"><span class="std std-ref">倒角</span></a></dt><dd><p>从创建的元素创建倒角.</p>
+</dd>
+<dt><a class="reference internal" href="loop.html#tool-mesh-loop-cut"><span class="std std-ref">环切</span></a></dt><dd><p>沿着网格环切.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/edge/offset_edge_slide.html#bpy-ops-mesh-offset-edge-loops-slide"><span class="std std-ref">偏移环切边</span></a></dt><dd><p>向选中循环边两侧添加循环边。</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="knife.html#tool-mesh-knife"><span class="std std-ref">切割</span></a></dt><dd><p>切割网格,按enter键确认操作.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/mesh/bisect.html#tool-mesh-bisect"><span class="std std-ref">切分</span></a></dt><dd><p>切分网格.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="poly_build.html#tool-mesh-poly-build"><span class="std std-ref">多边形建形</span></a></dt><dd><p>通过一个一个添加顶点创建模型.</p>
+</dd>
+<dt><a class="reference internal" href="spin.html#tool-mesh-spin"><span class="std std-ref">旋绕</span></a></dt><dd><p>通过挤出和旋转创建新的几何结构。</p>
+<dl class="simple">
+<dt><a class="reference internal" href="spin.html#tool-mesh-spin"><span class="std std-ref">旋绕复制</span></a></dt><dd><p>通过复制和旋转创建新的几何结构。</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/vertex/smooth_vertices.html#tool-mesh-smooth"><span class="std std-ref">光滑</span></a></dt><dd><p>平滑选择顶点的角度.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/vertex/smooth_vertices.html#tool-mesh-smooth"><span class="std std-ref">随机</span></a></dt><dd><p>随机化选中的顶点.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/edge/edge_slide.html#tool-mesh-edge-slide"><span class="std std-ref">滑移边线</span></a></dt><dd><p>沿面滑移边.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/vertex/slide_vertices.html#tool-mesh-vertex-slide"><span class="std std-ref">顶点滑移</span></a></dt><dd><p>沿边滑移顶点.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/mesh/transform/shrink-fatten.html#tool-mesh-shrink-fatten"><span class="std std-ref">法向缩放</span></a></dt><dd><p>沿着法向缩放顶点.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/mesh/transform/push_pull.html#tool-transform-push-pull"><span class="std std-ref">推/拉</span></a></dt><dd><p>推或拉(缩放)选中元素.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/mesh/transform/shear.html#tool-transform-shear"><span class="std std-ref">切变</span></a></dt><dd><p>切变选择元素.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/mesh/transform/to_sphere.html#tool-transform-to-sphere"><span class="std std-ref">球形化</span></a></dt><dd><p>围绕物体中心保持圆形向外移动顶点.</p>
+</dd>
+</dl>
+</dd>
+<dt><a class="reference internal" href="../editing/vertex/rip_vertices.html#tool-mesh-rip-region"><span class="std std-ref">断离区域</span></a></dt><dd><p>断开多边形并且移动结果.</p>
+<dl class="simple">
+<dt><a class="reference internal" href="../editing/vertex/rip_vertices_extend.html#tool-mesh-rip-edge"><span class="std std-ref">断离边线</span></a></dt><dd><p>延展顶点并且移动结果.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tool_settings.html" class="btn btn-neutral float-right" title="工具设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/tools/toolbar.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/tools/toolbar%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

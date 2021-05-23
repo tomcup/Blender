@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>光对象 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/lights/light_object.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="世界环境" href="world.html" />
+    <link rel="prev" title="Lights" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cameras.html">相机</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Lights</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">光对象</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#common-settings">公共设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#renderer-settings">渲染设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#point-light">点光</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spot-light">聚光灯</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#spot-shape">聚光灯形状</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#area-light">区域光</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sun-light">太阳光</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">世界环境</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="index.html">Lights</a> &raquo;</li>
+        
+      <li>光对象</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="light-objects">
+<h1>光对象<a class="headerlink" href="#light-objects" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">属性 ‣ 光</span> 和 <span class="menuselection">着色器编辑器 ‣ 边栏 ‣ 设置</span></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="common-settings">
+<h2>公共设置<a class="headerlink" href="#common-settings" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>类型</dt><dd><p>Defines the type of light.</p>
+</dd>
+<dt>颜色</dt><dd><p>发射的光的颜色。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="renderer-settings">
+<span id="bpy-types-pointlight"></span><span id="light-type-point"></span><h2>渲染设置<a class="headerlink" href="#renderer-settings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../eevee/lighting.html"><span class="doc">Eevee详细设置</span></a></p></li>
+<li><p><a class="reference internal" href="../cycles/light_settings.html"><span class="doc">Cycles详细设置</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="point-light">
+<h2>点光<a class="headerlink" href="#point-light" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<a class="reference internal image-reference" href="../../_images/render_lights_light-object_viewport.png"><img alt="../../_images/render_lights_light-object_viewport.png" src="../../_images/render_lights_light-object_viewport.png" style="width: 260px;" /></a>
+<p class="caption"><span class="caption-text">点光。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>点</em> 光是一种全方向的光，也就是说，点光向全方向辐射相同数量的光。它由一个普通的原点来表示。作为一个点光源，光线照射到物体表面的方向，是由光线和物体表面上的点之间的连线决定的。它可以用作简单的模型，例如一个灯泡。</p>
+<p>光强度/能量衰减是基于(在其他变量中)从“点”到物体的距离。换句话说，表面离得越远就会被渲染得越暗。</p>
+<dl class="simple">
+<dt>能量</dt><dd><p>光的能量用瓦特计算。数值越大，光的强度就越大。可以设置成负值，但是为了可测量和基于物理的结果，应该避免这种情况。</p>
+</dd>
+<dt>Radius</dt><dd><p>当大于零时，光将会从一个指定半径的球面发出。更大尺寸的光会有更加柔和的阴影和高光。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="spot-light">
+<span id="bpy-types-spotlight"></span><span id="light-type-spot"></span><h2>聚光灯<a class="headerlink" href="#spot-light" title="Permalink to this headline">¶</a></h2>
+<p>一个  <em>聚光灯</em> 光会在给定的方向上，从圆锥体的尖端发射圆锥形状的光线。</p>
+<dl class="simple">
+<dt>能量</dt><dd><p>光的能量用瓦特计算。数值越大，光的强度就越大。可以设置成负值，但是为了可测量和基于物理的结果，应该避免这种情况。</p>
+</dd>
+<dt>Radius</dt><dd><p>当大于零时，光将会从一个指定半径的球面发出。更大尺寸的光会有更加柔和的阴影和高光。</p>
+</dd>
+</dl>
+<div class="section" id="spot-shape">
+<h3>聚光灯形状<a class="headerlink" href="#spot-shape" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/render_lights_light-object_terms.png"><img alt="../../_images/render_lights_light-object_terms.png" src="../../_images/render_lights_light-object_terms.png" style="width: 610px;" /></a>
+<p class="caption"><span class="caption-text">Changing the Spot options also changes the appearance of the spotlight as displayed in the 3D Viewport.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>大小</dt><dd><p><em>Spot</em> 探照灯的外锥大小，它在很大程度上控制着 <em>聚光灯</em> 光所覆盖的圆形区域。这个滑动条实际上控制着照明光锥的顶部角度，并且这个角度可以在 (1.0 到 180.0)之间.</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">改变聚光 <em>尺寸</em> 选项。</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/render_lights_light-object_size45.png"><img alt="../../_images/render_lights_light-object_size45.png" src="../../_images/render_lights_light-object_size45.png" style="width: 320px;" /></a>
+</div>
+</td>
+<td><div class="figure align-default">
+<a class="reference internal image-reference" href="../../_images/render_lights_light-object_size60.png"><img alt="../../_images/render_lights_light-object_size60.png" src="../../_images/render_lights_light-object_size60.png" style="width: 320px;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>混合</dt><dd><p><em>混合</em> 滑动条控制 <em>聚光灯</em> 的内锥形。 <em>混合</em> 值可以在 (0.0 到 1.0)之间。这个值是一个比例值，并且代表内锥应该占外锥 <em>大小</em> 的空间数量。</p>
+<p>内锥边界线表明从 <em>探照灯</em> 发出的光从哪里开始模糊/柔化；在这个点之前它的光通常是全强度的。 <em>混合</em> 的值越大，聚光灯的边缘就越模糊，并且内锥体的圆形区域就越小(因为它会更早的模糊/柔化)。</p>
+<p>要使 <em>聚光灯</em> 具有更清晰的衰减率,从而减少模糊/柔和的边缘,应减小 <em>混合</em> 的值。将  <em>混合</em>  设置为 0.0 会导致非常锐利的聚光灯边缘,而光线和阴影之间没有任何过渡。</p>
+<p><em>聚光灯</em> 光的衰落率是 <em>混合</em> 和 <em>尺寸</em> 值的比率;两者的圆形间隙越大， <em>混合</em> 和 <em>尺寸</em> 之间的光线褪色越缓慢。</p>
+<p><em>混合</em> 和 <em>尺寸</em> 仅控制 <em>聚光灯</em> 光锥的孔径和柔和度(&quot;放射状&quot;衰失);它们不能控制阴影的柔和度,如下所示。</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/render_lights_light-object_shadow-spotlight.png"><img alt="../../_images/render_lights_light-object_shadow-spotlight.png" src="../../_images/render_lights_light-object_shadow-spotlight.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">渲染显示软边聚光灯区域和锐/硬对象阴影。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>注意,在上图中,由于光线跟踪的影响,对象的阴影是尖锐的,而聚光灯边缘是柔和的。如果你希望其他项在 <em>聚光灯</em> 区域中投射柔和阴影,则需要更改其他阴影设置。</p>
+</dd>
+<dt>显示锥形</dt><dd><p>Displays a transparent cone in 3D Viewport to visualize which objects are contained in it.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="area-light">
+<span id="bpy-types-arealight"></span><span id="light-type-area"></span><h2>区域光<a class="headerlink" href="#area-light" title="Permalink to this headline">¶</a></h2>
+<p><em>区域</em> 光模拟来自表面(或者类表面)发射的光。例如，电视屏幕、办公室霓虹灯、窗户或多云的天空只是几种类型的区域灯。区域光通过沿着用户定义尺寸的网格采样光，来产生具有软边缘的阴影。这与会产生锐利边缘的像点一样的人造光形成鲜明的对比。</p>
+<dl>
+<dt>能量</dt><dd><p>光的能量用瓦特计算。数值越大，光的强度就越大。可以设置成负值，但是为了可测量和基于物理的结果，应该避免这种情况。</p>
+</dd>
+<dt>形状</dt><dd><p>光的形状。</p>
+<dl class="simple">
+<dt>长方形</dt><dd><p>光的形状可以用一个长方形表示，并可以通过修改“X”和“Y”值进行修改。</p>
+</dd>
+<dt>正方形</dt><dd><p>光的形状可以用一个正方形表示，并随着 <em>尺寸</em> 属性的变化而变化。</p>
+</dd>
+<dt>圆盘</dt><dd><p>光的形状可以用一个圆盘表示，并随着 <em>尺寸</em> 属性的变化而变化。</p>
+</dd>
+<dt>椭圆</dt><dd><p>光的形状可以用一个椭圆表示，并可以通过修改“X”和“Y”值进行修改。</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>为你的 <em>区域</em> 光选择合适的形状会增强你的场景的可信度。例如，你可能有一个室内场景，并且想要模拟光从窗户进入。你可以在窗户处(竖直)放置一个 <em>长方形</em> 区域光，或者在霓虹灯(横向)处放置一个适当 <em>X尺寸</em> 和 <em>Y尺寸</em> 比率的 <em>长方形</em> 区域光。对于模拟电视屏幕发射的光，在大多数情况下垂直 <em>正方形</em> 区域光会更好。</p>
+</div>
+</dd>
+<dt>尺寸/X尺寸/Y尺寸</dt><dd><p><em>正方形</em> 或者  <em>长方形</em> 的尺寸规格。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sun-light">
+<span id="bpy-types-sunlight"></span><span id="light-type-sun"></span><h2>太阳光<a class="headerlink" href="#sun-light" title="Permalink to this headline">¶</a></h2>
+<p>A sun light provides light of constant intensity emitted in a single direction from infinitely far away.
+A sun light can be very handy for a uniform clear daylight open-space illumination. In the 3D Viewport,
+the <em>Sun</em> light is represented by an encircled black dot with rays emitting from it,
+plus a dashed line indicating the direction of the light.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>就像其他物体一样，可以通过旋转 <em>太阳</em> 光改变方向，但是因为但是因为光是从一个被认为无限远的位置发出的，所以 <em>太阳</em> 光的位置不会影响渲染结果。</p>
+</div>
+<dl class="simple">
+<dt>强度</dt><dd><p>灯光每平方米的瓦特强度。</p>
+</dd>
+<dt>角度</dt><dd><p>太阳光的尺寸取决于从地面上看时它的  <a class="reference external" href="https://en.wikipedia.org/wiki/Angular_diameter#Use_in_astronomy">角直径</a> 。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="world.html" class="btn btn-neutral float-right" title="世界环境" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Lights" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/lights/light_object.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/lights/light_object%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

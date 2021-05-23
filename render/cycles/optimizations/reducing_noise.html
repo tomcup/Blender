@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>降噪 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/cycles/optimizations/reducing_noise.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="材质节点" href="nodes.html" />
+    <link rel="prev" title="渲染优化" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cycles</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render_settings/index.html">渲染设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../world_settings.html">世界设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object_settings/index.html">物体设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material_settings.html">材质设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../light_settings.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu_rendering.html">GPU渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../features.html">试验特性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baking.html">渲染烘焙</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">渲染优化</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">降噪</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#path-tracing">路径追踪</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#the-source-of-the-noise">噪点的来源</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#bounces">最多反弹次数</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#caustics-and-filter-glossy">焦散和滤除光泽</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#light-falloff">光线衰减</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#multiple-importance-sampling">多重重要性采样</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#glass-and-transparent-shadows">玻璃和透明阴影</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#light-portals">日光入口</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#denoising">降噪</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#clamp-fireflies">钳制光斑</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="nodes.html">材质节点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">Cycles</a> &raquo;</li>
+        
+          <li><a href="index.html">渲染优化</a> &raquo;</li>
+        
+      <li>降噪</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reducing-noise">
+<h1>降噪<a class="headerlink" href="#reducing-noise" title="Permalink to this headline">¶</a></h1>
+<p>在执行最终渲染时，尽可能降低噪点非常重要。在这里，我们将讨论一些技巧，虽然打破了物理定律，但是在合理时间内渲染动画时尤为重要的。单击以放大示例图像，查看噪声差异。</p>
+<div class="section" id="path-tracing">
+<h2>路径追踪<a class="headerlink" href="#path-tracing" title="Permalink to this headline">¶</a></h2>
+<p>Cycles 在下一个事件估计时使用路径跟踪，这不擅长渲染所有类型的光效果(如焦散效果)，但与其他渲染算法相比，它的优势是能够渲染更详细、更大的场景。这是因为我们不需要在内存中存储光子贴图，并且与双向路径跟踪相比，我们可以保持光线相对一致，以使用按需图像缓存。</p>
+<div class="figure align-center">
+<img alt="../../../_images/render_cycles_introduction_rays.svg" src="../../../_images/render_cycles_introduction_rays.svg" /></div>
+<p>我们做与现实相反的事情，将相机的光线跟踪到场景中和灯光上，而不是从光源到场景中，然后进入摄像机。这样做的好处是，我们不会浪费不会出现在相机中的光线，但也意味着很难找到一些可能贡献很大的光路。光线将根据表面 BRDF 或已知光源的方向发送。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>有关详细信息，请参阅 <a class="reference internal" href="../render_settings/light_paths.html"><span class="doc">光程</span></a> 以及 <a class="reference internal" href="../render_settings/sampling.html"><span class="doc">采样</span></a> 文档。</p>
+</div>
+</div>
+<div class="section" id="the-source-of-the-noise">
+<h2>噪点的来源<a class="headerlink" href="#the-source-of-the-noise" title="Permalink to this headline">¶</a></h2>
+<p>要了解噪点可能来自何处，请以下面的场景为例。当我们将光线追踪到红点上由白色圆圈标记的位置时，下面的第二个图像给人一种漫反射色光 &quot;看到&quot; 的印象。</p>
+<p>要查找从曲面反射的光，我们需要从所有这些像素中查找平均颜色。注意球体上的光泽高光，以及光线投射在附近墙壁上的亮点。这些亮点比图像的其他部分亮 得多，并将显著影响此像素的照明。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-reference.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-reference.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-reference.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">这个场景。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">阴影点的亮照度。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-hotspot.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-hotspot.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-hotspot.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">检测到的高光。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>光源是已知来源，所以其位置已知，但它导致的光泽高光又是另一回事。对于路径跟踪，我们所能做的最好的事情就是在半球上随机分布光线，希望找到所有重要的亮点。如果对于一些像素我们错过了一些亮点，但是我们确实为另一个像素找到了它，这会导致噪点。我们采集的样本越多，我们覆盖所有重要光源的概率就越高。</p>
+<p>通过一些技巧，我们可以降低这种噪点。如果我们模糊亮点，它们就会变得更大，越来越不强烈，它们就更容易找到，噪点也更少。这不会给出相同的精确结果，但通常通过漫反射或柔和的光泽反射查看时，效果往往足够接近。下面是使用 <a class="reference internal" href="../render_settings/light_paths.html#render-cycles-integrator-filter-glossy"><span class="std std-ref">光泽过滤器</span></a> 和 <a class="reference internal" href="../../shader_nodes/color/light_falloff.html"><span class="doc">灯光衰减</span></a> 的文档。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-reference.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-reference.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-reference.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">使用光泽过滤&amp;灯光衰减。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">阴影点的亮照度。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-hotspot.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-hotspot.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_fisheye-blur-hotspot.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">检测到的高光。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="bounces">
+<h2>最多反弹次数<a class="headerlink" href="#bounces" title="Permalink to this headline">¶</a></h2>
+<p>在现实中，由于光速非常高，光会反弹大量。实际上，更多的反弹会引起更多的噪点，并且最好在 <a class="reference internal" href="../render_settings/light_paths.html#render-cycles-integrator-light-paths"><span class="std std-ref">光线追踪`</span></a> 部分中使用 <em>更少</em> 反弹，用于不同的色泽器类型，使用 <em>有限全局照明</em> 预设。漫反射表面通常可以减少反弹，而光泽表面需要更多，而传输制光器(如玻璃)通常最需要。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_0bounce.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_0bounce.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_0bounce.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">没有反弹。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id8">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_2bounce.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_2bounce.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_2bounce.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">最多两次反弹。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_4bounce.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_4bounce.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_4bounce.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">最多四次反弹。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>同样重要的是，使用 <strong>没有</strong> 值1.0的组件或接近该值的颜色着色器；尝试将最大值保持在0.8或更小，并使灯光更亮。实际上，表面很少能完全反射所有的光，但当然也有例外；通常玻璃会让大部分光通过，这就是为什么我们需要更多的反射。颜色分量的高值往往会引起噪点，因为光强度不会随着它从每个表面反弹而降低。</p>
+</div>
+<div class="section" id="caustics-and-filter-glossy">
+<h2>焦散和滤除光泽<a class="headerlink" href="#caustics-and-filter-glossy" title="Permalink to this headline">¶</a></h2>
+<p>Caustics are a well-known source of noise, causing <a class="reference internal" href="../../../glossary/index.html#term-Fireflies"><span class="xref std std-term">Fireflies</span></a>.
+They happen because the renderer has difficulty finding specular highlights
+viewed through a soft glossy or diffuse reflection.
+There is a <a class="reference internal" href="../render_settings/light_paths.html#render-cycles-integrator-no-caustics"><span class="std std-ref">No Caustics</span></a>
+option to disable glossy behind a diffuse reflection entirely.
+Many renderers will typically disable caustics by default.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id10">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_reference.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_reference.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_reference.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">默认设置。</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id11">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_no-caustics.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_no-caustics.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_no-caustics.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">焦散禁用。</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id12">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_filter-glossy.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_filter-glossy.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_filter-glossy.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">过滤光泽大于零。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>然而，不使用焦散会导致光线丢失，并且它仍然不包括通过柔和的光泽反射来查看锐利光泽反射的情况。有一个 <a class="reference internal" href="../render_settings/light_paths.html#render-cycles-integrator-filter-glossy"><span class="std std-ref">滤除光泽</span></a> 选项可以降低来自这种情况的噪点，但代价是准确性会产生偏差。这将通过增加着色器的粗糙度来模糊锐利的光泽反射，以使其更易于查找。</p>
+<p>上图显示了默认设置，没有焦散，滤除器光泽设置为1.0。</p>
+</div>
+<div class="section" id="light-falloff">
+<h2>光线衰减<a class="headerlink" href="#light-falloff" title="Permalink to this headline">¶</a></h2>
+<p>在现实中，真空中的光总是以1/(距离^2)的速率衰减。然而，随着距离变为零，这个值就变成了无穷大，我们可以在图像中得到非常亮的点。这些大多是间接照明的问题，在间接照明中，击中这样一个小但极亮的点的概率很低，因此很少发生。这是典型的 <a class="reference internal" href="../../../glossary/index.html#term-Fireflies"><span class="xref std std-term">闪点</span></a>。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id13">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_falloff-hard.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_falloff-hard.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_falloff-hard.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">硬衰减。</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id14">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_falloff-soft.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_falloff-soft.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_falloff-soft.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">软衰减。</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>为了减少此问题，<a class="reference internal" href="../../shader_nodes/color/light_falloff.html"><span class="doc">光线衰减</span></a> 节点具有 <em>平滑因子</em> ，可用于降低光线对附近曲面可能影响的最大强度。上面的图像显示默认衰落和平滑值 1.0。</p>
+</div>
+<div class="section" id="multiple-importance-sampling">
+<span id="render-cycles-reducing-noise-mis"></span><h2>多重重要性采样<a class="headerlink" href="#multiple-importance-sampling" title="Permalink to this headline">¶</a></h2>
+<p>可将具有自发光着色器的配置为使用多重重要性采样 (<a class="reference internal" href="../material_settings.html"><span class="doc">材质设置</span></a>) 。这意味着，他们将得到射线直接发送到他们，而不是结束在那里根据光线随机反弹周围。对于非常明亮的网状光源，这可以显著降低噪声。然而，当发射不是特别明亮时，这将从其他较亮的光源中抽取样品，而以这种方式找到它们很重要。</p>
+<p>这里的最佳设置很难猜测；它可能是一个试验和错误的问题，但通常很明显，一个有点发光的物体可能只在本地提供光，而用作光的网光需要启用此选项。下面是一个示例，其中发射球体对照明的贡献很小，并且图像通过禁用多重重要性来渲染其噪点略小。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id15">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_sample-lamp.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_sample-lamp.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_sample-lamp.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">多重重要性关闭。</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id16">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_no-sample-lamp.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_no-sample-lamp.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_no-sample-lamp.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">多重重要性开启。</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>世界背景还有一个 <em>多重重要性</em> (<a class="reference internal" href="../world_settings.html#render-cycles-integrator-world-settings"><span class="std std-ref">设置</span></a>) 选项。这对于具有小亮点的环境地图非常有用，并不单纯是平滑处理。然后在预处理中，此选项将确定亮点，并直接向它们发送光线。同样，如果不需要此选项，则启用此选项可能会从更重要的光源中获取样本。</p>
+</div>
+<div class="section" id="glass-and-transparent-shadows">
+<span id="render-cycles-reducing-noise-glass-and-transp-shadows"></span><h2>玻璃和透明阴影<a class="headerlink" href="#glass-and-transparent-shadows" title="Permalink to this headline">¶</a></h2>
+<p>禁用焦散后，玻璃会错过阴影，并且具有滤镜光泽，它们可能会更柔和。我们可以制作一个玻璃扫描器，当 <em>直接</em> 观看时，将使用玻璃BSDF，在 <em>间接</em> 查看时使用透明 BSDF。透明 BSDF 可用于透明阴影，以直接通过曲面查找光源，并给出颜色适当的阴影，但没有焦散。光程节点将用于确定何时使用两个着色器中的哪个。</p>
+<div class="figure align-default" id="id17">
+<img alt="../../../_images/render_cycles_optimizations_reducing-noise_glass-group.png" src="../../../_images/render_cycles_optimizations_reducing-noise_glass-group.png" />
+<p class="caption"><span class="caption-text">优化的玻璃着色器。</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+<p>上面我们可以看到用于玻璃透明度技巧的节点设置；在左侧由于缺少焦散，渲染有太多的阴影，右侧则带有该技巧的渲染。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id18">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_glass-too-much-shadow.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_glass-too-much-shadow.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_glass-too-much-shadow.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">默认的玻璃 BSDF。</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id19">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_glass-trick.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_glass-trick.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_glass-trick.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">优化的玻璃着色器。</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="light-portals">
+<h2>日光入口<a class="headerlink" href="#light-portals" title="Permalink to this headline">¶</a></h2>
+<p>当渲染一个日光室内场景时，大部分光线都是通过窗户或门的开口进入，集成器很难找到通向它们的路。要解决此问题，请使用 <a class="reference internal" href="../light_settings.html#render-cycles-lights-area-portals"><span class="std std-ref">灯光入口</span></a> 。然后，你将需要修改它的形状，以匹配你想要填充的洞口的形状。</p>
+<div class="figure align-default">
+<img alt="../../../_images/render_cycles_light-settings_portals2.jpg" src="../../../_images/render_cycles_light-settings_portals2.jpg" />
+</div>
+<div class="figure align-default">
+<img alt="../../../_images/render_cycles_light-settings_portals.jpg" src="../../../_images/render_cycles_light-settings_portals.jpg" />
+</div>
+</div>
+<div class="section" id="denoising">
+<h2>降噪<a class="headerlink" href="#denoising" title="Permalink to this headline">¶</a></h2>
+<p>Even with all the settings described above there will always end
+up being some render noise no matter how many samples you use.
+To fix this there is a post-processing technique to cleanup the final bit of noise.
+To use this enable <a class="reference internal" href="../../layers/denoising.html"><span class="doc">Denoising</span></a>
+in the <em>Render Layers</em> tab of the Properties.</p>
+<p>Below is an example render by
+<a class="reference external" href="https://blog.thepixelary.com/post/160451378592/denoising-in-cycles-tested">The Pixelary</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id20">
+<img alt="../../../_images/render_layers_denoising_example1.jpg" src="../../../_images/render_layers_denoising_example1.jpg" />
+<p class="caption"><span class="caption-text">降噪前的渲染示例。</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id21">
+<img alt="../../../_images/render_layers_denoising_example2.jpg" src="../../../_images/render_layers_denoising_example2.jpg" />
+<p class="caption"><span class="caption-text">降噪后的渲染示例。</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="clamp-fireflies">
+<span id="render-cycles-reducing-noise-clamp-samples"></span><h2>钳制光斑<a class="headerlink" href="#clamp-fireflies" title="Permalink to this headline">¶</a></h2>
+<p>最理想的情况是，使用之前的所有技巧，将 <a class="reference internal" href="../../../glossary/index.html#term-Fireflies"><span class="xref std std-term">闪点</span></a> 消灭，但它们仍然可能发生。为此，使用积分器 <a class="reference internal" href="../render_settings/light_paths.html#render-cycles-integrator-clamp-samples"><span class="std std-ref">钳制设置</span></a> 可以使任意单独的光线样本对像素的贡献 <em>强度</em> 可以 <em>钳制</em> 到一个最大值。</p>
+<p>如果设置得太低，这可能会导致图像中缺少高光，这或许有助于保留相机效果，如光晕或眩光。为了减轻这个难题，通常只对间接反弹进行钳制是有用的，这样可以使相机直接看到的高光不会受到影响。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id22">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_no-clamp.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_no-clamp.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_no-clamp.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">没有钳制(0)。</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id23">
+<a class="reference internal image-reference" href="../../../_images/render_cycles_optimizations_reducing-noise_clamp4.jpg"><img alt="../../../_images/render_cycles_optimizations_reducing-noise_clamp4.jpg" src="../../../_images/render_cycles_optimizations_reducing-noise_clamp4.jpg" style="width: 180px;" /></a>
+<p class="caption"><span class="caption-text">钳制设置为 4。</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nodes.html" class="btn btn-neutral float-right" title="材质节点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="渲染优化" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/cycles/optimizations/reducing_noise.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/cycles/optimizations/reducing_noise%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

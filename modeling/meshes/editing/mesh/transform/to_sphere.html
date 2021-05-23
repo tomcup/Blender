@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>球形化 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/transform/to_sphere.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../../copyright.html" />
+    <link rel="next" title="切变" href="shear.html" />
+    <link rel="prev" title="移动，旋转，缩放" href="basic.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../selecting/index.html">选择</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">编辑</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">网格工具</a><ul class="current">
+<li class="toctree-l5 current"><a class="reference internal" href="index.html">变形</a><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="basic.html">移动，旋转，缩放</a></li>
+<li class="toctree-l6 current"><a class="current reference internal" href="#">球形化</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#usage">用法</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="shear.html">切变</a></li>
+<li class="toctree-l6"><a class="reference internal" href="bend.html">弯曲</a></li>
+<li class="toctree-l6"><a class="reference internal" href="push_pull.html">推/拉</a></li>
+<li class="toctree-l6"><a class="reference internal" href="warp.html">弯绕</a></li>
+<li class="toctree-l6"><a class="reference internal" href="randomize.html">随机</a></li>
+<li class="toctree-l6"><a class="reference internal" href="shrink-fatten.html">法向缩放</a></li>
+<li class="toctree-l6"><a class="reference internal" href="skin_resize.html">重置蒙皮尺寸</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../mirror.html">镜像</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../duplicate.html">复制</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../extrude.html">挤出</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../merge.html">合并</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../split.html">拆分</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../separate.html">分离</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../bisect.html">切分</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../knife_project.html">投影切割</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../convex_hull.html">凸壳</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../symmetrize.html">对称</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../snap_symmetry.html">吸附到对称结构</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../normals.html">法向</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../shading.html">着色</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../sort_elements.html">元素排序</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cleanup.html">清理</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../delete.html">删除 &amp; 融并</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../vertex/index.html">Vertex Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../edge/index.html">边工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../face/index.html">Face Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../uv.html">UV工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../uv/index.html">UVs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../retopology.html">重拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">网格</a> &raquo;</li>
+        
+          <li><a href="../../index.html">编辑</a> &raquo;</li>
+        
+          <li><a href="../index.html">网格工具</a> &raquo;</li>
+        
+          <li><a href="index.html">变形</a> &raquo;</li>
+        
+      <li>球形化</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="to-sphere">
+<span id="tool-transform-to-sphere"></span><span id="bpy-ops-transform-tosphere"></span><h1>球形化<a class="headerlink" href="#to-sphere" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体与编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 变换 ‣ 球形化</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p><em>球形化</em> 变换会赋予选中元素球形特征。图片 <a class="reference internal" href="#fig-mesh-deform-to-sphere-monkey"><span class="std std-ref">逐渐提高球形系数的猴头。</span></a> 展示了对猴头网格应用 <em>球形化</em> 变换的结果。</p>
+<div class="figure align-default" id="id1">
+<span id="fig-mesh-deform-to-sphere-monkey"></span><img alt="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_suzanne-spherical.png" src="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_suzanne-spherical.png" />
+<p class="caption"><span class="caption-text">逐渐提高球形系数的猴头。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>上图依次展示了对猴头应用 0, 0.25 (25%), 0.5 (50%) 和 1 (100%) 的球形化系数。</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
+<img alt="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_operator-panel.png" src="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_operator-panel.png" />
+<p class="caption"><span class="caption-text">球形化系数。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>如下文图片所示，选中的网格元素越多，结果越平滑，也越接近球形。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_cubes-spherical.png" src="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_cubes-spherical.png" />
+<p class="caption"><span class="caption-text">不同级数细分后的网格应用球形化后的结果。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>在这组图片中，依次对整个方块应用 0, 0.25 (25%), 0.5 (50%) 和 1 (100%) 的球形化系数。</p>
+</div>
+</div>
+<p>根据选中元素的数量和排列不同，<em>球形化</em> 的结果也不所差异。</p>
+<div class="figure align-default" id="id4">
+<img alt="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_other-spherical.png" src="../../../../../_images/modeling_meshes_editing_mesh_transform_to-sphere_other-spherical.png" />
+<p class="caption"><span class="caption-text">对不同的选中元素应用球形化。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="shear.html" class="btn btn-neutral float-right" title="切变" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic.html" class="btn btn-neutral float-left" title="移动，旋转，缩放" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/editing/mesh/transform/to_sphere.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/editing/mesh/transform/to_sphere%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

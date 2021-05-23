@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>顶点倒角 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/vertex/bevel_vertices.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="从顶点创建边/面" href="make_face_edge.html" />
+    <link rel="prev" title="挤出顶点" href="extrude_vertices.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../selecting/index.html">选择</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">编辑</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mesh/index.html">网格工具</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Vertex Tools</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="extrude_vertices.html">挤出顶点</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">顶点倒角</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="make_face_edge.html">从顶点创建边/面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="connect_vertex_path.html">连接顶点路径</a></li>
+<li class="toctree-l5"><a class="reference internal" href="connect_vertex_pairs.html">连接顶点对</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rip_vertices.html">断离顶点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rip_vertices_fill.html">断离顶点并填充</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rip_vertices_extend.html">断离顶点并延长</a></li>
+<li class="toctree-l5"><a class="reference internal" href="slide_vertices.html">滑移顶点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="smooth_vertices.html">平滑顶点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="laplacian_smooth.html">拉普拉斯平滑顶点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="blend_shape.html">从形变混合</a></li>
+<li class="toctree-l5"><a class="reference internal" href="propagate_shapes.html">传递到形状</a></li>
+<li class="toctree-l5"><a class="reference internal" href="vertex_groups.html">顶点组</a></li>
+<li class="toctree-l5"><a class="reference internal" href="hooks.html">钩挂</a></li>
+<li class="toctree-l5"><a class="reference internal" href="make_vertex_parent.html">创建父级顶点</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../edge/index.html">边工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../face/index.html">Face Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uv.html">UV工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../uv/index.html">UVs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../retopology.html">重拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../index.html">网格</a> &raquo;</li>
+        
+          <li><a href="../index.html">编辑</a> &raquo;</li>
+        
+          <li><a href="index.html">Vertex Tools</a> &raquo;</li>
+        
+      <li>顶点倒角</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bevel-vertices">
+<span id="bpy-ops-mesh-bevel-vertex"></span><h1>顶点倒角<a class="headerlink" href="#bevel-vertices" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Edit Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Vertex ‣ Bevel Vertices</span></p>
+</dd>
+<dt class="field-odd">Hotkey</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">B</kbd></kbd></p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Vertex ‣ Bevel Edges</span> (edge bevel)</p>
+</dd>
+<dt class="field-odd">Hotkey</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">B</kbd></kbd> (edge bevel)</p>
+</dd>
+</dl>
+</div>
+<p>The <em>Bevel</em> tool rounds off edges or corners of a mesh at the point of the selected vertices.
+In &quot;vertex only&quot; mode, the <em>Bevel Vertices</em> tool works on selected vertices
+but the option to switch to <em>Bevel Edges</em> is available.
+By doing so, more vertices are added in order to smooth out profiles with a specified number of <em>segments</em>
+(see the options below for details about the bevel algorithm).</p>
+<div class="figure align-center" id="id1">
+<img alt="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_compare.png" src="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_compare.png" />
+<p class="caption"><span class="caption-text">Cubes with and without bevel.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the Vertex Only option active, some of the other options available will not work.
+However, they will work with <a class="reference internal" href="../edge/bevel.html"><span class="doc">Bevel Edges</span></a>.</p>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>Affect <kbd class="kbd docutils literal notranslate">V</kbd></dt><dd><dl class="simple">
+<dt>Vertices</dt><dd><p>Only the areas near vertices are beveled, the edges remain unchanged.</p>
+</dd>
+<dt>Edges</dt><dd><p>Bevel the edges, creating intersections at vertices.</p>
+</dd>
+</dl>
+</dd>
+<dt>Offset <kbd class="kbd docutils literal notranslate">A</kbd></dt><dd><p>You can change the bevel amount by moving the mouse towards and away from the object,
+like with transform tools.
+The exact meaning of the value depends on the <em>Amount Type</em> option (see below).</p>
+</dd>
+<dt>Amount Type <kbd class="kbd docutils literal notranslate">M</kbd></dt><dd><p>Selects how the <em>Amount</em> value controls the size of the bevel. According to the selection, the amount is:</p>
+<dl class="simple">
+<dt>Offset</dt><dd><p>The relative distance from the new edge to the original.</p>
+</dd>
+<dt>Width</dt><dd><p>The distance between the two new edges formed by the bevel
+(or the edges on either side of the bevel if there is more than one segment).</p>
+</dd>
+<dt>Depth</dt><dd><p>The perpendicular distance from the original edge to the bevel face.</p>
+</dd>
+<dt>Percent</dt><dd><p>The percentage of the length of adjacent edges that the new edges is slided along.</p>
+</dd>
+<dt>Absolute</dt><dd><p>The exact distance along edges adjacent to the beveled edge.
+A difference from <em>Offset</em> is visible when the unbeveled edges
+attached to beveled edges meet at an angle besides a right angle.</p>
+</dd>
+</dl>
+<p>For vertex-only bevels, the Offset and Depth types measure from the original vertex,
+and the Width type is measured from a new vertex to the center of the new face (as half the amount).</p>
+</dd>
+<dt>Segments <kbd class="kbd docutils literal notranslate">S</kbd></dt><dd><p>The number of segments in the bevel can be defined by
+scrolling the mouse <kbd class="kbd docutils literal notranslate">Wheel</kbd> to increase or decrease this value.
+The greater the number of segments, the smoother the bevel.
+Or press <kbd class="kbd docutils literal notranslate">S</kbd> to change the number with mouse movements, as well as numeric input.</p>
+<p>Alternatively, you can manually enter a segment number value while using the tool,
+or in the Mesh Tool options panel after using the tool.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_segments.png"><img alt="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_segments.png" src="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_segments.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">Bevel with four segments.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>Shape <kbd class="kbd docutils literal notranslate">P</kbd></dt><dd><p>This is a number between 0 and 1 that controls the shape of the profile (side view of a beveled edge).
+The default value, 0.5, gives a circular arc (if the faces meet at right angles).
+Values less than that give a flatter profile, with 0.25 being exactly flat,
+and values less than that giving a concave bevel. Values more than 0.5 give a more convex profile.
+Similarly as <em>Segments</em> it can be set with mouse movements and numeric input after toggling <kbd class="kbd docutils literal notranslate">P</kbd>.</p>
+</dd>
+<dt>Material Index</dt><dd><p>The <em>Material</em> number specifies which material should be assigned to the new faces created by the <em>Bevel</em> tool.
+With the default, -1, the material is inherited from the closest existing face (&quot;closest&quot; can be a bit ambiguous).
+Otherwise, the number is the slot index of the material to use for all newly created faces.</p>
+</dd>
+<dt>Harden Normals <kbd class="kbd docutils literal notranslate">H</kbd></dt><dd><p>When enabled, the per-vertex face normals of the bevel faces are adjusted to
+match the surrounding faces, and the normals of the surrounding faces are not affected.
+This will keep the surrounding faces flat (if they were before),
+with the bevel faces shading smoothly into them. For this effect to work,
+custom split normals need to be enabled, which requires <em>Auto Smooth</em> to be enabled
+(see <a class="reference internal" href="../mesh/normals.html"><span class="doc">Normals</span></a>).
+As a convenience, that option will be enabled for you if it is not already when you enable Harden Normals here.</p>
+</dd>
+<dt>Clamp Overlap <kbd class="kbd docutils literal notranslate">C</kbd></dt><dd><p>Limits the width of each beveled edge so that vertices do not overlap with other geometry.</p>
+</dd>
+<dt>Loop Slide</dt><dd><p>If there are un-beveled edges along with beveled edges into a vertex,
+the bevel tries to slide along those edges when possible.
+Turning the option off can lead to more even bevel widths.</p>
+</dd>
+<dt>Face Strength Mode</dt><dd><p>Set <em>Face Strength</em> on the faces involved in the bevel, according to the specified mode.
+This can be used in conjunction with
+a <a class="reference internal" href="../../../modifiers/modify/weighted_normal.html"><span class="doc">Weight Normals Modifier</span></a>
+(with the <em>Face Influence</em> option checked).</p>
+<dl class="simple">
+<dt>None</dt><dd><p>Do not set face strength.</p>
+</dd>
+<dt>New</dt><dd><p>Set the face strength of new faces along edges to <em>Medium</em>,
+and the face strength of new faces at vertices to <em>Weak</em>.</p>
+</dd>
+<dt>Affected</dt><dd><p>In addition to those set for the <em>New</em> case,
+also set the faces adjacent to new faces to have strength <em>Strong</em>.</p>
+</dd>
+<dt>All</dt><dd><p>In addition to those set for the <em>Affected</em> option,
+also set all the rest of the faces of the model to have strength <em>Strong</em>.</p>
+</dd>
+</dl>
+</dd>
+<dt>Profile Type <kbd class="kbd docutils literal notranslate">Z</kbd></dt><dd><dl>
+<dt>Superellipse</dt><dd><p>Creates a bevel with a uniform concave or convex curve.</p>
+</dd>
+<dt>Custom</dt><dd><div class="figure align-right" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/modeling_modifiers_generate_bevel_profile-widget.png"><img alt="../../../../_images/modeling_modifiers_generate_bevel_profile-widget.png" src="../../../../_images/modeling_modifiers_generate_bevel_profile-widget.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">The custom profile widget.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>This widget allows the creation of a user-defined profile with more complexity than
+with the single profile parameter. The modal tool allows toggling the custom profile,
+but the shape of the profile is only editable in the options panel after the operation is confirmed.</p>
+<p>The profile starts at the bottom right of the widget and ends at the top left, as if it
+were between two edges intersecting at a right angle. Control points are created in the widget and
+then the path is sampled with the number of segments from the bevel modifier.</p>
+<dl class="simple">
+<dt>Presets</dt><dd><p>The <em>Support Loops</em> and <em>Steps</em> presets are built dynamically depending on the number
+of segments in the bevel. If the number of segments is changed, the preset will have to be re-applied.</p>
+</dd>
+</dl>
+</dd>
+<dt>Sampling</dt><dd><p>Samples will first be added to each control point, then if there are enough samples,
+they will be divided evenly between the edges. The <em>Sample Straight Edges</em> option toggles
+whether the samples are added to edges with sharp control points on either side.
+If there aren't enough samples to give each edge the same number of samples,
+they will just be added to the most curved edges.
+So it is recommended to use at least as many segments as there are control points.</p>
+</dd>
+</dl>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Bevel with Custom Profile on.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customA.png"><img alt="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customA.png" src="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customA.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Edge Bevel.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customB.png"><img alt="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customB.png" src="../../../../_images/modeling_meshes_editing_vertex_bevel-vertices_customB.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">Vertex Bevel.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference internal" href="../../../modifiers/generate/bevel.html"><span class="doc">Bevel Modifier</span></a>
+is a non-destructive alternative to the Bevel tool.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="make_face_edge.html" class="btn btn-neutral float-right" title="从顶点创建边/面" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="extrude_vertices.html" class="btn btn-neutral float-left" title="挤出顶点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/editing/vertex/bevel_vertices.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/editing/vertex/bevel_vertices%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

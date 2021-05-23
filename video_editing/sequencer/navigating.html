@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>导航 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/video_editing/sequencer/navigating.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="片段" href="strips/index.html" />
+    <link rel="prev" title="剪切" href="toolbar/blade.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">视频编辑</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">序列编辑器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolbar/tools.html">工具栏</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">导航</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#header">标题栏</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#view-menu">视图菜单</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#markers-menu">标记菜单</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#main-view">主视图</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#adjusting-the-view">调整视图</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#playhead">播放头</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="strips/index.html">片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta.html">复合片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties/index.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../preview/index.html">预览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../index.html">视频编辑</a> &raquo;</li>
+        
+          <li><a href="index.html">序列编辑器</a> &raquo;</li>
+        
+      <li>导航</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navigating">
+<h1>导航<a class="headerlink" href="#navigating" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="header">
+<h2>标题栏<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<img alt="../../_images/video-editing_sequencer_navigating_header.png" src="../../_images/video-editing_sequencer_navigating_header.png" />
+<p class="caption"><span class="caption-text">视频序列编辑器标题栏。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="view-menu">
+<span id="bpy-types-spacesequenceeditor-show-region-hud"></span><h3>视图菜单<a class="headerlink" href="#view-menu" title="Permalink to this headline">¶</a></h3>
+<p>照例，视图菜单控制编辑器的视图设置。</p>
+<dl class="simple">
+<dt>侧栏 <kbd class="kbd docutils literal notranslate">N</kbd></dt><dd><p>显示或隐藏 <a class="reference internal" href="../../interface/window_system/regions.html#ui-region-sidebar"><span class="std std-ref">侧栏</span></a> 。</p>
+</dd>
+<dt>Toolbar <kbd class="kbd docutils literal notranslate">T</kbd></dt><dd><p>Show or hide the <a class="reference internal" href="../../interface/tool_system.html#ui-region-toolbar"><span class="std std-ref">Toolbar</span></a>.</p>
+</dd>
+<dt>调整上一步操作</dt><dd><p>Displays a pop-up panel to alter properties of the last
+completed operation. See <a class="reference internal" href="../../interface/undo_redo.html#ui-undo-redo-adjust-last-operation"><span class="std std-ref">调整上一步操作</span></a>.</p>
+</dd>
+<dt>预览为背景图</dt><dd><p>在主视图的背景中显示当前帧，就像在合成器中一样。</p>
+</dd>
+<dt>查看选定 <kbd class="kbd docutils literal notranslate">NumpadPeriod</kbd></dt><dd><p>最大化显示选定的片段(适应窗口)。</p>
+</dd>
+<dt>查看所有 <kbd class="kbd docutils literal notranslate">Home</kbd></dt><dd><p>最大化显示所有片段(适应窗口)。</p>
+</dd>
+<dt>缩放 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">B</kbd></kbd></dt><dd><p>点击然后拖动绘制一个矩形，则可以缩放到这个矩形大小。</p>
+</dd>
+<dt>导航</dt><dd><dl class="simple">
+<dt>播放动画 <kbd class="kbd docutils literal notranslate">Spacebar</kbd></dt><dd><p>开始或停止播放动画。这将在所有编辑器中开始播放。</p>
+</dd>
+<dt>Go to Current Frame <kbd class="kbd docutils literal notranslate">Numpad0</kbd></dt><dd><p>滚动时间轴，使当前帧显示在中心。</p>
+</dd>
+<dt>跳转到上一片段 <kbd class="kbd docutils literal notranslate">PageDown</kbd></dt><dd><p>当前帧会跳转到片段开头。</p>
+</dd>
+<dt>跳转到下一片段 <kbd class="kbd docutils literal notranslate">PageUp</kbd></dt><dd><p>当前帧将跳转到片段结尾。</p>
+</dd>
+<dt>跳转到上一个片段(中心) <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">PageDown</kbd></kbd></dt><dd><p>跳转到上一个片段中心。</p>
+</dd>
+<dt>跳转到下一个片段(中心) <kbd class="kbd docutils literal notranslate">PageUp</kbd></dt><dd><p>跳转到下一个片段中心。</p>
+</dd>
+</dl>
+</dd>
+<dt>范围</dt><dd><dl class="simple">
+<dt>设置预览范围 <kbd class="kbd docutils literal notranslate">P</kbd></dt><dd><p>交互式定义用于播放的帧范围。允许定义用于动画播放的临时预览范围(这与 <a class="reference internal" href="../../editors/timeline.html#animation-editors-timeline-headercontrols"><span class="std std-ref">时间轴编辑器标题栏</span></a> 中的 <em>播放范围</em> 选项是一样)。</p>
+</dd>
+<dt>Set Preview Range to Strips</dt><dd><p>Sets the frame range of preview to the range of the selected strips.</p>
+</dd>
+<dt>清除预览范围 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></dt><dd><p>清除预览范围。</p>
+</dd>
+<dt>设置起始帧 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Home</kbd></kbd></dt><dd><p>将动画范围的起始帧设置为当前播放头位置。</p>
+</dd>
+<dt>设置结束帧 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">End</kbd></kbd></dt><dd><p>将动画范围的结束帧设置为当前播放头位置。</p>
+</dd>
+<dt>设置帧范围为片段</dt><dd><p>将预览和渲染动画的帧范围设置为所选片段的帧范围。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="bpy-ops-sequencer-refresh-all">
+<dt>刷新所有</dt><dd><p>要强制Blender重新读入文件，并强制重新渲染3D视图，请单击 <em>刷新序列编辑器</em> 按钮。 Blender将更新和同步所有缓存的图像并计算当前帧。</p>
+<p>某些操作，如在3D视图中移动物体，可能不会强制 <em>序列编辑器</em> 调用渲染图像的刷新(因为移动可能不会影响渲染的图像)。如果Blender外部的某个应用程序修改了用作片段的图像或视频，则Blender无法从你的操作系统收到通知。</p>
+</dd>
+<dt>Sync Visible Range</dt><dd><p>Synchronize the visible range with other time based editors.</p>
+</dd>
+<dt>显示秒数 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">T</kbd></kbd></dt><dd><p>在时间轴显示秒而非帧数。</p>
+</dd>
+<dt>显示偏移</dt><dd><p>显示剪切或滑动片段中“额外”内容的溢出条。</p>
+</dd>
+<dt>显示函数曲线</dt><dd><p>显示不透明度和音量值的动画曲线，作为片段的暗部。</p>
+</dd>
+<dt>显示标记</dt><dd><p>显示标记区域。禁用后， <a class="reference internal" href="#markers-menu">标记菜单</a> 也将隐藏，且标记操作在编辑器中不再可用。</p>
+</dd>
+<dt>Show Cache</dt><dd><p>Show <a class="reference internal" href="properties/proxy_cache.html"><span class="doc">Cache</span></a>
+Show all enabled types;
+Final Images, Raw Images, Preprocessed Images, Composite Images</p>
+</dd>
+<dt>Show Waveforms</dt><dd><p>全局选项可以显示波形或片段信息，也可以使用单个 <a class="reference internal" href="properties/strip.html#sequencer-sound-waveform"><span class="std std-ref">片段选项</span></a>。</p>
+</dd>
+<dt>序列渲染图像</dt><dd><p>Render an image of the current frame.</p>
+</dd>
+<dt>序列渲染动画</dt><dd><p>从时间轴的起始帧到结束帧，将预览渲染为一个视频文件或者图像序列。</p>
+</dd>
+<dt>导出字幕</dt><dd><p>将用作字幕的 <a class="reference internal" href="strips/text.html"><span class="doc">文本片段</span></a> 导出为 <a class="reference external" href="https://en.wikipedia.org/wiki/SubRip">SubRip</a> 文件 (<code class="docutils literal notranslate"><span class="pre">.srt</span></code>)。导出的文件包含视频序列中的所有文本片段。</p>
+</dd>
+<dt>Toggle Sequencer/Preview <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd></dt><dd><p>Switch the editor display type between Sequencer and Preview.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="markers-menu">
+<h3>标记菜单<a class="headerlink" href="#markers-menu" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../../animation/markers.html"><span class="doc">标记</span></a> 用于表示动画中具有关键点或重要事件的帧。像大多数动画编辑器一样，标记显示在编辑器的底部。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/editors_graph-editor_introduction_markers.png" src="../../_images/editors_graph-editor_introduction_markers.png" />
+<p class="caption"><span class="caption-text">动画编辑器中的标记。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>有关不同的标记工具说明，详见于 <a class="reference internal" href="../../animation/markers.html#animation-markers-editing"><span class="std std-ref">编辑标记</span></a> 。</p>
+</div>
+</div>
+<div class="section" id="main-view">
+<h2>主视图<a class="headerlink" href="#main-view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adjusting-the-view">
+<h3>调整视图<a class="headerlink" href="#adjusting-the-view" title="Permalink to this headline">¶</a></h3>
+<p>使用这些快捷方式来调整VSE的序列区域：</p>
+<ul class="simple">
+<li><p>平移： <kbd class="kbd docutils literal notranslate">MMB</kbd></p></li>
+<li><p>缩放： <kbd class="kbd docutils literal notranslate">Wheel</kbd></p></li>
+<li><p>垂直滚动：使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Wheel</kbd></kbd>，或拖动右侧滚动条。</p></li>
+<li><p>水平滚动：使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Wheel</kbd></kbd>，或拖动底部滚动条。</p></li>
+<li><p>缩放视图： <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">MMB</kbd></kbd> 向上/向下(垂直缩放)或向左/向右(水平缩放)拖动。</p></li>
+<li><p>垂直缩放视图：拖动垂直滚动条上的圆圈。</p></li>
+<li><p>水平缩放视图：拖动水平滚动条上的圆圈。</p></li>
+</ul>
+</div>
+<div class="section" id="playhead">
+<h3>播放头<a class="headerlink" href="#playhead" title="Permalink to this headline">¶</a></h3>
+<p>The playhead is the blue vertical line with the current frame number at the top.
+It can be set or moved to a new position by pressing or holding <kbd class="kbd docutils literal notranslate">LMB</kbd>
+in scrubbing area at the top of the timeline.
+You can move the playhead in increments by pressing <kbd class="kbd docutils literal notranslate">Left</kbd> or <kbd class="kbd docutils literal notranslate">Right</kbd>, or by using <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Wheel</kbd></kbd>.
+You can also jump to the beginning or end frame by pressing <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd> or <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd>.
+As you do, the image for that frame is displayed in the Preview region.</p>
+<p>当你在序列片段上使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> 拖动帧指示器时，将 <em>孤立</em> 显示该片段(暂时忽略效果和其他片段，仅显示该片段输出)，并且片段会高亮显示。</p>
+<p>当拖动时按住 kbd:<cite>Ctrl</cite> ，则会吸附到片段的开始和结束点。</p>
+<p>查看图像序列或影片(<code class="docutils literal notranslate"><span class="pre">avi</span></code> /<code class="docutils literal notranslate"><span class="pre">mov</span></code>)文件时，可以在性能较好的计算机上进行实时预览。场景片段可以使用视口预览或代理进行实时播放，也支持显示渲染帧，但通常来说，实时播放速度会很慢。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>其他同步编辑器可用于擦洗(scrubbing)，例如时间轴。</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="strips/index.html" class="btn btn-neutral float-right" title="片段" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="toolbar/blade.html" class="btn btn-neutral float-left" title="剪切" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/video_editing/sequencer/navigating.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60video_editing/sequencer/navigating%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

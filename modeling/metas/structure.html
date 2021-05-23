@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>结构 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/metas/structure.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="基本体" href="primitives.html" />
+    <link rel="prev" title="工具栏" href="toolbar/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">融球</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolbar/index.html">工具栏</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">结构</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#technical-details">技术细节</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#type">类型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">融球</a> &raquo;</li>
+        
+      <li>结构</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="structure">
+<h1>结构<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="technical-details">
+<h2>技术细节<a class="headerlink" href="#technical-details" title="Permalink to this headline">¶</a></h2>
+<p>融球的更正式的定义可以看作是一个 <em>定向结构</em> ，它可以看作是静态场的源。场可以是正的也可以是负的，因此由相邻的定向结构产生的场可以相互吸引也可以相互排斥。</p>
+<p>隐式表面被定义为通过所有定向结构假定给定值，生成的三维场所在表面。例如，一个融球，它的定向结构是一个点，在它周围产生一个各向同性(即在所有方向上相同)的场，在恒定场值下的表面是以定向点为中心的球面。</p>
+<p>正因为 <em>融球</em> 物体除了数学公式之外就没别的了，所以一个融球可以在另一个上执行一些逻辑操作(与，或)，那样可以相加或相减。这种方法也称为 <em>构造实体几何</em> (CSG)。因为它的数学本质，CSG占用内存很少，但需要很多处理能力用于计算。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>关于 <a class="reference external" href="https://en.wikipedia.org/wiki/Metaballs">融球</a> 的维基百科页面。</p>
+</div>
+</div>
+<div class="section" id="type">
+<h2>类型<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">侧栏(Sidebar region) ‣ 变换面板(Transform panel) ‣ 类型(Type)</span> , <span class="menuselection">物体数据属性(Object Data Properties) ‣ 活动元素面板(Active Element panel) ‣ 类型(Type)</span></p>
+</dd>
+</dl>
+</div>
+<p>Blender有五种融球类型，每一种都由其底层(或定向)结构定义。</p>
+<p>在编辑模式下，可以使用 <em>活动元素</em> 面板中的相关按钮，或侧栏中的 <em>变换</em> 面板中的选择器更改此结构。根据结构的不同，可能在 <em>变换</em> 面板和 <em>活动元素</em> 面板中有额外的参数。</p>
+<dl>
+<dt>点(点，零维结构)</dt><dd><p>这是最简单的融球，没有任何额外设置。因为它仅有一点，它产生的各向同性的场，张成一个球形表面(这是为什么它在Blender里被称为 <em>融球</em> 或 <em>球</em>)。</p>
+</dd>
+<dt>胶囊(直线，一维结构)</dt><dd><p>这是一个表面由给定长度的直线产生的场来生成的融球，形成一个圆柱形的表面，带有环形闭合的端点。</p>
+<dl class="simple">
+<dt>X尺寸</dt><dd><p>线的长度(即胶囊的长度)。</p>
+</dd>
+</dl>
+</dd>
+<dt>平面(长方形平面，二维结构)</dt><dd><p>该类型融球的表面由一个长方形平面产生的场来生成，形成一个平行六面体表面，具有固定的厚度和圆形边框。</p>
+<dl class="simple">
+<dt>X/Y尺寸</dt><dd><p>矩形的长度和宽度。</p>
+</dd>
+</dl>
+</dd>
+<dt>椭球体(椭球体，三维结构)</dt><dd><p>该类型融球的表面由一个椭球体产生的场生成，形成一个椭球表面。</p>
+<dl class="simple">
+<dt>X/Y/Z尺寸</dt><dd><p>椭球体的长度、宽度、高度(默认设定为1.0)。</p>
+</dd>
+</dl>
+</dd>
+<dt>立方体(平行六面体，三维结构)</dt><dd><p>这是一个表面由平行六面体产生的场生成的融球，形成一个平行六面体表面且具有圆角。</p>
+<dl class="simple">
+<dt>X/Y/Z尺寸</dt><dd><p>平行六面体的长度、宽度、高度(默认设定为1.0)。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="primitives.html" class="btn btn-neutral float-right" title="基本体" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="toolbar/index.html" class="btn btn-neutral float-left" title="工具栏" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/metas/structure.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/metas/structure%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

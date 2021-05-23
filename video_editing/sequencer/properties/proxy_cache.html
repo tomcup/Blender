@@ -1,0 +1,458 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>代理&amp;缓存设置 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/video_editing/sequencer/properties/proxy_cache.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="预览" href="../../preview/index.html" />
+    <link rel="prev" title="修改器面板" href="modifiers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">视频编辑</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">序列编辑器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolbar/tools.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigating.html">导航</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../strips/index.html">片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../meta.html">复合片段</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">属性</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="strip.html">片段</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modifiers.html">修改器面板</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">代理&amp;缓存设置</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cache-settings">Cache Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#strip-cache">Strip Cache</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#proxy-settings">Proxy Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#strip-proxy-timecode-panel">片段代理&amp;时间码面板</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#proxy">代理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../preview/index.html">预览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../../index.html">视频编辑</a> &raquo;</li>
+        
+          <li><a href="../index.html">序列编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">属性</a> &raquo;</li>
+        
+      <li>代理&amp;缓存设置</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proxy-cache-settings">
+<h1>代理&amp;缓存设置<a class="headerlink" href="#proxy-cache-settings" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cache-settings">
+<h2>Cache Settings<a class="headerlink" href="#cache-settings" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区块 ‣ 代理<span class="accelerator">时</span>间码 ‣ 缓存设置</span></p>
+</dd>
+</dl>
+</div>
+<p>缓存用于保存帧进内存里以便预览，因此它们稍后显示的速度比从头开始渲染的快得多。缓存容量可在用户设置中的 <a class="reference internal" href="../../../editors/preferences/system.html"><span class="doc">系统标签</span></a> 里设置。</p>
+<p>在这个面板里可设置为所有片段缓存的图像类型。</p>
+<dl>
+<dt>Cache</dt><dd><dl class="simple">
+<dt>Raw</dt><dd><p>缓存raw图像从磁盘读取，已内存使用为代价来更快地实现片段的参数调整。</p>
+</dd>
+<dt>Pre-processed</dt><dd><p>缓存预处理图像，已内存使用为代价来更快实现效果调整。</p>
+</dd>
+<dt>Composite</dt><dd><p>缓存中间合成的图像，已内存使用为代价来更快实现堆栈的片段调整。</p>
+</dd>
+<dt>Final</dt><dd><p>为每一帧缓存最终图像。</p>
+</dd>
+</dl>
+</dd>
+<dt>Recycle Up to Cost</dt><dd><p>只有成本低于这个数值的帧会被回收。</p>
+<p>每个存储的图像都有一个分配的成本。成本计算为渲染耗时与保持所选帧率的最大可能的时间之比。成本越高，渲染图像就越难。</p>
+<p>最大图像成本被限制为任意值10。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="strip-cache">
+<h2>Strip Cache<a class="headerlink" href="#strip-cache" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区块 ‣ 代理<span class="accelerator">时</span>间码 ‣ 缓存设置</span></p>
+</dd>
+</dl>
+</div>
+<p>Similar to <a class="reference internal" href="#cache-settings">Cache Settings</a> panel,
+this panel sets the types of images that will be cached for the active strip.</p>
+<dl class="simple">
+<dt>启用片段缓存</dt><dd><p>启用默认覆盖缓存。当禁用时，将使用 <em>缓存设置</em> 。</p>
+</dd>
+<dt>缓存Raw</dt><dd><p>缓存raw图像从磁盘读取，已内存使用为代价来更快地实现片段的参数调整。</p>
+</dd>
+<dt>缓存预处理</dt><dd><p>缓存预处理图像，已内存使用为代价来更快实现效果调整。</p>
+</dd>
+<dt>缓存合成</dt><dd><p>缓存中间合成的图像，已内存使用为代价来更快实现堆栈的片段调整。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="proxy-settings">
+<h2>Proxy Settings<a class="headerlink" href="#proxy-settings" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区块 ‣ 代理<span class="accelerator">时</span>间码 ‣ 代理设置</span></p>
+</dd>
+</dl>
+</div>
+<dl>
+<dt>存储</dt><dd><p>定义代理是针对单个片段还是针对整个序列。</p>
+<dl>
+<dt>单个片段</dt><dd><p>代码存储在输入的目录。</p>
+</dd>
+<dt>工程</dt><dd><p>所有代理存储在一个目录。</p>
+<dl class="simple">
+<dt>代理目录</dt><dd><p>存储项目代理的位置。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>设置已选片段代理</dt><dd><p>为所有已选片段设置代理尺寸和覆盖标识。</p>
+</dd>
+<dt>重建代理和时间码编号</dt><dd><p>为所有已选片段生成代理和时间码，与 <span class="menuselection">片段 ‣ 重建代理和时间码编号</span> 作用相同。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="strip-proxy-timecode-panel">
+<span id="bpy-types-sequenceproxy"></span><h2>片段代理&amp;时间码面板<a class="headerlink" href="#strip-proxy-timecode-panel" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区块 ‣ 代理<span class="accelerator">时</span>间码 ‣ 片段代理<span class="accelerator">时</span>间码</span></p>
+</dd>
+</dl>
+</div>
+<div class="figure align-right">
+<img alt="../../../_images/video-editing_sequencer_properties_proxy-cache_panel.png" src="../../../_images/video-editing_sequencer_properties_proxy-cache_panel.png" />
+</div>
+<div class="section" id="proxy">
+<h3>代理<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h3>
+<p>Once you have chosen the <a class="reference internal" href="../../../glossary/index.html#term-Proxy"><span class="xref std std-term">Proxy</span></a>/<a class="reference internal" href="../../../glossary/index.html#term-Timecode"><span class="xref std std-term">Timecode</span></a> parameters,
+you need to select all strips for which you want proxies to be built.
+Then use <span class="menuselection">Strip ‣ Rebuild Proxy and Timecode indices</span>, or button in <a class="reference internal" href="#proxy-settings">Proxy Settings</a> panel.
+Once all proxies are built, they will be ready to use.</p>
+<p>为了使用代理，需要在序列编辑器预览面板中选择匹配 <a class="reference internal" href="../../preview/properties.html#proxy-render-size"><span class="std std-ref">代理渲染尺寸</span></a> 。</p>
+<dl>
+<dt>Custom Proxy</dt><dd><dl class="simple">
+<dt>Directory</dt><dd><p>默认下，所有构建的代理图像存储在 <code class="docutils literal notranslate"><span class="pre">&lt;原始片段路径&gt;/BL_代理/&lt;片段名称&gt;</span></code> 文件夹中，但这个位置可以使用这个选项来手动设置。</p>
+</dd>
+<dt>File</dt><dd><p>允许使用已存在的代理。</p>
+</dd>
+</dl>
+</dd>
+<dt>Resolutions</dt><dd><p>控制代理大小的按钮。可用的选项是原始片段尺寸的25%，50%，75%，100%。</p>
+</dd>
+<dt>覆盖</dt><dd><p>覆盖保存代理存储目录中任何现存的代理。</p>
+</dd>
+<dt>Build JPEG Quality</dt><dd><p>定义用于代理的JPEG图像的质量。</p>
+</dd>
+<dt>时间码编号</dt><dd><p>当你使用直接从相机复制的未经预处理的片段时，可能会出现一堆失真，主要是由于在序列中寻找给定的帧。这种情况会发生，是因为在这些片段的头部通常没有正确的帧率值。当源剪辑与场景设置帧率相同时，也可能会发生这个问题。下面的两种方法也许可以用来让Blender正确计算帧和帧率：</p>
+<ol class="arabic simple">
+<li><p>使用例如MEncoder的软件对视频进行预处理，修复文件头并插入正确的关键帧。</p></li>
+<li><p>使用Blender中代理/时间码选项。</p></li>
+</ol>
+<p>支持下列时间码：</p>
+<ul class="simple">
+<li><p>不使用时间码 -- 不使用任何时间码</p></li>
+<li><p>录制运行</p></li>
+<li><p>自由运行</p></li>
+<li><p>自由运行(录制日期)</p></li>
+<li><p>无空隙录制运行</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>通常使用录制运行是最好的选择，但如果剪辑的文件完全损坏， <em>无空隙录制运行</em> 将是获取可接受的结果的唯一机会。</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../preview/index.html" class="btn btn-neutral float-right" title="预览" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modifiers.html" class="btn btn-neutral float-left" title="修改器面板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/video_editing/sequencer/properties/proxy_cache.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60video_editing/sequencer/properties/proxy_cache%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

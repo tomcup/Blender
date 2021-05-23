@@ -1,0 +1,806 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>数据块 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/files/data_blocks.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="关联库" href="linked_libraries/index.html" />
+    <link rel="prev" title="重命名" href="blend/rename.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">文件 &amp; 数据系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blend/index.html">Blender 文件</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#life-time">生存期</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#protected">保护</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing">共享</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#making-single-user">生成单用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#removing-data-blocks">删除数据块</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-block-types">数据块类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-properties">自定义属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#editing-properties">编辑属性</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#user-interface">用户界面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#python-access">Python 脚本访问</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="linked_libraries/index.html">关联库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="media/index.html">媒体格式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="import_export.html">导入 &amp; 导出文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">文件 &amp; 数据系统</a> &raquo;</li>
+        
+      <li>数据块</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-blocks">
+<span id="bpy-types-blenddata"></span><span id="bpy-types-id"></span><h1>数据块<a class="headerlink" href="#data-blocks" title="Permalink to this headline">¶</a></h1>
+<p>任何 Blender 项目的基本单元都是数据块。例如：网格(meshes)、物体(objects)、材质(materials)、纹理(textures)、节点树(node-trees)、场景(scenes)、文本(texts)、笔刷(brushes) ，甚至是屏幕(screens)。</p>
+<div class="figure align-right" id="id1">
+<img alt="../_images/files_data-blocks_outliner-blender-file-view.png" src="../_images/files_data-blocks_outliner-blender-file-view.png" />
+<p class="caption"><span class="caption-text">Blender 文件的大纲视图。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>一个数据块是不同类型数据的一种通用抽象，具有一组共同的基本特征，属性和行为。</p>
+<p>通用特性：</p>
+<ul class="simple">
+<li><p>各种数据块是组成 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件的主要内容。</p></li>
+<li><p>可以互相关联，以便于重复利用和实例化(父/子、物体/物体数据，材质/图像，以及修改器和约束等方式)。</p></li>
+<li><p>对于同一个 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中的给定的数据块类型，其名字是唯一的。</p></li>
+<li><p>允许添加、删除、修改和复制。</p></li>
+<li><p>数据块能在文件之间相互关联(仅限部分数据块)。</p></li>
+<li><p>可以有自己的动画数据。</p></li>
+<li><p>可以有 <a class="reference internal" href="#files-data-blocks-custom-properties"><span class="std std-ref">自定义属性</span></a> 。</p></li>
+</ul>
+<p>用户通常会与更高级别的数据类型(物体，网格等)进行交互。 在编辑复杂的项目时，管理数据块变得更加重要，尤其是在处理相互关联的 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件时。 主要编辑器是 <a class="reference internal" href="../editors/outliner.html"><span class="doc">大纲视图</span></a>。</p>
+<p>并非 Blender 中的每个数据都是数据块，例如骨骼、序列条带或顶点组就不是数据块，它们分别属于骨架，场景和网格类型。</p>
+<div class="section" id="life-time">
+<h2>生存期<a class="headerlink" href="#life-time" title="Permalink to this headline">¶</a></h2>
+<p>每个数据块都有它的使用计数(引用计数)，当引用计数大于一时，你可以在UI数据块名称右侧看到当前的用户计数。</p>
+<p>Blender遵循常规的数据块处理规则，未被使用的数据最终会被移除。</p>
+<p>在创作过程中添加和删除大量数据是很常见的事情，垃圾回收的好处在于无需手动管理每一个数据块。</p>
+<p>当写入 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件的时候，这些零用户数据块将将不会被保存。</p>
+<div class="section" id="protected">
+<span id="data-system-datablock-fake-user"></span><h3>保护<a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h3>
+<p>由于零用户的数据块不会被保存，但有时你可能想要强制保留这些数据，而无需关心其使用者。</p>
+<p>你如果创建了一个 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件，作为供给其他文件关联的库文件，那么需要非常小心的确保这些数据不会在库文件中被删掉。</p>
+<p>要保护数据块，请使用名称旁边带有盾牌图标的按钮。 Blender 永远不会偷偷删除数据块，但是如果需要的话你仍然可以手动删除。</p>
+</div>
+</div>
+<div class="section" id="sharing">
+<h2>共享<a class="headerlink" href="#sharing" title="Permalink to this headline">¶</a></h2>
+<p>数据块可以在其他数据块之间共享。</p>
+<p>常见共享数据情形如下：</p>
+<ul class="simple">
+<li><p>材质之间共享贴图。</p></li>
+<li><p>物体(实例)间共享网格数据。</p></li>
+<li><p>物体间共享动画动作，比如让所有的灯光同时变暗。</p></li>
+</ul>
+<p>数据块可以在文件之间共享，见 <a class="reference internal" href="linked_libraries/index.html"><span class="doc">关联库</span></a>。</p>
+</div>
+<div class="section" id="making-single-user">
+<span id="data-system-datablock-make-single-user"></span><h2>生成单用户<a class="headerlink" href="#making-single-user" title="Permalink to this headline">¶</a></h2>
+<p>在多个用户之间共享数据块时，可以通过单击其名称右侧的用户计数按钮为指定的用户生成数据块的副本。这会复制该数据块并将新创建的副本分配给这个用法。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Objects have a set of more advanced actions to become single-user,
+see <a class="reference internal" href="../scene_layout/object/editing/relations.html#bpy-ops-object-make-single-user"><span class="std std-ref">their documentation</span></a>.</p>
+</div>
+</div>
+<div class="section" id="removing-data-blocks">
+<h2>删除数据块<a class="headerlink" href="#removing-data-blocks" title="Permalink to this headline">¶</a></h2>
+<p>正如 <a class="reference internal" href="#life-time">生存期</a> 中所述，数据块通常在不再使用时被删除。</p>
+<p>它们也可以手动 <em>取消链接</em> 或 <em>删除</em> 。</p>
+<p>取消链接数据块意味着其用户将不再使用它。 可以通过单击数据块名称旁边的“X”图标来实现。</p>
+<p>如果取消数据块与其所有用户的链接，这个数据块最终将由 Blender 删除(除非它是受保护的)。</p>
+<p>删除数据块将直接从 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中删除它，自动将其与所有用户断开连接。 这可以通过在其名称旁边的“X”图标上点击 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> 来实现。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>删除某些数据块可能会导致某些用户被删除，如果没有这些数据块这些用户将无效。 常见的例子比如删除物体数据(如网格，曲线，相机……)也将删除使用它的所有物体。</p>
+</div>
+<p>这两种操作也可以在上下文菜单中使用 <kbd class="kbd docutils literal notranslate">RMB</kbd> - 单击 <em>大纲视图</em> 中的数据块。</p>
+</div>
+<div class="section" id="data-block-types">
+<span id="data-system-datablock-types"></span><h2>数据块类型<a class="headerlink" href="#data-block-types" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id2">
+<img alt="../_images/files_data-blocks_id-types.png" src="../_images/files_data-blocks_id-types.png" />
+<p class="caption"><span class="caption-text">数据块类型及其图标。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>这里有一张表格，列出了 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中存储的数据类型，仅供参考。</p>
+<dl class="field-list simple">
+<dt class="field-odd">关联(Link)</dt>
+<dd class="field-odd"><p>库关联，支持关联到其他 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件中。</p>
+</dd>
+<dt class="field-even">打包(Pack)</dt>
+<dd class="field-even"><p>文件打包，文件内容能被打包进 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件 <em>(不适用于没有引用文件的多数数据块)</em>。</p>
+</dd>
+</dl>
+<div class="lead docutils container">
+</div>
+<table class="colwidths-given valign docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>类型</p></th>
+<th class="head"><p>关联(Link)</p></th>
+<th class="head"><p>打包(Pack)</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../animation/actions.html"><span class="doc">动作(Action)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">存储动画 F-曲线(F-Curve)。</div>
+<div class="line">用作动画数据,</div>
+<div class="line">以及非线性动画编辑器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../animation/armatures/introduction.html"><span class="doc">骨架(Armature)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">带动网格形变的骨架。</div>
+<div class="line">用作骨架物体的数据，以及骨架修改器(Armature Modifier)。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../sculpt_paint/brush/brush.html"><span class="doc">笔刷(Brush)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用于绘制工具。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render/cameras.html"><span class="doc">相机(Camera)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用于相机物体的数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modeling/modifiers/modify/mesh_sequence_cache.html"><span class="doc">缓存文件(Cache File)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用于网格缓存修改器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modeling/curves/introduction.html"><span class="doc">曲线(Curve)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用作曲线，字体和曲面物体的数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modeling/texts/introduction.html"><span class="doc">字体(Font)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><div class="line-block">
+<div class="line">字体文件引用。</div>
+<div class="line">文本物体的曲线数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../grease_pencil/introduction.html"><span class="doc">蜡笔(Grease Pencil)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">Grease Pencil 物体使用的2D / 3D草图数据。</div>
+<div class="line">在3D视窗，图像、序列&amp;影片剪辑编辑器中</div>
+<div class="line">3D Viewport, Image, Sequencer &amp; Movie Clip editors.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../scene_layout/collections/introduction.html"><span class="doc">集合(Collection)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">把场景中的物体分组整理。</div>
+<div class="line">用于实例物体和库链接。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../editors/image/introduction.html"><span class="doc">图像(Image)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><div class="line-block">
+<div class="line">图像文件。</div>
+<div class="line">用于着色节点和贴图。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../animation/shape_keys/introduction.html"><span class="doc">形态键(Keys)(Shape Keys)</span></a></p></td>
+<td><p>✗</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">存储几何形状的形变信息，用于动画。</div>
+<div class="line">用于网格，曲线和晶格物体。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render/lights/light_object.html"><span class="doc">灯光(Light)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用作灯光物体的数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="linked_libraries/index.html"><span class="doc">关联库(Library)</span></a></p></td>
+<td><p>✗</p></td>
+<td><p>✓</p></td>
+<td><div class="line-block">
+<div class="line">对外部 <code class="docutils literal notranslate"><span class="pre">.blend</span></code> 文件的引用。</div>
+<div class="line">从大纲视图的 <em>Blender文件</em> 视图访问。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render/freestyle/introduction.html"><span class="doc">线条样式(Line Style)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">用于 FreeStyle 渲染引擎。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../animation/lattice.html"><span class="doc">晶格(Lattice)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">基于网格的晶格变形。</div>
+<div class="line">用作晶格物体的数据，用于晶格修改器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../movie_clip/masking/introduction.html"><span class="doc">遮罩(Mask)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">平面动画遮罩曲线。</div>
+<div class="line">用于合成节点与序列编辑器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../render/materials/introduction.html"><span class="doc">材质(Material)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">设置阴影和纹理的渲染属性。</div>
+<div class="line">用于物体，网格与曲线。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modeling/metas/introduction.html"><span class="doc">融球(Metaball)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">三维的等值曲面。</div>
+<div class="line">用于融球物体的数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modeling/meshes/introduction.html"><span class="doc">网格(Mesh)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">由顶点/边/面生成的几何体。</div>
+<div class="line">用于网格物体的数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../editors/clip/introduction.html"><span class="doc">影片剪辑(Movie Clip)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>✗</p></td>
+<td><div class="line-block">
+<div class="line">引用图片序列或视频文件。</div>
+<div class="line">用于 <em>影片剪辑编辑器</em>。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../render/shader_nodes/groups.html"><span class="doc">节点树(Node Tree)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">可复用的节点组。</div>
+<div class="line">用于节点编辑器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../scene_layout/object/introduction.html"><span class="doc">物体(Object)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">包含场景中位置,</div>
+<div class="line">缩放和旋转的实体。</div>
+<div class="line">被用于场景和集合。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../sculpt_paint/brush/stroke.html"><span class="doc">绘制曲线(Paint Curve)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">保存一个绘制或雕刻的笔划数据。</div>
+<div class="line">从绘图工具中访问。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../sculpt_paint/index.html"><span class="doc">调色板(Palette)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">存储预设的颜色。</div>
+<div class="line">从绘图工具中访问。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../physics/particles/introduction.html"><span class="doc">粒子(Particle)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">粒子设置。</div>
+<div class="line">用于粒子系统。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render/eevee/light_probes/introduction.html"><span class="doc">光照探头)Light Probe</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">帮助在Eevee中实现复杂的实时照明。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../scene_layout/scene/introduction.html"><span class="doc">场景(Scene)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">主要存储所有的显示和动画数据。</div>
+<div class="line">是物体和动画的最高存储单位。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../render/output/audio/speaker.html"><span class="doc">声音(Sounds)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+<td><div class="line-block">
+<div class="line">参考的声音文件。</div>
+<div class="line">用于扬声器物体数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../render/output/audio/speaker.html"><span class="doc">扬声器(Speaker)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">三维场景的发声源。</div>
+<div class="line">用于扬声器物体数据。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../editors/text_editor.html"><span class="doc">文本(Text)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>✗</p></td>
+<td><div class="line-block">
+<div class="line">文本数据.</div>
+<div class="line">用于 Python 脚本和 OSL shader。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../render/materials/legacy_textures/introduction.html"><span class="doc">贴图(Texture)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">2D/3D 纹理。</div>
+<div class="line">用于笔刷和修改器。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interface/window_system/introduction.html"><span class="doc">窗口管理器(Window Manager)</span></a></p></td>
+<td><p>✗</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">Blender 所有 UI 的统一管理器。</div>
+<div class="line">包含工作区、通知系统、操作和键位映射。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../render/lights/world.html"><span class="doc">世界(World)</span></a></p></td>
+<td><p>✓</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">定义全局渲染环境的设置项。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../interface/window_system/workspaces.html"><span class="doc">工作区(Workspace)</span></a></p></td>
+<td><p>✗</p></td>
+<td><p>—</p></td>
+<td><div class="line-block">
+<div class="line">界面布局。</div>
+<div class="line">用于每个有自己的工作区的窗口。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="custom-properties">
+<span id="bpy-ops-wm-properties"></span><span id="bpy-types-bpy-struct"></span><span id="files-data-blocks-custom-properties"></span><h2>自定义属性<a class="headerlink" href="#custom-properties" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id3">
+<img alt="../_images/files_data-blocks_add.png" src="../_images/files_data-blocks_add.png" />
+<p class="caption"><span class="caption-text">自定义属性面板。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>自定义属性是一种在 Blender 的数据块中存储你自己的数据的方法。 它可以用于绑定(其中骨骼和物体可以具有驱动其他属性的自定义属性)和包含 Blender 中不可用的新设置的 Python 脚本。</p>
+<p>只有这些数据支持自定义属性：</p>
+<ul class="simple">
+<li><p>所有 <a class="reference internal" href="#data-system-datablock-types"><span class="std std-ref">数据块类型</span></a>。</p></li>
+<li><p>骨骼和姿态骨骼。</p></li>
+<li><p>序列片段。</p></li>
+</ul>
+<p>To add a custom property, search for the <em>Custom Properties</em> panel,
+found at the bottom of most <a class="reference internal" href="../editors/properties_editor.html"><span class="doc">Properties</span></a> or Sidebar region, and hit <em>Add</em>.</p>
+<div class="section" id="editing-properties">
+<h3>编辑属性<a class="headerlink" href="#editing-properties" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="user-interface">
+<h4>用户界面<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h4>
+<p>可以使用数据类型面板来编辑自定义属性。</p>
+<div class="figure align-right" id="id4">
+<img alt="../_images/files_data-blocks_edit.png" src="../_images/files_data-blocks_edit.png" />
+<p class="caption"><span class="caption-text">编辑自定义属性的弹框。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>属性名</dt><dd><p>自定义属性的名字。</p>
+</dd>
+<dt>属性值</dt><dd><p>这里其实做了两件事：首先设置了自定义属性的当前值，第二，定义了属性的数据类型。</p>
+<p>Custom properties can be of the following types: Integers, floats, strings, Boolean values,
+or short vectors of integers or floats.</p>
+<p>各个数据类型的例子如下表所示：</p>
+<dl class="field-list simple">
+<dt class="field-odd">Integer</dt>
+<dd class="field-odd"><p>1, 2, 3, 4,</p>
+</dd>
+<dt class="field-even">Float</dt>
+<dd class="field-even"><p>3.141, 5.0, 6.125,</p>
+</dd>
+<dt class="field-odd">String</dt>
+<dd class="field-odd"><p>any text,</p>
+</dd>
+<dt class="field-even">Boolean</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code></p>
+</dd>
+<dt class="field-odd">Vector</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code>, <code class="docutils literal notranslate"><span class="pre">[1.0,</span> <span class="pre">2.0,</span> <span class="pre">3.0]</span></code></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Boolean values are handled very similar to integers and only work
+when using Min/Max values that are integers and that are no more than 1 apart.</p>
+<p>At this point, the Boolean values will still look like integers but behave like
+a Boolean having one lower, off, value and a higher, on, value.</p>
+</div>
+</dd>
+<dt>默认值</dt><dd><p>在使用重置为默认值操作时用到的属性的默认值。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Default values are used as the basis of <a class="reference internal" href="../editors/nla/properties_modifiers.html#bpy-types-animdata-action-blend-type"><span class="std std-ref">NLA blending</span></a>,
+and a nonsensical default (e.g. 0 for a property used for scaling) on a property intended for
+being keyframed is likely to cause issues.</p>
+</div>
+</dd>
+<dt>Min, Max</dt><dd><p>The minimum/maximum value the custom property can take.</p>
+</dd>
+</dl>
+<div class="figure align-right" id="id5">
+<img alt="../_images/files_data-blocks_edit-color.png" src="../_images/files_data-blocks_edit-color.png" />
+<p class="caption"><span class="caption-text">带alpha的色彩的自定义属性设置。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>Is Library Overridable</dt><dd><p>Allow the property to be <a class="reference internal" href="linked_libraries/library_overrides.html"><span class="doc">overridden</span></a>
+when the data-block is linked.</p>
+</dd>
+<dt>使用软限制</dt><dd><p>开启通过滑块调整 <em>属性值</em> 的限制，而无需以数字方式输入值。</p>
+</dd>
+<dt>Soft Min, Max</dt><dd><p>The minimum/maximum value for the soft limit.</p>
+</dd>
+<dt>提示</dt><dd><p>允许你为你的自定义属性编写 <a class="reference internal" href="../getting_started/help.html"><span class="doc">提示</span></a>。</p>
+</dd>
+<dt>子类型</dt><dd><p>For vector properties, specifies the type of data the property contains,
+which affects how it appears in the <abbr title="User Interface">UI</abbr>. Most useful for color properties.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="python-access">
+<h4>Python 脚本访问<a class="headerlink" href="#python-access" title="Permalink to this headline">¶</a></h4>
+<p>可以通过与 <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries">字典</a> 类似的方式访问自定义属性，其中键值只能是字符串，而值只能是字符串，数字，数组或嵌套属性。</p>
+<p>See the <a class="reference external" href="https://docs.blender.org/api/blender_python_api_current/info_quickstart.html#custom-properties">API documentation</a>
+for details.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="linked_libraries/index.html" class="btn btn-neutral float-right" title="关联库" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="blend/rename.html" class="btn btn-neutral float-left" title="重命名" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/files/data_blocks.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60files/data_blocks%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

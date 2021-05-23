@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>洋面修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/physics/ocean.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="粒子实例修改器" href="particle_instance.html" />
+    <link rel="prev" title="材质" href="../../../physics/fluid/material.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#modify">修改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#physics">物理</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/cloth/index.html">Cloth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/collision.html">Collision</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l4"><a class="reference internal" href="explode.html">爆破修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/fluid/index.html">Fluid</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">洋面修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#waves">波浪</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#foam">泡沫</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#spray">浪花</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#spectrum">色谱</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#bake">烘培</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#examples">例子</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="particle_instance.html">粒子实例修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/particles/index.html">Particle System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../physics/soft_body/index.html">软体</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>洋面修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ocean-modifier">
+<span id="bpy-types-oceanmodifier"></span><h1>洋面修改器<a class="headerlink" href="#ocean-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>海洋</em> 修改器是一个海洋模拟工具，用于模拟和生成变形的海洋表面以及相关纹理，用于渲染模拟数据。 它旨在模拟深海波浪和泡沫.</p>
+<p>这是一个来自开放源码 <a class="reference external" href="https://code.google.com/archive/p/houdini-ocean-toolkit/">Houdini Ocean Toolkit</a> 的端口。</p>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_physics_ocean_panel.png"><img alt="../../../_images/modeling_modifiers_physics_ocean_panel.png" src="../../../_images/modeling_modifiers_physics_ocean_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">海洋修改器。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>几何数据(Geometry)</dt><dd><dl>
+<dt>生成</dt><dd><p>创建与模拟数据的分辨率完全对应的平铺网格栅格.</p>
+<p>生成网格曲面时，现有的网格对象将被海洋网格完全覆盖。 还添加了UV通道，将(0.0到1.0)UV空间映射到模拟网格。</p>
+<dl class="simple">
+<dt>Repeat X, Y</dt><dd><p>控制网格在X和Y方向平铺的次数。这些平铺网格区域的UV值(0.0到1.0)延续出UV空间。</p>
+</dd>
+</dl>
+</dd>
+<dt>置换</dt><dd><p>使用现有几何体而不是替换它。 顶点沿自身Z轴平移。</p>
+</dd>
+</dl>
+</dd>
+<dt>分辨率</dt><dd><p>这是模拟引擎的速度与品质的关键控制点，它决定了由模拟生成的内置二维网格面的精度。</p>
+<p>内部网格是分辨率值的二次幂，因此分辨率值为 ”16“ ，将创建大小为 “256×256” 的模拟数据。 分辨率越高，产生的细节就越多，但计算得越慢。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>使用 <em>生成</em> 修改器几何体选项时，此分辨率值还决定生成的网格曲面的分辨率，等于内部模拟数据的分辨率。</p>
+</div>
+</dd>
+<dt>时间</dt><dd><p>海洋表面的解算时间。要创建一个海洋动画，需要 <a class="reference internal" href="../../../animation/keyframes/editing.html#bpy-ops-anim-keyframe-insert"><span class="std std-ref">驱动</span></a> 该值。时间值变化的速度将决定波浪动画的速度。</p>
+</dd>
+<dt>深度</dt><dd><p>即模拟区域下方的洋底的恒定深度。 较低的值模拟较浅的水但是波浪更细密。</p>
+</dd>
+<dt>尺寸</dt><dd><p>一个简单的缩放因子，不影响波的高度或模拟的行为。</p>
+</dd>
+<dt>空间尺寸</dt><dd><p>模拟海洋表面区域的宽度，以米为单位。 这也决定了生成的网格或位移区域的大小。 当然，您可以在物体模式中的 <em>海洋</em> 修改器缩放对象，以调整场景中的外观尺寸。</p>
+</dd>
+<dt>随机种</dt><dd><p>A different <a class="reference internal" href="../../../glossary/index.html#term-Seed"><span class="xref std std-term">Seed</span></a> will produce a different simulation result.</p>
+</dd>
+<dt>生成法线</dt><dd><p>Simulates extra normal map data.
+This can be used by the Ocean texture, when mapped to Normals,
+as a bump map, and enables generating normal map image sequences when baking.</p>
+</dd>
+</dl>
+<div class="section" id="waves">
+<h3>波浪<a class="headerlink" href="#waves" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>比例</dt><dd><p>这是对波幅的总体缩放控制。它能够通过正负值控制波浪的高度或深度。它不仅能够对洋面物体进行Z向缩放，而且可以对各个模拟面进行缩放，包括X与Y向的置换，以及对应的水沫与法线。</p>
+</dd>
+<dt>最小波浪</dt><dd><p>指定所生成波浪尺寸的下限。与低通滤波器功能相仿，这会将高频波浪的细节移除。</p>
+</dd>
+<dt>翻滚度</dt><dd><p>波峰的翻滚程度。当翻滚度值为0时，海洋表面只是在Z方向上做上下置换。而较高的翻滚度值则会让波浪产生X向与Y向的置换效果，来产生较为尖锐的波峰效果。</p>
+</dd>
+<dt>风速率</dt><dd><p>风速以米/秒为单位。风速较低时，表面会形成会相应较小的波浪。</p>
+</dd>
+<dt>对齐</dt><dd><p>The directionality of the wave shapes due to wind.
+At a value of 0, the wind and waves are randomly, uniformly oriented.
+With higher <em>Alignment</em> values, the wind is blowing in a more constant direction,
+making the waves appear more compressed and aligned to a single direction.</p>
+</dd>
+<dt>方向</dt><dd><p>当使用 <em>对齐</em> 时，波浪对齐到的角度方向(使用自身X轴作为参考)。</p>
+</dd>
+<dt>阻尼</dt><dd><p>当使用 <em>对齐</em> 时，这将定义相互反射波的阻尼量。这样做的效果是使波的运动更有方向性(不仅仅是波的形状)。</p>
+<p>当 <em>阻尼</em> 为0.0时，波会在各个方向相互反射，当 <em>阻尼</em> 为1.0时，这些相互反射的波会被阻尼抵消掉，只留下沿风的方向传播的波。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="foam">
+<h3>泡沫<a class="headerlink" href="#foam" title="Permalink to this headline">¶</a></h3>
+<p>模拟其他泡沫数据。</p>
+<p>这可以通过海洋纹理获取，用于纹理创建(可能作为遮罩)，并允许在烘培时生成泡沫映射图像序列。</p>
+<dl class="simple">
+<dt>数据层</dt><dd><p>顶点数据层的可选名称，由海洋修改器用于将泡沫贴图存储为顶点颜色。 这是访问渲染器中的泡沫数据所必需的.</p>
+</dd>
+<dt>范围</dt><dd><p>调整覆盖波浪的泡沫量，负值将减少泡沫量(仅留下最高的顶峰)，正值将增加。 通常其范围从(-1.0到1.0)。</p>
+</dd>
+</dl>
+<div class="figure align-center" id="id2">
+<img alt="../../../_images/modeling_modifiers_physics_ocean_foam-layer-name.png" src="../../../_images/modeling_modifiers_physics_ocean_foam-layer-name.png" />
+<p class="caption"><span class="caption-text">使用指定数据层的泡沫顶点颜色。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="spray">
+<h4>浪花<a class="headerlink" href="#spray" title="Permalink to this headline">¶</a></h4>
+<p>Generate map of spray direction as a vertex color channel.
+This map can be used to define the velocities for spray particles.</p>
+<dl class="simple">
+<dt>Spray Map</dt><dd><p>Name of the vertex color layer used for the spray direction map.</p>
+</dd>
+<dt>Invert</dt><dd><p>Inverts the spray direction map.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="spectrum">
+<h3>色谱<a class="headerlink" href="#spectrum" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>色谱</dt><dd><p>Used to choose the wave spectrum model to use.
+Wave spectra are used to describe how energy moves through the waves at different frequencies.
+Energy travels through waves differently depending on the depth of the water and the wind speed.</p>
+<dl class="simple">
+<dt>湍流海洋</dt><dd><p>用于创建带水沫的湍流海洋(Phillips)。</p>
+</dd>
+<dt>创建大洋(尖海浪)</dt><dd><p>Use for a large area, established ocean where the ocean would extend for miles
+with wind blowing for days allowing the waves to reach a point of equilibrium (Pierson-Moskowitz method).</p>
+</dd>
+<dt>创建大洋(尖海浪)</dt><dd><p>Similar to regular <em>Established Ocean</em> however, waves will continue to grow with time
+creating sharper peaks (<abbr title="JOint North Sea WAve Project">JONSWAP</abbr> and Pierson-Moskowitz method).
+An extra parameter is used to define the sharpness of these peaks.</p>
+</dd>
+<dt>浅水</dt><dd><p>Use for shallow water with depths less than about 10 meters which makes it great
+for small lakes and ponds without heavy wind (JONSWAP and TMA -- Texel-Marsen-Arsloe methods).</p>
+</dd>
+</dl>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Examples of different spectra, settings adjusted for each.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<img alt="../../../_images/modeling_modifiers_physics_ocean_spectra-turbulent.png" src="../../../_images/modeling_modifiers_physics_ocean_spectra-turbulent.png" />
+<p class="caption"><span class="caption-text">湍流海洋。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../../_images/modeling_modifiers_physics_ocean_spectra-established.png" src="../../../_images/modeling_modifiers_physics_ocean_spectra-established.png" />
+<p class="caption"><span class="caption-text">创建大洋。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id6">
+<img alt="../../../_images/modeling_modifiers_physics_ocean_spectra-established-peaks.png" src="../../../_images/modeling_modifiers_physics_ocean_spectra-established-peaks.png" />
+<p class="caption"><span class="caption-text">创建大洋(尖海浪)。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../../_images/modeling_modifiers_physics_ocean_spectra-shallow-water.png" src="../../../_images/modeling_modifiers_physics_ocean_spectra-shallow-water.png" />
+<p class="caption"><span class="caption-text">浅水。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>尖海浪</dt><dd><p>An artificial factor to control how sharp the peaks of the waves are in
+the <em>Established Ocean (Sharp Peaks)</em> and <em>Shallow Water</em> spectrum models.</p>
+</dd>
+<dt>吹程</dt><dd><p>Distance from a lee shore, called the fetch, or the distance over which the wind blows with constant velocity.
+Used by <em>Established Ocean (Sharp Peaks)</em> and <em>Shallow Water</em> spectrum models.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="bake">
+<h3>烘培<a class="headerlink" href="#bake" title="Permalink to this headline">¶</a></h3>
+<p>与其实时模拟海洋数据，不如将数据烘培到指定目录中的文件中。当模拟完成后，将完全绕过模拟器引擎，修改器/纹理将从烘培文件中检索所有信息。</p>
+<p>烘焙具有以下优势：</p>
+<ul class="simple">
+<li><p>It is faster to use the stored data rather than recalculating it.</p></li>
+<li><p>允许使用外部渲染器对海洋数据进行渲染。</p></li>
+<li><p>允许使用更为高级的水沫贴图.</p></li>
+</ul>
+<p>模拟数据作为 <code class="docutils literal notranslate"><span class="pre">OpenEXR</span></code> 图像映射的序列存储在硬盘上，每个图像映射对应位移，法线和泡沫(如果能够生成)。 在从这些烘焙文件加载数据时，当从硬盘读取烘焙序列的帧时，它被缓存在内存中。 这意味着随后访问加载的帧很快，不会产生硬盘访问的开销.</p>
+<p>由于这些烘焙文件只是普通 <code class="docutils literal notranslate"><span class="pre">OpenEXR</span></code> ，所以它们也可以在支持它们的任何其他应用程序或渲染器中打开和渲染.</p>
+<dl>
+<dt>缓存路径</dt><dd><p>烘焙的EXR文件的存储路径。序列格式为  <code class="docutils literal notranslate"><span class="pre">disp_####.exr</span></code> ,  <code class="docutils literal notranslate"><span class="pre">normal_####.exr</span></code> ,  and <code class="docutils literal notranslate"><span class="pre">foam_####.exr</span></code> ，这里的 <code class="docutils literal notranslate"><span class="pre">####</span></code> 代表四位数的帧数值。如果缓存路径文件夹不存在，将创建一个新的。</p>
+</dd>
+<dt>起始帧、结束帧</dt><dd><p>用于烘焙模拟的帧范围(包括首尾)。当从烘焙范围外进行烘焙时，始帧与末帧将被重复执行烘焙操作。</p>
+</dd>
+<dt>水沫消退</dt><dd><p>烘培还提供改进的泡沫能力。 在实时模拟时，海洋模拟器仅检索当前帧的数据。 在泡沫映射的情况下，这代表给定帧的波峰顶端。 实际上，在通过波浪相互作用产生泡沫之后，它会在波浪表面的顶部保持一段时间，因为它会消散。 通过烘培，可以通过累积前一帧中的泡沫使其保持在表面上来近似该行为。</p>
+<iframe src="https://player.vimeo.com/video/17517981" style="border: 0; height: 286px; width: 500px">
+</iframe></dd>
+</dl>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>例子<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<iframe src="https://player.vimeo.com/video/18911131" style="border: 0; height: 286px; width: 500px">
+</iframe><p>在Blender中模拟和烘焙图像映射，在3Delight渲染。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="particle_instance.html" class="btn btn-neutral float-right" title="粒子实例修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../../../physics/fluid/material.html" class="btn btn-neutral float-left" title="材质" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/physics/ocean.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/physics/ocean%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

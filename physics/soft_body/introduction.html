@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>简介 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/soft_body/introduction.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="设置" href="settings.html" />
+    <link rel="prev" title="软体" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">软体</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">简介</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#typical-scenarios-for-using-soft-bodies">使用软体的典型场景</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-soft-body">创建软体</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interaction-in-real-time">实时交互</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tips">小贴士</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forces/index.html">力</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html">碰撞</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples.html">范例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="index.html">软体</a> &raquo;</li>
+        
+      <li>简介</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>简介<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>软体模拟用于模拟柔软的可形变物体。这个功能主要用于为动画添加辅助运动，例如人物行走时身体部分的轻微晃动。</p>
+<p>它也可以用于模拟更加常见的软体，如弯曲、变形、受重力和风力作用、或是与其他物体碰撞。</p>
+<p>虽然软体也可以在一定程度上模拟布料和其他有一定硬度的可形变物体，但专为此目的设计的 <a class="reference internal" href="../cloth/index.html"><span class="doc">布料模拟</span></a> 解算器可以更好的完成这一任务。</p>
+<p>软体模拟的工作原理是将物体已有的动画与它受到的力结合起来。物体的顶点受外力如重力或力场，和内力的同时作用。这样，你就能模拟真实世界中物体的形状，好像它们确实有体积、是实心的、并且受物理力量的作用。</p>
+<p>软体可以通过 <em>碰撞</em> 与其他物体产生相互作用。它也可以通过 <em>自碰撞</em> 与自己产生相互作用。</p>
+<p>软体模拟的结果可以被转换为静态对象。你也可以对模拟进行 <em>烘焙编辑</em> ，例如，修改中间某处的结果并从这里继续运行柔体模拟。</p>
+<div class="section" id="typical-scenarios-for-using-soft-bodies">
+<h2>使用软体的典型场景<a class="headerlink" href="#typical-scenarios-for-using-soft-bodies" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<span id="fig-softbody-intro-cone"></span><a class="reference internal image-reference" href="../../_images/physics_soft-body_introduction_windcone.jpg"><img alt="../../_images/physics_soft-body_introduction_windcone.jpg" src="../../_images/physics_soft-body_introduction_windcone.jpg" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">悬挂的风向袋是一个软体。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p><a class="reference external" href="https://vimeo.com/1865817">动画</a></p>
+</div>
+</div>
+<p>软体适用于：</p>
+<ul class="simple">
+<li><p>人物移动时的轻微晃动。</p></li>
+<li><p>使用橡胶、明胶等材料制作的富有弹性、可形变的物体。</p></li>
+<li><p>在风中晃动的树枝，摇摆的绳索等类似的物体。</p></li>
+<li><p>受力的旗帜、宽袖、垫子等简单的布制品。</p></li>
+</ul>
+<p>下面的视频或许可以给你一些启发：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=hLnY-OFUBzM">https://www.youtube.com/watch?v=hLnY-OFUBzM</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=qdusMZlBbQ4">https://www.youtube.com/watch?v=qdusMZlBbQ4</a></p></li>
+</ul>
+</div>
+<div class="section" id="creating-a-soft-body">
+<h2>创建软体<a class="headerlink" href="#creating-a-soft-body" title="Permalink to this headline">¶</a></h2>
+<p>软体模拟适用于所有具有顶点或控制点(网格、曲线、平面和晶格)的物体。</p>
+<p>To add a soft body simulation to an object,
+go to the <em>Physics</em> tab (bouncing ball icon) in the Properties
+and activate the <em>Soft Body</em> button.
+For a reference of all the settings see <a class="reference internal" href="settings.html"><span class="doc">this page</span></a>.</p>
+<p>你可以使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd> 播放动画开始软体模拟，使用 <kbd class="kbd docutils literal notranslate">Esc</kbd> 或 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd> 停止模拟。</p>
+</div>
+<div class="section" id="interaction-in-real-time">
+<h2>实时交互<a class="headerlink" href="#interaction-in-real-time" title="Permalink to this headline">¶</a></h2>
+<p>使用时间线编辑器可以很方便的处理软体模拟。你可以在不同的帧中切换，模拟将始终显示其实际形态。你可以与模拟过程实时交互，例如，移动碰撞物体或者抖动软体对象。</p>
+<p>You can then select the soft body object while running the simulation and <em>Apply</em>
+the modifier in the <em>Modifiers</em> tab of the Properties.
+This makes the deformation permanent.</p>
+</div>
+<div class="section" id="tips">
+<h2>小贴士<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>柔体模拟非常适合顶点均匀分布的物体。你需要足够多的顶点进行良好的碰撞。向一个特定的区域添加顶点会改变物体的形变(硬度)。</p></li>
+<li><p>碰撞计算会花费大量时间。如果某个对象是不可见的，就不要计算它。</p></li>
+<li><p>为了提高碰撞计算的速度，通常会使用一个额外的、更简单、不可见、稍微大一些的物体来替代碰撞对象进行计算。</p></li>
+<li><p>只在行得通时使用软体。如果试图给身体网格一个较紧的衣物，单单使用软体来模拟衣物的动画，你不会成功。自碰撞的软体毛发有实现的可能，但这是一条需要你独自摸索的道路。我们稍后会在 <a class="reference internal" href="collision.html"><span class="doc">碰撞</span></a> 中细述这个问题。</p></li>
+<li><p>尝试使用 <em>晶格</em> 或 <em>曲线引导</em> 而非物体本身来进行软体模拟。这或许更快。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="settings.html" class="btn btn-neutral float-right" title="设置" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="软体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/soft_body/introduction.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/soft_body/introduction%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

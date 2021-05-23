@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>倒角修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/bevel.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="布尔修改器" href="booleans.html" />
+    <link rel="prev" title="阵列修改器" href="array.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#modify">修改</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#generate">生成</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="array.html">阵列修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">倒角修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#profile">轮廓</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#superellipse">超椭圆</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#custom-profile">自定义轮廓</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#geometry">几何数据</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#shading">着色方式</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="booleans.html">布尔修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html">建形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="decimate.html">精简修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edge_split.html">拆边修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mask.html">遮罩修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mirror.html">镜像修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="multiresolution.html">多级精度修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="remesh.html">重构网格修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="screw.html">螺旋修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="skin.html">蒙皮修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="solidify.html">实体化修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subdivision_surface.html">表面细分修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="triangulate.html">三角化修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weld.html">焊接修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wireframe.html">线框修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>倒角修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bevel-modifier">
+<span id="bpy-types-bevelmodifier"></span><h1>倒角修改器<a class="headerlink" href="#bevel-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>倒角</em> 修改器可以把应用该修改器的网格的棱切成斜角，允许控制如何以及哪里把倒角操作应用到网格上。</p>
+<p>倒角修改器是编辑模式下 <a class="reference internal" href="../../meshes/editing/edge/bevel.html"><span class="doc">倒角操作</span></a> 的非破坏性替代方式。</p>
+<table class="docutils align-center" id="id1">
+<caption><span class="caption-text">立方体的侧视图。</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_square-not.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_square-not.png" src="../../../_images/modeling_modifiers_generate_bevel_square-not.png" style="width: 150px;" /></a>
+<p class="caption"><span class="caption-text">未倒角。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_square.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_square.png" src="../../../_images/modeling_modifiers_generate_bevel_square.png" style="width: 150px;" /></a>
+<p class="caption"><span class="caption-text">已倒角。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id4">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_panel.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_panel.png" src="../../../_images/modeling_modifiers_generate_bevel_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">倒角修改器。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>Affect</dt><dd><dl class="simple">
+<dt>顶点</dt><dd><p>仅靠近顶点的区域会倒角，边不受倒角影响。</p>
+</dd>
+<dt>边</dt><dd><p>Bevel the edges, creating intersections at vertices.</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_cubes-vertices-only.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_cubes-vertices-only.png" src="../../../_images/modeling_modifiers_generate_bevel_cubes-vertices-only.png" style="width: 325px;" /></a>
+<p class="caption"><span class="caption-text">三个倒角宽度分别为 0.1, 0.3 和 0.5 的立方体，启用了 <em>顶点</em> 选项。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>宽度类型</dt><dd><p>声明如何使用 <em>宽度</em> 以决定倒角总量。</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_width-methods.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_width-methods.png" src="../../../_images/modeling_modifiers_generate_bevel_width-methods.png" style="width: 240px;" /></a>
+</div>
+<dl class="simple">
+<dt>偏移量</dt><dd><p>The distance from the new edge to the original.</p>
+</dd>
+<dt>宽度</dt><dd><p>The distance between the two new edges formed by the bevel
+(or the edges on either side of the bevel if there is more than one segment).</p>
+</dd>
+<dt>深度</dt><dd><p>该值是从原始边到倒角面的垂直距离。</p>
+</dd>
+<dt>百分比</dt><dd><p>The percentage of the length of adjacent edge length that the new edges slide along.</p>
+</dd>
+<dt>Absolute</dt><dd><p>The exact distance along edges adjacent to the beveled edge. A difference from <strong>Offset</strong> is visible
+when the unbeveled edges attached to beveled edges meet at an angle besides a right angle.</p>
+</dd>
+</dl>
+</dd>
+<dt>宽度</dt><dd><p>倒角影响的尺寸，见下面的 <em>宽度方法</em> 。</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_cubes.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_cubes.png" src="../../../_images/modeling_modifiers_generate_bevel_cubes.png" style="width: 350px;" /></a>
+<p class="caption"><span class="caption-text">三个倒角宽度分别为 0.1、0.3 和 0.5 的立方体。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>段数</dt><dd><p>沿着倒角面所添加环边的数量。</p>
+</dd>
+<dt>限定方式</dt><dd><p>用来控制对网格应用倒角的位置。</p>
+<dl>
+<dt>无</dt><dd><p>无限制，所有的棱将会倒角。</p>
+</dd>
+<dt>角度</dt><dd><p>邻接面构成的二面角小于定义的阈值的棱将会倒角。用来允许你仅对物体构成尖端的棱倒角，而不影响光滑的表面。</p>
+</dd>
+<dt>权重</dt><dd><p>使用每个边的倒角权重来确定倒角的宽度。当倒角权重取 0.0 时，不会应用倒角。请参考 <a class="reference internal" href="../../meshes/editing/edge/edge_data.html"><span class="doc">这里</span></a> 了解关于调整倒角的权重。</p>
+</dd>
+<dt>顶点组</dt><dd><p>用一个顶点组的权重，来确定该倒角面的宽度。当倒角权重取0.0时，不会应用倒角。两个顶点都在顶点组的棱才会倒角。请参考 <a class="reference internal" href="../../meshes/properties/vertex_groups/vertex_groups.html"><span class="doc">这里</span></a> 了解关于调整顶点组的权重。</p>
+<dl>
+<dt>反转 <code class="docutils literal notranslate"><span class="pre">&lt;-&gt;</span></code></dt><dd><p>反转所选顶点组的影响，这意味着该组现在表示不会被修改器改变形状的顶点。</p>
+<p>反转顶点组的权重值。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="profile">
+<h3>轮廓<a class="headerlink" href="#profile" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="superellipse">
+<h4>超椭圆<a class="headerlink" href="#superellipse" title="Permalink to this headline">¶</a></h4>
+<p>创建具有均匀凹面或凸面曲线的倒角。</p>
+<dl class="simple">
+<dt>形状</dt><dd><p>倒角的形状，从凹到凸——如果 <em>段数</em> 少于2则无效果。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="custom-profile">
+<h4>自定义轮廓<a class="headerlink" href="#custom-profile" title="Permalink to this headline">¶</a></h4>
+<div class="figure align-right" id="id7">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_generate_bevel_profile-widget.png"><img alt="../../../_images/modeling_modifiers_generate_bevel_profile-widget.png" src="../../../_images/modeling_modifiers_generate_bevel_profile-widget.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">自定义轮廓控件。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>斜接形状</dt><dd><p>The shape of the miter patterns, from concave to convex. It has no effect if <em>Segments</em> is less than 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Miter Shape</em> slider stays active when miters are enabled
+because it still controls the shape of the miter profiles.</p>
+</div>
+</dd>
+</dl>
+<p>此控件用于创建用户定义的轮廓，其复杂性比使用单个轮廓参数更复杂。模态工具允许切换自定义轮廓，但仅在确认操作后，才能在选项面板中编辑轮廓形状。</p>
+<p>轮廓从控件的右下角开始，在左上角结束，就好像它是位于两条垂直交汇的边之间一样。在控件中创建控制点，然后使用段数修改器中的段数对路径进行采样。</p>
+<dl class="simple">
+<dt>预设</dt><dd><p><em>支撑环</em> 和 <em>阶梯*</em> 预设根据斜角中的段数动态生成。如果段数发生更改，则必须重新应用预设。</p>
+</dd>
+<dt>采样</dt><dd><p>向曲线添加一个控制点等于添加一个采样，然后如果采样数足够，将在均匀分配到各段倒角边。<em>采样直边</em> 选项切换采样是否向两端为锐化控制点的边添加采样。如果采样不足以为每个边提供相同数量的采样，则它们只会添加到最弯曲的边缘，因此建议段数至少应与控制点数相同。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="geometry">
+<h3>几何数据<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>内/外</dt><dd><p>当两个倒角边以一定角度相交时，就形成了 <em>斜接</em> 。如果有的话，在角大于180度的一侧，称为 <em>外斜接</em> 。如果小于180度，则称为 <em>内斜接</em> 。外斜接和内斜接可以分别设置为以下模式之一:</p>
+<dl>
+<dt>锐边</dt><dd><p>边在一个尖锐点相遇，且边上没有额外的顶点。</p>
+</dd>
+<dt>补块</dt><dd><p>边在一个尖锐的点相交，但是除此之外，在这个点附近引入了两个额外的顶点，这样顶点上的边和面就不会像在 <em>尖锐</em> 情况下那样被挤在一起。这种模式对于内斜接没有任何意义，因此它的行为类似于 <em>圆弧</em> 。</p>
+<p>扩展滑块控制新顶点到交点的距离。</p>
+</dd>
+<dt>圆弧</dt><dd><p>在交点附近引入两个顶点，然后用一条弧线将它们连接在一起。</p>
+<p>扩展滑块控制新顶点到交点的距离。</p>
+<p><em>轮廓</em> 滑块控制圆弧的形状。</p>
+</dd>
+</dl>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">斜接模式图表。</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id9">
+<img alt="../../../_images/modeling_meshes_editing_edge_bevel_miter-2.png" src="../../../_images/modeling_meshes_editing_edge_bevel_miter-2.png" />
+<p class="caption"><span class="caption-text">锐边外斜接。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id10">
+<img alt="../../../_images/modeling_meshes_editing_edge_bevel_miter-3.png" src="../../../_images/modeling_meshes_editing_edge_bevel_miter-3.png" />
+<p class="caption"><span class="caption-text">补块外斜接。</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id11">
+<img alt="../../../_images/modeling_meshes_editing_edge_bevel_miter-4.png" src="../../../_images/modeling_meshes_editing_edge_bevel_miter-4.png" />
+<p class="caption"><span class="caption-text">圆弧外斜接。</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id12">
+<img alt="../../../_images/modeling_meshes_editing_edge_bevel_miter-5.png" src="../../../_images/modeling_meshes_editing_edge_bevel_miter-5.png" />
+<p class="caption"><span class="caption-text">锐边内斜接。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id13">
+<img alt="../../../_images/modeling_meshes_editing_edge_bevel_miter-6.png" src="../../../_images/modeling_meshes_editing_edge_bevel_miter-6.png" />
+<p class="caption"><span class="caption-text">圆弧内斜接。</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>扩散</dt><dd><p>该值用于控制非锐边斜接引入的顶点的分散程度。</p>
+</dd>
+<dt>交集</dt><dd><p>在两个以上倒角边相交的顶点处创建一个网格，作为实现生成的几何体之间的相交的方法。此选项控制创建该网格的方法。</p>
+<dl>
+<dt>栅格填充</dt><dd><p>用于构建相交的默认方法，当需要平滑连续的倒角轮廓时很有用。如果不启用 <em>自定义轮廓</em>，轮廓的曲线将穿过相交区域，但使用自定义轮廓后，它会在相交区域的边界内创建平滑网格。</p>
+</dd>
+<dt>截止</dt><dd><p>在交汇于顶点的每个倒角边末端创建一个截止面。当新交点对于平滑栅格填充来说过于复杂时，这对自定义轮廓最有用。</p>
+<p>对于三向交点，当截止剖面的内角在同一位置相遇时，不会创建中心面。</p>
+<p>截止面的方向取决于原始顶点的法向。</p>
+</dd>
+</dl>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">相交方法选项。</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id15">
+<a class="reference internal image-reference" href="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-1.png"><img alt="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-1.png" src="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-1.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">网格填充相交方法。</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id16">
+<a class="reference internal image-reference" href="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-2.png"><img alt="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-2.png" src="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-2.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">三向截止相交，内侧的顶点被合并。</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id17">
+<a class="reference internal image-reference" href="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-3.png"><img alt="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-3.png" src="../../../_images/modeling_meshes_editing_edge_bevel_vmesh-3.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">带有中心面的截止相交方法。</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>钳制重叠</dt><dd><p>限制每个倒角边的宽度，使边缘不能与其他几何图形重叠。</p>
+</dd>
+<dt>环切线滑移</dt><dd><p>如果一个顶点有未倒角的边和已倒角的边，倒角会尽可能沿着这些边滑动。关闭该选项可以导致更均匀的倒角宽度。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="shading">
+<h3>着色方式<a class="headerlink" href="#shading" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>硬化法向</dt><dd><p>启用后，将调整倒角面的每个顶点面法线以匹配周围的面，并且不影响周围面的法线。这将使周围的面平坦(如果以前是面)，使倒角面阴影光滑。要实现这种效果，需要自定义法线数据，这需要启用 <em>自动光滑</em> 选项(参见 <a class="reference internal" href="../../meshes/editing/mesh/normals.html"><span class="doc">法线</span></a> )。</p>
+</dd>
+<dt>标记</dt><dd><dl class="simple">
+<dt>缝合边</dt><dd><p>如果一个缝合边穿过一个非缝合边，并且你把所有的边都进行倒角，这个选项将保持缝合边按预期延伸。</p>
+</dd>
+<dt>锐边</dt><dd><p>类似于标记缝合边，但是是为锐边设置的。</p>
+</dd>
+</dl>
+</dd>
+<dt>材质编号</dt><dd><p>用来倒角的材质槽的索引。当设置为 -1 时，将采用最靠近原始面的材质。</p>
+</dd>
+<dt>不设置面强度</dt><dd><p>根据这里指定的模式，在倒角所涉及的面上设置 <em>面强度</em> 。这可以与以下修改器一起使用 <a class="reference internal" href="../modify/weighted_normal.html"><span class="doc">加权法向修改器</span></a>  (勾选 <em>面影响</em> 选项)。</p>
+<dl class="simple">
+<dt>无</dt><dd><p>不设置面强度。</p>
+</dd>
+<dt>新建</dt><dd><p>设置沿边缘的新面的面强度为 <em>中</em> ，顶点的新面的面强度为 <em>弱</em> 。</p>
+</dd>
+<dt>受影响的</dt><dd><p>除了为设置为 <em>新建</em> 的那些面外，还将相邻的面设置为具有 <em>强</em> 强度。</p>
+</dd>
+<dt>全部</dt><dd><p>除了那些设置为 <em>受影响的</em> 情况，还设置模型的所有其余面强度是 <em>强</em> 。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="booleans.html" class="btn btn-neutral float-right" title="布尔修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="array.html" class="btn btn-neutral float-left" title="阵列修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/generate/bevel.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/generate/bevel%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

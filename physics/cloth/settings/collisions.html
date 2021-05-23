@@ -1,0 +1,408 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>碰撞 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/cloth/settings/collisions.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="属性权重" href="property_weights.html" />
+    <link rel="prev" title="形状" href="shape.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cloth</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">设置</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="physical_properties.html">物理属性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">高速缓存</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shape.html">形状</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">碰撞</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#collision-settings">碰撞设置</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#object-collisions">碰撞对象</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#self-collisions">自碰撞</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#troubleshooting">故障排除</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="property_weights.html">属性权重</a></li>
+<li class="toctree-l4"><a class="reference internal" href="field_weights.html">力场权重</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../examples.html">例子</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../index.html">Cloth</a> &raquo;</li>
+        
+          <li><a href="index.html">设置</a> &raquo;</li>
+        
+      <li>碰撞</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="collisions">
+<span id="bpy-types-clothcollisionsettings"></span><h1>碰撞<a class="headerlink" href="#collisions" title="Permalink to this headline">¶</a></h1>
+<p>在大多数情况下，一块布不只是挂在3D空间中，而是与环境中的其他物体碰撞。 为了确保正确模拟，有几个项目必须设置并一起工作：</p>
+<ul class="simple">
+<li><p>必须告诉 <em>布料</em> 对象参与碰撞。</p></li>
+<li><p>可选(但建议)告诉布料与自身发生碰撞。</p></li>
+<li><p>其他对象必须对 <em>布料</em> 对象 <em>通过</em> 共享图层可见。</p></li>
+<li><p>其他对象必须是网格对象。</p></li>
+<li><p>其他物体可能会被另外物体(如骨架或形态键)移动或自身变形。</p></li>
+<li><p>必须告知其他网格对象偏转布料对象。</p></li>
+<li><p>必须将blend文件保存在目录中以便保存模拟结果。</p></li>
+<li><p>然后你可以 <em>烘焙</em> 模拟。模拟器计算帧范围内的布料形状。</p></li>
+<li><p>之后，您可以在特定帧处编辑模拟结果，或对布料网格进行调整。</p></li>
+<li><p>您可以调整环境或改变对象形状，然后从当前帧向前重新运行布料模拟。</p></li>
+</ul>
+<div class="section" id="collision-settings">
+<h2>碰撞设置<a class="headerlink" href="#collision-settings" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 布料 ‣ 碰撞</span></p>
+</dd>
+</dl>
+</div>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/physics_cloth_settings_collisions_panel.png" src="../../../_images/physics_cloth_settings_collisions_panel.png" />
+<p class="caption"><span class="caption-text">布料碰撞面板.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>现在，你必须告诉 <em>布料</em> 对象你希望它参与碰撞。对于布料对象，找到 <em>布料 碰撞</em> 面板。</p>
+<dl class="simple">
+<dt>品质</dt><dd><p>你希望模拟的精细程度的一般设置。 较高的数字需要更多的时间，但确保更少的撕裂和穿透布料。</p>
+</dd>
+</dl>
+<div class="section" id="object-collisions">
+<h3>碰撞对象<a class="headerlink" href="#object-collisions" title="Permalink to this headline">¶</a></h3>
+<p>如果布料对象需要被其他物体偏转。要偏转布料，必须将此对象作为与布料对象发生碰撞的对象启用。 要使对象与布料对象碰撞，请启用 <a class="reference internal" href="../../collision.html#physics-collision-soft-bodt-cloth"><span class="std std-ref">碰撞 物理</span></a> 用于碰撞对象(不是用在布料对象上)。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果你的碰撞对象不是网格对象(如NURBS曲面)或文本对象，则必须使用以下命令将其转换为网格对象 <a class="reference internal" href="../../../scene_layout/object/editing/convert.html#object-convert-to"><span class="std std-ref">Convert To</span></a>.</p>
+</div>
+<dl class="simple">
+<dt>距离</dt><dd><p>另一个物体必须到达接近布料的距离，以便模拟排斥布料。 较小的值可能会产生错误，但会产生一些加速，而较大的值会产生不切实际的结果，如果太大而且会速度很慢。 所以最好在这之间找到一个合适的值。</p>
+</dd>
+<dt>冲量钳制</dt><dd><p>通过限制碰撞后的移动量，防止在紧凑和复杂的碰撞情况下发生爆炸。</p>
+</dd>
+<dt>碰撞集合</dt><dd><p>只有作为其中一部分的对象 <a class="reference internal" href="../../../scene_layout/collections/index.html"><span class="doc">集合</span></a> 可能会与布料发生碰撞。请注意，这些对象还必须启用碰撞物理。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="self-collisions">
+<h3>自碰撞<a class="headerlink" href="#self-collisions" title="Permalink to this headline">¶</a></h3>
+<p>Real cloth cannot penetrate itself, so you normally want the cloth to self-collide.
+Enable this to tell the cloth object that it should not penetrate itself.
+This adds to the simulation's compute time, but provides more realistic results.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>从远处观看的旗帜不需要启用此功能，但角色上的斗篷或衬衫的特写应启用此功能。</p>
+</div>
+<dl class="simple">
+<dt>摩擦</dt><dd><p>布料与自身碰撞时的摩擦系数。 例如，丝绸的摩擦系数低于棉布。</p>
+</dd>
+<dt>距离</dt><dd><p>当在这个距离时布料开始排斥自己。 较小的值可能会产生错误，但会产生一些加速，而较大的值会产生不切实际的结果，如果太大而且速度很慢。 最好在这之间找到一个合适的值。</p>
+</dd>
+<dt>冲量钳制</dt><dd><p>通过限制碰撞后的移动量，防止在紧凑和复杂的碰撞情况下发生爆炸。</p>
+</dd>
+<dt>顶点组</dt><dd><p>只有作为其一部分的顶点 <a class="reference internal" href="../../../modeling/meshes/properties/vertex_groups/index.html"><span class="doc">顶点组</span></a> 可以相互碰撞。</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>blend实例文件: <a class="reference external" href="https://wiki.blender.org/wiki/File:Cloth-regression-selfcollisions.blend">布料自碰撞</a>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>故障排除<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>如果你遇到碰撞检测的一些问题，有几种方法可以解决它们：</p>
+<ul class="simple">
+<li><p>最快的解决方案是增加对象/自碰撞的 <em>距离</em>。 这将是修复剪辑的最快方法; 但是，它会不那么准确，看起来也不会那么好。 使用这种方法往往使它看起来像布料在空中被支撑一样，并赋予它非常圆润的外观。</p></li>
+<li><p>第二种方法是增加 <em>品质</em> (在 <em>布料</em> 面板中)。 这导致模拟器的步骤更小，因此快速移动的碰撞被捕获的概率更高。 您还可以增加碰撞 <em>品质</em> 以执行更多迭代以解决碰撞。</p></li>
+<li><p>如果这些方法都没有帮助，你可以在进入 <em>编辑模式</em> 之后轻松编辑缓存/烘焙结果。</p></li>
+<li><p>如果布料被变形网格撕裂; 增加刚度设置。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="property_weights.html" class="btn btn-neutral float-right" title="属性权重" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="shape.html" class="btn btn-neutral float-left" title="形状" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/cloth/settings/collisions.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/cloth/settings/collisions%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

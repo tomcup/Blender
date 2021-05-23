@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ANT Landscape &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/add_mesh/ant_landscape.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Archimesh" href="archimesh.html" />
+    <link rel="prev" title="添加网格" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">添加网格</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ANT Landscape</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#interface">界面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#instructions">说明</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#landscape-panel">地形面板</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#landscape-tools">地形工具</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#landscape-main">地形主参数</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#landscape-noise">地形噪波</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#landscape-displace">地形置换</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">用法</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="archimesh.html">Archimesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="archipack.html">Archipack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blenderkit.html">BlenderKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boltfactory.html">Bolt Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discombobulator.html">Discombobulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geodesic_domes.html">Geodesic Domes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_extra_objects.html">Add Mesh Extra Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">添加网格</a> &raquo;</li>
+        
+      <li>ANT Landscape</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ant-landscape">
+<h1>ANT Landscape<a class="headerlink" href="#ant-landscape" title="Permalink to this headline">¶</a></h1>
+<p>这个插件用各种噪波类型来创建地形和环境。A.N.T. 代表 Another Noise Tool。</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>下拉框选添加网格，然后勾选 A.N.T. Landscape 来启用插件。</p></li>
+</ul>
+</div>
+<div class="section" id="interface">
+<h2>界面<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../../_images/addons_add-mesh_ant-landscape_ui.jpg"><img alt="../../_images/addons_add-mesh_ant-landscape_ui.jpg" src="../../_images/addons_add-mesh_ant-landscape_ui.jpg" style="width: 220px;" /></a>
+</div>
+<p>Located in the <span class="menuselection">3D Viewport ‣ Add ‣ Mesh</span> menu.</p>
+<p>Located in the <span class="menuselection">3D Viewport ‣ Sidebar ‣ Create</span> tab.</p>
+</div>
+<div class="section" id="instructions">
+<h2>说明<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<p>创建地形网格后，在  <a class="reference internal" href="../../interface/undo_redo.html#ui-undo-redo-adjust-last-operation"><span class="std std-ref">调整上一步操作</span></a>  面板有三个主要区域来设计你的网格。</p>
+<ul class="simple">
+<li><p>主要设置：物体和网格相关的设置，如大小和细分。</p></li>
+<li><p>噪波设置：噪波相关设置，决定地形的形状。</p></li>
+<li><p>置换设置：地形高度和边缘衰减的设置。</p></li>
+</ul>
+<div class="section" id="landscape-panel">
+<h3>地形面板<a class="headerlink" href="#landscape-panel" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>地形</dt><dd><p>地形按钮会创建网格并在侧栏添加几个面板和工具。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="landscape-tools">
+<h3>地形工具<a class="headerlink" href="#landscape-tools" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>网格置换</dt><dd><p>沿着法线方向或X,Y,Z方向置换选中的网格顶点。</p>
+</dd>
+<dt>Weight from Slope</dt><dd><p>以Z轴标准值为基础创建一个带权重的顶点组梯度映射。</p>
+</dd>
+<dt>地形腐蚀器</dt><dd><p>在 A.N.T. 地形网格上应用各种侵蚀， 在权重绘制模式下的 <em>权重</em> 菜单也可用。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="landscape-main">
+<h3>地形主参数<a class="headerlink" href="#landscape-main" title="Permalink to this headline">¶</a></h3>
+<p>在这可以调节主要设置和重新生成网格。</p>
+<p>对你的blender文件中的地形进行网格平滑，网格三角化，重命名和添加材质。</p>
+</div>
+<div class="section" id="landscape-noise">
+<h3>地形噪波<a class="headerlink" href="#landscape-noise" title="Permalink to this headline">¶</a></h3>
+<p>这里可以调整噪波设置并且只刷新那些设置。</p>
+<p>有许多设置和噪波类型可以用来自定义你的地形。</p>
+</div>
+<div class="section" id="landscape-displace">
+<h3>地形置换<a class="headerlink" href="#landscape-displace" title="Permalink to this headline">¶</a></h3>
+<p>这里可以调整置换设置并且只刷新那些设置。</p>
+<p>调整高度，衰减和层级。</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>待做</p>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">目录</dt>
+<dd class="field-odd"><p>添加网格</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>另一个噪波工具：地形，腐蚀和置换。</p>
+</dd>
+<dt class="field-odd">位置</dt>
+<dd class="field-odd"><p><span class="menuselection">3D视图 ‣ 侧栏 ‣ 创建</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>ant_landscape 目录</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Jimmy Hazevoet</p>
+</dd>
+<dt class="field-even">维护人员</dt>
+<dd class="field-even"><p>待做</p>
+</dd>
+<dt class="field-odd">许可证</dt>
+<dd class="field-odd"><p>GPL</p>
+</dd>
+<dt class="field-even">支持级别</dt>
+<dd class="field-even"><p>社区版</p>
+</dd>
+<dt class="field-odd">提示</dt>
+<dd class="field-odd"><p>这个插件和Blender捆绑在一起。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="archimesh.html" class="btn btn-neutral float-right" title="Archimesh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="添加网格" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/add_mesh/ant_landscape.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/add_mesh/ant_landscape%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

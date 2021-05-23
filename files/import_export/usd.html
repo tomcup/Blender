@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>通用场景描述 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/files/import_export/usd.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="插件" href="../../addons/index.html" />
+    <link rel="prev" title="Collada" href="collada.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">文件 &amp; 数据系统</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../blend/index.html">Blender 文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_blocks.html">数据块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linked_libraries/index.html">关联库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../media/index.html">媒体格式</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../import_export.html">导入 &amp; 导出文件</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="alembic.html">Alembic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collada.html">Collada</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">通用场景描述</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#export-options">导出选项</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#experimental">试验特性</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">局限</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">文件 &amp; 数据系统</a> &raquo;</li>
+        
+          <li><a href="../import_export.html">导入 &amp; 导出文件</a> &raquo;</li>
+        
+      <li>通用场景描述</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="universal-scene-description">
+<h1>通用场景描述<a class="headerlink" href="#universal-scene-description" title="Permalink to this headline">¶</a></h1>
+<p>通用场景描述(USD)文件可以包含复杂的分层、重写和对其他文件的引用。Blender的USD导出器采取更简单的方法。导出时，场景中所有受支持的物体将导出，也可选择受其选择状态的限制。Blender不支持（尚未）导出USD层、变量、骨架动画等。</p>
+<p>以下物体可以导出到 USD：</p>
+<ul class="simple">
+<li><p>网格（不同类型，见下文）。</p></li>
+<li><p>相机（目前仅支持透视相机，不支持正交相机）。</p></li>
+<li><p>灯（除面光外的所有类型）。</p></li>
+<li><p>毛发（导出为曲线，并仅限于父股）。</p></li>
+</ul>
+<p>导出动画时，最终解算的网格将写入 USD。这意味着可以导出以下参数：</p>
+<ul class="simple">
+<li><p>静态网格。</p></li>
+<li><p>形变网格;此处网格的拓扑结构不会更改，但顶点的位置会随时间而变化。比如动画角色或弹跳（但不开裂）物体。</p></li>
+<li><p>任意动画网格; 在这里，拓扑确实会发生变化。比如，流体模拟的结果，液体飞溅会从主体上脱落。</p></li>
+<li><p>Metaballs are exported as animated meshes.</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/files_import-export_usd_example.png" src="../../_images/files_import-export_usd_example.png" />
+<p class="caption"><span class="caption-text">来自 <a class="reference external" href="https://cloud.blender.org/p/spring/">春</a> 的镜头导出到 USD 并在 USDView中打开。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="export-options">
+<h2>导出选项<a class="headerlink" href="#export-options" title="Permalink to this headline">¶</a></h2>
+<p>导出到 USD 时，可以使用以下选项：</p>
+<dl>
+<dt>仅导出选中的物体</dt><dd><p>勾选后，仅导出选定的物体。对于副本物体，当其主体被选中时（比如在场景中实例化的集合）视为选中。</p>
+</dd>
+<dt>动画</dt><dd><p>勾选后，将导出整个场景帧范围。取消勾选中，仅导出当前场景帧。</p>
+</dd>
+<dt>毛发</dt><dd><p>勾选后，父级发股将导出为曲线系统。不会导出发股颜色。</p>
+</dd>
+<dt>UV 映射</dt><dd><p>勾选后，包含被导出网格的 UV 坐标。USD中的 UV 贴图名称与 Blender 中相同。在USD中，默认名称为 <code class="docutils literal notranslate"><span class="pre">st</span></code> ，而在 Blender 中，默认名称为 <code class="docutils literal notranslate"><span class="pre">UVMap</span></code>。要导出为标准 UV 贴图名称 <code class="docutils literal notranslate"><span class="pre">st</span></code>，先将Blender中的 UV 贴图重命名为 <code class="docutils literal notranslate"><span class="pre">st</span></code>。</p>
+</dd>
+<dt>法向</dt><dd><p>勾选，包含被导出网格的法线。这包括自定义循环法线。</p>
+</dd>
+<dt>材质</dt><dd><p>勾选后，导出网格的视口材质。当网格被指定了多个材质时，将为每个材质创建几何子集。</p>
+<p>第一个材质（如果有）也始终应用于网格本身（无论几何子集是否存在），因为 Hydra 视口不支持子集上的材料。更多详细信息见 <a class="reference external" href="https://github.com/PixarAnimationStudios/USD/issues/542">USD issue #542</a>。</p>
+</dd>
+<dt>设置用于</dt><dd><p>确定是使用集合、修改器的 <em>视图</em> 或 <em>渲染</em> 可见性，还是可同时为 <em>视口</em> 和 <em>渲染</em> 设置的任何其他属性。</p>
+</dd>
+</dl>
+<div class="section" id="experimental">
+<h3>试验特性<a class="headerlink" href="#experimental" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>实例化</dt><dd><p>由于这是一个实验性选项。如果未勾选，副本物体将导出为真实物体，因此具有 100 个粒子的粒子系统（显示 100 个网格）将在导出文件中存在 100 个单独的网格。选中后，副本物体将作为对原始物体的引用导出。如果原始物体不是导出的一部分，则第一个副本将导出为真实物体并用作引用。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="limitations">
+<h2>局限<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>单面/双面网格</dt><dd><p>USD 似乎既不支持双面不同材质或不同面组，因此 Blender 使用第一个材质中的标记将整个网格标记为单/双面。如果没有材质，则默认为双面。</p>
+</dd>
+<dt>网格法向</dt><dd><p>默认情况下，以USD表示的网格细分方案为&quot;Catmull-Clark&quot;，但 Blender 使用 'None'，表示导出多边形网格。这对于USD理解自定义法线是必需的；否则，网格将始终呈现为平滑。</p>
+</dd>
+<dt>顶点速度</dt><dd><p>目前只有流体模拟（一般不是微点）具有显式顶点速度。但是，这是导出速度的最重要情况，因为烘焙网格会一直更改拓扑，因此很难在后处理步骤中计算导入时的速度。</p>
+</dd>
+<dt>坐标系方位</dt><dd><p>Blender使用 Z 轴作为向上轴。由于USD支持 Y 向上和 Z向上，由 Blender 写出的 USD 文件始终使用 Z向上。</p>
+</dd>
+<dt>材质</dt><dd><p>导出材质的非常简单版本，仅使用 <a class="reference internal" href="../../render/materials/settings.html#render-materials-settings-viewport-display"><span class="std std-ref">视口显示</span></a> 颜色、金属度和粗糙度。</p>
+<p>当有多个材质时，网格面将存储为几何子集，并且每个材质都分配给相应的子集。如果只有一个材质，则跳过此步骤。请注意，几何子集不是时间采样的，因此当动画网格更改拓扑时可能会中断。</p>
+</dd>
+<dt>毛发</dt><dd><p>仅导出父级发股，并且仅导出具有恒定颜色的。没有 UV 坐标，也没有关于法线的信息。</p>
+</dd>
+<dt>相机</dt><dd><p>仅导出透视模式相机。</p>
+</dd>
+<dt>灯光</dt><dd><p>USD不直接支持聚光灯，因此这些灯不会导出。</p>
+</dd>
+<dt>粒子</dt><dd><p>粒子仅在它们处于生存状态时写入，这意味着它们始终可见。目前没有代码处理将它们标记为在其生命周期之外不可见。</p>
+<p>通过使用粒子的持久 ID 对物体名称添加后缀，使每个粒子变换具有唯一名称，从而导出粒子系统实例的物体。</p>
+</dd>
+<dt>实例化/引用</dt><dd><p>这仍然是一个实验功能，可以在导出到 USD 时启用。启用后，实例化物体网格将写入 USD 作为对原始网格的引用。网格的第一个副本是为实写而写入的，以下副本引用第一个副本。哪个网格被视为&quot;第一个&quot;或多或少是任意选择的。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../addons/index.html" class="btn btn-neutral float-right" title="插件" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collada.html" class="btn btn-neutral float-left" title="Collada" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/files/import_export/usd.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60files/import_export/usd%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

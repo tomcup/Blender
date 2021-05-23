@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>物理属性 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/cloth/settings/physical_properties.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="高速缓存" href="cache.html" />
+    <link rel="prev" title="设置" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cloth</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">设置</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">物理属性</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#stiffness">刚性</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#damping">阻尼</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#internal-springs">Internal Springs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#pressure">Pressure</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cache.html">高速缓存</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shape.html">形状</a></li>
+<li class="toctree-l4"><a class="reference internal" href="collisions.html">碰撞</a></li>
+<li class="toctree-l4"><a class="reference internal" href="property_weights.html">属性权重</a></li>
+<li class="toctree-l4"><a class="reference internal" href="field_weights.html">力场权重</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../examples.html">例子</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../index.html">Cloth</a> &raquo;</li>
+        
+          <li><a href="index.html">设置</a> &raquo;</li>
+        
+      <li>物理属性</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="physical-properties">
+<h1>物理属性<a class="headerlink" href="#physical-properties" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 布料 ‣ 物理属性</span></p>
+</dd>
+</dl>
+</div>
+<dl class="simple">
+<dt>质量</dt><dd><p>布料材质的质量.</p>
+</dd>
+<dt>空气粘度</dt><dd><p>空气有一定的密度，可以减缓坠落的速度。</p>
+</dd>
+<dt>弯曲模型</dt><dd><dl class="simple">
+<dt>线性</dt><dd><p>带线性弯曲弹簧的布料模型(旧)。</p>
+</dd>
+<dt>棱角</dt><dd><p>带棱角弯曲弹簧的布料模型。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="stiffness">
+<h2>刚性<a class="headerlink" href="#stiffness" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>张力</dt><dd><p>材料抗拉强度.</p>
+</dd>
+<dt>压缩</dt><dd><p>材料抗压强度.</p>
+</dd>
+<dt>结构</dt><dd><p>布料的整体刚度(仅在线性弯曲模型中)。</p>
+</dd>
+<dt>切变</dt><dd><p>材料抗剪切强度.</p>
+</dd>
+<dt>弯曲</dt><dd><p>皱纹系数。 更高会产生更大的褶皱。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="damping">
+<h2>阻尼<a class="headerlink" href="#damping" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>张力</dt><dd><p>拉伸行为中的阻尼量.</p>
+</dd>
+<dt>压缩</dt><dd><p>压缩行为中的阻尼量.</p>
+</dd>
+<dt>结构</dt><dd><p>拉伸行为中的阻尼量(仅在线性弯曲模型中).</p>
+</dd>
+<dt>切变</dt><dd><p>切变行为中的阻尼量.</p>
+</dd>
+<dt>弯曲</dt><dd><p>弯曲行为中的阻尼量.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="internal-springs">
+<span id="bpy-types-clothsettings-vertex-group-intern"></span><span id="bpy-types-clothsettings-internal-compression"></span><span id="bpy-types-clothsettings-internal-tension"></span><span id="bpy-types-clothsettings-internal-spring"></span><h2>Internal Springs<a class="headerlink" href="#internal-springs" title="Permalink to this headline">¶</a></h2>
+<p>As stated in the introduction, cloth physics are simulated through <a class="reference internal" href="../introduction.html#physics-cloth-introduction-springs"><span class="std std-ref">Springs</span></a>
+connecting vertices on the surface of a mesh. But these springs only interact on the surface
+and only apply to 2D surfaces. 3D or <em>Internal Springs</em> can be used to make a mesh behave similarly to
+a <a class="reference internal" href="../../soft_body/index.html"><span class="doc">Soft Body</span></a>. Internal springs can be enabled by toggling the checkbox in
+the <em>Internal Springs</em> panel header.</p>
+<dl class="simple">
+<dt>Max Spring Creation Length</dt><dd><p>The maximum length an internal spring can have during creation.
+If the distance between internal points is greater than this,
+no internal spring will be created between these points.
+A length of zero means that there is no length limit.</p>
+</dd>
+<dt>Max Creation Diversion</dt><dd><p>The maximum angle that is allowed to use to connect the internal points can diverge from the vertex normal.</p>
+</dd>
+<dt>Check Surface Normals</dt><dd><p>Requires the points the internal springs connect to have opposite normal directions.</p>
+</dd>
+<dt>张力</dt><dd><p>材料抗拉强度.</p>
+</dd>
+<dt>压缩</dt><dd><p>材料抗压强度.</p>
+</dd>
+<dt>Vertex Group</dt><dd><p>The <em>Tension</em> and <em>Compression</em> of internal springs can be controlled via
+a <a class="reference internal" href="../../../modeling/meshes/properties/vertex_groups/index.html"><span class="doc">Vertex Group</span></a> to
+specify which the portions of the mesh have internal springs or the spring strength.</p>
+</dd>
+<dt>Max Tension</dt><dd><p>Maximum tension stiffness value.</p>
+</dd>
+<dt>Max Compression</dt><dd><p>Maximum Compression stiffness value.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="pressure">
+<span id="bpy-types-clothsettings-vertex-group-pressure"></span><span id="bpy-types-clothsettings-pressure-factor"></span><span id="bpy-types-clothsettings-target-volume"></span><span id="bpy-types-clothsettings-use-pressure-volume"></span><span id="bpy-types-clothsettings-use-pressure"></span><h2>Pressure<a class="headerlink" href="#pressure" title="Permalink to this headline">¶</a></h2>
+<p>Cloth pressure allows the simulation of soft-shelled objects
+such as balloons or balls that are filled with a type of fluid.
+This fluid is modeled as a gas; to emulate an incompressible liquid set
+<em>Pressure Scale</em> as high as possible without breaking the simulation.
+Cloth pressure can be enabled by toggling the checkbox in the <em>Pressure</em> panel header.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../../../glossary/index.html#term-Non-manifold"><span class="xref std std-term">Non-manifold</span></a> meshes will work with cloth pressure however,
+pressure will escape out of the mesh holes and cause drifting or propulsion forces.
+One way to get around this is by using the <em>Vertex Group</em> to exclude the non-manifold portions of the mesh.</p>
+</div>
+<dl>
+<dt>Pressure</dt><dd><p>The uniform pressure that is constantly applied to the mesh.
+This value is specified in units of <em>Pressure Scale</em>, and can be
+negative to simulate implosions or any other case where an object
+has outside pressure pushing inwards.</p>
+</dd>
+<dt>Custom Volume</dt><dd><p>Use the <em>Target Volume</em> parameter as the initial volume for the cloth,
+instead of computing it from the mesh itself.</p>
+<dl class="simple">
+<dt>Target Volume</dt><dd><p>The mesh volume where the inner/outer pressure will be the same.
+If set to zero, changes in the volume of the object will not affect pressure.</p>
+</dd>
+</dl>
+</dd>
+<dt>Pressure Scale</dt><dd><p>Ambient pressure (in kPa) that exists both inside and outside the object,
+balancing out when the volume matches the target. Increase the value to
+make the object resist changes in volume more strongly.</p>
+</dd>
+<dt>Fluid Density</dt><dd><p>Specifies the density of the fluid contained inside the object
+(in kg/liter = 1000 kg/m<sup>3</sup>, use 1 for water), used to generate
+a hydrostatic pressure gradient that simulates the weight of the fluid.
+If the value is negative, it instead models buoyancy from a surrounding fluid.</p>
+<p>The fluid is not actually simulated, so while the setting helps to achieve
+a more plausible object shapes at rest, it cannot create realistic fluid dynamics effects.
+It can also be used to give more weight to a soft body like object with heavy and
+sufficiently flexible filling, even if it is not a fluid by itself.</p>
+<p>The volume of the object is not preserved. If that is desired it should be used
+together with <em>Pressure Scale</em>. <em>Fluid density</em> times <em>object size</em> times 50
+is a good start value for <em>Scale</em> to make sure that no more than 10% volume change
+if the object does not experience higher acceleration than standard gravity.</p>
+</dd>
+<dt>Vertex Group</dt><dd><p>Cloth pressure can be controlled via a <a class="reference internal" href="../../../modeling/meshes/properties/vertex_groups/index.html"><span class="doc">Vertex Group</span></a>
+to specify which the portions of the mesh to apply pressure.
+Zero weight means no pressure while a weight of one means full pressure.</p>
+<p>Note, faces with a vertex that has zero weight will be excluded from the <em>Target Volume</em> calculation.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cache.html" class="btn btn-neutral float-right" title="高速缓存" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="设置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/cloth/settings/physical_properties.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/cloth/settings/physical_properties%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

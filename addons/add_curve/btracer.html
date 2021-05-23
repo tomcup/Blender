@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BTracer &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/add_curve/btracer.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="曲线工具" href="curve_tools.html" />
+    <link rel="prev" title="指定形态键" href="assign_shape_keys.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">添加曲线</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="assign_shape_keys.html">指定形态键</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BTracer</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#interface">界面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#information">详细信息</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="curve_tools.html">曲线工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="extra_objects.html">添加额外的曲线物体。</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ivy_gen.html">Ivy Gen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sapling.html">Sapling Tree Gen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simplify_curves.html">简化曲线(Simplify Curves)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../add_mesh/index.html">添加网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">添加曲线</a> &raquo;</li>
+        
+      <li>BTracer</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="btracer">
+<h1>BTracer<a class="headerlink" href="#btracer" title="Permalink to this headline">¶</a></h1>
+<p>此脚本的目的,是在C4D Tracer中简单的添加工具.Btrace会在生成的曲线中,提供跟踪物体、粒子、动画的方法.</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender,在插件中的设置里.</p></li>
+<li><p>点击添加曲线,BTracer会使能开启脚本.</p></li>
+</ul>
+</div>
+<div class="section" id="interface">
+<h2>界面<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<p>Located in the <span class="menuselection">3D Viewport ‣ Sidebar ‣ Edit tab</span>.</p>
+<p>界面中默认设置是选择工具, 这里你可以获取到是哪个跟踪方法或函数.</p>
+<div class="figure align-right">
+<a class="reference internal image-reference" href="../../_images/addons_add-curve_btracer_ui.jpg"><img alt="../../_images/addons_add-curve_btracer_ui.jpg" src="../../_images/addons_add-curve_btracer_ui.jpg" style="width: 220px;" /></a>
+</div>
+</div>
+<div class="section" id="information">
+<h2>详细信息<a class="headerlink" href="#information" title="Permalink to this headline">¶</a></h2>
+<p>5个主要工具(对象跟踪、对象连接，网格跟踪，粒子轨迹，颗粒连接)共享的公共设置可用于大部分.每个工具创建的曲线都以最终结果为准.已创建曲线的设置可以在*Curves Settings*里进行设置.</p>
+<p>工具要可访问一些其它特性.所有工具要可访问针对曲线半径的生长曲线粒子动画工具.以及颜色混合器的工具.</p>
+<dl class="simple">
+<dt>对象跟踪</dt><dd><p>通过连续添加网络点或所有边缘的方式创建一个曲线.在转化前可选模块化的曲线半径或添加网络变形.</p>
+</dd>
+<dt>物体连接</dt><dd><p>用曲线加入已选物体并给每个节点添加钩子.</p>
+</dd>
+<dt>粒子痕迹跟踪</dt><dd><p>从系统中的每个粒子上创建曲线.保持粒子总数在250以下,并快速跑起来.</p>
+</dd>
+<dt>粒子连接</dt><dd><p>用一个连续不断的曲线连接系统中每个粒子.</p>
+</dd>
+<dt>网络跟随</dt><dd><p>从动画网络对象上创建曲线.跟随顶点,边或面的路线,也可选跟随对象原点.</p>
+</dd>
+<dt>生成曲线动画</dt><dd><p>用时间动画化曲线的半径.可以单独运行曲线上的对象,或者运行上面的工具.</p>
+</dd>
+<dt>函数曲线噪点</dt><dd><p>向一个物体添加函数曲线修改器的快速链接。</p>
+</dd>
+<dt>色彩调色剂</dt><dd><p>对齐颜色,创建颜色调色板和随机的颜色.</p>
+</dd>
+</dl>
+<p>每个脚本都有一定数量的不同配置项,任一个都可以用来创建一些有趣的特效.</p>
+<div class="refbox admonition">
+<p class="admonition-title">类别</p>
+<dl class="field-list simple">
+<dt class="field-odd">种类</dt>
+<dd class="field-odd"><p>添加曲线</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>转化/动画物体/粒子为曲线的工具.</p>
+</dd>
+<dt class="field-odd">位置</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏 ‣ 创建标签</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>btrace文件夹</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>liero, crazycourier</p>
+</dd>
+<dt class="field-even">贡献者</dt>
+<dd class="field-even"><p>Atom, MacKracken, meta-androcto</p>
+</dd>
+<dt class="field-odd">维护者</dt>
+<dd class="field-odd"><p>Brendon Murphy (meta-androcto)</p>
+</dd>
+<dt class="field-even">许可证</dt>
+<dd class="field-even"><p>GPL</p>
+</dd>
+<dt class="field-odd">支持级别</dt>
+<dd class="field-odd"><p>交流社区</p>
+</dd>
+<dt class="field-even">注意</dt>
+<dd class="field-even"><p>此插件由Blender捆绑自带.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="curve_tools.html" class="btn btn-neutral float-right" title="曲线工具" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="assign_shape_keys.html" class="btn btn-neutral float-left" title="指定形态键" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/add_curve/btracer.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/add_curve/btracer%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

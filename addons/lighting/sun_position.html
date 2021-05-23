@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>太阳位置(Sun Position) &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/lighting/sun_position.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="材质" href="../materials/index.html" />
+    <link rel="prev" title="三点照明(Tri-Lighting)" href="trilighting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_mesh/index.html">添加网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">光照</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="dynamic_sky.html">动态天空(Dynamic Sky)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trilighting.html">三点照明(Tri-Lighting)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">太阳位置(Sun Position)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#interface">界面</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">用法</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#normal-mode">正常模式(Normal Mode)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#use-object">使用物体(Use Object)</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#use-collection">使用集合(Use Collection)</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#analemma">日行轨迹(Analemma)</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#diurnal">每日的(Diurnal)</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#sky-texture">天空纹理(Sky Texture)</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#location">位置(Location)</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#entering-coordinates">输入坐标(Entering Coordinates)</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#north-offset">北方偏移(North Offset)</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#setting-the-time">设置时间(Setting the Time)</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#sun-hdri-texture-mode">太阳 + HDRI纹理模式(Sun + HDRI Texture Mode)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#synchronizing-the-sun-object-to-the-hdri-texture">将太阳对象与HDRI纹理同步化</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#preferences">偏好设置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">光照</a> &raquo;</li>
+        
+      <li>太阳位置(Sun Position)</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sun-position">
+<h1>太阳位置(Sun Position)<a class="headerlink" href="#sun-position" title="Permalink to this headline">¶</a></h1>
+<p>太阳位置可以对太阳进行定位和动画化（在一定的精度下），模拟真实世界的自然光照。它使用物理特性来定位太阳在场景中的位置：地理位置、时间和日期。它是基于地球系统研究实验室的 <a class="reference external" href="https://www.esrl.noaa.gov/gmd/grad/solcalc">在线计算器</a> 。</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>选择&quot;光照&quot;，然后选择&quot;太阳位置(Sun Position)&quot;以启用脚本。</p></li>
+</ul>
+</div>
+<div class="section" id="interface">
+<h2>界面<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<p>Located in the <span class="menuselection">Properties ‣ World ‣ Sun Position panel</span>.</p>
+</div>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>这个插件有两种不同的操作模式：&quot;正常模式&quot;( <a class="reference internal" href="#normal-mode">Normal Mode</a>)可以让你逼真地模拟太阳，而 &quot;太阳+HDRI纹理模式&quot;( <a class="reference internal" href="#sun-hdri-texture-mode">Sun + HDRI Texture Mode</a>)则可以让太阳光与HDRI纹理同步。</p>
+<p>使用模式可以在太阳位置面板的顶部选择。</p>
+<div class="section" id="normal-mode">
+<h3>正常模式(Normal Mode)<a class="headerlink" href="#normal-mode" title="Permalink to this headline">¶</a></h3>
+<p>默认情况下是这个模式。选择好时间和地点后，可以设置一个太阳光、天空纹理、集合用于视觉化。</p>
+<div class="section" id="use-object">
+<h4>使用物体(Use Object)<a class="headerlink" href="#use-object" title="Permalink to this headline">¶</a></h4>
+<p>选择将根据指定的时间和地点放置的太阳对象。每当你改变位置或时间，它的位置就会更新，因此你可以通过设置关键帧来创建动画。</p>
+</div>
+<div class="section" id="use-collection">
+<h4>使用集合(Use Collection)<a class="headerlink" href="#use-collection" title="Permalink to this headline">¶</a></h4>
+<p>选择要放置在场景周围用以实现可视化的对象集合。有两个选项可供选择：日行轨迹的 (<a class="reference internal" href="#analemma">analemma</a>) 和 每日的(<a class="reference internal" href="#diurnal">diurnal</a>)。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>建议在场景中创建一个集合，并将对象移动到这个集合中。如果你想创建多个可视化，可以根据需要创建多个集合，依次选择，然后选择合适的设置。一旦取消选择，一个集合就会保持在原地。</p>
+</div>
+<div class="section" id="analemma">
+<h5>日行轨迹(Analemma)<a class="headerlink" href="#analemma" title="Permalink to this headline">¶</a></h5>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Analemma">日行轨迹(Analemma)</a> 是一年中某一特定时间的太阳在天空中的位置的可视化。换句话说，它就像一幅一年中天空的时滞图，太阳在一天中的同一时间出现多次。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/addons_lighting_sun-position_bell-lab.jpg" src="../../_images/addons_lighting_sun-position_bell-lab.jpg" />
+<p class="caption"><span class="caption-text">这里用的日行轨迹是 &quot;<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Analemma_fishburn.tif">这幅图</a>&quot;。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="diurnal">
+<h5>每日的(Diurnal)<a class="headerlink" href="#diurnal" title="Permalink to this headline">¶</a></h5>
+<p>这个选项可以让你在一天内直观地看到太阳在天空中的轨迹。</p>
+</div>
+</div>
+<div class="section" id="sky-texture">
+<h4>天空纹理(Sky Texture)<a class="headerlink" href="#sky-texture" title="Permalink to this headline">¶</a></h4>
+<p>在世界着色节点树中选择一个天空纹理节点。它将被设置为匹配太阳动画。如果你想有一个简单的天空纹理与太阳光的位置匹配，这很有用。</p>
+</div>
+<div class="section" id="location">
+<h4>位置(Location)<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h4>
+<p>为了使太阳的位置正确，你需要在地球上选择一个场景所在的地方。这个地方用两个坐标来表示， <em>经度(Longitude)</em> （东/西）和 <em>纬度(Latitude)</em> （北/南）。它们用度数表示，经度为-180°至+180°，纬度为-90°至90°。坐标与OpenStreetMap或谷歌地图等数据库中的坐标相匹配。您可以手动输入和动画化，也可以粘贴进去。</p>
+<div class="section" id="entering-coordinates">
+<h5>输入坐标(Entering Coordinates)<a class="headerlink" href="#entering-coordinates" title="Permalink to this headline">¶</a></h5>
+<p>在 <em>位置(Location)</em> 面板中，输入 <em>纬度(Latitude)</em> 和 <em>经度(Longitude)</em> 坐标，对应于你想模拟的位置。一个更简单的方法是到一个在线地图，比如OpenStreetMap，从那里复制坐标，然后粘贴到 <em>Enter Coordinates</em> 字段。它们将被自动解析。</p>
+<p>另一个来源是维基百科。假设你想渲染Mies van der Rohe的 <a class="reference external" href="https://en.wikipedia.org/wiki/Barcelona_Pavilion">巴塞罗那展馆</a>。你可以从文章中复制坐标，然后粘贴到Blender中。</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">使用维基百科上的坐标。</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../_images/addons_lighting_sun-position_barcelona-wiki.jpg" src="../../_images/addons_lighting_sun-position_barcelona-wiki.jpg" />
+<p class="caption"><span class="caption-text">从维基百科上复制坐标。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../_images/addons_lighting_sun-position_barcelona-coor.png" src="../../_images/addons_lighting_sun-position_barcelona-coor.png" />
+<p class="caption"><span class="caption-text">并将其粘贴到Blender中，让其解析。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="north-offset">
+<h5>北方偏移(North Offset)<a class="headerlink" href="#north-offset" title="Permalink to this headline">¶</a></h5>
+<p>By default, the North points to the Y axis in the scene (to the top of the screen in top view).
+But sometimes, you may have modeled it in another orientation. In that case,
+you may enter a <em>North Offset</em>, to change the orientation of the scene.
+<em>Show North</em> toggles a dashed line pointing to the North in the 3D Viewport,
+to help you visualize the cardinal directions.</p>
+</div>
+</div>
+<div class="section" id="setting-the-time">
+<h4>设置时间(Setting the Time)<a class="headerlink" href="#setting-the-time" title="Permalink to this headline">¶</a></h4>
+<p>选择地球上的位置后，选择或模拟日期和时间。这很简单，但必须注意将 <em>时间(Time)</em> 区和 <em>夏令时(Daylight Saving)</em> 与您希望模拟的时间匹配。输入的时间是当地时间，但下面也可以显示全球UTC时间。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>时间以十进制格式存储，而不是 <code class="docutils literal notranslate"><span class="pre">时：分：秒</span></code>。要匹配这种格式的时间，请看标签 <em>本地(Local)</em>。</p>
+</div>
+</div>
+</div>
+<div class="section" id="sun-hdri-texture-mode">
+<h3>太阳 + HDRI纹理模式(Sun + HDRI Texture Mode)<a class="headerlink" href="#sun-hdri-texture-mode" title="Permalink to this headline">¶</a></h3>
+<p>这个模式并不是模拟真实位置和时间的太阳位置，而是简单地用太阳光对象锁定一个环境纹理。如果你想通过使用额外的太阳来增加纹理中的对比度，这个模式很有用。</p>
+<div class="section" id="synchronizing-the-sun-object-to-the-hdri-texture">
+<h4>将太阳对象与HDRI纹理同步化<a class="headerlink" href="#synchronizing-the-sun-object-to-the-hdri-texture" title="Permalink to this headline">¶</a></h4>
+<p>首先选择太阳对象和环境纹理节点。然后你可以通过启用 <em>同步太阳到纹理(Sync Sun to Texture)</em> 来同步它们。悬停在任何3D视图上都会显示环境纹理。使用 <kbd class="kbd docutils literal notranslate">鼠标中键(MMB)</kbd> 平移，滚轮缩放，以及 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">鼠标中键(MMB)</kbd></kbd> 设置曝光。放大并点击纹理中的太阳中心。之后，太阳对象将被锁定在它的位置上。</p>
+<p>现在你可以使用 <em>旋转(Rotation)</em> 滑块来旋转纹理和光线。</p>
+<div class="figure align-default" id="id5">
+<img alt="../../_images/addons_lighting_sun-position_env-selection.jpg" src="../../_images/addons_lighting_sun-position_env-selection.jpg" />
+<p class="caption"><span class="caption-text">点击3D视图中环境纹理中的太阳，将其锁定到太阳光对象。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="preferences">
+<h2>偏好设置<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h2>
+<p>插件的设置使一些功能成为可选的，所以你可以隐藏那些你不使用的功能。</p>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">目录</dt>
+<dd class="field-odd"><p>光照</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>用物体和/或天空纹理显示太阳位置。</p>
+</dd>
+<dt class="field-odd">位置(Location)</dt>
+<dd class="field-odd"><p><span class="menuselection">Properties ‣ World ‣ Sun Position panel</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>sun_position folder</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Michael Martin (xaire)</p>
+</dd>
+<dt class="field-even">维护人员</dt>
+<dd class="field-even"><p>Damien Picard (pioverfour)</p>
+</dd>
+<dt class="field-odd">许可证</dt>
+<dd class="field-odd"><p>GPL</p>
+</dd>
+<dt class="field-even">支持级别</dt>
+<dd class="field-even"><p>社区版</p>
+</dd>
+<dt class="field-odd">提示</dt>
+<dd class="field-odd"><p>该插件为Blender自带插件。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../materials/index.html" class="btn btn-neutral float-right" title="材质" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="trilighting.html" class="btn btn-neutral float-left" title="三点照明(Tri-Lighting)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/lighting/sun_position.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/lighting/sun_position%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

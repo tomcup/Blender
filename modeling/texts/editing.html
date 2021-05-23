@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>编辑 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/texts/editing.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="属性" href="properties.html" />
+    <link rel="prev" title="选择" href="selecting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metas/index.html">融球</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文本物体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selecting.html">选择</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">编辑</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#text">文本</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inserting-text">插入文本</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#accent-characters">音调字符</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#converting-to-a-mesh-or-curve">转换成网格或曲线</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#assigning-materials">指定材质</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="properties.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">文本物体</a> &raquo;</li>
+        
+      <li>编辑</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="editing">
+<h1>编辑<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h1>
+<p>编辑文本与Blender中的其他物体类型完全不同，主要体现在两个地方。 首先第一个是3D视图，可以进入其中键入文本，并有一些快捷键，例如 用于应用样式(请参阅 <a class="reference internal" href="properties.html#modeling-text-character"><span class="std std-ref">字体</span></a> )——请注意，在编辑模式下知道的大多数Blender快捷键不存在于此模式中。 第二个是属性编辑器，尤其是 <em>字体</em> 选项卡。</p>
+<div class="section" id="text">
+<span id="bpy-ops-font-change-spacing"></span><span id="bpy-ops-font-style-toggle"></span><span id="bpy-ops-font-text-paste-from-file"></span><h2>文本<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">3D视图 ‣ 文本</span></p>
+</dd>
+</dl>
+</div>
+<p>编辑文本物体类似于使用标准的文本编辑器，但功能不全并且有一些区别。3D视图标题栏的菜单提供的选项很少。你没有变换也没有镜像工具，等等。要离开编辑模式，请使用 <kbd class="kbd docutils literal notranslate">Tab</kbd> ，因为它不会在文本中插入tab字符，而是像其他物体类型一样进入和退出编辑模式。</p>
+<dl>
+<dt>剪切 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd></kbd></dt><dd><p>要将文本剪切并复制到缓冲区，请使用 <em>编辑</em> 菜单中的快捷方式或匹配条目。</p>
+</dd>
+<dt>复制 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">C</kbd></kbd></dt><dd><p>要将文本复制到缓冲区，请使用 <em>编辑</em> 菜单中的快捷方式或匹配条目。</p>
+</dd>
+<dt>粘贴 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">V</kbd></kbd></dt><dd><p>要从缓冲区粘贴文本，请使用 <em>编辑</em> 菜单中的快捷方式或匹配条目。</p>
+</dd>
+<dt>粘贴文件</dt><dd><p>从外部文本文件中插入文本，这将弹出一个 <a class="reference internal" href="../../editors/file_browser.html"><span class="doc">文件浏览器</span></a> ，用于导航到有效的UTF-8文件。像往常一样，注意文件的字符不要太多，因为响应会变慢。</p>
+</dd>
+<dt>大写</dt><dd><p>将所选文本改为大写。</p>
+</dd>
+<dt>小写</dt><dd><p>将所选文本改为小写。</p>
+</dd>
+<dt>特殊字符</dt><dd><p>这是一个有限的字符映射，用于插入键盘无法使用的字符。 许多其他特殊字符可以“组合”，见下文 <a class="reference internal" href="#accent-characters">音调字符</a> 。 如果需要其他的，则必须从外部编辑器或字符映射表工具中复制粘贴它们。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>文本缓冲区与桌面剪贴板同步。 但如果在Blender中使用它，也会复制文本格式。 有关插入文本的其他方法，请参阅下文 <a class="reference internal" href="#inserting-text">插入文本</a>。</p>
+</div>
+</dd>
+<dt>启用或关闭加粗，斜体，下划线，小型大写</dt><dd><p>要将 <em>粗体</em> , <em>斜体</em> , <em>下划线</em> 或 <em>小型大写</em> 属性应用于一组字符，可以在键入字符之前打开相关设置，或选择某些现有文本，然后切换菜单中所需的样式。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Blender的 <em>粗体</em> 和 <em>斜体</em> 按钮与其他应用程序的工作方式不同，因为它们也可以作为其他字体的占位符而手动加载。</p>
+</div>
+</dd>
+<dt>字距</dt><dd><p>字距是指单个字符之间的空间。</p>
+<dl class="simple">
+<dt>减小字距 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd></dt><dd><p>缩小光标两边字符之间的间距。</p>
+</dd>
+<dt>增大字距 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd></dt><dd><p>增大光标两边字符之间的间距。</p>
+</dd>
+<dt>重置字距</dt><dd><p>将光标两边的字符间距设置为初始值。</p>
+</dd>
+</dl>
+</dd>
+<dt>删除</dt><dd><dl class="simple">
+<dt>上/下一字符</dt><dd><p>删除光标之前或之后的字符。</p>
+</dd>
+<dt>上/下一单词</dt><dd><p>删除光标之前或之后的单词。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="inserting-text">
+<h2>插入文本<a class="headerlink" href="#inserting-text" title="Permalink to this headline">¶</a></h2>
+<p>可以通过两种方式插入文本：从内部文本缓冲区(如上所述)或从文本文件。</p>
+<p>使用现有的文本数据块，您在文本编辑器标题栏使用 <span class="menuselection">编辑(Edit) ‣ 将文本转换为 3D 物体(Text to 3D Object)</span> ，根据需要选择 <em>一个物体</em> 或 <em>每行生成一个物体</em> ，将现有的文本数据块转换为物体。</p>
+<p>在编辑3D文本时，也可以从剪贴板粘贴文本或者在 <em>编辑</em> 菜单里选择从文件粘贴。</p>
+<div class="section" id="accent-characters">
+<h3>音调字符<a class="headerlink" href="#accent-characters" title="Permalink to this headline">¶</a></h3>
+<p>许多特殊字符(例如音调字符，键盘上不能直接显示)可以使用两个其他字符的组合“组合”。 为此，键入主字符，按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd> ，然后按所需的“修饰符”以生成特殊字符。 下面给出一些例子：</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>ã: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">~</span></code></p></li>
+<li><p>á: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">'</span></code></p></li>
+<li><p>à: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p>â: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">^</span></code></p></li>
+<li><p>å: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">O</span></code></p></li>
+<li><p>æ: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">E</span></code></p></li>
+<li><p>ª: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>ë: <code class="docutils literal notranslate"><span class="pre">E</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">&quot;</span></code></p></li>
+<li><p>ç: <code class="docutils literal notranslate"><span class="pre">C</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p>¢: <code class="docutils literal notranslate"><span class="pre">C</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">|</span></code></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>ø: <code class="docutils literal notranslate"><span class="pre">O</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>§: <code class="docutils literal notranslate"><span class="pre">S</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">S</span></code></p></li>
+<li><p>†: <code class="docutils literal notranslate"><span class="pre">|</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>‡: <code class="docutils literal notranslate"><span class="pre">|</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+<li><p>©: <code class="docutils literal notranslate"><span class="pre">O</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">C</span></code></p></li>
+<li><p>®: <code class="docutils literal notranslate"><span class="pre">O</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">R</span></code></p></li>
+<li><p>™: <code class="docutils literal notranslate"><span class="pre">T</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">M</span></code></p></li>
+<li><p>½: <code class="docutils literal notranslate"><span class="pre">1</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">2</span></code></p></li>
+<li><p>÷: <code class="docutils literal notranslate"><span class="pre">-</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>±: <code class="docutils literal notranslate"><span class="pre">-</span></code>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Backspace</kbd></kbd>, <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+<div class="section" id="converting-to-a-mesh-or-curve">
+<h2>转换成网格或曲线<a class="headerlink" href="#converting-to-a-mesh-or-curve" title="Permalink to this headline">¶</a></h2>
+<p>在物体模式下，可以将文本物体转换为网格或曲线，请参见 <a class="reference internal" href="../../scene_layout/object/editing/convert.html#object-convert-to"><span class="std std-ref">Convert To</span></a>。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>结果的拓扑结构通常有点混乱，因此使用 <em>有限融并</em> 删除选项或在低阈值时应用 <a class="reference internal" href="../modifiers/generate/remesh.html"><span class="doc">重构网格修改器</span></a> 可能有助于清理网格。</p>
+</div>
+</div>
+<div class="section" id="assigning-materials">
+<h2>指定材质<a class="headerlink" href="#assigning-materials" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties) ‣ 材质(Materials)</span></p>
+</dd>
+</dl>
+</div>
+<p>要使不同的字符获得不同的材质，每个字符都必须有一个不同的 <em>材质编号</em> 。</p>
+<p>可以键入指定索引，或者在选择文本块并点击 <em>材质</em> 面板中的 <em>分配</em> 按钮后指定索引。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/modeling_texts_editing_material-index-example.png" src="../../_images/modeling_texts_editing_material-index-example.png" />
+<p class="caption"><span class="caption-text">红绿蓝文本示例。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="properties.html" class="btn btn-neutral float-right" title="属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="selecting.html" class="btn btn-neutral float-left" title="选择" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/texts/editing.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/texts/editing%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

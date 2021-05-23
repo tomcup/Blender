@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>选择 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/curves/selecting.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="编辑" href="editing/index.html" />
+    <link rel="prev" title="基本体" href="primitives.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meshes/index.html">网格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">曲线</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="primitives.html">基本体</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">选择</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#select-menu">选择菜单</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-random">随机选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checker-deselect">间隔式弃选</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-linked">选择相连元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-similar">选择相似元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#de-select-first-last">选中/弃选首点/末点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-next-previous">选择下一项 /上一项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#select-more-less">扩展选择/缩减选择</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pick-shortest-path">拾取最短路径</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="editing/index.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="curve_display.html">曲线显示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">曲线</a> &raquo;</li>
+        
+      <li>选择</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="selecting">
+<h1>选择<a class="headerlink" href="#selecting" title="Permalink to this headline">¶</a></h1>
+<p>本页面讨论在编辑模式下曲线对象的特定选择工具。曲线编辑还使用了通用的选择工具，如 <a class="reference internal" href="../../interface/selecting.html"><span class="doc">界面选择</span></a> 中所述。</p>
+<p><em>编辑模式</em> 下的曲线选择选项比网格少。主要是因为它只有一种可选元素类型，控制点(这里没有选择模式)。这些点比简单的顶点稍微复杂一些，但是，特别是贝塞尔曲线，一个顶点包含一个中心点和两个控制柄...</p>
+<p>The basic tools are the same as with <a class="reference internal" href="../meshes/selecting/index.html"><span class="doc">meshes</span></a>,
+so you can select a simple control point with the <kbd class="kbd docutils literal notranslate">LMB</kbd>,
+add to current selection with <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd>, Box Select <kbd class="kbd docutils literal notranslate">B</kbd>, and so on.</p>
+<p>对于贝塞尔曲线需要注意一点：当选择主控制点时，两侧控制柄也会自动处于选定状态，将其作为一个整体拖动，不改变控制柄的角度。但是，当选中一个控制柄后，选中的只是这个点，这允许你修改控制向量...</p>
+<p>请注意，与网格边不同，你无法直接选择一段曲线，而是只能通过选择组成该段曲线的所有控制点来实现。</p>
+<div class="section" id="select-menu">
+<h2>选择菜单<a class="headerlink" href="#select-menu" title="Permalink to this headline">¶</a></h2>
+<p>对于曲线来说，所有的 &quot;高级&quot; 选择选项都位于3D视图标题栏的 <em>选择</em> 菜单里。</p>
+<dl class="simple">
+<dt>全部 <kbd class="kbd docutils literal notranslate">A</kbd></dt><dd><p>全选。</p>
+</dd>
+<dt>无 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></dt><dd><p>无选择。</p>
+</dd>
+<dt>反转 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">I</kbd></kbd></dt><dd><p>选择所有未选中的几何图形，并取消选择当前选中的组件。</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="simple">
+<dt><a class="reference internal" href="../../interface/selecting.html#tool-select-box"><span class="std std-ref">框选</span></a> <kbd class="kbd docutils literal notranslate">B</kbd></dt><dd><p>互动框选择。</p>
+</dd>
+<dt><a class="reference internal" href="../../interface/selecting.html#tool-select-circle"><span class="std std-ref">刷选</span></a> <kbd class="kbd docutils literal notranslate">C</kbd></dt><dd><p>刷选择。</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="simple">
+<dt><a class="reference internal" href="#select-random">随机选择</a></dt><dd><p>随机选择控制点。</p>
+</dd>
+<dt><a class="reference internal" href="#checker-deselect">间隔式弃选</a></dt><dd><p>选择第n个控制点。</p>
+</dd>
+<dt><a class="reference internal" href="#select-linked">选择相连元素</a> <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></dt><dd><p>选择与当前选择相连接的控制点。</p>
+</dd>
+<dt><a class="reference internal" href="#select-similar">选择相似</a> <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd></dt><dd><p>选择与当前选择具有类似属性的控制点。</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="simple">
+<dt><a class="reference internal" href="#de-select-first-last">选中/弃选首点/末点</a></dt><dd><p>切换第一个或最后一个控制点的选择。</p>
+</dd>
+<dt><a class="reference internal" href="#select-next-previous">选择下一项 /上一项</a></dt><dd><p>选择下一个或上一个控制点。</p>
+</dd>
+</dl>
+<hr class="docutils" />
+<dl class="simple">
+<dt><a class="reference internal" href="#select-more-less">扩展选择/缩减选择</a></dt><dd><p>根据对象的父级-子级关系选择对象。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-random">
+<h2>随机选择<a class="headerlink" href="#select-random" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 随机选择</span></p>
+</dd>
+</dl>
+</div>
+<p>随机选择控制点。</p>
+<dl class="simple">
+<dt>百分比</dt><dd><p>选择定义百分比数量的控制点。</p>
+</dd>
+<dt>随机种</dt><dd><p>伪随机数生成器使用的 <a class="reference internal" href="../../glossary/index.html#term-Seed"><span class="xref std std-term">Seed</span></a> 。</p>
+</dd>
+<dt>动作</dt><dd><p>控制该操作是 <em>选择</em> 或 <em>取消选择</em> 控制点。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="checker-deselect">
+<h2>间隔式弃选<a class="headerlink" href="#checker-deselect" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 间隔式弃选</span></p>
+</dd>
+</dl>
+</div>
+<p>此工具应用交替选择/取消选择的检查器模式。这只适用于您已经选择了多个控制点的情况。</p>
+<p>它的工作原理是改变当前的选择，这样只有从活动的控制点开始，只有每一轮的第n个控制点才会保持选中的状态。</p>
+<dl class="simple">
+<dt>弃选项</dt><dd><p>每次模式重复中弃选的元素数量。</p>
+</dd>
+<dt>选中项</dt><dd><p>每次模式重复中选择的元素数量。</p>
+</dd>
+<dt>偏移量</dt><dd><p>从起始点的偏移。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-linked">
+<h2>选择相连元素<a class="headerlink" href="#select-linked" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 选择相连元素</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">L</kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p><kbd class="kbd docutils literal notranslate">L</kbd> (或者 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd> 全选) 会扩选光标附近的控制点和相连的全部控制点，也就是，选中同属一条曲线的所有控制点。注意，对于贝塞尔曲线，选中一个控制柄后使用 <kbd class="kbd docutils literal notranslate">L</kbd> 会选中所有控制点以及与之相连的所有控制点。</p>
+</div>
+<div class="section" id="select-similar">
+<h2>选择相似元素<a class="headerlink" href="#select-similar" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 选择相似元素</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">G</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择与活动控制点具有某些类似属性的控制点。 <a class="reference internal" href="../../interface/undo_redo.html#ui-undo-redo-adjust-last-operation"><span class="std std-ref">调整上一步操作</span></a> 面板提供了几个选择选项:</p>
+<dl class="simple">
+<dt>类型</dt><dd><dl class="simple">
+<dt>类型</dt><dd><p>选择具有相同样条类型的样条，例如贝塞尔、NURBS或多边形。</p>
+</dd>
+<dt>半径</dt><dd><p>选择有相似半径值的控制点。</p>
+</dd>
+<dt>权重</dt><dd><p>选择所有有着相似权重值的控制点。</p>
+</dd>
+<dt>方向</dt><dd><p>选择有相似控制柄方向的控制点。</p>
+</dd>
+</dl>
+</dd>
+<dt>比较</dt><dd><p>相等,大于,小于。(仅适用于半径、权重) (ToDo 2.76)</p>
+</dd>
+<dt>阈值</dt><dd><p>精度 (ToDo 2.76)</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="de-select-first-last">
+<h2>选中/弃选首点/末点<a class="headerlink" href="#de-select-first-last" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 选中/弃选首点</span> , <span class="menuselection">选择 ‣ 选中/弃选末点</span></p>
+</dd>
+</dl>
+</div>
+<p>这些操作用于切换曲线首末端点的选中状态。这可以用在快速寻找曲线的起始点(比如将曲线用作路径时)。</p>
+</div>
+<div class="section" id="select-next-previous">
+<h2>选择下一项 /上一项<a class="headerlink" href="#select-next-previous" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 选择下一项</span> , <span class="menuselection">选择 ‣ 选择上一项</span></p>
+</dd>
+</dl>
+</div>
+<p>该操作基于当前选中项，扩选下一个或上一个控制点(即沿曲线的前一个或后一个控制点)。对于闭合曲线，起点和终点不算作相邻顶点。</p>
+</div>
+<div class="section" id="select-more-less">
+<h2>扩展选择/缩减选择<a class="headerlink" href="#select-more-less" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">选择 ‣ 扩展/缩减选择</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">NumpadPlus</kbd></kbd> , <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">NumpadMinus</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>它们的目的是根据目前选择的控制点来减少或扩大选中项。</p>
+<dl class="simple">
+<dt>扩展选择</dt><dd><p>对于每个选定的控制点，选择它的 <em>所有</em> 连接点(即一个或两个…)。</p>
+</dd>
+<dt>缩减选择</dt><dd><p>对于每个选定的控制点，如果 <em>所有</em> 与此点连接的点都被选中，则保持选中此点。否则取消选择。</p>
+</dd>
+</dl>
+<p>这意味着两点:</p>
+<ol class="arabic simple">
+<li><p>当选择曲线的 <em>所有</em> 控制点时，什么都不会发生(对于 <em>缩减选择</em> ，所有连接的点总是被选择，当然，此时 <em>扩展选择</em> 不能添加任何点)。相反,在没有选择控制点时也一样。</p></li>
+<li><p>其次，这两个工具的作用范围不会 &quot;跳出&quot; 曲线( 决不会从物体的一条曲线 &quot;跳到&quot; 另一条曲线上)。</p></li>
+</ol>
+</div>
+<div class="section" id="pick-shortest-path">
+<h2>拾取最短路径<a class="headerlink" href="#pick-shortest-path" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Menu Search ‣ Pick Shortest Path</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择两个控制点之间的曲线段: 活动点和光标下的控制点。在闭合曲线的情况下，选择最短路径。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="editing/index.html" class="btn btn-neutral float-right" title="编辑" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="primitives.html" class="btn btn-neutral float-left" title="基本体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/curves/selecting.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/curves/selecting%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

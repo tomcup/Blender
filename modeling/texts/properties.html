@@ -1,0 +1,593 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>属性 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/texts/properties.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="体积(卷标)" href="../volumes/index.html" />
+    <link rel="prev" title="编辑" href="editing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metas/index.html">融球</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">文本物体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shape">形状</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#texture-space">纹理空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geometry">几何数据</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#extrusion-taper-bevel">挤出，锥化和倒角</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#font">字体</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#transform">变换</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#paragraph">段</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#alignment">对齐</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#spacing">间隔</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#text-boxes">文本框</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">文本物体</a> &raquo;</li>
+        
+      <li>属性</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="properties">
+<h1>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="shape">
+<h2>形状<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>所有模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">Properties ‣ Text ‣ Shape</span></p>
+</dd>
+</dl>
+</div>
+<p><em>形状</em> 面板中的大多数设置与 <a class="reference internal" href="../curves/properties/shape.html"><span class="doc">曲线</span></a> 数据块共享，详情请参阅这些设置。</p>
+<dl class="simple">
+<dt>快速编辑</dt><dd><p>不填充编辑模式下的字母，只显示它们的轮廓。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="texture-space">
+<h2>纹理空间<a class="headerlink" href="#texture-space" title="Permalink to this headline">¶</a></h2>
+<p>每个物体可以有一个自动生成的 UV 映射，可以在这里调整这些映射。</p>
+<p>详见 <a class="reference internal" href="../meshes/uv/uv_texture_spaces.html#properties-texture-space"><span class="std std-ref">生成的UV属性</span></a>。</p>
+</div>
+<div class="section" id="geometry">
+<h2>几何数据<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>所有模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性(Properties) ‣ 字体(Font) ‣ 几何数据(Geometry)</span></p>
+</dd>
+</dl>
+</div>
+<dl class="simple">
+<dt>偏移量</dt><dd><p>偏移定义字母的曲线的控制点，这将使它们更薄或更厚。 小心使用，很有可能产生某些错误。</p>
+</dd>
+</dl>
+<div class="section" id="extrusion-taper-bevel">
+<h3>挤出，锥化和倒角<a class="headerlink" href="#extrusion-taper-bevel" title="Permalink to this headline">¶</a></h3>
+<p>该面板的其余设置(用于为字母提供体积)也与 <a class="reference internal" href="../curves/properties/geometry.html"><span class="doc">曲线</span></a> 数据块共享，有关详细信息，请参阅这些设置。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>锥形物体影响效果取决于如何构建定义字母的曲线。 结果通常看起来很随机。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../curves/properties/geometry.html#bpy-types-curve-bevel"><span class="std std-ref">Bevel</span></a> is applied to the curves defining the letters,
+which means that usually it will follow their outlines
+(there will be two parallel beveled curves, and not a single one, as one might expect).</p>
+</div>
+</div>
+</div>
+<div class="section" id="font">
+<span id="modeling-text-character"></span><h2>字体<a class="headerlink" href="#font" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>所有模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties) ‣ 字体(Font) ‣ 字体(Font)</span></p>
+</dd>
+</dl>
+</div>
+<p>Blender默认自带 <em>内置</em> 字体，在四个字体样式数据块菜单中都有显示。内置*字体始终存在，并在该列表中显示为 &quot;Bfont&quot;。数据块菜单包含一个显示当前加载字体的列表。为每种字体样式选择一种。</p>
+<p>要加载不同的 <em>字体</em> ，点击 <em>字体</em> 面板中的一个*加载*按钮，然后导航到一个字体文件。<a class="reference internal" href="../../editors/file_browser.html"><span class="doc">文件浏览器</span></a> 会给所有有效字体一个大写的 &quot;F &quot;图标。</p>
+<p>如果你选择了Blender不支持的字体，你会得到 &quot;Not a valid font &quot;的错误信息。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unix上的字体位置</p>
+<p>字体通常位于``/usr/lib/fonts``，或``/usr/lib/X11/fonts``等类似路径下，但并非总是如此。它们也可能在其他位置，如``/usr/share/local``或``/usr/local/share``，以及可能的相关子目录下。</p>
+</div>
+<p>请记住，相同的字体将应用于文本中所有具有相同样式的字符，但每种样式都需要单独的字体。例如，您需要加载一个 <em>Italics</em> 字体，以使字符或单词成为斜体。一旦加载了字体，您就可以将该字体的 &quot;样式 &quot;应用于选定的字符或整个对象。总的来说，您至少需要加载四种不同类型的字体来代表每种风格（正常、斜体、粗体、粗体与斜体）。</p>
+<p>需要理解的是，Blender并不关心你加载的 &quot;正常&quot;、&quot;粗体 &quot;等样式的字体。这就是为什么你可以在同一文本中最多使用四种不同的字体，但你必须在同一字体的不同样式或不同字体之间进行选择。Blender有很多排版控件可以改变文本的样式和布局，在 <em>字体</em> 面板中可以找到。</p>
+<dl>
+<dt>粗体</dt><dd><p>在键入之前用 <em>粗体</em> 按钮切换。 通过选择文本然后使用3D视图的 <em>文本</em> 菜单中的 <em>粗体</em> 条目，也可以将文本设置为 <strong>粗体</strong> 。</p>
+</dd>
+<dt>斜体</dt><dd><p>在输入之前用 <em>斜体</em> 按钮切换。 通过选择文本然后使用3D视图的 <em>文本</em> 菜单中的 <em>斜体</em> 条目，也可以将文本设置为 <em>斜体</em> 。</p>
+</dd>
+<dt>下划线</dt><dd><p>启用下划线，由下面的 <a class="reference internal" href="#modeling-text-character-underline"><span class="std std-ref">下划线设置</span></a> 所控制。</p>
+</dd>
+<dt>小型大写</dt><dd><p>启用此选项可将字符键入为小型大写字母。</p>
+<p><em>小型大写</em> 的尺寸可以通过 <a class="reference internal" href="#modeling-text-character-underline"><span class="std std-ref">小型大写缩放设置</span></a> 来改变。</p>
+</dd>
+</dl>
+<div class="section" id="transform">
+<h3>变换<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>尺寸</dt><dd><p>控制整个文本的大小(无法独立控制每个字符大小)。 但请注意，具有不同字体(不同样式，见下文)的字符可能具有不同的可见大小。</p>
+</dd>
+<dt>切变</dt><dd><p>控制整个文本的倾斜度。 尽管看起来很相似，但这与斜体样式不同。</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/modeling_texts_properties_shear-example.png"><img alt="../../_images/modeling_texts_properties_shear-example.png" src="../../_images/modeling_texts_properties_shear-example.png" style="width: 340px;" /></a>
+<p class="caption"><span class="caption-text">切变的例子。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>物体字形</dt><dd><p>允许单个物体用于渲染字体，可以在Blender中创建/建模属于自己的复杂字体！ 该字段用于选择要用于定位用于键入的各个字符的物体前缀名称(物体“族”)。 这是一个非常复杂的过程，因此这里有详细的步骤：</p>
+<ol class="arabic simple">
+<li><p>创建字体字符，每个字符可以是任何物体类型(网格，曲线等)。 它们必须在命名方案后面都有一个名称：“通用前缀”后跟“字符名称”(例如“ft.a”，“ft.b”等)。</p></li>
+<li><p>对于文本物体，启用 <a class="reference internal" href="../../scene_layout/object/properties/instancing/verts.html"><span class="doc">实例化顶点</span></a> 。</p></li>
+<li><p>在 <em>物体数据</em> 选项卡中，使用“字体”物体的“公共前缀”来填充 <em>物体字形</em> 字段。 现在，每当文本中的字符与“字体”物体名称的 <em>后缀部分</em> 匹配时，此物体就会复制到该字符上。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>物体是重复的，因此它们的中心位于相应字符的 <em>右下角</em> 。</p>
+</div>
+</dd>
+<dt>曲线路径文本</dt><dd><p>用来选择一个曲线，来让文本物体跟随它。</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/modeling_texts_properties_curved-lowres-example.png"><img alt="../../_images/modeling_texts_properties_curved-lowres-example.png" src="../../_images/modeling_texts_properties_curved-lowres-example.png" style="width: 360px;" /></a>
+<p class="caption"><span class="caption-text">曲线上的文本。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>应该使用 <a class="reference internal" href="../modifiers/deform/curve.html"><span class="doc">曲线修改器</span></a>，它提供更多控制，是现在Blender中实现此类效果的标准方法。</p>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="modeling-text-character-underline">
+<dt>下划线</dt><dd><p>在键入之前用 <em>下划线</em> 按钮切换。 通过选择文本然后使用 <em>3D视图</em> 的 <em>文本</em> 菜单中的 <em>下划线</em> 条目，也可以将文本设置为加下划线。</p>
+</dd>
+<dt>下划线位置</dt><dd><p>这允许垂直移动下划线的位置。</p>
+</dd>
+<dt>下划线厚度</dt><dd><p>这控制下划线的粗细。</p>
+</dd>
+<dt>小型大写缩放</dt><dd><p>缩放应用于大写字母，将它们变成小型大写字母。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="paragraph">
+<h2>段<a class="headerlink" href="#paragraph" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>全部</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties editor) ‣ 字体(Font) ‣ 段(Paragraph)</span></p>
+</dd>
+</dl>
+</div>
+<p><em>段</em> 面板对文本的排列和间距进行了设置。</p>
+<div class="figure align-default" id="id3">
+<img alt="../../_images/modeling_texts_properties_paragraph-settings.png" src="../../_images/modeling_texts_properties_paragraph-settings.png" />
+<p class="caption"><span class="caption-text"><em>段</em> 面板。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="alignment">
+<h3>对齐<a class="headerlink" href="#alignment" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>水平对齐</dt><dd><dl class="simple">
+<dt>左对齐</dt><dd><p>使用文本框时，将文本对齐到框的左边，否则以文本物体的原点作为文本的起点（向右增加）。</p>
+</dd>
+<dt>居中对齐</dt><dd><p>使用文本框时，将文本在框中居中对齐，否则以文本物体的原点作为文本的起点（向左边和右边等量增加）。</p>
+</dd>
+<dt>右对齐</dt><dd><p>使用文本框时，将文本对齐到框的右边，否则以文本物体的原点作为文本的起点（向左增加）。</p>
+</dd>
+<dt>左右对齐</dt><dd><p>只有当一行以折行结束（ <strong>不是</strong> 以换行结束）时，才会换行，并且使用 <em>空格</em> 代替 <em>字距</em> （kerning）来填充行。</p>
+</dd>
+<dt>分散对齐</dt><dd><p>总是换行，即使它还在输入中。它使用字距（kerning）来填充行。</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>左右对齐</em> 和 <em>分散对齐</em> 都只在文本框内生效。</p>
+</div>
+</dd>
+<dt>垂直对齐</dt><dd><dl>
+<dt>顶部基线</dt><dd><ul class="simple">
+<li><p>对于文本框，将文本的 &quot;顶部 &quot;基线与框的顶部对齐。</p></li>
+<li><p>在没有文本框的情况下，将文本的实际基线与对物体的原点对齐，并向底部延伸。</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>在第一行中，根据文本框的使用与否，参考点的不同确实令人困惑。</p>
+</div>
+</dd>
+<dt>顶</dt><dd><ul class="simple">
+<li><p>对于文本框，将文本的顶部与框的顶部对齐。</p></li>
+<li><p>在没有文本框的情况下，将文本的顶部与对象的原点对齐，并向底部延伸。</p></li>
+</ul>
+</dd>
+<dt>居中对齐</dt><dd><ul class="simple">
+<li><p>对于文本框，将文本在框里居中。</p></li>
+<li><p>在没有文本框的情况下，将文本物体的原点为中心，并在上下两个方向上等量延伸。</p></li>
+</ul>
+</dd>
+<dt>底</dt><dd><ul class="simple">
+<li><p>对于文本框，将文本的底部与框的底部对齐。</p></li>
+<li><p>在没有文本框的情况下，将文本的底部对齐物体的原点，并向顶部延伸。</p></li>
+</ul>
+</dd>
+<dt>底部基线</dt><dd><ul class="simple">
+<li><p>对于文本框，将文本的基线与框的底部对齐。</p></li>
+<li><p>在没有文本框的情况下，将文本的基线与物体的原点对齐，并向顶部延伸。</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="spacing">
+<h3>间隔<a class="headerlink" href="#spacing" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>字符间距</dt><dd><p>字符间距(字距)缩放的系数。</p>
+<p>在 <em>3D视图</em> 的编辑模式下，还可以通过按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd> / <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd> 键来减少/增加文字光标位置的单独字距。</p>
+</dd>
+<dt>单词间距</dt><dd><p>单词间距缩放的系数。</p>
+</dd>
+<dt>行间距</dt><dd><p>行间距缩放的系数。</p>
+</dd>
+<dt>X/Y 偏移量</dt><dd><p>这些设置控制了对象内文本位置的 X 和 Y 偏移。这是相对于物体的原点而言的，或者是整个文本，或者是使用文本框时的每个框。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="text-boxes">
+<span id="bpy-types-textbox"></span><h2>文本框<a class="headerlink" href="#text-boxes" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>全部</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties editor) ‣ 字体(Font) ‣ 文本框(Text Boxes)</span></p>
+</dd>
+</dl>
+</div>
+<p>文本框（或称为框）允许您在单个文本物体内的矩形区域中分配文本。每个文本物体允许有任意数量的可自由定位和可调整大小的文本框。</p>
+<p>文字从编号最低的文本框连续流向编号最高的文本框，每个文本框内的文字都用文字折行。当较低编号的文本框无法容纳更多的文字时，文字就会在文本框之间流动。如果到了最后一个文本框，文字就会溢出（默认情况下，见下面的选项）。</p>
+<div class="figure align-default" id="id4">
+<img alt="../../_images/modeling_texts_properties_frame-upperpanel-area.png" src="../../_images/modeling_texts_properties_frame-upperpanel-area.png" />
+<p class="caption"><span class="caption-text">文本框选项卡。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>添加文本框</dt><dd><p>在当前文本框之后插入一个新的文本框（按照文本流的顺序）。新文本框的大小和位置与选定的文本框相同。</p>
+</dd>
+<dt>删除 “X”</dt><dd><p>删除当前文本框。</p>
+</dd>
+<dt>溢出</dt><dd><p>如何处理文本溢出文本框定义的可用空间。</p>
+<dl>
+<dt>溢出</dt><dd><p>就让文字从最后一个框里溢出。</p>
+</dd>
+<dt>缩放至适应</dt><dd><p>缩放文字以适应可用空间。</p>
+</dd>
+<dt>截断</dt><dd><p>隐藏可用空间的放不下的文本末尾部分。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>它只会在 <em>物体模式</em> 下截断，在 <em>编辑模式</em> 下，整个文本仍然可见（并根据需要溢出）。</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>X/Y 尺寸</dt><dd><p>指定文本框的宽度和高度，如果设置为 <strong>零</strong> ，则不会发生文字折行（会被忽略，如果全部设置为空大小，则整个文本框系统被禁用）。</p>
+</dd>
+<dt>X/Y 偏移量</dt><dd><p>控制文本框在 <em>X</em> 和 <em>Y</em> 上的偏移，即其位置。</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id5">
+<img alt="../../_images/modeling_texts_properties_frame-example4.png" src="../../_images/modeling_texts_properties_frame-example4.png" />
+<p class="caption"><span class="caption-text">多列，文本在方框之间流动。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../volumes/index.html" class="btn btn-neutral float-right" title="体积(卷标)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="editing.html" class="btn btn-neutral float-left" title="编辑" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/texts/properties.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/texts/properties%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

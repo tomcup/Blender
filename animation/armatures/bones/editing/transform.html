@@ -1,0 +1,498 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>变换 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/armatures/bones/editing/transform.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="Bone Roll" href="bone_roll.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">骨架</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">骨骼</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tools/index.html">工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">编辑</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">变换</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#scale-radius">缩放半径</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#scale-envelope-distance">Scale Envelope Distance 缩放封套距离</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#align-bones">Align Bones  对齐骨骼</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="bone_roll.html">Bone Roll</a></li>
+<li class="toctree-l5"><a class="reference internal" href="extrude.html">Extrude</a></li>
+<li class="toctree-l5"><a class="reference internal" href="duplicate.html">Duplicate</a></li>
+<li class="toctree-l5"><a class="reference internal" href="fill_between_joints.html">Fill Between Joints</a></li>
+<li class="toctree-l5"><a class="reference internal" href="split.html">Split</a></li>
+<li class="toctree-l5"><a class="reference internal" href="separate_bones.html">Separate Bones</a></li>
+<li class="toctree-l5"><a class="reference internal" href="subdivide.html">Subdivide</a></li>
+<li class="toctree-l5"><a class="reference internal" href="switch_direction.html">Switch Direction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="symmetrize.html">Symmetrize</a></li>
+<li class="toctree-l5"><a class="reference internal" href="naming.html">命名</a></li>
+<li class="toctree-l5"><a class="reference internal" href="change_layers.html">Change Layers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="parenting.html">Parenting 父级</a></li>
+<li class="toctree-l5"><a class="reference internal" href="properties.html">属性</a></li>
+<li class="toctree-l5"><a class="reference internal" href="delete.html">Delete</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../properties/index.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../skinning/index.html">蒙皮</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../posing/index.html">姿态</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../../index.html">骨架</a> &raquo;</li>
+        
+          <li><a href="../index.html">骨骼</a> &raquo;</li>
+        
+          <li><a href="index.html">编辑</a> &raquo;</li>
+        
+      <li>变换</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transform">
+<h1>变换<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><div class="figure align-right" id="id1" style="width: 165px">
+<a class="reference internal image-reference" href="../../../../_images/animation_armatures_bones_editing_transform_panel.png"><img alt="../../../../_images/animation_armatures_bones_editing_transform_panel.png" src="../../../../_images/animation_armatures_bones_editing_transform_panel.png" style="width: 165px;" /></a>
+<p class="caption"><span class="caption-text">The Transform panel for armatures in Edit Mode.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>We will not detail here the various transformations of bones, nor things like axis locking, pivot points, and so on,
+as they are common to most object editing, and already described in
+the <a class="reference internal" href="../../../../scene_layout/object/editing/transform/control/index.html"><span class="doc">mesh section</span></a>.
+The same goes for mirroring,
+as it is nearly the same as with <a class="reference internal" href="../../../../modeling/meshes/editing/mesh/mirror.html"><span class="doc">mesh editing</span></a>.
+Just keep in mind that bones' roots and tips behave more or less like meshes' vertices,
+and bones themselves act like edges in a mesh.</p>
+<p>正如所知道的那样，骨骼有两种关系：它们是父子关系和连接关系。在 <em>编辑模式</em> 下，父级的骨骼行为就像他们没有任何关系。你可以抓取，旋转，缩放等，父骨不影响其子骨骼。然而，连接骨骼必须有父骨骼尾端连接着子骨骼的头部，所以，当对骨骼进行变换时，将影响所有相连的父骨/子骨等等。</p>
+<p>而与其他变换工具，“局部轴”是指物体的轴，这里它们是骨骼自己的轴(当你锁定到局部轴时，通过按相关键两次，约束将沿所选骨骼的局部轴应用而不是骨架物体的轴)。</p>
+<p>最后，您可以在属性区域的 <em>Transform(变换)</em> 面板中编辑活动选定骨骼的两个关节的位置和半径，以及 <a class="reference internal" href="bone_roll.html#armature-bone-roll"><span class="std std-ref">滚动旋转</span></a>。</p>
+<div class="section" id="scale-radius">
+<h2>缩放半径<a class="headerlink" href="#scale-radius" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">骨架 ‣ 变换 ‣ 缩放半径</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>您可以通过选择骨骼的头部，身体或尾部来改变骨骼的半径，然后按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> ，向左或向右移动鼠标。如果选择了身体，意味半径将被缩放。像往常一样，通过相连的骨骼，你可以同时缩放父级的尾端和子级的头部的半径。(封套模式)。</p>
+<p>You can also alter the bone radius by selecting the tail or head of the bone you wish to alter,
+then navigate to <span class="menuselection">Properties ‣ Bone ‣ Deform ‣ Radius Section</span>
+and entering new values for the <em>Tail</em> and <em>Head</em> number fields.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Bone Scale and Scale Radius comparison. 骨骼缩放和缩放半径的比较。</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../../../_images/animation_armatures_bones_selecting_single-bone.png" src="../../../../_images/animation_armatures_bones_selecting_single-bone.png" />
+<p class="caption"><span class="caption-text">在八面锥(Octahedr)显示模式选择的单一骨骼。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-2.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-2.png" />
+<p class="caption"><span class="caption-text">正常缩放后。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id5">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-3.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-3.png" />
+<p class="caption"><span class="caption-text">在封套( Envelope)显示模式选择的单一骨骼。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id6">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-4.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-4.png" />
+<p class="caption"><span class="caption-text">缩放半径后其长度保持不变，但其关节的半径较大。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>需要注意的是当调整骨(通过直接进行缩放，或者通过移动其关节中的一个)大小时，Blender自动校正它的封套的末端半径。因此，建议首先放置所有骨骼，然后才能编辑这些属性。</p>
+</div>
+<div class="section" id="scale-envelope-distance">
+<h2>Scale Envelope Distance 缩放封套距离<a class="headerlink" href="#scale-envelope-distance" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式和姿态模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">骨架 ‣ 变换 ‣ 缩放封套距离</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>你可以通过单击要更改的骨骼的主体来更改骨骼封套体积的大小，快捷键 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd> ，然后向左或向右拖动鼠标，骨骼封套体积将相应更改。</p>
+<p>You can also alter the Bone Envelope volume by selecting the Bone you wish to alter and
+then navigate to <span class="menuselection">Properties ‣ Bone ‣ Deform ‣ Envelope ‣ Distance</span>
+then enter a new value into it.</p>
+<p>改变骨骼封套体积不会改变骨骼的大小，它只能影响子对象顶点的范围。</p>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Envelope scaling example. 封套缩放示例。</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id8">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-3.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-3.png" />
+<p class="caption"><span class="caption-text">在封套( Envelope)显示模式选择的单一骨骼。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-5.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-radius-5.png" />
+<p class="caption"><span class="caption-text">封套缩放后的距离。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">&quot;骨骼大小&quot; 缩放示例。</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id11">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-1.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-1.png" />
+<p class="caption"><span class="caption-text">在样条骨骼(B-Bone)模式的默认 &quot;骨骼尺寸 &quot;。</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id12">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-2.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-2.png" />
+<p class="caption"><span class="caption-text">封套缩放后的距离。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id13">
+<img alt="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-3.png" src="../../../../_images/animation_armatures_bones_editing_transform_scaling-bone-size-3.png" />
+<p class="caption"><span class="caption-text">对象模式中的相同骨架，样条骨骼(B-Bone)模式，Bone.004的的缩放。</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="align-bones">
+<h2>Align Bones  对齐骨骼<a class="headerlink" href="#align-bones" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">骨架 ‣ 变换 ‣ 对齐骨骼</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>旋转所选骨骼以获得与活动骨骼相同的方向。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bone_roll.html" class="btn btn-neutral float-right" title="Bone Roll" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/armatures/bones/editing/transform.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/armatures/bones/editing/transform%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

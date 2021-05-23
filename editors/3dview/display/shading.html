@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>视图着色 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/3dview/display/shading.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="工具栏" href="../toolbar/index.html" />
+    <link rel="prev" title="视图叠加层" href="overlays.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">3D视图</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../startup_scene.html">启动场景</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modes.html">物体模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigate/index.html">漫游</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../3d_cursor.html">3D游标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../controls/index.html">控件</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Display</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="visibility.html">物体类型可见性</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gizmo.html">视图Gizmo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overlays.html">视图叠加层</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">视图着色</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#wireframe">线框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#solid">实体</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#material-preview">材质预览</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#rendered">渲染</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../toolbar/index.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../viewport_render.html">视图渲染</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texture_node/index.html">纹理节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nla/index.html">非线性动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../preferences/index.html">偏好设置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../index.html">3D视图</a> &raquo;</li>
+        
+          <li><a href="index.html">Display</a> &raquo;</li>
+        
+      <li>视图着色</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="viewport-shading">
+<span id="view3d-viewport-shading"></span><span id="bpy-types-view3dshading-type"></span><h1>视图着色<a class="headerlink" href="#viewport-shading" title="Permalink to this headline">¶</a></h1>
+<p>可以调整3D视图的阴影以匹配手头的任务。 有几种模式可供选择。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当场景的渲染引擎设置为工作台时，材质预览选项不可用。</p>
+</div>
+<div class="section" id="wireframe">
+<span id="dview-shading-rendered"></span><h2>线框<a class="headerlink" href="#wireframe" title="Permalink to this headline">¶</a></h2>
+<p>Shows the full scene by only displaying the edges of the objects (wireframes).</p>
+<dl>
+<dt>颜色</dt><dd><dl class="simple">
+<dt>单个</dt><dd><p>使用单一颜色渲染整个场景。</p>
+</dd>
+<dt>物体</dt><dd><p>使用视图显示 <a class="reference internal" href="../../../render/workbench/display_settings.html#properties-object-viewport-display"><span class="std std-ref">物体</span></a> 面板中的颜色，可为每个物体设置该颜色。</p>
+</dd>
+<dt>随机</dt><dd><p>将为场景中的每个对象选择随机颜色。</p>
+</dd>
+</dl>
+</dd>
+<dt>背景</dt><dd><p>背景如何在3D视图中显示。</p>
+<dl class="simple">
+<dt>主题</dt><dd><p>使用主题的背景颜色。</p>
+</dd>
+<dt>世界环境</dt><dd><p>使用世界视图显示选项。</p>
+</dd>
+<dt>视图</dt><dd><p>为3D视图的背景选择自定义颜色。</p>
+</dd>
+</dl>
+</dd>
+<dt>选项</dt><dd><dl class="simple" id="dview-shading-xray">
+<dt>透视</dt><dd><p>渲染场景至透明。 使用滑块可以控制场景的透明度。 在线框模式下，可以调整后面的线的不透明度。</p>
+</dd>
+<dt>轮廓</dt><dd><p>在视图中渲染物体的轮廓。 轮廓的颜色可以调整。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="solid">
+<h2>实体<a class="headerlink" href="#solid" title="Permalink to this headline">¶</a></h2>
+<p>在实体模式下显示场景。 此模式使用工作台引擎渲染3D视图。 <a class="reference internal" href="../../../render/workbench/lighting.html"><span class="doc">光照</span></a> ， <a class="reference internal" href="../../../render/workbench/color.html"><span class="doc">颜色</span></a> 和 <a class="reference internal" href="../../../render/workbench/options.html"><span class="doc">选项</span></a> 可以在工作台渲染引擎章节。</p>
+<dl>
+<dt>背景</dt><dd><p>背景在3D视图中的显示方式。</p>
+<dl class="simple">
+<dt>主题</dt><dd><p>使用主题的背景颜色。</p>
+</dd>
+<dt>世界环境</dt><dd><p>使用世界视图显示选项。</p>
+</dd>
+<dt>视图</dt><dd><p>为3D视图的背景选择自定义颜色。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="material-preview">
+<span id="dview-material-preview"></span><h2>材质预览<a class="headerlink" href="#material-preview" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference internal" href="../../../render/eevee/index.html"><span class="doc">Eevee</span></a> 和 HDRI 环境渲染 3D 视口。此模式特别适用于预览材质和纹理绘制。用户可以选择不同的光照条件来测试材质。</p>
+<dl>
+<dt>光照</dt><dd><dl>
+<dt>场景灯光</dt><dd><p>渲染场景时使用场景中的灯光。</p>
+</dd>
+<dt>场景世界</dt><dd><p>渲染场景时使用场景的世界。 当关闭时，将使用下一个选项构建一个世界。</p>
+<dl class="simple">
+<dt>HDRI环境</dt><dd><p>用于点亮场景的环境贴图。</p>
+</dd>
+<dt>旋转</dt><dd><p>环境在Z轴上的旋转。</p>
+</dd>
+<dt>强度</dt><dd><p>环境光照的强度。</p>
+</dd>
+<dt>World Opacity</dt><dd><p>The opacity level of the HDRI will be rendered as background in the 3D Viewport.</p>
+</dd>
+<dt>Blur</dt><dd><p>Factor to unfocus the <em>HDRI Environment</em>,
+note that this does not change the diffusion of the lighting,
+only the appearance of the colors.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>渲染通道</dt><dd><p>显示另一个渲染通道，而非组合渲染。可用于分析和调试几何形状、材料和照明。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="rendered">
+<span id="dview-rendered"></span><h2>渲染<a class="headerlink" href="#rendered" title="Permalink to this headline">¶</a></h2>
+<p>Render the 3D Viewport with the scene <em>Render Engine</em>, for interactive rendering.
+By default the scene lights are used for lighting.
+An HDRI environment can be used as well, with the same options as Material Preview mode.</p>
+<dl class="simple">
+<dt>渲染通道</dt><dd><p>显示另一个渲染通道，而非组合渲染。可用于分析和调试几何形状、材料和照明。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../toolbar/index.html" class="btn btn-neutral float-right" title="工具栏" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="overlays.html" class="btn btn-neutral float-left" title="视图叠加层" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/3dview/display/shading.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/3dview/display/shading%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

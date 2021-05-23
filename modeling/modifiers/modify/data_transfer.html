@@ -1,0 +1,476 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>数据传递修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/modify/data_transfer.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="网格缓存修改器" href="mesh_cache.html" />
+    <link rel="prev" title="常见的修改器选项" href="../common_options.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#modify">修改</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">数据传递修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#selection-of-data-to-transfer">选择要传输的数据</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">使用</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#geometry-mapping">几何映射</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#topology-mapping">拓扑映射</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_cache.html">网格缓存修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_sequence_cache.html">网格序列缓存修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="normal_edit.html">法线编辑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uv_project.html">UV 投射修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uv_warp.html">UV偏移修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_edit.html">顶点权重编辑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_mix.html">顶点权重混合修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_proximity.html">顶点权重邻近修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weighted_normal.html">加权法向修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>数据传递修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-transfer-modifier">
+<span id="bpy-types-datatransfermodifier"></span><h1>数据传递修改器<a class="headerlink" href="#data-transfer-modifier" title="Permalink to this headline">¶</a></h1>
+<p>数据传输修改器将几种类型的数据从一个网格传输到另一个网格。 数据类型包括顶点组，UV贴图，顶点颜色，自定义法线等。</p>
+<p>传递是通过在源网格与目标网格元素(顶点、边等)之间建立映射实现的，这可以是一对一映射，或者通过插值实现的多对一映射。</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_data-transfer_normals-example.jpg"><img alt="../../../_images/modeling_modifiers_modify_data-transfer_normals-example.jpg" src="../../../_images/modeling_modifiers_modify_data-transfer_normals-example.jpg" style="width: 680px;" /></a>
+<p class="caption"><span class="caption-text">物体间传输法线，见 <a class="reference external" href="https://en.blender.org/uploads/a/ad/Data_Transfer_Normal_Torus.blend">样例 blend 文件</a>。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../../scene_layout/object/editing/relations.html"><span class="doc">数据传递操作</span></a></p>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id2">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_data-transfer_panel.png"><img alt="../../../_images/modeling_modifiers_modify_data-transfer_panel.png" src="../../../_images/modeling_modifiers_modify_data-transfer_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">数据传递修改器。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>源</dt><dd><p>要复制数据的网格物体。</p>
+<p>如果未设置字段右侧的按钮，则在生成映射时会在全局空间中考虑来源与目标几何体，否则将在局部空间中对它们进行计算(即，好像两个物体的原点位于同一位置)。</p>
+</dd>
+<dt>混合模式</dt><dd><p>控制如何影响目标数据:</p>
+<dl class="simple">
+<dt>全部</dt><dd><p>替换目标物体中的所有内容(注意: 仍然使用 <em>混合系数</em> )</p>
+</dd>
+<dt>上限阈值</dt><dd><p>只有当目标值高于给定的阈值 <em>混合系数</em> 时，才替换目标值。如何解释该阈值取决于数据类型，请注意，对于布尔值，此选项将充当逻辑与。</p>
+</dd>
+<dt>下限阈值</dt><dd><p>只有当目标值低于给定的阈值 <em>混合系数</em> 时，才替换目标值。如何解释该阈值取决于数据类型，请注意，对于布尔值，此选项将充当逻辑或。</p>
+</dd>
+<dt>混合，添加，相减， 相乘</dt><dd><p>应用该操作，将使用混合系数来控制源物体或目标物体数值使用的程度。仅适用于几种元素类型(顶点组，顶点颜色)。</p>
+</dd>
+</dl>
+</dd>
+<dt>混合系数</dt><dd><p>将多少传输的数据混合到现有数据中(不受所有数据类型的支持)。</p>
+</dd>
+<dt>顶点组</dt><dd><p>用于逐项精细控制混合系数。可以通过右侧的小 &quot;箭头&quot; 按钮反转顶点组的影响。</p>
+</dd>
+<dt>生成数据层</dt><dd><p>这个修改器不能生成所需的数据层本身。如果需要,一旦选择了数据源数据集,该按钮将被用来生成匹配的目标层。</p>
+</dd>
+</dl>
+<div class="section" id="selection-of-data-to-transfer">
+<h3>选择要传输的数据<a class="headerlink" href="#selection-of-data-to-transfer" title="Permalink to this headline">¶</a></h3>
+<p>要保持修改器的大小合理，必须首先选择要受影响的项的类型(顶点、边、面角和/或面)。</p>
+<dl class="simple">
+<dt>映射类型</dt><dd><p>源物体和目标物体之间如何映射。每种映射类型都有自身对应的选项。详情见下文 <a class="reference internal" href="#geometry-mapping">几何映射</a> 。</p>
+</dd>
+<dt>数据类型</dt><dd><p>切换按钮的左列，以选择要传输的数据类型。</p>
+</dd>
+<dt>多层数据类型选项</dt><dd><p>在这种情况下(顶点组、顶点颜色、UVs)，一个可以选择源层转移(通常,要么是所有的,或一个指定的)，以及如何影响目标物体(通过匹配名字，匹配顺序/位置，或者通过手动指定目的层，选择一个源,)。</p>
+</dd>
+<dt>UV孤岛处理精简</dt><dd><p>此设置目前只影响UV的传递。它允许避免一个给定的目标面获得来自不同源UV岛的UV坐标。将其保持在0.0意味着完全不处理岛屿。通常，像0.02这样的小值就足以获得良好的结果，但是如果您要从一个非常多面的的源映射到一个非常低面的目标，那么您可能必须大幅提高它。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>使用<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>在使用这个修改器时要记住的第一个关键事项是它将 <strong>不会</strong> 创建目标数据层。为此，一旦选择了传输的源数据集， <em>生成数据层</em> 按钮应始终开启。这也应该很好理解,在目标网格上创建的这些数据层 <strong>不是</strong> 修改器堆栈的一部分，这意味着如果删除了修改器，或者更改源数据选择，它们仍会继续存在。</p>
+<div class="section" id="geometry-mapping">
+<h3>几何映射<a class="headerlink" href="#geometry-mapping" title="Permalink to this headline">¶</a></h3>
+<p>几何映射是一个给定的目标网格如何与源网格相关联。在这个过程中,一个目标顶点/边缘/…获取指定的源网格作为其数据源的一部分。要想用这个修改器得到良好的效果，理解透这个主题是至关重要的。</p>
+<dl>
+<dt>拓扑</dt><dd><p>最简单的选项，期望两个物体有相同数量，并且按索引匹配他们。对于两个相同网格经不同变形后的副本很管用。</p>
+</dd>
+<dt>一对一映射</dt><dd><p>仅为目标网格元素选择一个源网格元素，这通常基于最短距离。</p>
+<dl>
+<dt>顶点</dt><dd><dl class="simple">
+<dt>最近的点</dt><dd><p>使用源物体最近的顶点数据。</p>
+</dd>
+<dt>最近的边顶点</dt><dd><p>使用源物体最近边的顶点数据。</p>
+</dd>
+<dt>最近的面顶点</dt><dd><p>使用源物体最近面的顶点数据。</p>
+</dd>
+</dl>
+</dd>
+<dt>边</dt><dd><dl class="simple">
+<dt>最近的顶点</dt><dd><p>使用源物体中距离目标边最近的顶点所在边的数据。</p>
+</dd>
+<dt>最近的边</dt><dd><p>用源物体中距离目标边最近的边线数据(使用边线的中点计算)。</p>
+</dd>
+<dt>最近的面边</dt><dd><p>使用源物体最近面的最近边缘(使用边缘的中点)。</p>
+</dd>
+</dl>
+</dd>
+<dt>面拐</dt><dd><p>面拐不是真实的元素，类似连在特定表面的拆分顶点。因此面拐会同时匹配顶点(位置)和面(法向...)数据。</p>
+<dl class="simple">
+<dt>最近的拐角和最佳匹配法线</dt><dd><p>从最近的源拐角中，选取与目标拐点 <em>拆分</em> 法向最相近的源拐角数据。</p>
+</dd>
+<dt>最近的拐角和最佳匹配面法线</dt><dd><p>从最近的源拐角中，选取与目标拐角 <em>面</em> 法向最相近的源拐角数据。</p>
+</dd>
+<dt>最近面上的最近拐角</dt><dd><p>使用最近源面的最近拐角数据。</p>
+</dd>
+</dl>
+</dd>
+<dt>面</dt><dd><dl class="simple">
+<dt>最近的面</dt><dd><p>使用最近的源面数据。</p>
+</dd>
+<dt>最佳法线匹配</dt><dd><p>使用与目标法向最匹配的源面数据。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>插值映射</dt><dd><p>为每个目标网格使用多个源物体，在传递的同时进行数据插值。</p>
+<dl>
+<dt>顶点</dt><dd><dl class="simple">
+<dt>最近边插值</dt><dd><p>使用最近来源边的最近点数据，对来源边的两个顶点数据插值。</p>
+</dd>
+<dt>最近面插值</dt><dd><p>使用最近来源面的最近点数据，对来源面的所有顶点数据插值。</p>
+</dd>
+<dt>投影面插值</dt><dd><p>使用目标顶点沿自身法向投影到来源面的点数据，对该来源面的所有顶点数据插值。</p>
+</dd>
+</dl>
+</dd>
+<dt>边</dt><dd><dl class="simple">
+<dt>投影边插值</dt><dd><p>这是一个采样过程。沿着目标的边缘投射几条光线(插值两条边的顶点法线)，如果足够多的光线射入一个源的边缘，所有命中源边缘的数据都被插值到目标的边缘。</p>
+</dd>
+</dl>
+</dd>
+<dt>面拐</dt><dd><p>面拐不是真实的元素，类似连在特定表面的拆分顶点。因此面拐会同时匹配顶点(位置)和面(法向...)数据。</p>
+<dl class="simple">
+<dt>最近面插值</dt><dd><p>使用最近的源面的最近点数据，对源面的所有拐角插值。</p>
+</dd>
+<dt>投影面插值</dt><dd><p>使用目标拐角沿自身法向投影到来源面的点数据，对该来源面的拐角数据插值。</p>
+</dd>
+</dl>
+</dd>
+<dt>面</dt><dd><dl class="simple">
+<dt>投影面插值</dt><dd><p>这是一个采样过程。从整个目标面投射几束光线(沿着它自己的法线)，如果有足够多的光线照射到源面，所有被照射的源面数据都被插值到目标面。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="topology-mapping">
+<h3>拓扑映射<a class="headerlink" href="#topology-mapping" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>最大距离</dt><dd><p>当启用 &quot;压力触控笔&quot; 图标按钮时，这是获取成功映射的源与目的地之间的最大距离。如果目标项目不能在该范围内找到一个源项,那么它就不会得到转移的数据。</p>
+<p>这样可以将一个小的细分的模型传递到更复杂的模型上(比如将手部模型传递到 &quot;整体模型&quot; 上)。</p>
+</dd>
+<dt>光线半径</dt><dd><p>对于光线投射为基础的映射方式，光线投射的半径，对于1D和2D物体特别重要(比如顶点和边)，没有一点宽度，就会没有匹配的光线。。。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mesh_cache.html" class="btn btn-neutral float-right" title="网格缓存修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../common_options.html" class="btn btn-neutral float-left" title="常见的修改器选项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/modify/data_transfer.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/modify/data_transfer%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>片段 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/video_editing/sequencer/properties/strip.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="修改器面板" href="modifiers.html" />
+    <link rel="prev" title="属性" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">视频编辑</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">序列编辑器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../toolbar/tools.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigating.html">导航</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../strips/index.html">片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../meta.html">复合片段</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">属性</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">片段</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#header">标题栏</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#adjust-panel">调整面板</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#compositing">合成处理</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#transform">变换</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#offset">Offset</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#crop">Crop</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#video">视频</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#color">颜色</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#sound">声音</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#time-panel">时间面板</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#source-panel">源面板</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#options-for-sound-strips">声音片段的选项</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="modifiers.html">修改器面板</a></li>
+<li class="toctree-l4"><a class="reference internal" href="proxy_cache.html">代理&amp;缓存设置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../preview/index.html">预览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../../index.html">视频编辑</a> &raquo;</li>
+        
+          <li><a href="../index.html">序列编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">属性</a> &raquo;</li>
+        
+      <li>片段</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="strip">
+<h1>片段<a class="headerlink" href="#strip" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="header">
+<h2>标题栏<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>类型</dt><dd><p>图标表示片段类型。</p>
+</dd>
+<dt>名称</dt><dd><p>可以在此处命名或重命名片段。</p>
+</dd>
+<dt>屏蔽(静音)</dt><dd><p>勾选后，该片段将不会产生任何输出。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="adjust-panel">
+<h2>调整面板<a class="headerlink" href="#adjust-panel" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区块 ‣ 片段 ‣ 调整</span></p>
+</dd>
+</dl>
+</div>
+<p><em>调整</em> 面板用于控制片段的视觉属性。</p>
+<div class="section" id="compositing">
+<h3>合成处理<a class="headerlink" href="#compositing" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>混合</dt><dd><p>片段与下方通道的混合模式。</p>
+</dd>
+<dt>不透明度</dt><dd><p>设置片段的不透明度（alpha）。当动画化并且 <span class="menuselection">视图 ‣ 显示函数曲线</span> 选项启用时，这个值会在片段上绘制一个跟随动画曲线的暗部。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="transform">
+<h3>变换<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>镜像X</dt><dd><p>Mirrors the image along the X axis (left to right) or the Y axis (top to bottom).</p>
+</dd>
+</dl>
+<div class="section" id="offset">
+<h4>Offset<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h4>
+<p>用于沿X轴和Y轴移动帧。此外，它禁用了图像的自动缩放。</p>
+</div>
+<div class="section" id="crop">
+<h4>Crop<a class="headerlink" href="#crop" title="Permalink to this headline">¶</a></h4>
+<p>用于剪切源图像，使用 <em>顶</em> ， <em>左</em> ，<em>底</em> 和 <em>右</em> 来控制剪切图像的相应部分。</p>
+</div>
+</div>
+<div class="section" id="video">
+<h3>视频<a class="headerlink" href="#video" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>闪烁</dt><dd><p>每隔n帧显示。例如，如果你设置此项为10，则片段只会显示源视频的1，11，21，31，41帧。 <em>闪烁</em> 是一个浮点值 -- 使用这种方法，你可得到一个与节拍同步的闪烁效果，例如，使用非整数值。</p>
+</dd>
+<dt>反转帧序</dt><dd><p>从序列的最后一帧倒序播放片段。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="color">
+<h3>颜色<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>饱和度</dt><dd><p>增加或减少图像的饱和度。</p>
+</dd>
+<dt>正片叠加(相乘)</dt><dd><p>使用此数值乘以颜色。这会增加亮度。</p>
+</dd>
+<dt>转换为浮点数</dt><dd><p>转换输入为浮点数据。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="sound">
+<h3>声音<a class="headerlink" href="#sound" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>音量</dt><dd><p>声音的音量。当动画化并且 <span class="menuselection">视图 ‣ 显示函数曲线</span> 选项启用时，这个值会在片段上绘制一个跟随动画曲线的暗部。这个值也会显示在波形中。</p>
+</dd>
+<dt>音调</dt><dd><p>播放速度的系数。该值会影响片段的长度，但不会时间轴里显示。</p>
+</dd>
+<dt>声相</dt><dd><p>用于平移左右声道的音频。仅适用于单声道源音频。值在-2和2之间，0表示前/中，-1表示左，1表示右。如果是多声道音频(后置扬声器)，你可使用较高数值来平移它：-2，2为背后。所以该值基本上表示了它的播放角度。</p>
+</dd>
+</dl>
+<dl class="simple" id="sequencer-sound-waveform">
+<dt>显示波形图</dt><dd><p>Display an approximate waveform of the sound file inside of the sound strip.
+The waveform reflects strip volume and its animation using <a class="reference internal" href="../../../animation/keyframes/introduction.html"><span class="doc">keyframes</span></a>.</p>
+</dd>
+<dt>单声道</dt><dd><p>将所有音频通道混合为一个。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="time-panel">
+<h2>时间面板<a class="headerlink" href="#time-panel" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区域 ‣ 片段 ‣ 时间</span></p>
+</dd>
+</dl>
+</div>
+<p>时间面板用于控制片段源及其时间轴位置。</p>
+<dl class="simple">
+<dt>锁定(挂锁图标)</dt><dd><p>防止片段被移动(可在面板标题栏中找到)。</p>
+</dd>
+<dt>通道</dt><dd><p>改变片段的通道编号。</p>
+</dd>
+<dt>起始</dt><dd><p>改变片段的起始帧编号，这与选择再移动片段的效果一样。</p>
+</dd>
+<dt>持续时间</dt><dd><p>改变片段的长度。这效果也可通过改变结束帧来实现，与选择再移动片段的右控制柄的效果一样。</p>
+</dd>
+<dt>结束</dt><dd><p>指定片段的结束时间和结束帧号。</p>
+</dd>
+<dt>片段偏移量起始/结束</dt><dd><p>用于通过重复最后一帧将片段延伸以至超出结束帧。或者它可用于缩短片段，就如裁剪结束帧。这与调整片段控制柄的效果一样。</p>
+</dd>
+</dl>
+<dl class="simple" id="sequencer-duration-hard">
+<dt>硬切偏移量起始/结束</dt><dd><p>未剪切片段内容的偏移量。</p>
+</dd>
+<dt>Current Frame</dt><dd><p>相对于活动片段起始的播放头位置。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="source-panel">
+<h2>源面板<a class="headerlink" href="#source-panel" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏区域 ‣片段 ‣ 源</span></p>
+</dd>
+</dl>
+</div>
+<p>源面板用于控制片段源，例如文件名称、文件路径和解释这些文件的各种方法。</p>
+<dl>
+<dt>路径</dt><dd><p>包含源文件的目录。当文件被移动时，可更新这里而不用重新创建片段了。</p>
+</dd>
+<dt>文件</dt><dd><p>源文件的文件名称。对于图像序列中的图像片段，每一帧的名称都不相同。</p>
+</dd>
+<dt>改变数据/文件</dt><dd><p>与 <em>路径</em> 和 <em>文件</em> 项相同，但这会同时打开文件浏览器，以便找到搜索的文件。与 <span class="menuselection">片段 ‣ 输入 ‣ 改变路径/文件</span> 相同。</p>
+</dd>
+<dt>MPEG预搜索</dt><dd><p>仅适用于视频 -- 使用预搜索项以告知Blender基于指定的之前的帧数(例如MPEG-2 DVD的15帧)来回看并合成图像。</p>
+</dd>
+<dt>色彩空间</dt><dd><p>指定源文件的色彩空间。</p>
+</dd>
+<dt>Alpha模式</dt><dd><p>如果源文件有一个Alpha(透明)通道，你可选择：</p>
+<p><a class="reference internal" href="../../../glossary/index.html#term-Straight-Alpha"><span class="xref std std-term">直通型Alpha</span></a> 或 <a class="reference internal" href="../../../glossary/index.html#term-Premultiplied-Alpha"><span class="xref std std-term">预乘型Alpha</span></a></p>
+</dd>
+<dt>流编号</dt><dd><p>仅适用于影片 -- 对于具有多个影片流的文件，使用具有给定目录的流。</p>
+</dd>
+<dt>反交错</dt><dd><p>删除视频文件中的场。例如，如果它是一个模拟视频，并且有着偶数或奇数的交错场。</p>
+</dd>
+<dt>分辨率</dt><dd><p>活动片段图像输出的分辨率。</p>
+</dd>
+</dl>
+<div class="section" id="options-for-sound-strips">
+<h3>声音片段的选项<a class="headerlink" href="#options-for-sound-strips" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>声音</dt><dd><p><a class="reference internal" href="../../../interface/controls/templates/data_block.html#ui-data-block"><span class="std std-ref">数据块菜单</span></a> 选择声音。</p>
+</dd>
+<dt>路径</dt><dd><p>使用 <a class="reference internal" href="../../../interface/controls/templates/data_block.html#ui-data-block"><span class="std std-ref">数据块</span></a> 菜单的声音文件的路径。</p>
+</dd>
+<dt>打包</dt><dd><p>将声音打包进blend文件。</p>
+</dd>
+<dt>缓存</dt><dd><p>解码声音文件并加载进内存。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modifiers.html" class="btn btn-neutral float-right" title="修改器面板" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="属性" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/video_editing/sequencer/properties/strip.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60video_editing/sequencer/properties/strip%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

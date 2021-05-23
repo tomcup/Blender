@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>衰减 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/sculpt_paint/brush/falloff.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="游标" href="cursor.html" />
+    <link rel="prev" title="笔画" href="stroke.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">雕刻 &amp; 绘制</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html">笔刷</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigation.html">视图切换</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#modes">模式</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../sculpting/index.html">雕刻</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../texture_paint/index.html">纹理绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vertex_paint/index.html">顶点绘制</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../weight_paint/index.html">权重绘制</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../weight_paint/introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../weight_paint/tools.html">权重绘制工具</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../weight_paint/tool_settings/index.html">工具设置</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="brush.html">笔刷</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="../weight_paint/tool_settings/brush_settings.html">笔刷设置</a><ul class="current">
+<li class="toctree-l6 current"><a class="reference internal" href="../weight_paint/tool_settings/brush_settings.html#advanced">高级</a><ul class="current">
+<li class="toctree-l7"><a class="reference internal" href="stroke.html">笔画</a></li>
+<li class="toctree-l7 current"><a class="current reference internal" href="#">衰减</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#normal-falloff">法向衰减</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="cursor.html">Cursor 游标</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../weight_paint/tool_settings/brush_settings.html#stroke">笔画</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../weight_paint/tool_settings/brush_settings.html#falloff">衰减</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../weight_paint/tool_settings/brush_settings.html#cursor">Cursor 游标</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="symmetry.html">对称</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../weight_paint/tool_settings/options.html">选项</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../weight_paint/usage.html">使用顶点组</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../weight_paint/editing.html">Editing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">雕刻 &amp; 绘制</a> &raquo;</li>
+        
+          <li><a href="index.html">笔刷</a> &raquo;</li>
+        
+      <li>衰减</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="falloff">
+<h1>衰减<a class="headerlink" href="#falloff" title="Permalink to this headline">¶</a></h1>
+<p>衰减控制笔刷衰减的 <em>强度</em> 。衰减从画笔的中心(曲线的左侧部分)映射到其边界(曲线的右侧部分)。更改曲线的形状将使画笔更软或更硬。更多信息请查看 <a class="reference internal" href="../../interface/controls/templates/curve.html#ui-curve-widget"><span class="std std-ref">曲线部件</span></a> 。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/sculpt-paint_brush_falloff_brush-curve.png" src="../../_images/sculpt-paint_brush_falloff_brush-curve.png" />
+<p class="caption"><span class="caption-text">笔刷曲线示例。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>曲线预设</dt><dd><dl>
+<dt>Custom</dt><dd><p>The user can choose how the strength of the falloff is determined from the center of the brush
+to the borders by manually manipulating the control points within the Curve Widget.</p>
+</dd>
+<dt>Custom Presets</dt><dd><ul class="simple">
+<li><p>Smooth</p></li>
+<li><p>球体</p></li>
+<li><p>Root</p></li>
+<li><p>Sharp</p></li>
+<li><p>Linear</p></li>
+<li><p>Constant</p></li>
+</ul>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Custom Preset types.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-smooth.png" src="../../_images/sculpt-paint_brush_falloff_custom-smooth.png" />
+<p class="caption"><span class="caption-text">Smooth.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-sphere.png" src="../../_images/sculpt-paint_brush_falloff_custom-sphere.png" />
+<p class="caption"><span class="caption-text">Sphere.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-root.png" src="../../_images/sculpt-paint_brush_falloff_custom-root.png" />
+<p class="caption"><span class="caption-text">Root.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id6">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-sharp.png" src="../../_images/sculpt-paint_brush_falloff_custom-sharp.png" />
+<p class="caption"><span class="caption-text">Sharp.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-linear.png" src="../../_images/sculpt-paint_brush_falloff_custom-linear.png" />
+<p class="caption"><span class="caption-text">Linear.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id8">
+<img alt="../../_images/sculpt-paint_brush_falloff_custom-constant.png" src="../../_images/sculpt-paint_brush_falloff_custom-constant.png" />
+<p class="caption"><span class="caption-text">Constant.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>Smooth</dt><dd><p>The center strength, the border strength, and the falloff transition between them are evenly distributed.</p>
+</dd>
+<dt>平滑器</dt><dd><p>Similar to <em>Smooth</em> but produces a wider center point of the brush before tapering off.</p>
+</dd>
+<dt>球体</dt><dd><p>The strength of the brush is predominately at its strongest point
+with a steep falloff near the border of the brush.</p>
+</dd>
+<dt>Root</dt><dd><p>Similar to a Sphere but the center is a more concentrated point.</p>
+</dd>
+<dt>Sharp</dt><dd><p>The center of the brush is the strongest point
+then exponentially tapers off to a lower strength, creating a fine point.</p>
+</dd>
+<dt>Linear</dt><dd><p>With the center being the strongest,
+the strength will consistently weaken as it reaches the border of the brush.</p>
+</dd>
+<dt>Sharper</dt><dd><p>Similar to <em>Sharp</em> but the center point is more condensed.</p>
+</dd>
+<dt>Inverse square</dt><dd><p>A hybrid between <em>Smooth</em> and <em>Sphere</em>.</p>
+</dd>
+<dt>Constant</dt><dd><p>The strength of the brush remains unified across the entire brush.
+This will create a sharp edge at the border of the brush.</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id9">
+<img alt="../../_images/sculpt-paint_brush_falloff_demo.png" src="../../_images/sculpt-paint_brush_falloff_demo.png" />
+<p class="caption"><span class="caption-text">(From Left to Right) Smooth, Smoother, Sphere, Root,
+Sharp, Linear, Sharper, Inverse square, Constant.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>衰减形状</dt><dd><dl class="simple">
+<dt>球体</dt><dd><p>从中心向外在球体中应用笔刷影响。</p>
+</dd>
+<dt>投射</dt><dd><p>这将笔刷影响转换为一个圆柱体(将忽略沿视图的深度)，而非球体。它可用于沿网格的轮廓来调整其轮廓。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="normal-falloff">
+<h2>法向衰减<a class="headerlink" href="#normal-falloff" title="Permalink to this headline">¶</a></h2>
+<p>远离视图的方向笔刷笔触会逐渐消失，以防止出现粗糙的边缘。</p>
+<dl class="simple">
+<dt>角度</dt><dd><p>衰减开始的角度。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cursor.html" class="btn btn-neutral float-right" title="游标" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stroke.html" class="btn btn-neutral float-left" title="笔画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/sculpt_paint/brush/falloff.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60sculpt_paint/brush/falloff%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

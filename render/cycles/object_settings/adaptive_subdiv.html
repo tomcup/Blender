@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>自适应细分 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/cycles/object_settings/adaptive_subdiv.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="相机" href="cameras.html" />
+    <link rel="prev" title="物体" href="object_data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cycles</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render_settings/index.html">渲染设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../world_settings.html">世界设置</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">物体设置</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="object_data.html">物体</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">自适应细分</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#known-limitations">已知限制</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cameras.html">相机</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../material_settings.html">材质设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../light_settings.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu_rendering.html">GPU渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../features.html">试验特性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baking.html">渲染烘焙</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../optimizations/index.html">渲染优化</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">Cycles</a> &raquo;</li>
+        
+          <li><a href="index.html">物体设置</a> &raquo;</li>
+        
+      <li>自适应细分</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="adaptive-subdivision">
+<span id="bpy-types-cyclesobjectsettings-dicing-rate"></span><span id="bpy-types-cyclesobjectsettings-use-adaptive-subdivision"></span><span id="render-cycles-settings-object-subdivision"></span><h1>自适应细分<a class="headerlink" href="#adaptive-subdivision" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">修改器 ‣ 表面细分</span></p>
+</dd>
+</dl>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>实现尚未完成，标记为 <a class="reference internal" href="../features.html#cycles-experimental-features"><span class="std std-ref">实验功能集</span></a> 。</p>
+</div>
+<p>当使用 <em>实验特征集</em> 时，将更改 <a class="reference internal" href="../../../modeling/modifiers/generate/subdivision_surface.html"><span class="doc">表面细分修改器</span></a> ，以在渲染时控制网格的细分。为此，除 <em>视图</em> 和 <em>渲染</em> 设置外，所有其他设置都相同。删除/重命名上述设置，并添加以下设置：</p>
+<p class="rubric">视图</p>
+<dl class="simple">
+<dt>层级</dt><dd><p>在 3D 视图中要查看的细分级别，这与原始 <em>细分修改器</em> 上的 <em>视图</em> 设置相同。</p>
+</dd>
+</dl>
+<p class="rubric">渲染</p>
+<dl>
+<dt>自适应</dt><dd><p>使用 OpenSubdiv 自动为近对象和远对象提供不同的细分级别。这允许较近的对象获得更多的细分，而较远的对象获得更少的细分。</p>
+<dl>
+<dt>分块率</dt><dd><p>使用 <em>自适应</em> 时， <em>渲染层级</em> 属性更改为 <em>分块率</em> ，此属性用于乘以 <a class="reference internal" href="../render_settings/subdivision.html#cycles-subdivision-rate"><span class="std std-ref">场景分块比例</span></a>。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/render_cycles_object-settings_adaptive-subdiv_displacement-dicing.png" src="../../../_images/render_cycles_object-settings_adaptive-subdiv_displacement-dicing.png" />
+<p class="caption"><span class="caption-text">细分关闭/打开，分块率：1.0 - 0.3 - 0.05(猴子模型在视图中看起来完全相同，没有修改器)。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt>层级</dt><dd><p>要在最终渲染中看到的细分级别，其工作原理与原始 <em>细分修改器</em> 上的 <em>渲染</em> 设置相同。</p>
+</dd>
+</dl>
+<div class="section" id="known-limitations">
+<h2>已知限制<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>多用户物体数据现在变成了单用户数据，这导致了内存使用率的增加。对于这些情况最好还是不要使用自适应细分。</p></li>
+<li><p>多视图渲染可能在视图之间存在一些不一致。</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>实例不会单独细分。相反，原始对象被细分，然后在所有实例上复制。要同时利用自适应细分和实例，您应该将原始对象放置在离相机最近的实例位置。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cameras.html" class="btn btn-neutral float-right" title="相机" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="object_data.html" class="btn btn-neutral float-left" title="物体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/cycles/object_settings/adaptive_subdiv.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/cycles/object_settings/adaptive_subdiv%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

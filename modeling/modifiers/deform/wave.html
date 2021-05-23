@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>波浪修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/deform/wave.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="Cloth" href="../../../physics/cloth/index.html" />
+    <link rel="prev" title="弯绕修改器" href="warp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#modify">修改</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#deform">形变</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="armature.html">骨架修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cast.html">铸型修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curve.html">曲线函数修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="displace.html">置换修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hooks.html">钩挂修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="laplacian_deform.html">拉普拉斯形变修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="lattice.html">晶格修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_deform.html">网格变形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shrinkwrap.html">缩裹修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simple_deform.html">简易形变修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="smooth.html">平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corrective_smooth.html">矫正平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="laplacian_smooth.html">拉普拉斯平滑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="surface_deform.html">表面变形修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="warp.html">弯绕修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">波浪修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#start-position">起始位置</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#time">时间</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#texture">纹理</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#technical-details-and-hints">技术细节和提示</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>波浪修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wave-modifier">
+<span id="bpy-types-wavemodifier"></span><h1>波浪修改器<a class="headerlink" href="#wave-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>波浪</em> 修改器可以给一个物体几何形状添加波浪一样的运动效果。</p>
+<p>这个修改器可以应用于网格，晶格，曲线，曲面和文本。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_deform_wave_example-circular.jpg"><img alt="../../../_images/modeling_modifiers_deform_wave_example-circular.jpg" src="../../../_images/modeling_modifiers_deform_wave_example-circular.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">圆形波。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_deform_wave_example-linear.jpg"><img alt="../../../_images/modeling_modifiers_deform_wave_example-linear.jpg" src="../../../_images/modeling_modifiers_deform_wave_example-linear.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">线性波。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_deform_wave_example-normals.jpg"><img alt="../../../_images/modeling_modifiers_deform_wave_example-normals.jpg" src="../../../_images/modeling_modifiers_deform_wave_example-normals.jpg" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">开启X轴向运动，开启Y轴法线。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id4">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_deform_wave_panel.png"><img alt="../../../_images/modeling_modifiers_deform_wave_panel.png" src="../../../_images/modeling_modifiers_deform_wave_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">波浪修改器。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>运动</dt><dd><p>波浪效果对Z方向上的顶点/控制点变形，从给定的起始点开始，沿着圆形波传播出去(如果同时启用X 和Y轴)，或者形成平行于所勾选X/Y轴向的，直线的波(如果仅启用一个轴向)。</p>
+</dd>
+<dt>循环</dt><dd><p>周期性地重复这些波，而不是单个脉冲。</p>
+</dd>
+<dt>沿法向</dt><dd><p>仅适用于网格。沿表面法线方向(而非物体Z轴方向)置换网格。</p>
+<dl class="simple">
+<dt>X/Y/Z</dt><dd><p>将法线上的位移限制在选定的局部轴上。</p>
+</dd>
+</dl>
+</dd>
+<dt>衰减</dt><dd><p>控制波离开上面的坐标(或 <em>起始位置对象</em> 的坐标)时衰减的速度。</p>
+</dd>
+<dt>高度</dt><dd><p>波纹的高度或振幅。</p>
+</dd>
+<dt>宽度</dt><dd><p>两个后续波纹顶部之间宽度的一半(如果启用 <em>循环</em> )。这对纹波振幅有间接影响。如果脉冲距离太近，波可能不会达到Z轴坐标为0的位置，所以在这种情况下，Blender实际上降低了整个波，所以最小值为零，因此，最大值低于预期的振幅。参见下面的 <a class="reference internal" href="#technical-details-and-hints">技术细节和提示</a> 。</p>
+</dd>
+<dt>窄度</dt><dd><p>每个脉冲的实际宽度:值越高，脉冲越窄。单脉冲可见区域的实际宽度由 <code class="docutils literal notranslate"><span class="pre">4/窄度</span></code> 给出。也就是说，如果 <em>窄度</em> 是1， <em>脉冲</em> 是4个单位宽，如果 <em>窄度</em> 是4，<em>脉冲</em> 是1个单位宽。</p>
+</dd>
+<dt>顶点组</dt><dd><p>用来控制修改器影响因子的顶点组的名字。如果留空，修改器会同等影响所有的顶点。</p>
+<dl>
+<dt>反转 <code class="docutils literal notranslate"><span class="pre">&lt;-&gt;</span></code></dt><dd><p>反转所选顶点组的影响，这意味着该组现在表示不会被修改器改变形状的顶点。</p>
+<p>反转顶点组的权重值。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>上面描述的所有值都在局部对象空间中，也就是说，它们必须与对应对象的 <em>缩放</em> 值相乘才能得到真实的维度。</p>
+</div>
+<div class="section" id="start-position">
+<h3>起始位置<a class="headerlink" href="#start-position" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>物体</dt><dd><p>使用另一个对象作为波浪起始位置的参考。请注意，然后您可以动画化该对象的位置，以随着时间的推移改变波的起源。</p>
+</dd>
+<dt>起始位置 X/Y</dt><dd><p>在物体局部坐标系中波的中心坐标。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="time">
+<h3>时间<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<p>用来控制动画的设置选项。</p>
+<dl class="simple">
+<dt>偏移量</dt><dd><p>在帧中的时间偏移量。波开始的帧 (如果 <em>速度</em> 为正)，或结束 (如果 <em>速度</em> 为负)。使用负帧数作准备，然后预启动波。</p>
+</dd>
+<dt>生命周期</dt><dd><p>动画时长，以帧为单位。设置为0则表示动画一直循环下去。</p>
+</dd>
+<dt>阻尼</dt><dd><p>额外数量的帧，波从 <em>高度</em> 值慢慢衰减到0直到 <em>生命</em> 终结。衰减发生在所有的波纹身上，起始于 <em>生命</em> 终结后开始的第一帧。 <em>衰减</em> 帧过后后波纹消失。</p>
+</dd>
+<dt>速率</dt><dd><p>波纹每帧的速度。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="texture">
+<h3>纹理<a class="headerlink" href="#texture" title="Permalink to this headline">¶</a></h3>
+<p>您可以使用纹理，您可以很好地控制哪些顶点受波浪的影响，以及影响到什么程度。</p>
+<p>参见 <a class="reference internal" href="../common_options.html#modifiers-common-options-masking"><span class="std std-ref">常见遮罩选项</span></a> 以获得完整的参考。</p>
+</div>
+</div>
+<div class="section" id="technical-details-and-hints">
+<h2>技术细节和提示<a class="headerlink" href="#technical-details-and-hints" title="Permalink to this headline">¶</a></h2>
+<p>上面值的关系描述如下：</p>
+<div class="figure align-center" id="id5">
+<img alt="../../../_images/modeling_modifiers_deform_wave_front-characteristics.png" src="../../../_images/modeling_modifiers_deform_wave_front-characteristics.png" />
+<p class="caption"><span class="caption-text">波前特征。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>为了获得与海浪相似的良好的波浪效果，并接近正弦波，使后续波纹与波纹宽度之间的距离相等。也就是说， <em>窄度</em> 值必须等于 <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">/</span> <span class="pre">宽度</span></code> 。例如，对于 <em>宽度</em> 为1，将 <em>窄度</em> 设置为2。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../physics/cloth/index.html" class="btn btn-neutral float-right" title="Cloth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="warp.html" class="btn btn-neutral float-left" title="弯绕修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/deform/wave.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/deform/wave%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

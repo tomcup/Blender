@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2D图层 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/properties/layers.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Masks" href="masks.html" />
+    <link rel="prev" title="物体数据" href="data.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiframe.html">多帧</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">属性</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="data.html">物体数据</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2D图层</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#layers-list">图层列表</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#specials">特定</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#lock-visibility-general-controls">Lock &amp; Visibility General Controls</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#masks">Masks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adjustments">调整</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#relations">关系</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#display">显示</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="masks.html">Masks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="onion_skinning.html">洋葱皮</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strokes.html">笔画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="display.html">视图显示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modes">模式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">蜡笔</a> &raquo;</li>
+        
+          <li><a href="index.html">属性</a> &raquo;</li>
+        
+      <li>2D图层</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="d-layers">
+<span id="bpy-types-gpencillayer"></span><h1>2D图层<a class="headerlink" href="#d-layers" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>All Modes</p>
+</dd>
+<dt class="field-even">Panel</dt>
+<dd class="field-even"><p><span class="menuselection">Object Data tab ‣ Layers</span></p>
+</dd>
+<dt class="field-odd">Hotkey</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">Y</kbd></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="layers-list">
+<h2>图层列表<a class="headerlink" href="#layers-list" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<img alt="../../_images/grease-pencil_properties_layers_panel.png" src="../../_images/grease-pencil_properties_layers_panel.png" />
+<p class="caption"><span class="caption-text">蜡笔图层面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Grease Pencil objects each have a list of 2D layers for grouping and arranging strokes
+in a <a class="reference internal" href="../../interface/controls/templates/list_presets.html#ui-list-view"><span class="std std-ref">List view</span></a>. Any stroke can only belong to a single 2D layer.
+There is always only one active layer in the list (the selected one).
+When you draw, the new strokes are added to the active layer.
+By default the view order of the layers in the viewport is top to bottom.</p>
+<p>Every layer correspond to a channel in the Dope Sheet editor (in Grease Pencil mode).
+See <a class="reference internal" href="../../editors/dope_sheet/grease_pencil.html"><span class="doc">Dope Sheet</span></a> for more information.
+Layers can also be used together with Modifiers to only affects part of your drawing.
+See <a class="reference internal" href="../modifiers/introduction.html"><span class="doc">Modifiers</span></a> for more information.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Sometimes the layers you are not working on can be a distraction.
+Activate <em>Fade Layers</em> in overlays to control the opacity of the non-active layers.
+See <a class="reference internal" href="../../editors/3dview/display/overlays.html"><span class="doc">Overlays</span></a> for more information.</p>
+</div>
+<p id="bpy-types-gpencillayer-use-onion-skinning"><span id="bpy-types-gpencillayer-hide"></span><span id="bpy-types-gpencillayer-lock"></span><span id="bpy-types-gpencillayer-mask-layer"></span>图层名称旁边有四个图标按钮，用于控制图层的常见属性：</p>
+<dl class="simple" id="bpy-types-gpencillayer-use-solo-mode">
+<dt>蒙版(蒙版图标)</dt><dd><p>Toggle the <a class="reference internal" href="masks.html"><span class="doc">Masks</span></a> visibility in the layer.</p>
+</dd>
+<dt>洋葱皮(洋葱皮图标)</dt><dd><p>切换使用图层 <a class="reference internal" href="onion_skinning.html"><span class="doc">洋葱皮</span></a>。</p>
+</dd>
+<dt>视图/渲染可见性(眼睛图标)</dt><dd><p>在视图和渲染中切换图层的可见性。</p>
+</dd>
+<dt>锁定(锁上图标)</dt><dd><p>切换图层不可编辑。</p>
+</dd>
+</dl>
+<p id="bpy-types-gpencillayer-opacity"><span id="bpy-types-gpencillayer-blend-mode"></span>在图层列表下方还有其他常用设置：</p>
+<dl class="simple">
+<dt>Blend</dt><dd><p>要执行混合的操作的图层。见 <a class="reference internal" href="../../glossary/index.html#term-Color-Blend-Modes"><span class="xref std std-term">颜色混合模式</span></a> 。</p>
+</dd>
+<dt>不透明度</dt><dd><p>用于设置图层的不透明度。</p>
+</dd>
+<dt>Use Lights</dt><dd><p>When enabled, the layer is affected by lights.</p>
+</dd>
+</dl>
+<div class="section" id="specials">
+<h3>特定<a class="headerlink" href="#specials" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>复制图层</dt><dd><p>制作所选图层的精确副本，附加数字以区分其名称。</p>
+</dd>
+<dt>显示全部</dt><dd><p>打开列表中每个图层的可见性。</p>
+</dd>
+<dt>隐藏其他</dt><dd><p>关闭列表中除活动层之外的每个层的可见性。</p>
+</dd>
+<dt>锁定全部</dt><dd><p>锁定列表中所有图层的编辑性。</p>
+</dd>
+<dt>全部解锁</dt><dd><p>解锁列表中所有图层的编辑性。</p>
+</dd>
+<dt>Autolock Inactive Layer</dt><dd><p>Locks automatically the edition of every layer in the list except the active one.
+This way you avoid to make unwanted changes in other layers without the need to lock them every time.</p>
+</dd>
+<dt>向下合并</dt><dd><p>将所选图层与下面的图层合并，新图层保留靠下图层的名称。</p>
+</dd>
+<dt>复制层到物体</dt><dd><p>Makes a copy of the layer and move it to the selected Grease Pencil object.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="lock-visibility-general-controls">
+<h3>Lock &amp; Visibility General Controls<a class="headerlink" href="#lock-visibility-general-controls" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>锁定(锁上图标)</dt><dd><p>切换活动图层是否是唯一可以编辑的图层。</p>
+</dd>
+<dt>可见性(屏幕图标)</dt><dd><p>切换活动图层是否是唯一可以编辑且可见的图层。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="masks">
+<h2>Masks<a class="headerlink" href="#masks" title="Permalink to this headline">¶</a></h2>
+<p>In a <a class="reference internal" href="../../interface/controls/templates/list_presets.html#ui-list-view"><span class="std std-ref">List view</span></a> of layers affected by a layer mask.
+See <a class="reference internal" href="masks.html"><span class="doc">Masks</span></a> for more information.</p>
+</div>
+<div class="section" id="adjustments">
+<h2>调整<a class="headerlink" href="#adjustments" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id2">
+<img alt="../../_images/grease-pencil_properties_layers_adjustment.png" src="../../_images/grease-pencil_properties_layers_adjustment.png" />
+<p class="caption"><span class="caption-text">图层调整面板。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>染色颜色/系数</dt><dd><p>为图层中使用的任何材质颜色着色的颜色。 <em>Factor</em> 控制要应用的色调颜色的数量。</p>
+</dd>
+<dt>笔画的宽度</dt><dd><p>覆盖图层中笔画粗细的宽度值。</p>
+</dd>
+<dt>通道编号</dt><dd><p>层编号值可与某些修改器一起使用，以限制仅对某些区域的更改。</p>
+<p>更多信息见 <a class="reference internal" href="../modifiers/introduction.html"><span class="doc">修改器</span></a>。</p>
+</dd>
+<dt>查看图层</dt><dd><p>Defines the View Layer to use for the Grease Pencil layer.
+If empty, the layer will be included in all View Layers.
+This is useful to separate drawings parts for <a class="reference internal" href="../../compositing/introduction.html"><span class="doc">compositing</span></a>.</p>
+</dd>
+<dt>禁止锁定材质编辑</dt><dd><p>避免在图层中编辑锁定的材质。 禁用后，即使它们在材质列表中被锁定，也可以编辑任何材质。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="relations">
+<h2>关系<a class="headerlink" href="#relations" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>从属/类型</dt><dd><p>选择父物体，然后键入以操作图层。 该图层将继承父级的变换，这在剪纸动画时非常有用。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="display">
+<h2>显示<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>自定义通道颜色</dt><dd><p>设置要在通道区域中使用的颜色 <a class="reference internal" href="../../editors/dope_sheet/grease_pencil.html"><span class="doc">摄影表</span></a>。</p>
+</dd>
+<dt>仅在关键帧上显示</dt><dd><p>仅当视图在实际帧中具有关键帧时，才会使视图在视口中可见。 例如，当您使用 <em>填充</em> 工具进行笔画处理并且只想查看实际帧中的笔画以避免填充不需要的区域时，这会有所帮助。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="masks.html" class="btn btn-neutral float-right" title="Masks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data.html" class="btn btn-neutral float-left" title="物体数据" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/properties/layers.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/properties/layers%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>烘焙物理模拟 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/baking.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="渲染" href="../render/index.html" />
+    <link rel="prev" title="Fluid Flow" href="forces/force_fields/types/fluid_flow.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collision.html">Collision</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">烘焙物理模拟</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#options">选项</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#baking">烘焙</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">物理</a> &raquo;</li>
+        
+      <li>烘焙物理模拟</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="baking-physics-simulations">
+<span id="bpy-ops-ptcache"></span><span id="bpy-types-pointcache"></span><h1>烘焙物理模拟<a class="headerlink" href="#baking-physics-simulations" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../glossary/index.html#term-Baking"><span class="xref std std-term">烘焙</span></a> 是指存储或缓存计算结果的行为。</p>
+<p>播放动画时，模拟结果会自动缓存到内存中，因此下一次播放时，可以从内存中读取结果，播放的更快。</p>
+<p>如果你烘焙了模拟结果，缓存会被保护，你将无法改变模拟设置，除非点击 <em>清除烘焙</em> 清除模拟。</p>
+<p>通常建议在渲染之前烘焙您的物理模拟。除了不再需要经过耗时的模拟过程之外，烘焙可以帮助防止潜在的错误，并确保模拟的结果每次都保持完全相同。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blender中大多数物理模拟器使用类似的系统，但并不全部具有完全相同的设置。所有设置都在此处介绍，但单个物理类型可能无法提供所有这些选项。</p>
+</div>
+<div class="figure align-right" id="id1">
+<img alt="../_images/physics_baking_multi-cache-interface.png" src="../_images/physics_baking_multi-cache-interface.png" />
+<p class="caption"><span class="caption-text">同时存储两个缓存。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>缓存列表</dt><dd><p>Blender允许同时存储和管理同一物理对象的多个缓存，可以使用 <a class="reference internal" href="../interface/controls/templates/list_presets.html#ui-list-view"><span class="std std-ref">列表视图</span></a> 来管理这些缓存。双击可以为缓存命名。</p>
+</dd>
+</dl>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>缓存名称</dt><dd><p>每个缓存可以有一个名称。如果名称已给定，则任何磁盘缓存都将存储在以该名称开头的文件中。例如，名为 'MyCache' 的缓存将存储在 <code class="docutils literal notranslate"><span class="pre">MyCache_xxxxxx_yy.bphys</span></code> 中。</p>
+<p>如果未对缓存命名(默认)，则缓存的文件名将取决于它所附加到的物体，尽管这并不直观。例如，物体 <code class="docutils literal notranslate"><span class="pre">Cube</span></code> 上的缓存将存储在 <code class="docutils literal notranslate"><span class="pre">43756265_xxxxxx_yy.bphys</span></code> 中， <code class="docutils literal notranslate"><span class="pre">43756265</span></code> 由物体名称确定。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当一个物体有多个缓存时，<strong>记得一定要指定缓存名称</strong>。如上所述，未命名缓存的文件名由它所附加到的物体名称确定。因此，具有多个物理系统且所有具有未命名缓存的物体都会导致冲突，并且 <strong>可能导致缓存文件丢失</strong>。</p>
+</div>
+</dd>
+<dt>磁盘缓存</dt><dd><p>当你保存时，烘焙过的模拟缓存会被存储到blend文件内。如果勾选 <em>磁盘缓存</em>，Blender会把缓存单独存放在blend文件旁边一个命名为 <code class="docutils literal notranslate"><span class="pre">blendcache_[filename]</span></code> 的文件夹中。(必须先保存blend文件)</p>
+<dl>
+<dt>使用库路径</dt><dd><p>当物理对象被 <a class="reference internal" href="../files/linked_libraries/index.html"><span class="doc">关联</span></a> 到另一个blend文件时，共享磁盘缓存 。</p>
+<p>启用此选项后，对象的关联版本将引用相同的磁盘缓存。否则，关联版本将使用独立的缓存。</p>
+</dd>
+<dt>压缩</dt><dd><p>缓存文件的压缩级别。一些物理缓存可能非常大(比如烟雾)。Blender可以压缩这些缓存，以节省空间。</p>
+<dl class="simple">
+<dt>无</dt><dd><p>不要压缩缓存。</p>
+</dd>
+<dt>低压缩率</dt><dd><p>压缩操作将优化压缩/解压缩文件的操作速度而非文件大小。</p>
+</dd>
+<dt>高压缩率</dt><dd><p>压缩的缓存文件比 <em>低压缩率</em> 更小，但是需要更多CPU时间进行压缩/解压缩。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>外部数据</dt><dd><p>使用用户指定的文件路径读取磁盘上的缓存。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>缓存列表</em> 中的缓存名称和 <em>编号</em> 必须与外部缓存文件名称严格对应才能正常工作。缓存文件的命名格式为 <code class="docutils literal notranslate"><span class="pre">name_frame_index.bphys</span></code>.</p>
+</div>
+<dl class="simple">
+<dt>编号</dt><dd><p>缓存文件的编号(文件名的最后两位数字)</p>
+</dd>
+<dt>文件路径</dt><dd><p>选择缓存文件的路径。</p>
+</dd>
+</dl>
+</dd>
+<dt>起始</dt><dd><p>模拟开始的帧位置。</p>
+</dd>
+<dt>结束</dt><dd><p>模拟结束的帧位置。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>模拟只计算 <em>缓存</em> 面板中 <em>起始*帧 到 *结束</em> 帧之间的正数帧，不论你是否烘焙。因此如果你想要一个比默认帧范围更长的模拟，必须更改 <em>结束</em> 帧。</p>
+</div>
+</dd>
+<dt>缓存步长</dt><dd><p>存储模拟数据的间隔。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>一些物理系统(例如粒子)允许仅缓存每第n帧，然后插值计算中间空缺的帧。使用大于1的缓存步长将得到较小的缓存，但结果可能与原始模拟不同。</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="baking">
+<span id="physics-bake"></span><h2>烘焙<a class="headerlink" href="#baking" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>烘焙</dt><dd><p>开始烘焙。Blender在大多数烘焙操作中将变得无响应。光标将显示为代表烘焙进度的数字。必须在物体模式下进行烘焙。</p>
+</dd>
+</dl>
+<dl class="simple" id="free-physics-bake">
+<dt>清除烘培</dt><dd><p>将烘焙缓存标记为临时。数据仍然存在，但会随着下一个物体修改和帧更改而被删除。此按钮仅在物理系统烘焙后可使用。</p>
+</dd>
+</dl>
+<dl id="calc-physics-bake-to-frame">
+<dt>Calculate to Frame</dt><dd><p>仅烘焙至当前帧。受限于缓存设置中设置的 <em>结束</em> 帧。</p>
+</dd>
+<dt>当前烘培缓存</dt><dd><p>将任何临时缓存的模拟数据存储为烘焙。注意，播放动画将尝试模拟任何可见的物理模拟。根据物理类型，这些数据可能被暂时缓存。通常，当对象或设置被修改时，这些临时缓存将被清除，但转换为烘焙将会“保存”它。</p>
+</dd>
+<dt>烘培所有动力学解算结果</dt><dd><p>烘焙场景中的所有物理系统，甚至不同类型的物理系统。用于烘焙涉及不同物理类型之间相互作用的复杂设置。</p>
+<p>请参阅 <a class="reference internal" href="#physics-bake"><span class="std std-ref">烘培</span></a>。</p>
+</dd>
+<dt>清除所有烘培</dt><dd><p>清除场景中所有物理系统的烘焙，甚至是不同类型的物理系统。</p>
+<p>请参阅 <a class="reference internal" href="#free-physics-bake"><span class="std std-ref">清除烘培</span></a>.</p>
+</dd>
+<dt>Update All to Frame</dt><dd><p>场景中的所有物理系统仅烘焙到当前帧。</p>
+<p>请参阅 <a class="reference internal" href="#calc-physics-bake-to-frame"><span class="std std-ref">计算至帧</span></a>。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../render/index.html" class="btn btn-neutral float-right" title="渲染" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="forces/force_fields/types/fluid_flow.html" class="btn btn-neutral float-left" title="Fluid Flow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/baking.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/baking%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

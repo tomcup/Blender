@@ -1,0 +1,697 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>笔画菜单 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/edit/stroke_menu.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="点菜单" href="point_menu.html" />
+    <link rel="prev" title="蜡笔菜单" href="grease_pencil_menu.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../primitives.html">基本体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../selecting.html">选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../multiframe.html">多帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../animation/index.html">动画</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#modes">模式</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../draw/index.html">绘制模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sculpting/index.html">雕刻模式</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">编辑模式</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools.html">编辑工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="grease_pencil_menu.html">蜡笔菜单</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">笔画菜单</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#subdivide">细分</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#simplify">简化</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#trim">修剪</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#join">合并</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#move-to-layer">移动到层</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#assign-material">指定材质</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#set-as-active-material">设为活动材质</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#arrange-strokes">整理笔画</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#close">闭合</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toggle-cyclic">切换循环</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#toggle-caps">切换封顶</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#switch-direction">切换方向</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#scale-stroke-thickness">Scale Stroke Thickness</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reset-fill-transform">Reset Fill Transform</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="point_menu.html">点菜单</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../vertex_paint/index.html">Vertex Paint Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../weight_paint/index.html">权重绘制模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">Object Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">蜡笔</a> &raquo;</li>
+        
+          <li><a href="index.html">编辑模式</a> &raquo;</li>
+        
+      <li>笔画菜单</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stroke-menu">
+<h1>笔画菜单<a class="headerlink" href="#stroke-menu" title="Permalink to this headline">¶</a></h1>
+<p>此页介绍 <em>笔画</em> 菜单中各种工具。这些工具主要用于笔画，但是，一些工具也可用于选定的点。</p>
+<div class="section" id="subdivide">
+<span id="bpy-ops-gpencil-stroke-subdivide"></span><h2>细分<a class="headerlink" href="#subdivide" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 细分</span></p>
+</dd>
+</dl>
+</div>
+<p>通过在选定的点之间插入点来细分笔画。</p>
+<dl class="simple">
+<dt>切割次数</dt><dd><p>细分的次数。</p>
+</dd>
+<dt>平滑</dt><dd><p>细分后点之间的平滑程度。</p>
+</dd>
+<dt>重复</dt><dd><p>重复该过程的次数。</p>
+</dd>
+<dt>Selected Points</dt><dd><p>开启后，限制效果仅用于笔画中选中的点。</p>
+</dd>
+<dt>位置</dt><dd><p>开启后，此操作会影响点的位置。</p>
+</dd>
+<dt>厚度</dt><dd><p>开启后，此操作会影响点的厚度。</p>
+</dd>
+<dt>强度</dt><dd><p>开启后，此操作会影响点的强度(alpha)。</p>
+</dd>
+<dt>UV</dt><dd><p>开启后，此操作会影响点的UV旋转。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="simplify">
+<span id="bpy-ops-gpencil-stroke-sample"></span><span id="bpy-ops-gpencil-stroke-simplify"></span><span id="bpy-ops-gpencil-stroke-simplify-fixed"></span><h2>简化<a class="headerlink" href="#simplify" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 简化</span></p>
+</dd>
+</dl>
+</div>
+<p>减少笔画中点的数量。</p>
+<dl>
+<dt>固定</dt><dd><p>删除笔画中的交替点，开始和结束点除外。</p>
+<dl class="simple">
+<dt>步数</dt><dd><p>重复该过程的次数。</p>
+</dd>
+</dl>
+</dd>
+<dt>自适应</dt><dd><p>使用RDP算法(Ramer-Douglas-Peucker算法)进行点删除。该算法会试图使用更少的点实现类似的线形。</p>
+<dl class="simple">
+<dt>系数</dt><dd><p>控制算法应用的递归简化量。</p>
+</dd>
+</dl>
+</dd>
+<dt>采样</dt><dd><p>使用预设的点距重新创建笔画的几何形状。</p>
+<dl class="simple">
+<dt>长度</dt><dd><p>重新创建的笔画上点之间的距离。值越小，重建笔画需要的点越多，值越大，创建笔画需要的点越少。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="trim">
+<span id="bpy-ops-gpencil-stroke-trim"></span><h2>修剪<a class="headerlink" href="#trim" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 修剪</span></p>
+</dd>
+</dl>
+</div>
+<p>将笔画裁剪到第一个循环或交点。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-1.png"><img alt="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-1.png" src="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-1.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">原始笔画。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-2.png"><img alt="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-2.png" src="../../../_images/grease-pencil_modes_edit_stroke-menu_trim-2.png" style="width: 320px;" /></a>
+<p class="caption"><span class="caption-text">修剪操作的结果。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="join">
+<span id="bpy-ops-gpencil-stroke-join"></span><h2>合并<a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 合并 ‣ 合并<span class="accelerator">复</span>制</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">J</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">J</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>将两个或多个笔画合并为一个。</p>
+<dl class="simple">
+<dt>类型</dt><dd><dl class="simple">
+<dt>合并 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">J</kbd></kbd></dt><dd><p>通过连接点合并选定笔画。</p>
+</dd>
+<dt>合并&amp;复制 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">J</kbd></kbd></dt><dd><p>连接点至一个新的笔画来合并笔画。</p>
+</dd>
+</dl>
+</dd>
+<dt>保留缺口</dt><dd><p>启用后，不使用几何结构连接笔画。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="move-to-layer">
+<span id="bpy-ops-gpencil-move-to-layer"></span><h2>移动到层<a class="headerlink" href="#move-to-layer" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 移动到层</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">M</kbd></p>
+</dd>
+</dl>
+</div>
+<p>A pop-up menu to move the stroke to a different layer.
+You can choose the layer to move the selected strokes to
+from a list of layers of the current Grease Pencil object.
+You can also add a new layer to move the selected stroke to.</p>
+</div>
+<div class="section" id="assign-material">
+<span id="bpy-ops-gpencil-stroke-change-color"></span><h2>指定材质<a class="headerlink" href="#assign-material" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 指定材质</span></p>
+</dd>
+</dl>
+</div>
+<p>Changes the material linked to the selected stroke.
+You can choose the name of the material to be used by the selected stroke
+from a list of materials of the current Grease Pencil object.</p>
+</div>
+<div class="section" id="set-as-active-material">
+<span id="bpy-ops-gpencil-set-active-material"></span><h2>设为活动材质<a class="headerlink" href="#set-as-active-material" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 设为活动材质</span></p>
+</dd>
+</dl>
+</div>
+<p>设置选中笔画材质为活动材质。</p>
+</div>
+<div class="section" id="arrange-strokes">
+<span id="bpy-ops-gpencil-stroke-arrange"></span><h2>整理笔画<a class="headerlink" href="#arrange-strokes" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 整理笔画</span></p>
+</dd>
+</dl>
+</div>
+<p>在2D图层中改变笔画的绘制顺序。</p>
+<dl class="simple">
+<dt>移到最前</dt><dd><p>把选定的点/笔画移动到最前。</p>
+</dd>
+<dt>前移</dt><dd><p>把选定的点/笔画向前移动一位。</p>
+</dd>
+<dt>后移</dt><dd><p>把选定的点/笔画向后移动一位。</p>
+</dd>
+<dt>移到最后</dt><dd><p>把选定的点/笔画移动到最后。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="close">
+<h2>闭合<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 闭合</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">F</kbd></p>
+</dd>
+</dl>
+</div>
+<p>通过连接结束点和起始点，闭合或敞开笔画。</p>
+<dl class="simple">
+<dt>类型</dt><dd><dl class="simple">
+<dt>Close All</dt><dd><p>闭合所有敞开的选定笔画。</p>
+</dd>
+<dt>Open All</dt><dd><p>敞开所有闭合的选定笔画。</p>
+</dd>
+<dt>切换</dt><dd><p>闭合或敞开选定的笔画。</p>
+</dd>
+</dl>
+</dd>
+<dt>Create Geometry</dt><dd><p>开启后，会添加点以闭合笔画。如果禁用，此操作与 <em>切换循环</em> 效果一样。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="toggle-cyclic">
+<span id="bpy-ops-gpencil-stroke-cyclical-set"></span><h2>切换循环<a class="headerlink" href="#toggle-cyclic" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 切换循环</span></p>
+</dd>
+</dl>
+</div>
+<p>在敞开和闭合笔画之间循环。</p>
+<dl class="simple">
+<dt>类型</dt><dd><dl class="simple">
+<dt>Close All</dt><dd><p>闭合所有敞开的选定笔画。</p>
+</dd>
+<dt>Open All</dt><dd><p>敞开所有闭合的选定笔画。</p>
+</dd>
+<dt>切换</dt><dd><p>闭合或敞开选定的笔画。</p>
+</dd>
+<dt>Create Geometry</dt><dd><p>开启后，会添加点以闭合笔画，与使用 <em>闭合</em> 工具类似。如果禁用，笔画会闭合，并且首尾中间实际上没有几何体。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="toggle-caps">
+<span id="bpy-ops-gpencil-stroke-caps-set"></span><h2>切换封顶<a class="headerlink" href="#toggle-caps" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 切换封顶</span></p>
+</dd>
+</dl>
+</div>
+<p>切换笔画末端的封顶样式。</p>
+<dl class="simple">
+<dt>默认</dt><dd><p>设置笔画起始和结束点为圆形(默认)。</p>
+</dd>
+<dt>两者</dt><dd><p>切换笔画起始和结束点的封顶为圆形或平直。</p>
+</dd>
+<dt>起始</dt><dd><p>切换笔画起始点的封顶为圆形或平直。</p>
+</dd>
+<dt>结束</dt><dd><p>切换笔画结束点的封顶为圆形或平直。</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-1.png"><img alt="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-1.png" src="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-1.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">笔画以圆形封顶结束。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-2.png"><img alt="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-2.png" src="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-2.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">笔画以平直封顶结束。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-3.png"><img alt="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-3.png" src="../../../_images/grease-pencil_modes_edit_stroke-menu_cap-3.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">两种封顶结合。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="switch-direction">
+<span id="bpy-ops-gpencil-stroke-flip"></span><h2>切换方向<a class="headerlink" href="#switch-direction" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 切换方向</span></p>
+</dd>
+</dl>
+</div>
+<p>反转选定笔画中点的方向(如，起始点会变成结束点，反之亦然)。</p>
+</div>
+<div class="section" id="scale-stroke-thickness">
+<h2>Scale Stroke Thickness<a class="headerlink" href="#scale-stroke-thickness" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Stroke ‣ Scale Stroke Thickness</span></p>
+</dd>
+</dl>
+</div>
+<p>When enabled, scales the stroke thickness during scale transformations.</p>
+</div>
+<div class="section" id="reset-fill-transform">
+<h2>Reset Fill Transform<a class="headerlink" href="#reset-fill-transform" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Stroke ‣ Reset Fill Transform</span></p>
+</dd>
+</dl>
+</div>
+<p>Reset all fill translation, scaling and rotations in the selected strokes.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="point_menu.html" class="btn btn-neutral float-right" title="点菜单" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="grease_pencil_menu.html" class="btn btn-neutral float-left" title="蜡笔菜单" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/modes/edit/stroke_menu.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/modes/edit/stroke_menu%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

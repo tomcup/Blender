@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>输出设置 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/output/settings.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="文件格式" href="file_formats.html" />
+    <link rel="prev" title="介绍" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">渲染输出</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">介绍</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">输出设置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dimensions-panel">尺寸面板</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#time-remapping">时间重映射</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#output-panel">输出面板</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post-processing-panel">后处理面板</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="file_formats.html">文件格式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="audio/index.html">音频渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metadata.html">元数据</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stereoscopy/index.html">立体视法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html">渲染动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation_player.html">动画播放器</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="index.html">渲染输出</a> &raquo;</li>
+        
+      <li>输出设置</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="output-settings">
+<h1>输出设置<a class="headerlink" href="#output-settings" title="Permalink to this headline">¶</a></h1>
+<p>渲染进程中的第一步是确定和设置输出选项。这包括渲染尺寸、 帧速率、 像素长宽比、 输出位置和文件类型。</p>
+<div class="section" id="dimensions-panel">
+<span id="render-tab-dimensions"></span><span id="bpy-types-rendersettings-use-border"></span><h2>尺寸面板<a class="headerlink" href="#dimensions-panel" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/render_output_settings_dimensions-panel.png" src="../../_images/render_output_settings_dimensions-panel.png" />
+<p class="caption"><span class="caption-text">尺寸面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Several render presets exist with common resolution and frame rates
+for TVs and screens can be selected in the panel header.</p>
+<dl>
+<dt>Resolution X, Y</dt><dd><p>图像中水平和垂直方向的像素数。</p>
+<dl class="simple">
+<dt>百分比</dt><dd><p>滑块可相对于上面的X / Y值减小或增大渲染图像的大小。这对于与最终图像具有相同比例的小测试渲染非常有用。</p>
+</dd>
+</dl>
+</dd>
+<dt>Aspect X, Y</dt><dd><p>较旧的电视可能具有非方形像素，因此这可用于控制沿相应轴的像素的形状。这将使图像预先扭曲，这些图像在计算机屏幕上看起来会拉伸，但会在电视机上正确显示。在渲染时使用正确的像素长宽比非常重要，以防止重新缩放，从而降低图像质量。</p>
+<p>更多关于像素长宽比的信息，请参考 <a class="reference internal" href="file_formats.html"><span class="doc">视频输出</span></a>。</p>
+</dd>
+</dl>
+<dl id="render-output-dimensions-region">
+<dt>渲染区域</dt><dd><p>仅渲染视图的一部分而不是整个帧。请参阅 <a class="reference internal" href="../../editors/3dview/navigate/regions.html#editors-3dview-navigate-render-region"><span class="std std-ref">渲染区域</span></a> 文档以了解如何定义渲染区域的大小。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This disables the <em>Save Buffers</em> option in the Performance panel.</p>
+</div>
+</dd>
+<dt>Crop to Render Region</dt><dd><p>将渲染图像裁剪为渲染区域的大小，而不是渲染其周围的透明背景。</p>
+</dd>
+<dt>Frame Start, End</dt><dd><p>Set the <em>Start</em> and <em>End</em> frames for <a class="reference internal" href="animation.html"><span class="doc">Rendering Animations</span></a>.</p>
+</dd>
+<dt>Step</dt><dd><p>Controls the number of frames to advance by for each frame in the timeline.</p>
+</dd>
+<dt>帧率</dt><dd><p>对于 <a class="reference internal" href="animation.html"><span class="doc">动画</span></a> ，帧速率是每秒显示的帧数。</p>
+</dd>
+</dl>
+<div class="section" id="time-remapping">
+<h3>时间重映射<a class="headerlink" href="#time-remapping" title="Permalink to this headline">¶</a></h3>
+<p>用于重新映射动画的长度。</p>
+</div>
+</div>
+<div class="section" id="output-panel">
+<span id="bpy-types-rendersettings-use-render-cache"></span><span id="bpy-types-rendersettings-use-file-extension"></span><span id="bpy-types-rendersettings-use-placeholder"></span><span id="bpy-types-rendersettings-use-overwrite"></span><span id="bpy-types-rendersettings-filepath"></span><span id="render-tab-output"></span><h2>输出面板<a class="headerlink" href="#output-panel" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/render_output_settings_panel.png" src="../../_images/render_output_settings_panel.png" />
+<p class="caption"><span class="caption-text">输出面板。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>此面板提供用于设置动画渲染帧的位置以及保存图像质量的选项。</p>
+<dl>
+<dt>文件路径</dt><dd><p>选择保存渲染帧的位置。</p>
+<p>渲染动画时，帧编号附加在文件名末尾，带有四个填充零 (e.g. <code class="docutils literal notranslate"><span class="pre">image0001.png</span></code>). 您可以通过#在文件名中添加适当数量的任意位置来设置自定义填充大小 (e.g. <code class="docutils literal notranslate"><span class="pre">image_##_test.png</span></code> translates to <code class="docutils literal notranslate"><span class="pre">image_01_test.png</span></code>).</p>
+<p>此设置扩展了 <a class="reference internal" href="../../files/blend/open_save.html#files-blend-relative-paths"><span class="std std-ref">相对路径</span></a> ，其中 <code class="docutils literal notranslate"><span class="pre">//</span></code> 前缀表示当前混合文件的目录。</p>
+</dd>
+<dt>Saving</dt><dd><dl class="simple">
+<dt>文件扩展名</dt><dd><p>将每种文件类型的正确文件扩展名添加到输出文件中。</p>
+</dd>
+<dt>缓存结果</dt><dd><p>保存渲染图像并传递到硬盘驱动器上临时位置的多层EXR文件。这允许合成器读取这些以改善性能，尤其是对于重度合成。</p>
+</dd>
+</dl>
+</dd>
+<dt>文件格式</dt><dd><p>选择要保存的文件格式。根据使用的格式，可以使用其他选项，如通道，位深度和压缩级别。</p>
+<p>要渲染图像，请参阅 <a class="reference internal" href="../../files/media/image_formats.html#bpy-types-imageformatsettings"><span class="std std-ref">：保存图像</span></a>, 渲染视频，查看 <a class="reference internal" href="file_formats.html"><span class="doc">rendering to videos</span></a>.</p>
+</dd>
+<dt>颜色模式</dt><dd><p>选择保存图像使用的色彩格式。注意，<em>RGBA</em> 并不适用于所有图像格式。</p>
+<p>BW, RGB, RGBA</p>
+</dd>
+<dt>Image Sequence</dt><dd><dl class="simple">
+<dt>覆盖</dt><dd><p>渲染时覆盖现有文件。</p>
+</dd>
+<dt>占位符</dt><dd><p>渲染时创建空占位符框架。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>原始渲染农场</p>
+<p>让多台机器共享渲染工作负载的简单方法是：</p>
+<ul class="simple">
+<li><p>在网络文件系统设置一个共享目录。</p></li>
+<li><p>禁用覆盖，在 <em>渲染输出</em> 面板中启用占位符。</p></li>
+<li><p>启动任意数量的计算机，然后渲染到该目录。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="post-processing-panel">
+<span id="render-output-postprocess"></span><h2>后处理面板<a class="headerlink" href="#post-processing-panel" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">Properties ‣ Output ‣ Post Processing</span></p>
+</dd>
+</dl>
+</div>
+<p>后处理面板用于控制渲染后用于处理图像的不同选项。</p>
+<div class="figure align-right" id="id3">
+<img alt="../../_images/render_output_settings_post-processing-panel.png" src="../../_images/render_output_settings_post-processing-panel.png" />
+<p class="caption"><span class="caption-text">后处理面板。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>Pipeline</dt><dd><dl class="simple">
+<dt>序列</dt><dd><p>渲染视频序列编辑器的输出，而不是3D场景的活动摄像机的视图。如果序列包含场景条，则这些也将作为管道的一部分呈现。如果还启用了 <em>合成</em> ，则场景条将成为合成器的输出。</p>
+</dd>
+<dt>合成</dt><dd><p>Renders the output from the compositing node setup,
+and then pumps all images through the Composite node tree,
+displaying the image fed to the Composite Output node.</p>
+</dd>
+</dl>
+</dd>
+<dt>Dither</dt><dd><p>抖动是一种模糊像素的技术，以防止在渐变区域中看到条带，其中在颜色之间出现阶梯式步进。当渐变较长或较不陡峭时，条带伪影更明显。抖动是针对具有低位深度的图形而开发的，这意味着它们具有有限范围的可能颜色。</p>
+<p>抖动通过获取像素值并将它们与阈值和相邻像素进行比较然后进行计算以生成适当的颜色。抖动通过创建一种视觉颜色混合来创建更大调色板的感知效果。例如，如果您采用网格并在其上均匀分布红色和黄色像素，则图像将显示为橙色。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="file_formats.html" class="btn btn-neutral float-right" title="文件格式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/output/settings.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/output/settings%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

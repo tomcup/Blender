@@ -1,0 +1,462 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>混合节点 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/texture_node/types/color/mix_rgb.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="RGB曲线着色器节点" href="rgb_curves.html" />
+    <link rel="prev" title="反转节点" href="invert.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../3dview/index.html">3D视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">纹理节点</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#node-types">节点类型</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">颜色节点</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="invert.html">反转节点</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">混合节点</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#inputs">输入</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#properties">属性</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#outputs">输出</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#examples">举例</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#contrast-enhancement">对比度增强</a></li>
+<li class="toctree-l7"><a class="reference internal" href="#watermark-images">水印图像</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#encoding-your-watermark-in-an-image">在图像中设置水印</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#decoding-an-image-for-your-watermark">为你的水印解码图像</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="rgb_curves.html">RGB曲线着色器节点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="hue_saturation.html">色相/饱和度/明度 着色器节点</a></li>
+<li class="toctree-l5"><a class="reference internal" href="combine_separate.html">合并/分离着色器节点</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../converter/index.html">转换器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../distort/index.html">畸变类节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../input/index.html">输入节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../output/index.html">输出节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../patterns/index.html">图案节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../textures/index.html">纹理节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../groups.html">节点组</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../nla/index.html">非线性动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../preferences/index.html">偏好设置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../../index.html">纹理节点</a> &raquo;</li>
+        
+          <li><a href="index.html">颜色节点</a> &raquo;</li>
+        
+      <li>混合节点</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="bpy-types-texturenodemixrgb"></span><div class="section" id="mix-node">
+<h1>混合节点<a class="headerlink" href="#mix-node" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1">
+<img alt="../../../../_images/compositing_node-types_CompositorNodeMixRGB.png" src="../../../../_images/compositing_node-types_CompositorNodeMixRGB.png" />
+<p class="caption"><span class="caption-text">混合节点。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>“混合”节点通过处理两个输入图像的单个和相应像素来混合图像，在着色器和纹理中称为“MixRGB”。</p>
+<div class="section" id="inputs">
+<h2>输入<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>系数</dt><dd><p>控制节点对输出图像的影响量。</p>
+</dd>
+<dt>图像</dt><dd><p>背景图像。图像大小和分辨率为输出图像的尺寸。</p>
+</dd>
+<dt>图像</dt><dd><p>前景图像。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties">
+<h2>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>混合</dt><dd><p>在“混合类型”下拉菜单中可以选择混合类型。每种混合类型的细节见 <a class="reference internal" href="../../../../glossary/index.html#term-Color-Blend-Modes"><span class="xref std std-term">颜色混合模式</span></a> 。</p>
+<p>添加，相减，相乘(正片叠底)，滤色，相除，差值，变暗，变亮，叠加，减淡，颜色加深，色相，饱和度，值(明度)，颜色，柔光，线性光</p>
+</dd>
+<dt>使用 Alpha通道</dt><dd><p>通过单击 <em>颜色和Alpha</em> 图标激活时，第二个图像的Alpha通道将用于混合。停用时，默认图标背景为浅灰色。总是使用基本图像的alpha通道。</p>
+</dd>
+<dt>钳制</dt><dd><p>Limit the output value between 0.0 and 1.0.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="outputs">
+<h2>输出<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>图像</dt><dd><p>标准图像输出。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h2>举例<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>下面是常见混合模式和用途的示例，将颜色或棋盘格与遮罩混合。</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_color_mix_blend-modes.png"><img alt="../../../../_images/compositing_types_color_mix_blend-modes.png" src="../../../../_images/compositing_types_color_mix_blend-modes.png" style="width: 700px;" /></a>
+</div>
+<p>对上述混合方法的一些解释可能有助于您有效地使用混合节点：</p>
+<dl class="simple">
+<dt>相加</dt><dd><p>把蓝色加上蓝色会使它保持蓝色，但把蓝色加上红色会使它变成紫色。白色已经有了全部的蓝色，所以它保持白色。使用此选项可以改变图像的颜色。添加蓝色会使图像更冷。</p>
+</dd>
+<dt>相减</dt><dd><p>把蓝色从白色的图层上去掉，红色和绿色结合在一起就变成了黄色。把蓝色从紫色的图层上去掉红色。用这个来降低图像的饱和度。去掉黄色会使图像更蓝，更令人沮丧。</p>
+</dd>
+<dt>正片叠底(相乘)</dt><dd><p>Black (0.0) times anything leaves black. Anything times White (1.0) is itself.
+Use this to mask out garbage, or to colorize a black-and-white image.</p>
+</dd>
+<dt>色相</dt><dd><p>显示图像中有多少颜色，忽略除所选颜色以外的所有颜色：生成单色图片(样式“黑色和色调”)。</p>
+</dd>
+<dt>混合</dt><dd><p>合并两个图像，平均两个图像。</p>
+</dd>
+<dt>变亮</dt><dd><p>就像漂白剂使你的白色更白，和遮罩一起使用可以让你的图层变亮。</p>
+</dd>
+<dt>差值</dt><dd><p>它会去掉一种颜色。把黄色变成白色所需要的颜色是蓝色。使用这个来比较两个非常相似的图像，看看对其中一个图像做了什么，使之成为另一个图像。有点像图像的更改日志。您可以使用此功能查看已放置在图像中的水印(请参见 <a class="reference internal" href="#watermark-images">水印图像</a>)，以进行检测图片是否被盗用。</p>
+</dd>
+<dt>变暗</dt><dd><p>在这里设置颜色，就像透过玫瑰色的眼镜看世界。</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only add, subtract, multiply and divide are suitable for <a class="reference internal" href="../../../../glossary/index.html#term-Scene-Referenced"><span class="xref std std-term">Scene Referenced</span></a> images.</p>
+</div>
+<div class="section" id="contrast-enhancement">
+<h3>对比度增强<a class="headerlink" href="#contrast-enhancement" title="Permalink to this headline">¶</a></h3>
+<p>Here is a small node tree showing the effects of two other common uses for the RGB Curve:
+<em>Darken</em> and <em>Contrast Enhancement</em>.
+You can see the effect each curve has independently,
+and the combined effect when they are <em>mixed</em> equally.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_color_mix_contrast-enhancement.png"><img alt="../../../../_images/compositing_types_color_mix_contrast-enhancement.png" src="../../../../_images/compositing_types_color_mix_contrast-enhancement.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">显示“变暗”、“增强对比度”和“混合”节点以进行合成的示例节点设置。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>正如你所希望看到的，我们原始图像的猴头是过曝，要调整过曝，必须变暗图像并增强图像的对比度。</p>
+<p>在上面的的RGB曲线中，只有曲线的右侧被降低，因此，沿底部的任何X输入都会导致几何上的Y输出减少,实现图像的“变暗”。(下面的)RGB(S形)曲线缩放输出，使X的中间值发生显著变化,即中间亮度比例被扩展，因此输出的是白色和黑色，从而增强图像的对比度。要创建此曲线，只需单击该曲线并添加新的控制点，然后根据需要拖动点以弯曲曲线。最后混合节点将这两种效果地结合在一起，最终效果就感觉好多了。</p>
+</div>
+<div class="section" id="watermark-images">
+<h3>水印图像<a class="headerlink" href="#watermark-images" title="Permalink to this headline">¶</a></h3>
+<p>在过去，当纸糊变干时，一个图案被压进纸糊中，会形成一个标记，用来识别纸的制造者和来源。除了在适当的光线下，几乎看不到这个标记。这可以认为是最早形式的潜意识广告。如今，人们在自己的图片上加上水印，将其标识为个人知识产权，或是作者或主机服务的潜意识广告，或是简单地跟踪图片在网络上的传播。Blender为您提供了一套完整的工具，既可以对水印进行编码，也可以判断图像是否具有水印。</p>
+<div class="section" id="encoding-your-watermark-in-an-image">
+<h4>在图像中设置水印<a class="headerlink" href="#encoding-your-watermark-in-an-image" title="Permalink to this headline">¶</a></h4>
+<p>首先，您可以使用不容易复制的名称、词汇、形状或图像来构建自己的个人水印。虽然中性灰色最适合使用建议的编码方法，但您可以自由使用其他颜色或图案。它可以是单个像素或整个渐变，这取决于您自己。在下面的示例中，我们使用“装换”节点在图像中的特定位置对水印进行编码，它可以帮助我们设置水印标记的位置。然后，使用RGB-&gt;BW节点将图像转换为数字，Map Value节点可以使用这些数字使图像成为半透明状态。在这种情况下，它将水印标记的透明度降低到原来的十分之一。“添加”节点添加相应的像素，使包含标记的像素变得更亮。</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_color_mix_watermark-encode.png"><img alt="../../../../_images/compositing_types_color_mix_watermark-encode.png" src="../../../../_images/compositing_types_color_mix_watermark-encode.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">使用标记和特定位置将标记嵌入到图像中。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>当然，如果想让人们注意到你的水印标记，请不要把它缩的太小，或者你可以把它变成对比色。当然也有许多其他的方法，比如使用其他混合设置和更高级的功能，你可以随意尝试！</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>附加用途</p>
+<p>你也可以使用这项技术，做出其他有意思的效果，如在标题序列中使文字看起来像是在水面上投射的，或者像刺青一样，使文字附写在女孩的前臂上。</p>
+</div>
+</div>
+<div class="section" id="decoding-an-image-for-your-watermark">
+<h4>为你的水印解码图像<a class="headerlink" href="#decoding-an-image-for-your-watermark" title="Permalink to this headline">¶</a></h4>
+<p>When you see an image that you think might be yours,
+use the node tree below to compare it to your stock image (pre-watermarked original).
+In this tree, the Mix node is set to Difference,
+and the Map Value node amplifies any difference. The result is routed to a viewer,
+and you can see how the original mark clearly stands out.</p>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/compositing_types_color_mix_watermark-decode.png"><img alt="../../../../_images/compositing_types_color_mix_watermark-decode.png" src="../../../../_images/compositing_types_color_mix_watermark-decode.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-text">检查图像的水印。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Various image compression algorithms lose some of the original; the difference shows as noise.
+Experiment with different compression settings and marks to see which works best for you by
+having the encoding node group in one scene, and the decoding group in another.
+Use them while changing Blender's image format settings,
+reloading the watermarked image after saving, to get an acceptable result.
+In the example above, the mark was clearly visible all the way up to <code class="docutils literal notranslate"><span class="pre">JPEG</span></code> compression of 50%.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="rgb_curves.html" class="btn btn-neutral float-right" title="RGB曲线着色器节点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="invert.html" class="btn btn-neutral float-left" title="反转节点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/texture_node/types/color/mix_rgb.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/texture_node/types/color/mix_rgb%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

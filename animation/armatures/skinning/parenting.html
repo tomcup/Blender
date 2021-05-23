@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>骨架形变父级 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/armatures/skinning/parenting.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="姿态" href="../posing/index.html" />
+    <link rel="prev" title="简介" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">骨架</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bones/index.html">骨骼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">蒙皮</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">骨架形变父级</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#with-empty-groups">With Empty Groups 附带空顶点组</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#example">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#with-automatic-weights">With Automatic Weights   附带自动权重</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#with-envelope-weights">With Envelope Weights 附带封套权重</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../posing/index.html">姿态</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../index.html">骨架</a> &raquo;</li>
+        
+          <li><a href="index.html">蒙皮</a> &raquo;</li>
+        
+      <li>骨架形变父级</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="armature-deform-parent">
+<h1>骨架形变父级<a class="headerlink" href="#armature-deform-parent" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式和姿态模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">物体/姿态 ‣ 父级 ‣ 骨架形变</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>骨架变形父级是创建并设置 <a class="reference internal" href="../../../modeling/modifiers/deform/armature.html"><span class="doc">骨架修改器</span></a> 的一种方式。</p>
+<p>要建立骨架变形父子关系，你必须首先选择将受到骨架影响的所有子对象，最后选择骨架对象本身。一旦选择了所有子对象和骨架，请按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> ，然后在弹出菜单中设置父级到(Set Parent To)选择骨架变形(Armature Deform)。</p>
+<p>骨架将是所有其他子物体的父物体，每个物体子将具有与骨架相关联的骨架修改器(<em>Object</em> 字段)。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/animation_armatures_skinning_parenting_deform-object-mode.png" src="../../../_images/animation_armatures_skinning_parenting_deform-object-mode.png" />
+<p class="caption"><span class="caption-text">与网格对象相关联的骨骼。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="with-empty-groups">
+<h2>With Empty Groups 附带空顶点组<a class="headerlink" href="#with-empty-groups" title="Permalink to this headline">¶</a></h2>
+<p>When parenting it will create empty <a class="reference internal" href="../../../modeling/meshes/properties/vertex_groups/index.html"><span class="doc">vertex groups</span></a>
+on the child objects (if they do not already exist) for and named after each deforming bone in the armature.
+The newly created vertex groups will be empty. This means they will not have any weights assigned.
+Vertex groups will only be created for bones which are setup as deforming
+(<span class="menuselection">Properties ‣ Bone ‣ Deform Panel</span>).</p>
+<p>然后，你可以手动选择顶点并将其分配给你选择的特定顶点组，以使骨架中的骨骼影响它们。</p>
+<p>如果你已经创建(并权重)网格所需的所有顶点组，请选择此选项。</p>
+<div class="section" id="example">
+<h3>示例<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>例如，如果有一个由三个骨骼命名为“BoneA”，“BoneB”和“BoneC”以及称为“Cube”的立方体网格的骨架。如果你将立方体设置父级到骨架，立方体将会在其上创建名为“BoneA”，“BoneB”和“BoneC”的三个新顶点组。请注意，每个顶点组都是空的。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/animation_armatures_skinning_parenting_bone-empty-groups.png" src="../../../_images/animation_armatures_skinning_parenting_bone-empty-groups.png" />
+<p class="caption"><span class="caption-text">Cube in Edit Mode using Armature Deform with empty groups.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="with-automatic-weights">
+<h2>With Automatic Weights   附带自动权重<a class="headerlink" href="#with-automatic-weights" title="Permalink to this headline">¶</a></h2>
+<p><em>With Automatic Weights</em> parenting works similar to <em>With Empty Groups</em>,
+but it will not leave the vertex groups empty. It calculates how much influence a particular bone
+would have on vertices based on the distance from those vertices to a particular bone (&quot;bone heat&quot; algorithm).
+This influence will be assigned as weights in the vertex groups.</p>
+<p>This method of parenting is certainly easier to setup, but it can often lead to armatures which do not deform child
+objects in ways you would want. Overlaps can occur when it comes to determining which bones should
+influence certain vertices when calculating influences for more complex armatures and child objects.
+Symptoms of this confusion are that when transforming the armature in <em>Pose Mode</em>,
+parts of the child objects do not deform as you expect;
+If Blender does not give you the results you require,
+you will have to manually alter the weights of vertices in relation to the vertex groups they belong to and
+have influence in.</p>
+</div>
+<div class="section" id="with-envelope-weights">
+<h2>With Envelope Weights 附带封套权重<a class="headerlink" href="#with-envelope-weights" title="Permalink to this headline">¶</a></h2>
+<p>工作方式类似于 <em>附带封套权重</em> 。不同之处在于影响是基 <a class="reference internal" href="../bones/properties/deform.html#armature-bones-envelope"><span class="std std-ref">骨骼封套</span></a> 设置内容计算的。它将分配给每个顶点组的顶点在骨骼内的影响体积，权重取决于它们的到这骨骼的距离。</p>
+<p>这意味着新包含/排除的顶点或新的封套设置不会被考虑。你将不得不再次使用骨架变形附带封套权重( Armature Deform With Envelope Weights)来再次建立父子关系。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果想要使用封套设置立即将骨架修改器绑定到 <em>骨骼封套(Bone Envelopes)</em>。</p>
+</div>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/animation_armatures_skinning_parenting_envelope-influence.png" src="../../../_images/animation_armatures_skinning_parenting_envelope-influence.png" />
+<p class="caption"><span class="caption-text">Two sets of armatures, each with three bones.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>如果你使用与骨骼蒙皮相同的名称并已经定义了顶点组，则其内容将完全被自动权重和封套权重覆盖。在这种情况下，可以使用 <em>附带空顶点组</em>。</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../../sculpt_paint/weight_paint/usage.html#weight-painting-bones"><span class="std std-ref">骨骼顶点组</span></a>。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../posing/index.html" class="btn btn-neutral float-right" title="姿态" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="introduction.html" class="btn btn-neutral float-left" title="简介" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/armatures/skinning/parenting.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/armatures/skinning/parenting%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>绘制笔刷 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/modes/draw/tool_settings/brushes/draw_brush.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../../copyright.html" />
+    <link rel="next" title="填充笔刷" href="fill_brush.html" />
+    <link rel="prev" title="圆环工具" href="../circle.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../primitives.html">基本体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../selecting.html">选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../multiframe.html">多帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../properties/index.html">属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../animation/index.html">动画</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html#modes">模式</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">绘制模式</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools.html">绘图工具</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html">工具设置</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../draw.html">自由线工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../fill.html">填充工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../erase.html">擦除工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../tint.html">Tint Tool</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../cutter.html">裁剪工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../eyedropper.html">吸管</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../line.html">直线工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../polyline.html">折线工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../arc.html">圆弧工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../curve.html">曲线工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../box.html">方框工具</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../circle.html">圆环工具</a></li>
+<li class="toctree-l5 current"><a class="reference internal" href="../index.html#brushes">笔刷</a><ul class="current">
+<li class="toctree-l6 current"><a class="current reference internal" href="#">绘制笔刷</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#tool-settings">Tool Settings</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#brushes">Brushes</a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="#brush-settings">Brush Settings</a><ul>
+<li class="toctree-l8"><a class="reference internal" href="#advanced">Advanced</a></li>
+<li class="toctree-l8"><a class="reference internal" href="#stroke">Stroke</a><ul>
+<li class="toctree-l9"><a class="reference internal" href="#post-processing">后期处理</a></li>
+<li class="toctree-l9"><a class="reference internal" href="#randomize">随机</a></li>
+<li class="toctree-l9"><a class="reference internal" href="#stabilize-stroke">Stabilize Stroke</a></li>
+</ul>
+</li>
+<li class="toctree-l8"><a class="reference internal" href="#cursor">Cursor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="fill_brush.html">填充笔刷</a></li>
+<li class="toctree-l6"><a class="reference internal" href="erase_brush.html">擦除笔刷</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../stroke_placement.html">笔划放置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../drawing_planes.html">绘图平面</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../guides.html">引导</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../sculpting/index.html">雕刻模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../edit/index.html">编辑模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../vertex_paint/index.html">Vertex Paint Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../weight_paint/index.html">权重绘制模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../object/index.html">Object Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../index.html">蜡笔</a> &raquo;</li>
+        
+          <li><a href="../../index.html">绘制模式</a> &raquo;</li>
+        
+          <li><a href="../index.html">工具设置</a> &raquo;</li>
+        
+      <li>绘制笔刷</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="draw-brush">
+<h1>绘制笔刷<a class="headerlink" href="#draw-brush" title="Permalink to this headline">¶</a></h1>
+<p>Draw brushes are the special type of brushes that uses Grease Pencil for drawing tools.
+The brush can be changed in the Tool Settings.</p>
+<p>The different draw brushes (pencil, Ink, marker, etc.) are settings variations of the same <em>Draw Brush</em>.
+You can create many brushes, each with unique settings to get different artistic result while drawing.</p>
+<div class="section" id="tool-settings">
+<h2>Tool Settings<a class="headerlink" href="#tool-settings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="brushes">
+<h3>Brushes<a class="headerlink" href="#brushes" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-right" id="id1">
+<img alt="../../../../../_images/grease-pencil_modes_draw_tool-settings_brushes_draw-brush_data-block.png" src="../../../../../_images/grease-pencil_modes_draw_tool-settings_brushes_draw-brush_data-block.png" />
+<p class="caption"><span class="caption-text">笔刷数据块面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>笔刷</dt><dd><p>在 <a class="reference internal" href="../../../../../interface/controls/templates/data_block.html#ui-data-block"><span class="std std-ref">数据块菜单</span></a> 中选择预设笔刷类型或自定义笔刷。</p>
+<dl>
+<dt>添加笔刷</dt><dd><p>点击添加按钮时，新笔刷会克隆当前笔刷的设置。</p>
+</dd>
+<dt>Brush Specials</dt><dd><dl>
+<dt>Reset Brush</dt><dd><p>Reset the current brush to its default settings.</p>
+</dd>
+<dt>Reset All Brushes</dt><dd><p>Reset all brushes to their default settings.</p>
+</dd>
+<dt>自定义图标</dt><dd><p>允许使用自定义笔刷图标。</p>
+<dl class="simple">
+<dt>图片路径</dt><dd><p>指定用于自定义图标的图片路径。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to save a custom brush in a blend-user, enable <em>Fake User</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="brush-settings">
+<h2>Brush Settings<a class="headerlink" href="#brush-settings" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>Material</dt><dd><p>Data-block selector for the <a class="reference internal" href="../../../../materials/introduction.html"><span class="doc">material</span></a>.</p>
+</dd>
+<dt>半径</dt><dd><p>笔刷的半径，单位为像素。</p>
+<p>可以按下 <kbd class="kbd docutils literal notranslate">F</kbd>，再移动鼠标/压感笔或输入数字并确定，来改变画笔大小。</p>
+<dl class="simple">
+<dt>使用压感(压感图标)</dt><dd><p>Uses stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>强度</dt><dd><p>控制笔画的透明度(alpha)。从完全透明(0.0)到完全不透明(1.0).</p>
+<p>You can change the brush strength interactively by pressing <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">F</kbd></kbd>
+in the 3D Viewport and then moving the mouse/pen and then <kbd class="kbd docutils literal notranslate">LMB</kbd>.
+You can also enter the size numerically.</p>
+<dl class="simple">
+<dt>使用压感(压感图标)</dt><dd><p>Uses stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="advanced">
+<h3>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>输入采样</dt><dd><p>控制输入设备读取并在笔画上生成点的频率。数值越高，精度越高(更多点)，但是产生不规则的笔画；数值越低，精度越低(更少点)，但是产生柔和的笔画。(0禁用额外的输入设备采样。)</p>
+<p>你必须根据你的输入设备设置合适的值，来平衡笔画的精确度和柔和度。详见 <a class="reference internal" href="../../../../../getting_started/configuration/hardware.html"><span class="doc">输入设备</span></a>。</p>
+</dd>
+<dt>激活光滑</dt><dd><p>绘制笔画时的平滑迭代次数。</p>
+</dd>
+<dt>角度</dt><dd><p>笔画厚度最大时，输入设备的笔画方向(0°为水平方向)。</p>
+<dl class="simple">
+<dt>系数</dt><dd><p>当笔画垂直于 <em>角度</em> 值时，厚度的减少量。</p>
+</dd>
+</dl>
+</dd>
+<dt>Hardness</dt><dd><p>边界点到中心的透明(alpha)程度。仅在笔刷使用 <em>点</em> 或 <em>方块</em> 类型的笔画材质时起作用。</p>
+<dl>
+<dt>宽高比</dt><dd><p>控制alpha渐变的宽、高。</p>
+<p>X，Y</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="stroke">
+<h3>Stroke<a class="headerlink" href="#stroke" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="post-processing">
+<h4>后期处理<a class="headerlink" href="#post-processing" title="Permalink to this headline">¶</a></h4>
+<p>后期处理在完成绘制时执行，即松开 <kbd class="kbd docutils literal notranslate">LMB</kbd> 或 <kbd class="kbd docutils literal notranslate">Pen</kbd> 时。你可以使用面板区域顶栏的复选框切换是否使用后期处理。</p>
+<dl>
+<dt>平滑</dt><dd><p>对笔画上点位置的平滑力度。</p>
+<dl class="simple">
+<dt>迭代</dt><dd><p>应用于笔画的平滑迭代次数。</p>
+</dd>
+</dl>
+</dd>
+<dt>细分步数</dt><dd><p>应用于新创建笔画的细分次数。</p>
+</dd>
+<dt>简化</dt><dd><p>使用自适应算法减少笔画中的最最终点数。</p>
+</dd>
+<dt>修剪笔画末端</dt><dd><p>自动修剪笔画末端。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="randomize">
+<span id="bpy-types-brushgpencilsettings-use-jitter-pressure"></span><span id="bpy-types-brushgpencilsettings-pen-jitter"></span><span id="bpy-types-brushgpencilsettings-uv-random"></span><span id="bpy-types-brushgpencilsettings-random"></span><span id="bpy-types-brushgpencilsettings-use-settings-random"></span><h4>随机<a class="headerlink" href="#randomize" title="Permalink to this headline">¶</a></h4>
+<p>Adds randomness to the position of the points along the stroke.
+You can toggle the use of Randomize using the checkbox in the section panel header.</p>
+<dl>
+<dt>半径</dt><dd><p>使用输入设备的压感用于随机的程度。</p>
+<dl class="simple">
+<dt>Stroke Random (stroke icon)</dt><dd><p>Use randomness only at stroke level.</p>
+</dd>
+<dt>使用压感(压感图标)</dt><dd><p>Uses the stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>强度</dt><dd><p>应用于笔画强度值(alpha)的随机程度。</p>
+<dl class="simple">
+<dt>Stroke Random (stroke icon)</dt><dd><p>Use randomness only at stroke level.</p>
+</dd>
+<dt>使用压感(压感图标)</dt><dd><p>Uses the stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>UV</dt><dd><p>应用于UV旋转的随即程度。</p>
+<dl class="simple">
+<dt>Stroke Random (stroke icon)</dt><dd><p>Use randomness only at stroke level.</p>
+</dd>
+<dt>使用压感(压感图标)</dt><dd><p>Uses the stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>Hue, Saturation, Value</dt><dd><p>Randomizes the hue, saturation, and value of the stroke's <a class="reference internal" href="../introduction.html#grease-pencil-draw-color"><span class="std std-ref">Color</span></a>.</p>
+<dl class="simple">
+<dt>Stroke Random (stroke icon)</dt><dd><p>Use randomness only at stroke level.</p>
+</dd>
+<dt>使用压感(压感图标)</dt><dd><p>Uses the stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>抖动</dt><dd><p>添加到笔画的抖动程度。</p>
+<dl class="simple">
+<dt>Stroke Random (stroke icon)</dt><dd><p>Use randomness only at stroke level.</p>
+</dd>
+<dt>使用压感(压感图标)</dt><dd><p>Uses the stylus pressure to control how strong the effect is.
+The gradient of the pressure can be customized using
+the <a class="reference internal" href="../../../../../interface/controls/templates/curve.html"><span class="doc">curve widget</span></a>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="stabilize-stroke">
+<span id="bpy-types-brush-smooth-stroke"></span><span id="bpy-types-brushgpencilsettings-use-settings-stabilizer"></span><span id="grease-pencil-draw-brushes-stabilizer"></span><h4>Stabilize Stroke<a class="headerlink" href="#stabilize-stroke" title="Permalink to this headline">¶</a></h4>
+<p><em>Stabilize Stroke</em> helps to reduce jitter of the strokes while drawing by
+delaying and correcting the location of points.
+You can toggle the use of <em>Stabilize Stroke</em> using the checkbox in the section panel header.</p>
+<dl class="simple">
+<dt>半径</dt><dd><p>在笔画继续之前，与前一点的最小距离。</p>
+</dd>
+<dt>系数</dt><dd><p>平滑系数，值越高，笔画越平滑，但是绘制的感觉像是在拉动笔画。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="cursor">
+<h3>Cursor<a class="headerlink" href="#cursor" title="Permalink to this headline">¶</a></h3>
+<p>The cursor can be disabled by toggling the checkbox in the <em>Cursor</em> header.</p>
+<dl class="simple">
+<dt>Show Fill Color While Drawing</dt><dd><p>在视图中显示笔刷链接的材质颜色。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fill_brush.html" class="btn btn-neutral float-right" title="填充笔刷" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../circle.html" class="btn btn-neutral float-left" title="圆环工具" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/modes/draw/tool_settings/brushes/draw_brush.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/modes/draw/tool_settings/brushes/draw_brush%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

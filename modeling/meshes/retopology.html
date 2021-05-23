@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>重拓扑 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/retopology.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="曲线" href="../curves/index.html" />
+    <link rel="prev" title="网格分析" href="mesh_analysis.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selecting/index.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing/index.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="uv/index.html">UVs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">重拓扑</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-poly-build-tool">使用多边形构建工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remeshing">重构网格</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#voxel">体素</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#quad">四边形</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">网格</a> &raquo;</li>
+        
+      <li>重拓扑</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="retopology">
+<h1>重拓扑<a class="headerlink" href="#retopology" title="Permalink to this headline">¶</a></h1>
+<p>重拓扑是简化网格拓扑的过程，使其更简洁，更易于使用。雕刻或生成拓扑(例如通过 3D 扫描)产生的混乱拓扑存在重拓扑的需要。如果网格将用于某种形式的形变，则网格通常需要重新拓扑。形变可以包括绑定或物理模拟，如布料或软体。可以通过在编辑模式下操作几何体手动完成重新拓扑，或通过自动方法。</p>
+<div class="section" id="using-the-poly-build-tool">
+<h2>使用多边形构建工具<a class="headerlink" href="#using-the-poly-build-tool" title="Permalink to this headline">¶</a></h2>
+<p>Todo 2.81.</p>
+</div>
+<div class="section" id="remeshing">
+<span id="bpy-ops-object-voxel-remesh"></span><span id="bpy-types-mesh-remesh"></span><h2>重构网格<a class="headerlink" href="#remeshing" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>物体模式，雕刻模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性 ‣ 物体数据 ‣ 网格重构</span></p>
+</dd>
+</dl>
+</div>
+<p>网格重构是一种使用更均匀的拓扑自动重建几何体的技术。网格重构可以根据定义的分辨率添加或删除拓扑量。此技术对于 <a class="reference internal" href="../../sculpt_paint/sculpting/index.html"><span class="doc">雕刻</span></a> 特别有用，可在在初始形状基础上生成更好的拓扑。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>限制:</p>
+<ul class="simple">
+<li><p>网格重构仅适用于原始网格数据，并忽略从修改器、形态键、绑定等生成的几何结构。</p></li>
+<li><p>网格重构不能与 <a class="reference internal" href="../modifiers/generate/multiresolution.html"><span class="doc">多级精度修改器</span></a> 一起使用。</p></li>
+</ul>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../modifiers/generate/remesh.html"><span class="doc">网格重构修改器</span></a></p>
+</div>
+<div class="section" id="voxel">
+<h3>体素<a class="headerlink" href="#voxel" title="Permalink to this headline">¶</a></h3>
+<p>体素网格重构使用 OpenVDB 从当前几何体生成新的流形网格。它生成具有拓扑完全均匀分布的网格，并且一旦计算新网格，它没有任何性能损失。这使得体素网格重构非常适合雕刻，使得更加高精度细节下的雕刻成为可能，而其他类似功能如dyntopo，往往会带来更多的性能开销。</p>
+<dl class="simple">
+<dt>体素大小</dt><dd><p>重构后网格的分辨率或细节量。该值用于定义 <a class="reference internal" href="../../glossary/index.html#term-Voxel"><span class="xref std std-term">体素</span></a> 的大小，在物体空间中。这些体素围绕网格组合，用于决定新的几何体。例如，值为 0.5m将创建大约 0.5m 的地形分块(假设启用了 <em>保留体积</em>)。该值越低，细节越精细，但会导致具有更密集拓扑的网格。</p>
+</dd>
+<dt>适应性</dt><dd><p>通过简化并不太需要细节的位置的几何结构来降低面数，将对并不需要那么多细节的面引入三角化。注意： <em>适应性</em> 数值高于0将禁用 <em>修复极点</em>。</p>
+</dd>
+<dt>修复极点</dt><dd><p>尝试以稍许性能为代价，产生更少的 <a class="reference internal" href="../../glossary/index.html#term-Pole"><span class="xref std std-term">极点</span></a> 发产生更好的拓扑流。</p>
+</dd>
+<dt>平滑法向</dt><dd><p>对最终网格应用 <a class="reference internal" href="../../scene_layout/object/editing/shading.html#bpy-ops-object-shade-smooth"><span class="std std-ref">平滑法向</span></a> 操作。</p>
+</dd>
+<dt>保留</dt><dd><dl class="simple">
+<dt>体积</dt><dd><p>告诉算法尝试保留网格的原始体积。启用此功能可能会使操作变慢，这取决于网格的复杂性。</p>
+</dd>
+<dt>绘制遮罩</dt><dd><p>将 <a class="reference internal" href="../../sculpt_paint/sculpting/hide_mask.html#sculpt-mask-menu"><span class="std std-ref">绘制遮罩</span></a> 重新投射到新网格上。</p>
+</dd>
+<dt>面组</dt><dd><p>将 <a class="reference internal" href="../../sculpt_paint/sculpting/editing.html#sculpting-editing-facesets"><span class="std std-ref">绘制遮罩</span></a> 重新投射到新网格上。</p>
+</dd>
+</dl>
+</dd>
+<dt>体素重构</dt><dd><p>执行网格重构操作，以基于当前网格的体积创建新的流形网格。执行此操作将丢失与原始网格关联的所有网格物体数据层。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="quad">
+<span id="bpy-ops-object-quadriflow-remesh"></span><h3>四边形<a class="headerlink" href="#quad" title="Permalink to this headline">¶</a></h3>
+<p>四边形网格重构使用Quadriflow算法创建一个基于 <a class="reference internal" href="../../glossary/index.html#term-Quadrilateral"><span class="xref std std-term">四边形</span></a> 的网格，该网格具有很少的极点，且循环边遵循表面曲率。此方法相对较慢，但可产生更高质量的最终拓扑。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>执行 <em>Quadriflow网格重构</em> 将丢失与原始网格关联的所有网格物体数据层。</p>
+</div>
+<dl class="simple">
+<dt>QuadriFlow网格重构</dt><dd><p>打开一个弹出窗口，用于设置网格重构操作的参数。</p>
+</dd>
+<dt>使用绘制对称</dt><dd><p>使用 <a class="reference internal" href="../../sculpt_paint/brush/symmetry.html"><span class="doc">绘制对称</span></a> 选项生成对称网格。</p>
+</dd>
+<dt>保留锐边</dt><dd><p>告诉算法尝试保留网格的尖锐特征。启用此功能可能会使操作变慢，这取决于网格的复杂性。</p>
+</dd>
+<dt>保留网格边界</dt><dd><p>告诉算法尝试保留网格的原始体积。启用此功能可能会使操作变慢，这取决于网格的复杂性。</p>
+</dd>
+</dl>
+<dl>
+<dt>保留绘制遮罩</dt><dd><p>将 <a class="reference internal" href="../../sculpt_paint/sculpting/hide_mask.html#sculpt-mask-menu"><span class="std std-ref">绘制遮罩</span></a> 重新投射到新网格上。</p>
+</dd>
+<dt>平滑法向</dt><dd><p>对最终网格应用 <a class="reference internal" href="../../scene_layout/object/editing/shading.html#bpy-ops-object-shade-smooth"><span class="std std-ref">平滑法向</span></a> 操作。</p>
+</dd>
+<dt>模式</dt><dd><p>如何为新网格指定细节数量。</p>
+<dl class="simple">
+<dt>比率</dt><dd><p>指定相对于当前网格的目标面数。</p>
+</dd>
+<dt>边长</dt><dd><p>输入新网格中的目标边长。</p>
+</dd>
+<dt>面</dt><dd><p>输入新网格中的面数。</p>
+</dd>
+</dl>
+</dd>
+<dt>种子</dt><dd><p>要与解算器一起使用的随机 <a class="reference internal" href="../../glossary/index.html#term-Seed"><span class="xref std std-term">种子</span></a>；不同的种子将导致重构在网格上产生不同的四边形布局。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../curves/index.html" class="btn btn-neutral float-right" title="曲线" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mesh_analysis.html" class="btn btn-neutral float-left" title="网格分析" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/retopology.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/retopology%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>动画工具 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/grease_pencil/animation/tools.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="绘制模式" href="../modes/draw/index.html" />
+    <link rel="prev" title="插值" href="interpolation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">蜡笔</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../object.html">Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiframe.html">多帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties/index.html">属性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visual_effects/index.html">视觉效果</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">动画</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interpolation.html">插值</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">动画工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#insert-blank-keyframe">插入空白关键帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-active-keyframe">复制活动关键帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-active-keyframe">删除活动关键帧</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interpolation">插值</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#interpolate">插值</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#sequence">序列</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#bake-mesh-to-grease-pencil">Bake Mesh to Grease Pencil</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modes">模式</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">蜡笔</a> &raquo;</li>
+        
+          <li><a href="index.html">动画</a> &raquo;</li>
+        
+      <li>动画工具</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="animation-tools">
+<h1>动画工具<a class="headerlink" href="#animation-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="insert-blank-keyframe">
+<span id="bpy-ops-gpencil-blank-frame-add"></span><h2>插入空白关键帧<a class="headerlink" href="#insert-blank-keyframe" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>绘制模式，编辑模式，雕刻模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">Stroke ‣ Animation ‣ Insert Blank Keyframe (Active Layer)</span>
+<span class="menuselection">Stroke ‣ Animation ‣ Insert Blank Keyframe (All Layers)</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">I</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<dl class="simple">
+<dt>活动层</dt><dd><p>在当前帧的活动图层中添加新的空白关键帧。如果当前帧上已有关键帧，则将在下一帧上添加新的空白关键帧。</p>
+</dd>
+<dt>所有图层</dt><dd><p>启用后，将在所有图层(而不仅仅是活动图层)上创建空白关键帧。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="duplicate-active-keyframe">
+<span id="bpy-ops-gpencil-frame-duplicate"></span><h2>复制活动关键帧<a class="headerlink" href="#duplicate-active-keyframe" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>绘制模式，编辑模式，雕刻模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 动画 ‣ 复制活动关键帧(活动层)</span> <span class="menuselection">笔画 ‣ 动画 ‣ 复制活动关键帧(全部层)</span></p>
+</dd>
+</dl>
+</div>
+<p>通过将最后一个关键帧复制到当前帧来进行笔画的复制.</p>
+<dl class="simple">
+<dt>模式</dt><dd><dl class="simple">
+<dt>活动</dt><dd><p>只复制活动层。</p>
+</dd>
+<dt>所有</dt><dd><p>复制全部层。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="delete-active-keyframe">
+<span id="bpy-ops-gpencil-active-frames-delete-all"></span><h2>删除活动关键帧<a class="headerlink" href="#delete-active-keyframe" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>绘制模式，编辑模式，雕刻模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">笔画 ‣ 动画 ‣ 删除活动关键帧(活动层)</span> <span class="menuselection">笔画 ‣ 动画 ‣ 删除活动关键帧(全部层)</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">X</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>删除摄影表或当前关键帧中的最后一个关键帧(如果位于其中)。</p>
+</div>
+<div class="section" id="interpolation">
+<span id="grease-pencil-animation-tools-interpolation"></span><h2>插值<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interpolate">
+<span id="bpy-ops-gpencil-interpolate"></span><h3>插值<a class="headerlink" href="#interpolate" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>绘制模式，编辑模式，雕刻模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">画笔 ‣ 动画 ‣ 插值 ‣ 插值</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">E</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>通过添加 <em>单个</em> 关键帧，对上一个关键帧和下一个关键帧之间的笔画插值。在两个关键帧之间的帧上，按 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">E</kbd></kbd> 将添加新的关键帧。可以通过这种方式定义新笔画的最终插值效果。</p>
+</div>
+<div class="section" id="sequence">
+<span id="bpy-ops-gpencil-interpolate-sequence"></span><h3>序列<a class="headerlink" href="#sequence" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>绘制模式，编辑模式，雕刻模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">画笔 ‣ 动画 ‣ 插值 ‣ 序列</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">E</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>通过添加 <em>多个</em> 关键帧，对上一个关键帧和下一个关键帧之间的笔画插值。将在上一个关键帧和下一个关键帧之间的每个帧上添加一个间断帧。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>当前后关键帧中的笔画具有相同的点数时，<em>插值</em> 和 <em>序列</em> 工具工作得更好。比如，当在不同关键帧上的复制笔画仅位置、旋转或缩放不同时。</p>
+</div>
+</div>
+</div>
+<div class="section" id="bake-mesh-to-grease-pencil">
+<span id="bpy-ops-gpencil-mesh-bake"></span><h2>Bake Mesh to Grease Pencil<a class="headerlink" href="#bake-mesh-to-grease-pencil" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参照</p>
+<dl class="field-list simple">
+<dt class="field-odd">Editor</dt>
+<dd class="field-odd"><p>3D View</p>
+</dd>
+<dt class="field-even">模式</dt>
+<dd class="field-even"><p>Object and Pose Modes</p>
+</dd>
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Object ‣ Animation ‣ Bake Mesh to Grease Pencil...</span></p>
+</dd>
+</dl>
+</div>
+<p>Converts each frame of a mesh animation within a selected frame range to
+a Grease Pencil object keyframed strokes. The <em>Bake Action</em> tool computes the final animation of
+the selected objects with all those modifiers, drivers, and constraints applied, and keyframes the result.</p>
+<dl class="simple">
+<dt>Start Frame, End Frame</dt><dd><p>Start/End frame for the baking process.</p>
+</dd>
+<dt>Frame Step</dt><dd><p>Frame steps for the baking process</p>
+</dd>
+<dt>Thickness</dt><dd><p>Strokes thickness.</p>
+</dd>
+<dt>Threshold Angle</dt><dd><p>Threshold value that determine the strokes end.</p>
+</dd>
+<dt>Stroke Offset</dt><dd><p>Sets offset to separate strokes from filled strokes.</p>
+</dd>
+<dt>Only Seam Edges</dt><dd><p>Convert only edges marked as seam.</p>
+</dd>
+<dt>Export Faces</dt><dd><p>Convert faces as filled strokes.</p>
+</dd>
+<dt>Target Object</dt><dd><p>Select the target Grease Pencil object for the baked animation or a new one if there is nothing yet.</p>
+</dd>
+<dt>Target Frame</dt><dd><p>Target destination frame for the baked animation.</p>
+</dd>
+<dt>Reproject Type</dt><dd><p>Sets the reprojection type to use for the converted strokes.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../modes/draw/index.html" class="btn btn-neutral float-right" title="绘制模式" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="interpolation.html" class="btn btn-neutral float-left" title="插值" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/grease_pencil/animation/tools.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60grease_pencil/animation/tools%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

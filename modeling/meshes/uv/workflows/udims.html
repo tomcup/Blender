@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UDIM &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/uv/workflows/udims.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="应用纹理" href="../applying_image.html" />
+    <link rel="prev" title="布局工作流" href="layout.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../selecting/index.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../editing/index.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">UVs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../uv_texture_spaces.html">UV &amp; 纹理空间</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../unwrapping/index.html">展开</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tools/index.html">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../editing.html">编辑</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">工作流</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="layout.html">布局工作流</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">UDIM</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#workflow">工作流程</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#udim-tiles">UDIM分块</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../applying_image.html">应用纹理</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../retopology.html">重拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../index.html">网格</a> &raquo;</li>
+        
+          <li><a href="../index.html">UVs</a> &raquo;</li>
+        
+          <li><a href="index.html">工作流</a> &raquo;</li>
+        
+      <li>UDIM</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="udims">
+<h1>UDIM<a class="headerlink" href="#udims" title="Permalink to this headline">¶</a></h1>
+<p>使用UV贴图可能有一个缺点，即整个网格仅对应一个纹理。大多数情况下这是够用的，但缺点是整个网格的纹理只能有一个分辨率。如果具有不同重要性的几何形状组成的非常大的网格，则会导致问题。当使用单个纹理时，它可能没有足够的分辨率覆盖较大的 UV 孤岛，而对较小、不太重要的孤岛而言则是低效率的。</p>
+<p>UDIM 能够将UV孤岛分布在多个不同的纹理上，从而提供了解决方案。UDIM(U DIMension )基于一个切片系统，其中每个分块在整体 UDIM 纹理阵列中是不同的纹理。基本上，每个分块都由其自己的 UV 空间（0-1、1-2、2-3）组成，并将各自的图像分配给该分块。分块在 <a class="reference internal" href="#udim-tiles">UDIM分块</a> 面板中进行管理，其中可以为分块指定生成的图像。概括地说，用户可以创建多个不同分辨率的纹理；比如，可能有一个的 4k 分辨率纹理用于主要细节，而2k 和/或 1k 纹理则用于不太重要的细节。</p>
+<p>UDIM阵列包含一个主分块，此分块的编号为 <code class="docutils literal notranslate"><span class="pre">1001</span></code>。添加的下一个分块编号将是 <code class="docutils literal notranslate"><span class="pre">1002</span></code>，并将置于主分块的右侧。整个 UDIM 分块是十个分块宽，因此在第一行创建的分块为 <code class="docutils literal notranslate"><span class="pre">1001</span></code> 到 <code class="docutils literal notranslate"><span class="pre">1010</span></code>。十个分块后，在主分块上方开始一排新的分块，因此， <code class="docutils literal notranslate"><span class="pre">1011</span></code> 将直接位于 <code class="docutils literal notranslate"><span class="pre">1001</span></code> 的正上方。</p>
+<div class="section" id="workflow">
+<h2>工作流程<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<p>UDIM 工作流与任何其他 UV 贴图一样都是由展开网格开始。之后，用户应该决定要将 UV 贴图拆分成多少个纹理。对于每个网格和工作流来说，这都将有所不同，但比较好的是最少3个：一个 4k、一个 2k 和一个 1k 图像。然后创建所需的纹理以匹配所需的纹理数。</p>
+<p>在此之后，将 UV 移动到合适的分块，并像任何其他 UV 贴图一样缩放和管理。有关布局 UV 的信息见 <a class="reference internal" href="layout.html"><span class="doc">布局工作流</span></a> 。</p>
+<p>当UV在多个UV孤岛上正确设置后，就可以在UDIM数组中添加适当的纹理了。目前，现有的纹理不能添加到分块上，要用现有的纹理填充分块，你首先必须：</p>
+<ol class="arabic simple">
+<li><p>创建所需的分块。</p></li>
+<li><p>保存图像。</p></li>
+<li><p>删除该文件并将其替换为新的图像文件，保留旧文件名，将保存的图像文件替换为期望的纹理。或者通过在另一个应用程序中打开图像并修改图像的内容。</p></li>
+</ol>
+<p>除了可以使用第三方应用程序编辑 UDIM 纹理之外，还可以直接在 UDIM 纹理上进行绘制。这适用于平面绘制或 <a class="reference internal" href="../../../../sculpt_paint/texture_paint/index.html"><span class="doc">三维绘制</span></a> 。</p>
+</div>
+<div class="section" id="udim-tiles">
+<span id="bpy-types-udimtiles"></span><span id="bpy-ops-image-tile"></span><h2>UDIM分块<a class="headerlink" href="#udim-tiles" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">编辑器</dt>
+<dd class="field-odd"><p>图像编辑器，UV编辑器</p>
+</dd>
+<dt class="field-even">模式</dt>
+<dd class="field-even"><p>全部模式</p>
+</dd>
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">侧栏 ‣ 图像 ‣ UDIM分块</span></p>
+</dd>
+</dl>
+</div>
+<p>在此面板中，可以管理 UDIM 分块；添加新的分块，移除分块，或者使用生成的纹理填充分块。</p>
+<dl>
+<dt>UDIM 分块列表</dt><dd><p>列出与主编号(<code class="docutils literal notranslate"><span class="pre">1000</span></code> 分块)关联的所有 UDIM 分块。双击分块名称可以更改分块 <em>标签</em> .</p>
+</dd>
+<dt>添加分块 <code class="docutils literal notranslate"><span class="pre">+</span></code></dt><dd><p>向组中添加一个新的UDIM分块。</p>
+<dl class="simple">
+<dt>起始分块编号</dt><dd><p>起始分块编号。UDIM 必须从 <code class="docutils literal notranslate"><span class="pre">1001</span></code> 分块开始，并且通常按顺序依次增大编号。</p>
+</dd>
+<dt>数量</dt><dd><p>要添加的分块数量。</p>
+</dd>
+<dt>标签</dt><dd><p>可以使用可选标签来代替编号。这些标签在 2D 视口中显示。</p>
+</dd>
+<dt>Fill(填充)</dt><dd><p>使用生成的图像填充UDIM 分块；见下方 <em>填充分块</em>。</p>
+</dd>
+</dl>
+</dd>
+<dt>移除分块 <code class="docutils literal notranslate"><span class="pre">-</span></code></dt><dd><p>从组中删除选定的 UDIM 分块。如果未保存此分块并包含数据，则该数据将丢失。</p>
+</dd>
+<dt>填充分块</dt><dd><p>使用 <a class="reference internal" href="../../../../editors/image/image_settings.html#image-generated"><span class="std std-ref">生成的图像</span></a> 填充UDIM 分块。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>如果分块未填充，则不会将其与图像一起保存。</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../applying_image.html" class="btn btn-neutral float-right" title="应用纹理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="layout.html" class="btn btn-neutral float-left" title="布局工作流" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/uv/workflows/udims.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/uv/workflows/udims%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

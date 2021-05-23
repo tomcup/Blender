@@ -1,0 +1,452 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>In-Betweens &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/armatures/posing/editing/in_betweens.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="Propagate" href="propagate.html" />
+    <link rel="prev" title="Apply" href="apply.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">骨架</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bones/index.html">骨骼</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../skinning/index.html">蒙皮</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">姿态</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Editing</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="clear.html">Clear Transform</a></li>
+<li class="toctree-l5"><a class="reference internal" href="apply.html">Apply</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">In-Betweens</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#push-pose-from-rest-pose">Push Pose from Rest Pose</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#relax-pose-to-rest-pose">Relax Pose to Rest Pose</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#push-pose-from-breakdown">Push Pose from Breakdown</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#relax-pose-to-breakdown">Relax Pose to Breakdown</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#pose-breakdowner">Pose Breakdowner</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="propagate.html">Propagate</a></li>
+<li class="toctree-l5"><a class="reference internal" href="copy_paste.html">Copy/Paste Pose</a></li>
+<li class="toctree-l5"><a class="reference internal" href="pose_library.html">Pose Library</a></li>
+<li class="toctree-l5"><a class="reference internal" href="flip_quats.html">Flip Quats</a></li>
+<li class="toctree-l5"><a class="reference internal" href="show_hide.html">Show/Hide</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../tool_settings.html">Tool Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../bone_constraints/index.html">骨骼约束</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../actions.html">动作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../drivers/index.html">驱动器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="../../index.html">骨架</a> &raquo;</li>
+        
+          <li><a href="../index.html">姿态</a> &raquo;</li>
+        
+          <li><a href="index.html">Editing</a> &raquo;</li>
+        
+      <li>In-Betweens</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="in-betweens">
+<h1>In-Betweens<a class="headerlink" href="#in-betweens" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-right" id="id1">
+<img alt="../../../../_images/animation_armatures_posing_editing_in-betweens_tools.png" src="../../../../_images/animation_armatures_posing_editing_in-betweens_tools.png" />
+<p class="caption"><span class="caption-text">In-Betweens Tools.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>There are several tools for editing poses in an animation.</p>
+<p>There are also in <em>Pose Mode</em> a bunch of armature-specific editing options/tools,
+like <a class="reference internal" href="../../bones/editing/naming.html#armature-editing-naming-bones"><span class="std std-ref">auto-bones naming</span></a>,
+<a class="reference internal" href="../../bones/editing/properties.html#armature-bone-properties"><span class="std std-ref">properties switching/enabling/disabling</span></a>, etc.,
+that were already described in the armature editing pages. See the links above...</p>
+<div class="section" id="push-pose-from-rest-pose">
+<span id="bpy-ops-pose-push-rest"></span><h2>Push Pose from Rest Pose<a class="headerlink" href="#push-pose-from-rest-pose" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Pose Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Pose ‣ In-Betweens ‣ Push Pose from Rest Pose</span></p>
+</dd>
+</dl>
+</div>
+<p>Similar to <em>Push Pose from Breakdown</em> but interpolates the pose to the rest position instead.
+Only one keyframe is needed for this tool unlike two for the other.</p>
+</div>
+<div class="section" id="relax-pose-to-rest-pose">
+<span id="bpy-ops-pose-relax-rest"></span><h2>Relax Pose to Rest Pose<a class="headerlink" href="#relax-pose-to-rest-pose" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Pose Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Pose ‣ In-Betweens ‣ Relax Pose to Rest Pose</span></p>
+</dd>
+</dl>
+</div>
+<p>Similar to <em>Relax Pose to Breakdown</em> but works to bring the pose back to the rest position instead.
+Only one keyframe is needed for this tool unlike two for the other.</p>
+</div>
+<div class="section" id="push-pose-from-breakdown">
+<span id="bpy-ops-pose-push"></span><h2>Push Pose from Breakdown<a class="headerlink" href="#push-pose-from-breakdown" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Pose Mode</p>
+</dd>
+<dt class="field-even">Tool</dt>
+<dd class="field-even"><p><span class="menuselection">Toolbar ‣ In-Betweens Tools ‣ Push</span></p>
+</dd>
+<dt class="field-odd">Menu</dt>
+<dd class="field-odd"><p><span class="menuselection">Pose ‣ In-Betweens ‣ Push Pose from Breakdown</span></p>
+</dd>
+<dt class="field-even">Hotkey</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">E</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p><em>Push Pose</em> interpolates the current pose by making it closer to the next keyframed position.</p>
+</div>
+<div class="section" id="relax-pose-to-breakdown">
+<span id="bpy-ops-pose-relax"></span><h2>Relax Pose to Breakdown<a class="headerlink" href="#relax-pose-to-breakdown" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Pose Mode</p>
+</dd>
+<dt class="field-even">Tool</dt>
+<dd class="field-even"><p><span class="menuselection">Toolbar ‣ In-Betweens Tools ‣ Relax</span></p>
+</dd>
+<dt class="field-odd">Menu</dt>
+<dd class="field-odd"><p><span class="menuselection">Pose ‣ In-Betweens ‣ Relax Pose to Breakdown</span></p>
+</dd>
+<dt class="field-even">Hotkey</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">E</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Relax pose is somewhat related to the above topic, but it is only useful with keyframed bones.
+When you edit such a bone (and hence take it &quot;away&quot; from its &quot;keyed position&quot;),
+using this tool will progressively &quot;bring it back&quot; to its &quot;keyed position&quot;,
+with smaller and smaller steps as it comes near it.</p>
+</div>
+<div class="section" id="pose-breakdowner">
+<span id="bpy-ops-pose-breakdown"></span><h2>Pose Breakdowner<a class="headerlink" href="#pose-breakdowner" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Pose Mode</p>
+</dd>
+<dt class="field-even">Tool</dt>
+<dd class="field-even"><p><span class="menuselection">Toolbar region ‣ In-Betweens Tools ‣ Breakdowner</span></p>
+</dd>
+<dt class="field-odd">Menu</dt>
+<dd class="field-odd"><p><span class="menuselection">Pose ‣ In-Betweens ‣ Pose Breakdowner</span></p>
+</dd>
+<dt class="field-even">Hotkey</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">LMB</kbd>-drag</p>
+</dd>
+</dl>
+</div>
+<p>Creates a suitable breakdown pose on the current frame.</p>
+<p>The Breakdowner tool can be constrained to work on specific transforms and axes,
+by pressing the following keys while the tool is active:</p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">G</kbd>, <kbd class="kbd docutils literal notranslate">R</kbd>, <kbd class="kbd docutils literal notranslate">S</kbd>: move, rotate, scale</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">B</kbd>: Bendy bones</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">C</kbd>: custom properties</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">X</kbd>, <kbd class="kbd docutils literal notranslate">Y</kbd>, <kbd class="kbd docutils literal notranslate">Z</kbd>: to the corresponding axes</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="propagate.html" class="btn btn-neutral float-right" title="Propagate" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="apply.html" class="btn btn-neutral float-left" title="Apply" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/armatures/posing/editing/in_betweens.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/armatures/posing/editing/in_betweens%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

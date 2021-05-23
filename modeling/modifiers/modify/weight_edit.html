@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>顶点权重编辑修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/modify/weight_edit.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="顶点权重混合修改器" href="weight_mix.html" />
+    <link rel="prev" title="UV偏移修改器" href="uv_warp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#modify">修改</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="data_transfer.html">数据传递修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_cache.html">网格缓存修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_sequence_cache.html">网格序列缓存修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="normal_edit.html">法线编辑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uv_project.html">UV 投射修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uv_warp.html">UV偏移修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">顶点权重编辑修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#falloff">衰减</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#influence">影响</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#example">例子</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="weight_mix.html">顶点权重混合修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_proximity.html">顶点权重邻近修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weighted_normal.html">加权法向修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>顶点权重编辑修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vertex-weight-edit-modifier">
+<span id="bpy-types-vertexweighteditmodifier"></span><h1>顶点权重编辑修改器<a class="headerlink" href="#vertex-weight-edit-modifier" title="Permalink to this headline">¶</a></h1>
+<p>这个修改器是用来编辑顶点组的权重的。</p>
+<p>对于每个顶点的一般过程如下:</p>
+<ul class="simple">
+<li><p>(可选)通过预定义的函数或自定义映射曲线进行映射。</p></li>
+<li><p>应用影响因子，并且可选地应用顶点组或纹理遮罩(0.0表示原始权重，1.0表示完全映射的权重)。</p></li>
+<li><p>将权重应用于顶点，并且/或者，如果权重低于给定阈值，它可以选择从组中删除顶点，如果权重高于给定阈值，则可以添加顶点。</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>此修改器会在标准(0.0到1.0)范围内隐式地限制权重值。 低于0.0的所有值都将设置为0.0，高于1.0的所有值都将设置为1.0。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>您可以在权重绘制模式中查看修改后的权重。这也意味着，如果您想查看正在编辑的顶点组的原始权重，就必须禁用 <em>顶点权重编辑</em> 修改器。</p>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_weight-edit_panel.png"><img alt="../../../_images/modeling_modifiers_modify_weight-edit_panel.png" src="../../../_images/modeling_modifiers_modify_weight-edit_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">顶点权重编辑修改器面板</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>顶点组</dt><dd><p>要影响的顶点组。</p>
+</dd>
+<dt>默认权重</dt><dd><p>分配给不在给定顶点组中的所有顶点的默认权重。</p>
+</dd>
+<dt>添加组</dt><dd><p>将最终权重超过 <em>添加阈值</em> 的顶点添加到顶点组。</p>
+</dd>
+<dt>移除组</dt><dd><p>从顶点组中删除最终权重低于 <em>删除阈值</em> 的顶点。</p>
+</dd>
+<dt>标准化权重</dt><dd><p>缩放顶点组中的权重以保持相对权重，但最低和最高值保持在完整的0 - 1范围内。</p>
+</dd>
+</dl>
+<div class="section" id="falloff">
+<h3>衰减<a class="headerlink" href="#falloff" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>衰减类型</dt><dd><p>映射类型。</p>
+<dl class="simple">
+<dt>线性</dt><dd><p>不映射。</p>
+</dd>
+<dt>自定义曲线</dt><dd><p>允许使用曲线手动定义映射。</p>
+</dd>
+<dt>锐利,平滑,根凸和球状</dt><dd><p>这些是经典的映射函数，从最尖锐到最圆。</p>
+</dd>
+<dt>随机</dt><dd><p>每个顶点使用一个随机值。</p>
+</dd>
+<dt>中值梯级</dt><dd><p>创建二值权重(0.0或1.0)，其中0.5为切分值。</p>
+</dd>
+</dl>
+</dd>
+<dt>反转 <code class="docutils literal notranslate"><span class="pre">&lt;--&gt;</span></code></dt><dd><p>反转衰减。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="influence">
+<span id="modeling-modifiers-weight-edit-influence-mask-options"></span><h3>影响<a class="headerlink" href="#influence" title="Permalink to this headline">¶</a></h3>
+<p>对于三种 <em>顶点权重</em> 修改器，这些设置是相同的。</p>
+<dl>
+<dt>全局影响</dt><dd><p>修改器的整体影响(0.0将保持顶点组的权重不变，1.0是标准影响)。</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>影响仅作用于权重，将此值设置为0.0并不会阻止向/从顶点组添加/删除顶点。</p>
+</div>
+</dd>
+</dl>
+<p>此外，可以使用顶点组或纹理(两者都是互斥的)对每个顶点的精细控制影响效果。其中的每个顶点值将与 <em>全局影响</em> 相乘。</p>
+<p>参见 <a class="reference internal" href="../common_options.html#modifiers-common-options-masking"><span class="std std-ref">常见遮罩选项</span></a> 以获得完整的参考。</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>例子<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>下面是一个使用 <em>顶点权重编辑</em> 修改器(以及 <a class="reference internal" href="weight_proximity.html"><span class="doc">顶点权重邻近</span></a> 修改器)来生成 <a class="reference internal" href="../deform/displace.html"><span class="doc">置换</span></a> 修改器使用的权重，产生多种效果的例子。</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><em>曲线映射</em> 差异。</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_weight-edit_mapping-concave.jpg"><img alt="../../../_images/modeling_modifiers_modify_weight-edit_mapping-concave.jpg" src="../../../_images/modeling_modifiers_modify_weight-edit_mapping-concave.jpg" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">凹类型映射曲线。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_weight-edit_distance-edge.jpg"><img alt="../../../_images/modeling_modifiers_modify_weight-edit_distance-edge.jpg" src="../../../_images/modeling_modifiers_modify_weight-edit_distance-edge.jpg" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">无映射曲线(线性)。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_weight-edit_mapping-convex.jpg"><img alt="../../../_images/modeling_modifiers_modify_weight-edit_mapping-convex.jpg" src="../../../_images/modeling_modifiers_modify_weight-edit_mapping-convex.jpg" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">凸类型映射曲线。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_weight-edit_exrem-vertices.jpg"><img alt="../../../_images/modeling_modifiers_modify_weight-edit_exrem-vertices.jpg" src="../../../_images/modeling_modifiers_modify_weight-edit_exrem-vertices.jpg" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-text">从顶点组移除计算权重低于0.1的顶点。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<iframe src="https://player.vimeo.com/video/30188564" style="border: 0; height: 345px; width: 560px">
+</iframe><p>TEST_2 场景 <a class="reference external" href="https://wiki.blender.org/wiki/File:ManModifiersWeightVGroupEx.blend">blend 文件</a>。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="weight_mix.html" class="btn btn-neutral float-right" title="顶点权重混合修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="uv_warp.html" class="btn btn-neutral float-left" title="UV偏移修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/modify/weight_edit.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/modify/weight_edit%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>映射节点 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/shader_nodes/vector/mapping.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="法向(正常)着色器节点" href="normal.html" />
+    <link rel="prev" title="置换着色器节点" href="displacement.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">着色器节点</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../input/index.html">输入节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../output/index.html">输出节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../shader/index.html">着色器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../textures/index.html">纹理节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../color/index.html">颜色节点</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">矢量着色器节点</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="bump.html">凸凹着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="displacement.html">置换着色器节点</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">映射节点</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#inputs">输入选项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#properties">属性</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#outputs">输出选项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#examples">举例</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="normal.html">法向(正常)着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="normal_map.html">法线贴图着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curves.html">矢量曲线节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vector_displacement.html">矢量置换着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vector_rotate.html">Vector Rotate Node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="transform.html">矢量变换着色器节点</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../converter/index.html">转换器节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../groups.html">节点组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../osl.html">开放式着色语言 (OSL)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">着色器节点</a> &raquo;</li>
+        
+          <li><a href="index.html">矢量着色器节点</a> &raquo;</li>
+        
+      <li>映射节点</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mapping-node">
+<span id="bpy-types-shadernodemapping"></span><h1>映射节点<a class="headerlink" href="#mapping-node" title="Permalink to this headline">¶</a></h1>
+<p><em>映射</em> 节点通过应用移动，旋转和缩放来变换输入矢量。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/render_shader-nodes_vector_mapping_node.png" src="../../../_images/render_shader-nodes_vector_mapping_node.png" />
+<p class="caption"><span class="caption-text">映射着色器节点。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="inputs">
+<h2>输入选项<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>节点的输入是动态的。 特别是 <em>位置</em> 输入仅在 <em>纹理</em> 和 <em>点</em> 矢量类型中可用。</p>
+<dl class="simple">
+<dt>矢量</dt><dd><p>要转换的矢量。</p>
+</dd>
+<dt>位置</dt><dd><p>沿每个轴的平移量。</p>
+</dd>
+<dt>旋转</dt><dd><p>沿每个轴的旋转量。 XYZ顺序。</p>
+</dd>
+<dt>缩放</dt><dd><p>沿每个轴的缩放比例。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="properties">
+<h2>属性<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>Vector Type</dt><dd><p>节点根据输入矢量的语义类型不同地应用转换。</p>
+<dl>
+<dt>点</dt><dd><p>对于这种类型的矢量，该节点执行正向的变换操作。</p>
+<p>对纹理坐标的变换类似于变换UV贴图。例如， 沿X轴 <strong>正方向</strong> 移动纹理坐标将导致被求值的纹理向X轴 <strong>负方向</strong> 移动，这就好像直接在移动UV贴图一样。 类似地， <strong>放大</strong> 纹理坐标则会导致被求值的纹理 <strong>缩小</strong> 。因此，变换纹理坐标会对被求值的纹理产生相反的效果。</p>
+<p>变换的顺序为：缩放-&gt;旋转-&gt;移动，这意味着：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>平移使输入沿局部旋转轴移动。</p></li>
+<li><p>旋转使输入绕空间原点旋转。</p></li>
+<li><p>缩放将沿全局轴缩放输入。</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>纹理</dt><dd><p>对于这种类型的矢量，该节点执行反向的变换操作。</p>
+<p>与 <em>点</em> 类型相反，对纹理坐标执行反向变换意味着对被求值的纹理本身进行变换。 例如，沿X轴 <strong>正方向</strong> 移动纹理坐标将导致被求值的纹理向X轴 <strong>正方向</strong> 移动，这和人们的一般认知相同。 类似地， <strong>放大</strong> 纹理坐标将导致被求值的纹理 <strong>放大</strong> 。</p>
+<p>变换的顺序为：移动-&gt;旋转-&gt;缩放，这意味着：</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>平移使输入沿全局轴移动。</p></li>
+<li><p>旋转使输入围绕平移矢量旋转。</p></li>
+<li><p>缩放将沿本地旋转轴缩放输入。</p></li>
+</ul>
+</div></blockquote>
+</dd>
+<dt>矢量</dt><dd><p>对于这种类型的矢量，该节点执行 <em>点</em> 类型的变换操作，但移动(translation)为0。</p>
+</dd>
+<dt>法向(正常)</dt><dd><p>对于此向量类型，节点执行变换的逆转置并规格化结果。 这种变换可确保非均匀缩放后的法线正确。 因此，在转换法线时应使用此类型。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="outputs">
+<h2>输出选项<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>矢量</dt><dd><p>转换后的输入矢量。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="examples">
+<h2>举例<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
+<img alt="../../../_images/render_shader-nodes_vector_mapping_example.png" src="../../../_images/render_shader-nodes_vector_mapping_example.png" />
+<p class="caption"><span class="caption-text">映射节点实例。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="normal.html" class="btn btn-neutral float-right" title="法向(正常)着色器节点" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="displacement.html" class="btn btn-neutral float-left" title="置换着色器节点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/shader_nodes/vector/mapping.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/shader_nodes/vector/mapping%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

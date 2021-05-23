@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Geodesic Domes &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/add_mesh/geodesic_domes.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Add Mesh Extra Objects" href="mesh_extra_objects.html" />
+    <link rel="prev" title="Discombobulator" href="discombobulator.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">添加网格</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ant_landscape.html">ANT Landscape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="archimesh.html">Archimesh</a></li>
+<li class="toctree-l4"><a class="reference internal" href="archipack.html">Archipack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blenderkit.html">BlenderKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="boltfactory.html">Bolt Factory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="discombobulator.html">Discombobulator</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Geodesic Domes</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#instructions">说明</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#geodesic-object-class-types">测地线物体类型</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#geodesic-object-parameters">测地线物体参数</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#geodesic-object-types">测地线物体类型</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#import-your-mesh">导入网格</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#faces">面(Faces)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#struts">结构(Struts)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#hubs">轮毂(Hubs)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#superformula-menu">超级公式菜单</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_extra_objects.html">Add Mesh Extra Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">添加网格</a> &raquo;</li>
+        
+      <li>Geodesic Domes</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geodesic-domes">
+<h1>Geodesic Domes<a class="headerlink" href="#geodesic-domes" title="Permalink to this headline">¶</a></h1>
+<p>Andy Houston 的原始介绍（Blender 2.4 系列）</p>
+<ul class="simple">
+<li><p>基于二十面体，八面体和四面体的测量球。</p></li>
+<li><p>三角形，六边形和六边/三角组合型面选项。</p></li>
+<li><p>把当前图形转换为它的对偶图形的功能。</p></li>
+<li><p>表格，圆柱，抛物线，圆环和球。</p></li>
+<li><p>轮毂(Hubs)和结构(Struts)。用自定义网格填充边和顶点。</p></li>
+<li><p>超级公式变形。创建圆角，不稳定图形等。</p></li>
+</ul>
+<p>Brendon Murphy 的说明 (Blender 2.6/7 系列)</p>
+<ul class="simple">
+<li><p>插件可以用来创建测地线物体，不仅限于穹顶和球。</p></li>
+<li><p>每个创建的网格类型都有自己的可编辑参数。</p></li>
+<li><p>通过编辑参数，可以创建很多简单或复杂的网格。</p></li>
+<li><p>创建一个等边金字塔，足球，酒杯以及更多其它的。</p></li>
+<li><p>只受限于你的想象力（以及一些很酷的数学限制）。</p></li>
+<li><p>用超级公式的参数创建复杂的网格变形。</p></li>
+<li><p>在下一节将会介绍菜单类型和如何通过参数来“设计”网格。</p></li>
+</ul>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>下拉框选添加网格，然后勾选 Geodesic Domes 来启用插件。</p></li>
+</ul>
+</div>
+<div class="section" id="instructions">
+<h2>说明<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>主要菜单</dt><dd><p>在 <em>主要</em> 菜单是做大部分操作的位置。在3D视图会显示测地线物体的默认三边形，这里可以修改物体的创建参数。注意：我发现在处理面(Faces)，结构(Struts)和轮毂(Hubs)之前先使用物体创建参数会更简单，这在下面会有具体解释。</p>
+</dd>
+</dl>
+<p>现在，来看一下物体类型和它们的参数：</p>
+<dl class="simple">
+<dt>物体</dt><dd><p>默认你可以创建六种类型的物体。利用参数可以在这些物体上再创建更多的物体。每个类型的物体有自己独特的参数集，它们共用超级公式的参数(下面有说明)。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="geodesic-object-class-types">
+<h2>测地线物体类型<a class="headerlink" href="#geodesic-object-class-types" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>测地线(Geodesic)</dt><dd><p>注意： <em>频率(Frequency)</em> 参数对创建物体影响系数很高。要创建测地线穹顶必须提高 <em>频率(Frequency)</em> 或默认三角形。</p>
+</dd>
+<dt>细分基础 Subdivide Basic/Triacon</dt><dd><p>类型1是“等边三边形”。类型2是“立方体”。</p>
+</dd>
+<dt>多面体(Hedron)</dt><dd><p>在四面体，八面体，二十面体中做选择。</p>
+</dd>
+<dt>点</dt><dd><p>点(vertex)，边或面指向上。</p>
+</dd>
+<dt>形状</dt><dd><p>在三角形，六边形或星形中选择。</p>
+</dd>
+<dt>圆形</dt><dd><p>选择球形化或平坦。（可能对所有物体类型都不起作用。）</p>
+</dd>
+</dl>
+<div class="section" id="geodesic-object-parameters">
+<h3>测地线物体参数<a class="headerlink" href="#geodesic-object-parameters" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>频率</dt><dd><p>细分基础三角形。</p>
+</dd>
+<dt>半径</dt><dd><p>全体半径。</p>
+</dd>
+<dt>偏心率</dt><dd><p>在 X/Y 轴向上的缩放。</p>
+</dd>
+<dt>挤压</dt><dd><p>在Z 轴的缩放。</p>
+</dd>
+<dt>方形（X/Y方向）</dt><dd><p>在 X / Y 轴向的超椭圆调整。</p>
+</dd>
+<dt>方形（Z方向）</dt><dd><p>在 Z 轴向的超椭圆调整。</p>
+</dd>
+<dt>旋转（X/Y向位置）</dt><dd><p>在 X / Y 轴向上旋转超椭圆。</p>
+</dd>
+<dt>旋转（ Z 轴方向）</dt><dd><p>在 Z 轴向上旋转超椭圆。</p>
+</dd>
+<dt>对偶</dt><dd><p>面转成顶点，顶点转成面，边翻转。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="geodesic-object-types">
+<h2>测地线物体类型<a class="headerlink" href="#geodesic-object-types" title="Permalink to this headline">¶</a></h2>
+<p>可以创建六种类型的物体。每个类型有它们自己的参数集。大多数菜单项都是可以自解释的。每个参数上的工具条提示会有更多提示信息。</p>
+<dl class="simple">
+<dt>间隙</dt><dd><p>沿着特定方向收缩面。在Z向（高度）或X/Y向添加或删除面的行列数。</p>
+</dd>
+<dt>相位</dt><dd><p>绕轴心旋转。在旋转变形或与 <em>间隙(Gap)</em>  一起使用时很有用。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="import-your-mesh">
+<h2>导入网格<a class="headerlink" href="#import-your-mesh" title="Permalink to this headline">¶</a></h2>
+<p>可以导入你自己的网格并在插件中使用。仅限于面(Faces)，结构(Struts)和轮毂(Hubs)菜单下。</p>
+</div>
+<div class="section" id="faces">
+<h2>面(Faces)<a class="headerlink" href="#faces" title="Permalink to this headline">¶</a></h2>
+<p>此部分在网格上添加挤出和编辑面结构。</p>
+</div>
+<div class="section" id="struts">
+<h2>结构(Struts)<a class="headerlink" href="#struts" title="Permalink to this headline">¶</a></h2>
+<p>这个部分允许你沿着网格的边挤出物体。</p>
+</div>
+<div class="section" id="hubs">
+<h2>轮毂(Hubs)<a class="headerlink" href="#hubs" title="Permalink to this headline">¶</a></h2>
+<p>这个部分允许你把一个物体放置到一个网格的顶点上。</p>
+</div>
+<div class="section" id="superformula-menu">
+<h2>超级公式菜单<a class="headerlink" href="#superformula-menu" title="Permalink to this headline">¶</a></h2>
+<p>超级公式设置增加了多种设置，如挤捏，旋转，膨胀还有其它更复杂的编辑类型。</p>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">类别</dt>
+<dd class="field-odd"><p>添加网格</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>创建测地线物体.</p>
+</dd>
+<dt class="field-odd">坐标</dt>
+<dd class="field-odd"><p><span class="menuselection">3D Viewport ‣ Add ‣ Mesh</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>add_mesh_geodesic_domes folder</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Andy Housten</p>
+</dd>
+<dt class="field-even">维护人员</dt>
+<dd class="field-even"><p>To Do</p>
+</dd>
+<dt class="field-odd">许可证</dt>
+<dd class="field-odd"><p>GPL</p>
+</dd>
+<dt class="field-even">支持级别</dt>
+<dd class="field-even"><p>社区版</p>
+</dd>
+<dt class="field-odd">说明</dt>
+<dd class="field-odd"><p>该插件为Blender自带插件。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mesh_extra_objects.html" class="btn btn-neutral float-right" title="Add Mesh Extra Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="discombobulator.html" class="btn btn-neutral float-left" title="Discombobulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/add_mesh/geodesic_domes.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/add_mesh/geodesic_domes%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

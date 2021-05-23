@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>法线编辑修改器 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/modifiers/modify/normal_edit.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="UV 投射修改器" href="uv_project.html" />
+    <link rel="prev" title="网格序列缓存修改器" href="mesh_sequence_cache.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">修改器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../common_options.html">常见的修改器选项</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#modify">修改</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="data_transfer.html">数据传递修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_cache.html">网格缓存修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mesh_sequence_cache.html">网格序列缓存修改器</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">法线编辑修改器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#mix">混合</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#offset">偏移量</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">使用</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#example">例子</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="uv_project.html">UV 投射修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uv_warp.html">UV偏移修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_edit.html">顶点权重编辑修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_mix.html">顶点权重混合修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weight_proximity.html">顶点权重邻近修改器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weighted_normal.html">加权法向修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#generate">生成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deform">形变</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#physics">物理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">修改器</a> &raquo;</li>
+        
+      <li>法线编辑修改器</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="normal-edit-modifier">
+<span id="bpy-types-normaleditmodifier"></span><h1>法线编辑修改器<a class="headerlink" href="#normal-edit-modifier" title="Permalink to this headline">¶</a></h1>
+<p><em>法线编辑</em> 修改器会影响(或生成)自定义法线。 它使用一些简单的参数化方法来计算法线(在游戏开发和建筑学领域非常有用)，并将那些生成的法线与现有法线混合。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这个修改器需要启用自定义法线，这可以通过在 <span class="menuselection">属性编辑器 ‣ 物体数据 ‣ 法向</span> 中启用 <a class="reference internal" href="../../meshes/structure.html#auto-smooth"><span class="std std-ref">自动平滑</span></a> 来实现。</p>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_normal-edit_panel.png"><img alt="../../../_images/modeling_modifiers_modify_normal-edit_panel.png" src="../../../_images/modeling_modifiers_modify_normal-edit_panel.png" style="width: 300px;" /></a>
+<p class="caption"><span class="caption-text">法线编辑修改器。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>径向</dt><dd><p>将法线与 <code class="docutils literal notranslate"><span class="pre">(原点,</span> <span class="pre">顶点坐标)</span></code> 向量对齐，换句话说，所有法线似乎都是从给定的中心点发出的，就像它们是从椭球表面发出的一样。</p>
+</dd>
+<dt>定向</dt><dd><p>定向使所有的法线指向(收敛到)一个给定的目标物体。</p>
+</dd>
+<dt>目标</dt><dd><p>生成法线时，使用此物体的中心作为参考点。</p>
+<p><em>径向</em> 模式下可选， <em>定向</em> 模式下必选。</p>
+</dd>
+<dt>平行法向</dt><dd><p>让所有法线平行于两物体中心的连线，而不是朝向目标中心会聚.</p>
+<p>只适用于 <em>定向</em> 模式。</p>
+</dd>
+</dl>
+<div class="section" id="mix">
+<h3>混合<a class="headerlink" href="#mix" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>混合模式</dt><dd><p>如何影响已存在的法线和新产生的法线。</p>
+<p>注意到这里的 <em>乘</em> 选项 <strong>不是</strong> 叉乘，而是一对一分量的快速乘法。</p>
+</dd>
+<dt>混合系数</dt><dd><p>产生的法线混合到已存在的法线的程度。</p>
+</dd>
+<dt>顶点组</dt><dd><p>允许对每个项精细控制的混合系数。可以使用右侧的箭头按钮反转顶点组的影响。</p>
+</dd>
+<dt>最大角度</dt><dd><p>禁止新生成的法线与给定阈值以上的原始法线形成夹角。这对于防止极端的改变非常有用，因为极端改变甚至会导致面的正面/背面颠倒，从而产生难看的着色伪影。</p>
+<dl class="simple">
+<dt>锁定多边形法向(挂锁图标)</dt><dd><p>当多边形的法线与新计算的自定义顶点法线不一致时，不要翻转(反转前/后面)多边形。还可以帮助避免着色问题。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="offset">
+<h3>偏移量<a class="headerlink" href="#offset" title="Permalink to this headline">¶</a></h3>
+<p>在使用已修改对象的原点生成法线之前，给它一个偏移量。</p>
+<p>如果没有设置 <em>目标对象</em> ，则只在 <em>径向</em> 模式下启用。如果在 <em>定向</em> 模式下，只有在开启 <em>平行法向</em> 时启用。</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>使用<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>此修改器可用于快速生成低多边形树叶的径向法线，或通过部分弯曲默认法线来 &quot;修复&quot; 类似卡通渲染的着色...</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>更复杂的法线操作可以通过将法线从一个网格复制到另一个网格来实现，参见 <a class="reference internal" href="data_transfer.html"><span class="doc">数据传递修改器</span></a> 。对一些阴影效果也可以使用 <a class="reference internal" href="weighted_normal.html"><span class="doc">加权法向修改器</span></a> 。</p>
+</div>
+</div>
+<div class="section" id="example">
+<h2>例子<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/modeling_modifiers_modify_normal-edit_example.jpg"><img alt="../../../_images/modeling_modifiers_modify_normal-edit_example.jpg" src="../../../_images/modeling_modifiers_modify_normal-edit_example.jpg" style="width: 680px;" /></a>
+<p class="caption"><span class="caption-text">编辑自定义法线指向给定方向的例子， 见 <a class="reference external" href="http://download.blender.org/ftp/mont29/persistent_data/sapling_CN.blend">示例blend 文件</a>。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>左侧树网格具有未修改的法线，而在右侧，一个 <em>法线编辑</em> 修改器被用于将法线朝相机弯曲。 这种阴影技巧通常用在游戏中伪造树木和其他植被的散射.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="uv_project.html" class="btn btn-neutral float-right" title="UV 投射修改器" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mesh_sequence_cache.html" class="btn btn-neutral float-left" title="网格序列缓存修改器" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/modifiers/modify/normal_edit.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/modifiers/modify/normal_edit%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,744 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>编辑 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/video_editing/sequencer/editing.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="复合片段" href="meta.html" />
+    <link rel="prev" title="选择" href="selecting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">视频编辑</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">序列编辑器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolbar/tools.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigating.html">导航</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strips/index.html">片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="selecting.html">选择</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">编辑</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transform">Transform</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#move">移动</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#start-frame-offset">起始帧偏移</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#end-frame">结束帧</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#move-extend-from-current-frame">Move/Extend from Current Frame</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#slip-strip-contents">Slip Strip Contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#snap-strips-to-the-current-frame">Snap Strips to the Current Frame</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#clear-strips-offset">Clear Strips Offset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#swap-strips">交换片段</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#remove-gaps">Remove Gaps</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#insert-gaps">Insert Gaps</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#split">剪切</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hold-split">硬剪切</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#duplicate-strips">复制片段</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete">Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#separate-images">分离图像</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#movie-strip">Movie Strip</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#set-render-size">设置渲染尺寸</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#deinterlace-movies">逐行扫描影片</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#effect-strip">Effect Strip</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#change-effect-input">Change Effect Input</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#change-effect-type">Change Effect Type</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reassign-inputs">重新指定输入项</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#swap-inputs">交换输入</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#lock-mute">Lock/Mute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#context-menu">上下文菜单</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fades">淡化</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="meta.html">复合片段</a></li>
+<li class="toctree-l3"><a class="reference internal" href="properties/index.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../preview/index.html">预览</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../editors/index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="../index.html">视频编辑</a> &raquo;</li>
+        
+          <li><a href="index.html">序列编辑器</a> &raquo;</li>
+        
+      <li>编辑</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="editing">
+<h1>编辑<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transform">
+<h2>Transform<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="move">
+<span id="bpy-ops-transform-seq-slide"></span><h3>移动<a class="headerlink" href="#move" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 变换 ‣ 移动</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">G</kbd></p>
+</dd>
+</dl>
+</div>
+<p>按 <kbd class="kbd docutils literal notranslate">G</kbd> 移动所有选中的片段。在时间轴上水平移动鼠标(左/右)更改片段的位置。垂直移动(上/下)以更改通道。</p>
+<p>按住 <kbd class="kbd docutils literal notranslate">Ctrl</kbd> 时拖动吸附到其他片段的起点和终点。鼠标相对于选择的位置影响片段被吸附的位置。如果它更接近选择的初始位置，则选择的起始帧将被吸附，否则结束帧将被吸附。</p>
+<p>要使用“波动编辑” (腾出空间给你拖动的片段) ，请在放置片段时按住 <kbd class="kbd docutils literal notranslate">Alt</kbd> 。</p>
+<p>也可以按 <kbd class="kbd docutils literal notranslate">X</kbd> 将方向锁定为沿时间轴或按 <kbd class="kbd docutils literal notranslate">Y</kbd> 锁定为可以更改片段通道的方向。</p>
+<p>通过按住 <kbd class="kbd docutils literal notranslate">LMB</kbd> 来拖动片段，可以使用鼠标来移动片段。目前，仅可以通过拖动来移动一个片段。</p>
+<div class="section" id="start-frame-offset">
+<h4>起始帧偏移<a class="headerlink" href="#start-frame-offset" title="Permalink to this headline">¶</a></h4>
+<p>The <em>Start Frame Offset</em> for that strip can be selected by clicking <kbd class="kbd docutils literal notranslate">LMB</kbd> on the left handle of the strip;
+holding it down (or pressing <kbd class="kbd docutils literal notranslate">G</kbd> and then moving the mouse left/right)
+changes the start frame within the strip by the number of frames you move it.
+The frame number label under the strip displays the start frame of the strip.</p>
+<ul class="simple">
+<li><p>If you have a 20-image sequence strip, and drag the left handle to the right by 10 frames,
+the strip will start at image 11 (images 1 to 10 will be skipped).
+Use this to clip off a roll-up or undesired lead-in.</p></li>
+<li><p>Dragging the left handle left will create a lead-in (copies) of the first frame for as many frames as you drag it.
+Use this when you want some frames for a transition at the start of the clip.</p></li>
+</ul>
+</div>
+<div class="section" id="end-frame">
+<h4>结束帧<a class="headerlink" href="#end-frame" title="Permalink to this headline">¶</a></h4>
+<p>The <em>End Frame</em> of the strip could be selected by clicking <kbd class="kbd docutils literal notranslate">LMB</kbd> on the right handle of the strip;
+holding it down (or pressing <kbd class="kbd docutils literal notranslate">G</kbd>) and then moving the mouse changes the ending frame within the strip.
+The frame number label over the strip displays the end frame of the strip.</p>
+<ul class="simple">
+<li><p>Dragging the right handle to the left shortens the clip;
+any original images at the tail are ignored. Use this to quickly clip off a roll-down.</p></li>
+<li><p>Dragging the right handle to the right extends the clip.
+For movies and images sequences, more of the animation is used until exhausted.
+Extending a clip beyond its length will render as a copy of the last image.
+Use this for transitions out of this clip.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>多选</p>
+<p>按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> 可选择多个(包括控制柄，指侧边箭头)片段：按下 <kbd class="kbd docutils literal notranslate">G</kbd> 时，所选的所有东西都会随着你的鼠标一起移动 -- 这意味着，例如，可以同时移动一个片段，缩短另外两个，并且延展第四个。</p>
+</div>
+</div>
+</div>
+<div class="section" id="move-extend-from-current-frame">
+<h3>Move/Extend from Current Frame<a class="headerlink" href="#move-extend-from-current-frame" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Transform ‣ Move/Extend from Current Frame</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">E</kbd></p>
+</dd>
+</dl>
+</div>
+<p>选择多个片段后，按下 <kbd class="kbd docutils literal notranslate">E</kbd> 可让你交互地延展片段。这与移动相似，但对于在当前帧周围延展(或缩短)时间来说却很有用。</p>
+<p>对于当前帧指示器的“鼠标侧边”的所有选定的片段控制柄会一起变换，因此你可改变当前帧的持续时间。</p>
+</div>
+<div class="section" id="slip-strip-contents">
+<span id="bpy-ops-sequencer-slip"></span><h3>Slip Strip Contents<a class="headerlink" href="#slip-strip-contents" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 变换 ‣ 滑动片段内容</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">S</kbd></p>
+</dd>
+</dl>
+</div>
+<p>滑动工具允许你改变片段内容的位置而不移动片段本身。</p>
+</div>
+<div class="section" id="snap-strips-to-the-current-frame">
+<span id="bpy-ops-sequencer-snap"></span><h3>Snap Strips to the Current Frame<a class="headerlink" href="#snap-strips-to-the-current-frame" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Transform ‣ Snap Strips to the Current Frame</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Moves the strip or control point to the current frame.</p>
+</div>
+<div class="section" id="clear-strips-offset">
+<span id="bpy-ops-sequencer-offset-clear"></span><h3>Clear Strips Offset<a class="headerlink" href="#clear-strips-offset" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 变换 ‣ 清除片段偏移量</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">O</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>重置(软)起始/结束帧控制柄。</p>
+</div>
+<div class="section" id="swap-strips">
+<span id="bpy-ops-sequencer-swap"></span><h3>交换片段<a class="headerlink" href="#swap-strips" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Transform ‣ Swap Strips</span></p>
+</dd>
+</dl>
+</div>
+<dl class="simple">
+<dt>Left <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Left</kbd></kbd></dt><dd><p>Swaps the active strip with the strip to the left.</p>
+</dd>
+<dt>Right <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">Right</kbd></kbd></dt><dd><p>Swaps the active strip with the strip to the right.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="remove-gaps">
+<span id="bpy-ops-sequencer-gap-remove"></span><h3>Remove Gaps<a class="headerlink" href="#remove-gaps" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Transform ‣ Insert Gaps</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">Backspace</kbd></p>
+</dd>
+</dl>
+</div>
+<p>Remove blank frames between the current frame and the first strip to the right,
+independent of selection or locked state of strips.</p>
+</div>
+<div class="section" id="insert-gaps">
+<span id="bpy-ops-sequencer-gap-insert"></span><h3>Insert Gaps<a class="headerlink" href="#insert-gaps" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Transform ‣ Insert Gaps</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">Equals</kbd></p>
+</dd>
+</dl>
+</div>
+<p>Insert blank frames between the current frame and the first strips to the right,
+independent of selection or locked state of strips.</p>
+</div>
+</div>
+<div class="section" id="split">
+<span id="bpy-ops-sequencer-split"></span><h2>剪切<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 剪切</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">K</kbd></p>
+</dd>
+</dl>
+</div>
+<p>在当前帧中将选定的片段剪切成两个。剪切会生成两个使用相同源的片段，且与原始片段的时间和长度一致。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>这可以认为是复制当前片段的快速方法，调整起始/结束帧以形成两个不重叠的片段，显示与以前相同的内容。</p>
+</div>
+</div>
+<div class="section" id="hold-split">
+<h2>硬剪切<a class="headerlink" href="#hold-split" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 硬剪切</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">K</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>如 <em>剪切</em> ，它会把一个片段分成两个截然不同的片段，但无法通过拖动终点来显示经过每个结果片段的剪切后的帧。</p>
+<p>虽然你可以在 <em>片段信息</em> 面板中调整 <a class="reference internal" href="properties/strip.html#sequencer-duration-hard"><span class="std std-ref">保持偏移量</span></a> 的数字区域。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>这可以被认为是模拟将视频文件分割为两部分的方式，用每个部分替换当前片段。</p>
+</div>
+</div>
+<div class="section" id="duplicate-strips">
+<span id="bpy-ops-sequencer-duplicate-move"></span><h2>复制片段<a class="headerlink" href="#duplicate-strips" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 复制片段</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>复制一个片段以创建一个非链接的副本；拖动它到一个时间和通道，然后单击 <kbd class="kbd docutils literal notranslate">LMB</kbd> 放下。</p>
+</div>
+<div class="section" id="delete">
+<span id="bpy-ops-sequencer-delete"></span><h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 删除</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">Delete</kbd>, <kbd class="kbd docutils literal notranslate">X</kbd></p>
+</dd>
+</dl>
+</div>
+<p>删除选定的片段。</p>
+</div>
+<div class="section" id="separate-images">
+<h2>分离图像<a class="headerlink" href="#separate-images" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 分离图像</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">Y</kbd></p>
+</dd>
+</dl>
+</div>
+<p>仅适用于图像序列 - 将片段转换为多个片段，每一帧对应一个片段。适用于幻灯片放映以及其他你希望在非连续图像中引入一组内容的情况。</p>
+<dl class="simple">
+<dt>长度</dt><dd><p>你必须指定所需结果片段的持续时间。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="movie-strip">
+<h2>Movie Strip<a class="headerlink" href="#movie-strip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-render-size">
+<span id="bpy-ops-sequencer-rendersize"></span><h3>设置渲染尺寸<a class="headerlink" href="#set-render-size" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Set Render Size</span></p>
+</dd>
+</dl>
+</div>
+<p>Sets the render resolution and aspect to match the strip's resolution.</p>
+</div>
+<div class="section" id="deinterlace-movies">
+<span id="bpy-ops-sequencer-deinterlace-selected-movies"></span><h3>逐行扫描影片<a class="headerlink" href="#deinterlace-movies" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Deinterlace Movies</span></p>
+</dd>
+</dl>
+</div>
+<p>Converts interlaced video into progressive video.</p>
+</div>
+</div>
+<div class="section" id="effect-strip">
+<span id="sequencer-edit-change"></span><h2>Effect Strip<a class="headerlink" href="#effect-strip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="change-effect-input">
+<span id="bpy-ops-sequencer-change-effect-input"></span><h3>Change Effect Input<a class="headerlink" href="#change-effect-input" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Effect Strip ‣ Change Effect Type</span></p>
+</dd>
+</dl>
+</div>
+<p>Swaps which strips are the input for the effect strip.</p>
+</div>
+<div class="section" id="change-effect-type">
+<span id="bpy-ops-sequencer-change-effect-type"></span><h3>Change Effect Type<a class="headerlink" href="#change-effect-type" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Effect Strip ‣ Change Effect Type</span></p>
+</dd>
+</dl>
+</div>
+<p>切换所选特效片段上的特效。</p>
+</div>
+<div class="section" id="reassign-inputs">
+<span id="bpy-ops-sequencer-reassign-inputs"></span><h3>重新指定输入项<a class="headerlink" href="#reassign-inputs" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">片段 ‣ 效果片段 ‣ 重新指定输入项</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate">R</kbd></p>
+</dd>
+</dl>
+</div>
+<p>This tool can be used to assign (reconnect) effect strips in a different way.
+Select three arbitrary strips and press <kbd class="kbd docutils literal notranslate">R</kbd>.
+If you don't create a cycle, those will be connected to a new effect chain.</p>
+</div>
+<div class="section" id="swap-inputs">
+<span id="bpy-ops-sequencer-swap-inputs"></span><h3>交换输入<a class="headerlink" href="#swap-inputs" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">Strip ‣ Effect Strip ‣ Swap Inputs</span></p>
+</dd>
+<dt class="field-even">快捷键</dt>
+<dd class="field-even"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">S</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Swaps the first two inputs for the effect strip.</p>
+</div>
+</div>
+<div class="section" id="lock-mute">
+<h2>Lock/Mute<a class="headerlink" href="#lock-mute" title="Permalink to this headline">¶</a></h2>
+<span id="bpy-ops-sequencer-lock"></span><dl class="simple" id="bpy-ops-sequencer-unlock">
+<dt>Lock Strips <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></dt><dd><p>Disables the strip from being transformed.</p>
+</dd>
+<dt>Unlock Strips <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></dt><dd><p>Enables disabled strips allowing them to be transformed.</p>
+</dd>
+</dl>
+<span id="bpy-ops-sequencer-mute"></span><dl class="simple" id="bpy-ops-sequencer-unmute">
+<dt>屏蔽/取消屏蔽 <kbd class="kbd docutils literal notranslate">H</kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">H</kbd></kbd></dt><dd><p>屏蔽或者取消屏蔽所选片段。</p>
+</dd>
+<dt>屏蔽/取消屏蔽未选择的片段 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">H</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">H</kbd></kbd></dt><dd><p>屏蔽或者取消屏蔽未选择的所有片段。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<dl class="simple" id="bpy-ops-sequencer-reload">
+<dt>Reload Strips <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">R</kbd></kbd></dt><dd><p>Reloads the strips from their external saved location.</p>
+</dd>
+<dt>Reload Strips and Adjust Length <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">R</kbd></kbd></dt><dd><p>Reloads the strips from their external saved location and re-adjusts the strip duration.</p>
+</dd>
+</dl>
+<dl class="simple" id="bpy-ops-sequencer-change-path">
+<dt>Change Path/Files</dt><dd><p>更改选定片段中包含的源文件。</p>
+</dd>
+</dl>
+<dl class="simple" id="bpy-ops-sequencer-swap-data">
+<dt>Swap Data</dt><dd><p>Swaps two sequence strips.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="context-menu">
+<h2>上下文菜单<a class="headerlink" href="#context-menu" title="Permalink to this headline">¶</a></h2>
+<p>可以在序列编辑器的时间轴上单击 <kbd class="kbd docutils literal notranslate">RMB</kbd> 来激活上下文菜单。这个菜单可快速访问一些常用的工具。</p>
+</div>
+<div class="section" id="fades">
+<h2>淡化<a class="headerlink" href="#fades" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">菜单</dt>
+<dd class="field-odd"><p><span class="menuselection">添加 ‣ 淡化</span></p>
+</dd>
+</dl>
+</div>
+<p>该菜单部分包含用于添加和删除片段淡入淡出的操作。对于可视片段，操作将动画处理不透明度，而对于音频片段，则将动画处理音量。</p>
+<dl class="simple">
+<dt>清除淡化</dt><dd><p>从所选序列中删除淡入淡出动画。</p>
+</dd>
+<dt>淡入淡出</dt><dd><p>淡入淡出所选片断。</p>
+</dd>
+<dt>淡入</dt><dd><p>淡入选定的片段。</p>
+</dd>
+<dt>淡出</dt><dd><p>淡出选定的片段。</p>
+</dd>
+<dt>From Current Frame</dt><dd><p>Fade from the current frame to the end of overlapping sequences.</p>
+</dd>
+<dt>To Current Frame</dt><dd><p>Fade from the start of sequences under the Playhead to the current frame.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="meta.html" class="btn btn-neutral float-right" title="复合片段" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="selecting.html" class="btn btn-neutral float-left" title="选择" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/video_editing/sequencer/editing.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60video_editing/sequencer/editing%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

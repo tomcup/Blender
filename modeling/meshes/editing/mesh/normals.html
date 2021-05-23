@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>法向 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/meshes/editing/mesh/normals.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="着色" href="shading.html" />
+    <link rel="prev" title="吸附到对称结构" href="snap_symmetry.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">网格</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../selecting/index.html">选择</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">编辑</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">网格工具</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="transform/index.html">变形</a></li>
+<li class="toctree-l5"><a class="reference internal" href="mirror.html">镜像</a></li>
+<li class="toctree-l5"><a class="reference internal" href="duplicate.html">复制</a></li>
+<li class="toctree-l5"><a class="reference internal" href="extrude.html">挤出</a></li>
+<li class="toctree-l5"><a class="reference internal" href="merge.html">合并</a></li>
+<li class="toctree-l5"><a class="reference internal" href="split.html">拆分</a></li>
+<li class="toctree-l5"><a class="reference internal" href="separate.html">分离</a></li>
+<li class="toctree-l5"><a class="reference internal" href="bisect.html">切分</a></li>
+<li class="toctree-l5"><a class="reference internal" href="knife_project.html">投影切割</a></li>
+<li class="toctree-l5"><a class="reference internal" href="convex_hull.html">凸壳</a></li>
+<li class="toctree-l5"><a class="reference internal" href="symmetrize.html">对称</a></li>
+<li class="toctree-l5"><a class="reference internal" href="snap_symmetry.html">吸附到对称结构</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">法向</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#flip">翻转</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#recalculate">重计算</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#set-from-faces">从面设置</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#rotate">旋转</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#point-to-target">指向目标体</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#merge">合并</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#split">拆分</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#average">平均法向</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#copy-vectors">复制矢量</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#paste-vectors">粘贴矢量</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#smooth-vectors">平滑矢量</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#reset-vectors">重置矢量</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#select-by-face-strength">按面强度选择</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#set-face-strength">设置面强度</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="shading.html">着色</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sort_elements.html">元素排序</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cleanup.html">清理</a></li>
+<li class="toctree-l5"><a class="reference internal" href="delete.html">删除 &amp; 融并</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../vertex/index.html">Vertex Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../edge/index.html">边工具</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../face/index.html">Face Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../uv.html">UV工具</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../properties/index.html">属性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../uv/index.html">UVs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../mesh_analysis.html">网格分析</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../retopology.html">重拓扑</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../index.html">网格</a> &raquo;</li>
+        
+          <li><a href="../index.html">编辑</a> &raquo;</li>
+        
+          <li><a href="index.html">网格工具</a> &raquo;</li>
+        
+      <li>法向</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="normals">
+<span id="modeling-meshes-editing-normals-editing"></span><span id="bpy-ops-mesh-normals-tools"></span><h1>法向<a class="headerlink" href="#normals" title="Permalink to this headline">¶</a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>可以用来编辑法向的参考 <a class="reference internal" href="../../../modifiers/modify/normal_edit.html"><span class="doc">法线编辑修改器</span></a>。</p>
+<p><a class="reference internal" href="../../../modifiers/modify/weighted_normal.html"><span class="doc">加权法向修改器</span></a> 可以通过不同的方法改变法向， 包括 <em>面强度</em> (参考下文)。</p>
+<p>也可以用数据传递 (<a class="reference internal" href="../../../../scene_layout/object/editing/relations.html"><span class="doc">操作</span></a> 或 <a class="reference internal" href="../../../modifiers/modify/data_transfer.html"><span class="doc">修改器</span></a>) 从另一个网格复制法线.</p>
+</div>
+<div class="section" id="flip">
+<span id="bpy-ops-mesh-flip-normals"></span><h2>翻转<a class="headerlink" href="#flip" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 反转</span></p>
+</dd>
+</dl>
+</div>
+<p>该工具仅用于反转选中面的法线方向。注：由于只有选中面的法线方向会被翻转，故可用于精准调整法线方向(<strong>不是朝向</strong> ，法线总是垂直于面的)。</p>
+</div>
+<div class="section" id="recalculate">
+<span id="bpy-ops-mesh-normals-make-consistent"></span><h2>重计算<a class="headerlink" href="#recalculate" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 向外重算法线方向</span> 和 <span class="menuselection">网格 ‣ 法向 ‣ 向内重算法线方向</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">N</kbd></kbd> 和 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">N</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>这些工具会重新计算选择面法向让他们指向面的体积侧(区分于内)。体积不需要封闭;内外的区分取决于面的连接角度。</p>
+</div>
+<div class="section" id="set-from-faces">
+<span id="bpy-ops-mesh-set-normals-from-faces"></span><h2>从面设置<a class="headerlink" href="#set-from-faces" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 从面设置</span></p>
+</dd>
+</dl>
+</div>
+<p>设置角部的自定义法向与角部所在的面法向一致。</p>
+</div>
+<div class="section" id="rotate">
+<span id="bpy-ops-transform-rotate-normal"></span><h2>旋转<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣法向 ‣ 旋转</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">R</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>这是一个交互式工具。当您移动鼠标时，选中的法线也会旋转。您也可以通过使用旋转变换快捷键先按下 <kbd class="kbd docutils literal notranslate">R</kbd> ，再按下 <kbd class="kbd docutils literal notranslate">N</kbd> 激活旋转法线工具。</p>
+</div>
+<div class="section" id="point-to-target">
+<span id="bpy-ops-mesh-point-normals"></span><h2>指向目标体<a class="headerlink" href="#point-to-target" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 指向目标体</span></p>
+</dd>
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">L</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>设置所有选择的法向到目标并 <kbd class="kbd docutils literal notranslate">Return</kbd> or <kbd class="kbd docutils literal notranslate">LMB</kbd> 确认。</p>
+<p>按键以设置目标：</p>
+<ul class="simple">
+<li><p>鼠标游标 <kbd class="kbd docutils literal notranslate">M</kbd></p></li>
+<li><p>枢轴 <kbd class="kbd docutils literal notranslate">L</kbd></p></li>
+<li><p>原始物体 <kbd class="kbd docutils literal notranslate">O</kbd></p></li>
+<li><p>游标(单击设置) <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd></p></li>
+<li><p>网格选择(单击设置) <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd></p></li>
+</ul>
+<dl>
+<dt>模式</dt><dd><p>工具的操作可以修改，如果以下按键已经按下：</p>
+<dl class="simple">
+<dt>对齐 <kbd class="kbd docutils literal notranslate">A</kbd></dt><dd><p>所有法向会指向相同方向：从选择的中心指向目标。</p>
+</dd>
+<dt>球形化 <kbd class="kbd docutils literal notranslate">S</kbd></dt><dd><p>那么每个法向会被插值计算介于它原始值和指向目标的方向。</p>
+</dd>
+<dt>反转 <kbd class="kbd docutils literal notranslate">I</kbd></dt><dd><p>法向会从上面指定的方向反转。</p>
+</dd>
+</dl>
+</dd>
+<dt>重置 <kbd class="kbd docutils literal notranslate">R</kbd></dt><dd><p>重置自定义法向回操作开始前的状态。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="merge">
+<span id="bpy-ops-mesh-merge-normals"></span><h2>合并<a class="headerlink" href="#merge" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 合并</span></p>
+</dd>
+</dl>
+</div>
+<p>根据选择的顶点合并所有法向，创建一个平均法向给所有面。</p>
+</div>
+<div class="section" id="split">
+<span id="bpy-ops-mesh-split-normals"></span><h2>拆分<a class="headerlink" href="#split" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 拆分</span></p>
+</dd>
+</dl>
+</div>
+<p>拆分所有选择的顶点法向，使每个面有单独的法向，指向每个面的的法向方向。</p>
+</div>
+<div class="section" id="average">
+<span id="bpy-ops-mesh-average-normals"></span><h2>平均法向<a class="headerlink" href="#average" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 平均法向</span></p>
+</dd>
+</dl>
+</div>
+<p>平均所有每个链接有硬边的扇面的顶点法向。</p>
+</div>
+<div class="section" id="copy-vectors">
+<h2>复制矢量<a class="headerlink" href="#copy-vectors" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 复制矢量</span></p>
+</dd>
+</dl>
+</div>
+<p>如果单选一个法向，就复制到内部矢量缓存。</p>
+</div>
+<div class="section" id="paste-vectors">
+<h2>粘贴矢量<a class="headerlink" href="#paste-vectors" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 粘贴矢量</span></p>
+</dd>
+</dl>
+</div>
+<p>替换选择的法向为内部法向缓存中的一个。</p>
+</div>
+<div class="section" id="smooth-vectors">
+<span id="bpy-ops-mesh-smooth-normals"></span><h2>平滑矢量<a class="headerlink" href="#smooth-vectors" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 平滑矢量</span></p>
+</dd>
+</dl>
+</div>
+<p>调整法向使与之相邻的顶点法向相近。</p>
+</div>
+<div class="section" id="reset-vectors">
+<h2>重置矢量<a class="headerlink" href="#reset-vectors" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 重置矢量</span></p>
+</dd>
+</dl>
+</div>
+<p>重置法向为默认计算的法向。</p>
+</div>
+<div class="section" id="select-by-face-strength">
+<span id="bpy-ops-mesh-mod-weighted-strength"></span><h2>按面强度选择<a class="headerlink" href="#select-by-face-strength" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 按面强度选择</span></p>
+</dd>
+</dl>
+</div>
+<p>另一个影响法向的方法是在模型的面上设置*面强度* 。面强度可分为 <em>弱</em>，<em>中</em>，<em>强</em> 。关于设置法相强度 <a class="reference internal" href="../../../modifiers/modify/weighted_normal.html"><span class="doc">加权法向修改器</span></a> 需要注意的是：当结合的多个法向链接到一个顶点，最终的值只有面强度最高的面会被采纳。</p>
+<p>例如，如果3个面链接一个顶点并且有强中弱三个面权重，只有强的面的法相会被取为最终结果。</p>
+<p>使用子菜单选择 <em>弱</em>、<em>中</em>，或 <em>强</em> 之一。然后，此工具将选择所选面强度相对应的面。</p>
+</div>
+<div class="section" id="set-face-strength">
+<h2>设置面强度<a class="headerlink" href="#set-face-strength" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">网格 ‣ 法向 ‣ 设置面强度</span></p>
+</dd>
+</dl>
+</div>
+<p>使用子菜单选择 <em>弱</em>、<em>中</em>，或 <em>强</em> 之一。然后，此工具将当前选定面的面强度更改为所选面强度。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="shading.html" class="btn btn-neutral float-right" title="着色" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="snap_symmetry.html" class="btn btn-neutral float-left" title="吸附到对称结构" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/meshes/editing/mesh/normals.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/meshes/editing/mesh/normals%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

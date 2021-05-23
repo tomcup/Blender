@@ -1,0 +1,472 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>内力 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/soft_body/forces/interior.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="碰撞" href="../collision.html" />
+    <link rel="prev" title="外力" href="exterior.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">软体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../settings.html">设置</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">力</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="exterior.html">外力</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">内力</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#settings">设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#tips-preventing-collapse">小贴士：防止坍塌</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#stiff-quads">硬度</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#bending-stiffness">弯曲</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../collision.html">碰撞</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples.html">范例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../index.html">软体</a> &raquo;</li>
+        
+          <li><a href="index.html">力</a> &raquo;</li>
+        
+      <li>内力</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interior">
+<h1>内力<a class="headerlink" href="#interior" title="Permalink to this headline">¶</a></h1>
+<p>通常来说，你会在网格中相邻顶点之间创建边连接它们。想象每一条边都是一根弹簧。任何机械弹簧都能够在拉力作用下拉伸，在压力作用下收缩。所有弹簧都有一个自己的理想长度，而硬度则限制了在这个理想长度的基础上，你可以拉伸或压缩弹簧的程度。</p>
+<p>在Blender中，弹簧理想长度就是你创造的网格中边线的原始长度，甚至在你启用软体系统之前就存在了。直到你为物体添加了软体模拟，所有弹簧都被假定为完全僵硬的状态，不会被拉伸，不会被压缩。</p>
+<p>你可以调整边弹簧的硬度，让你的网格在微风中自然下垂、弯曲、飘动，或者在地上缩成一团。</p>
+<hr class="docutils" />
+<p>要在软体对象的顶点之间创建连接，必须有将顶点组织在一起的力。这些力在连接顶点之间的边线上是有效的。这个力就扮演了弹簧的作用。如图。 <a class="reference internal" href="#fig-softbody-force-interior-connection"><span class="std std-ref">顶点与连接顶点的边线上的力。</span></a> 展示了一个3X3的网格点(Blender中的网格平面)在软体模拟中是如何连接的。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1" style="width: 180px">
+<span id="fig-softbody-force-interior-connection"></span><a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_theory-1.svg"><img alt="../../../_images/physics_soft-body_forces_interior_theory-1.svg" src="../../../_images/physics_soft-body_forces_interior_theory-1.svg" width="180px" /></a>
+<p class="caption"><span class="caption-text">顶点与连接顶点的边线上的力。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2" style="width: 180px">
+<span id="fig-softbody-force-interior-stiff"></span><a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_theory-2.svg"><img alt="../../../_images/physics_soft-body_forces_interior_theory-2.svg" src="../../../_images/physics_soft-body_forces_interior_theory-2.svg" width="180px" /></a>
+<p class="caption"><span class="caption-text">硬度开启后的额外作用力。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>但是，如果你不使用额外的边约束，四边形对角线上的两个顶点就会自由转动。避免四边面坍塌的合理方法是，在对角的两个顶点中新增一条边。这个方法效果很好，但是却会大幅度改变你的网格的拓扑结构。</p>
+<p>幸运的是，Blender允许我们定义额外的虚拟连接。一方面，你可以为四边面的对角线定义虚拟连接(<em>硬四边面</em> 图示。 <a class="reference internal" href="#fig-softbody-force-interior-stiff"><span class="std std-ref">硬度开启后的额外作用力。</span></a>)，另一方面，你甚至使用 <em>弯曲</em> 参数，为一个顶点和与其临近点相连的任何顶点之间创建虚拟连接。换句话说，弯曲的数值可以在顶点和与其相距两条边距离的任何顶点中创造虚拟连接。</p>
+<div class="section" id="settings">
+<h2>设置<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>边线的特点可以在软体面板的 <em>弹性</em> 和 <em>硬度</em> 属性中设置。详见 <a class="reference internal" href="../settings.html#physics-softbody-settings-edges"><span class="std std-ref">软体边设置</span></a>。</p>
+</div>
+<div class="section" id="tips-preventing-collapse">
+<h2>小贴士：防止坍塌<a class="headerlink" href="#tips-preventing-collapse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stiff-quads">
+<h3>硬度<a class="headerlink" href="#stiff-quads" title="Permalink to this headline">¶</a></h3>
+<p>我们会使用两个立方体(蓝色：只有四边面，红色：只有三角面)来展示边设置的不同效果，这两个立方体会关闭结果选项(如何设置碰撞体的方法在 <a class="reference internal" href="../collision.html"><span class="doc">碰撞</span></a> 页面)自由掉落在平面上。查看 <a class="reference external" href="https://wiki.blender.org/wiki/File:Blender3DQuads-BE-Stiffness.blend">示例blend文件</a>。</p>
+<span id="fig-softbody-force-interior-without"></span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">关闭硬度。</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第1帧。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-036.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-036.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-036.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第36帧。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-401.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-401.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-401.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第401帧。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>在图示 <a class="reference internal" href="#fig-softbody-force-interior-without"><span class="std std-ref">关闭硬度。</span></a> 中，使用了默认的设置(没有开启 <em>硬度</em>)。只有四边面的立方体将完全坍塌，三角面组成的立方体保持其形状不变，即使在碰撞期间由于受力，会暂时变形。</p>
+<span id="fig-softbody-force-interior-with"></span><table class="docutils align-default" id="id7">
+<caption><span class="caption-text">开启硬度</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id8">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第1帧。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-036.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-036.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-036.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第36帧。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id10">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-401.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-401.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-sq-401.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第401帧。</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>在图示 <a class="reference internal" href="#fig-softbody-force-interior-with"><span class="std std-ref">开启硬度</span></a> 中，启用 <em>硬度</em> (两个立方体)。立方体均保持了形状不变，但这个选项对红色立方体来说没有区别，因为它根本没有四边面。</p>
+</div>
+<div class="section" id="bending-stiffness">
+<h3>弯曲<a class="headerlink" href="#bending-stiffness" title="Permalink to this headline">¶</a></h3>
+<p>第二种防止物体坍塌的方法是改变它的 <em>弯曲</em> 硬度。这个选项创造包含对接线处的虚拟弹簧(阻尼同样作用于这些连接)。</p>
+<span id="fig-softbody-force-interior-bending"></span><table class="docutils align-default" id="id11">
+<caption><span class="caption-text">抗弯刚性</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id12">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-001.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第1帧。</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id13">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-036.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-036.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-036.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第36帧。</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id14">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-401.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-401.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-sb-bs-401.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">第401帧。</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>图示. <a class="reference internal" href="#fig-softbody-force-interior-bending"><span class="std std-ref">抗弯刚性</span></a> 中，<em>弯曲</em> 的强度设置到了1。现在两个立方体都更硬了。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id15">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-001.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-001.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-001.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">两个平面即将下落。</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id16">
+<span id="fig-softbody-force-interior-no-bending"></span><a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-101.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-101.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-101.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">无抗弯刚性。</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id17">
+<a class="reference internal image-reference" href="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-high-101.png"><img alt="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-high-101.png" src="../../../_images/physics_soft-body_forces_interior_quadvstri-bending-high-101.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">高抗弯刚性(10)。</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>如果你想让一个细分后的平面更挺阔，也可以使用抗弯刚性。无 <em>抗弯刚性</em> 时，小的平面可以像铰链一样自由转动。如图 <a class="reference internal" href="#fig-softbody-force-interior-no-bending"><span class="std std-ref">无抗弯刚性。</span></a>。在这里，你在模拟中开启 <em>硬度</em> 是无用的，因为此示例中没有任何面发生了形变。</p>
+<p>抗弯刚性是指让平面发生形变所需要的力度。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../collision.html" class="btn btn-neutral float-right" title="碰撞" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exterior.html" class="btn btn-neutral float-left" title="外力" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/soft_body/forces/interior.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/soft_body/forces/interior%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

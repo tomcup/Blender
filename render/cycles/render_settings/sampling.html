@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>采样 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/cycles/render_settings/sampling.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="光程" href="light_paths.html" />
+    <link rel="prev" title="蜡笔" href="grease_pencil.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../eevee/index.html">Eevee</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Cycles</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">渲染设置</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="grease_pencil.html">蜡笔</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">采样</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#subsamples">Subsamples</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#adaptive-sampling">自适应采样</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#denoising">Denoising</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#advanced">高级</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="light_paths.html">光程</a></li>
+<li class="toctree-l4"><a class="reference internal" href="volumes.html">体积</a></li>
+<li class="toctree-l4"><a class="reference internal" href="subdivision.html">分区</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hair.html">毛发</a></li>
+<li class="toctree-l4"><a class="reference internal" href="simplify.html">简化</a></li>
+<li class="toctree-l4"><a class="reference internal" href="motion_blur.html">运动模糊</a></li>
+<li class="toctree-l4"><a class="reference internal" href="film.html">胶片</a></li>
+<li class="toctree-l4"><a class="reference internal" href="performance.html">性能</a></li>
+<li class="toctree-l4"><a class="reference internal" href="debug.html">调试</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../world_settings.html">世界设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object_settings/index.html">物体设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../material_settings.html">材质设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../light_settings.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gpu_rendering.html">GPU渲染</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../features.html">试验特性</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../baking.html">渲染烘焙</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../optimizations/index.html">渲染优化</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="../index.html">Cycles</a> &raquo;</li>
+        
+          <li><a href="index.html">渲染设置</a> &raquo;</li>
+        
+      <li>采样</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sampling">
+<h1>采样<a class="headerlink" href="#sampling" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">渲染 ‣ 采样</span></p>
+</dd>
+</dl>
+</div>
+<p>积分器是一种用于计算光照的渲染算法。目前，Cycles引擎支持一种积分器，一种带直接光照采样的路径追踪积分器。它可以很好地适用于各种照明设定，但不适用于焦散以及其它一些复杂的光照情形。</p>
+<p>光线从摄像机出发射到场景中，并来回反弹，直到它们找到一个光源，例如一个灯光物体，一个发光物体，或是环境背景光。为了找到灯光或发光的表面，间接照明采样(让光线跟随表面BSDF)与直接照明采样(选取一个光源并追踪射向它的光线)都将会用到。</p>
+<dl>
+<dt>积分器</dt><dd><p>共有两种采样途径供选择:  <em>路径追踪</em>  和 <em>分支路径追踪</em> 。</p>
+<dl>
+<dt>路径追踪</dt><dd><p><em>路径追踪积分器</em> 是一个纯路径追踪器，它从视点发出一条光线，光线与物体表面相交时根据表面的材质属性继续采样一个方向，发出另一条光线。这样能使单个采样计算得更快，但需要更多的样本去去除噪点。</p>
+</dd>
+<dt>分支路径追踪</dt><dd><p>非渐进式分支追踪积分器提供出色的采样控制。他和 <em>路径追踪</em> 相似，但是在第一个点它会为不同的表面材质分出不同的路径，它会考虑所有的光线而非仅仅一条。</p>
+<p>这样会让每个采样变得比较慢一些，但是可以降低噪点，特别是那些主要是直接或单次反射光的场景上。要跟普通路径追踪获得一样的漫射采样数的话，需要注意是这样计算 250路径追踪采样 = 10 抗锯齿采样 x 25 漫射采样。采样面板显示了总采样数值。</p>
+</dd>
+</dl>
+</dd>
+<dt>渲染</dt><dd><p>这是最终渲染中单像素的光程追踪次数。采样次数越多，结果中的噪点就会越少，也会更加精确。</p>
+<p>When using <em>Branched Path Tracing</em>, this changes the <em>AA Samples</em>
+which are multiplied by the <a class="reference internal" href="#subsamples">Subsamples</a> and improve <a class="reference internal" href="../../../glossary/index.html#term-Anti-Aliasing"><span class="xref std std-term">Anti-Aliasing</span></a>.</p>
+</dd>
+<dt>视窗</dt><dd><p>在3D视图中使用的样本数。当设置样本数为零时，3D视图中将会不断采样。</p>
+</dd>
+</dl>
+<div class="section" id="subsamples">
+<h2>Subsamples<a class="headerlink" href="#subsamples" title="Permalink to this headline">¶</a></h2>
+<p>The subpanel is only shown when using <em>Branched Path Tracing</em>.</p>
+<dl class="simple">
+<dt>漫射色采样</dt><dd><p>每个抗锯齿采样中的漫射反弹采样数。</p>
+</dd>
+<dt>光泽采样</dt><dd><p>每个抗锯齿采样中的光泽反弹采样数。</p>
+</dd>
+<dt>传递采样</dt><dd><p>每个抗锯齿采样中的漫射传递采样数。</p>
+</dd>
+<dt>环境光遮罩采样</dt><dd><p>每个抗锯齿采样中的环境遮罩采样数。</p>
+</dd>
+<dt>网格照明采样</dt><dd><p>每个抗锯齿采样中的网格照明采样数。</p>
+</dd>
+<dt>次表面采样</dt><dd><p>每个抗锯齿采样中的次表面散射采样数。</p>
+</dd>
+<dt>体积光渲染</dt><dd><p>每个抗锯齿采样中的体积散射采样数。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="adaptive-sampling">
+<h2>自适应采样<a class="headerlink" href="#adaptive-sampling" title="Permalink to this headline">¶</a></h2>
+<p>With adaptive sampling Cycles automatically reduces the number of samples in areas that have little noise,
+for faster rendering and more even noise distribution.
+For example hair on a character may need many samples, but the background may need very few.</p>
+<p>默认情况下，停止采样的阈值随AA采样的数量变化。这减少了总体渲染时间，尤其是在降噪之后，结果几乎是无法区分的。</p>
+<p>With adaptive sampling it is also possible to render images with a target amount of noise.
+This is done by settings the <em>Noise Threshold</em>, typical values are in the range from 0.1 to 0.001.
+Then render samples can then be set to a high value,
+and the renderer will automatically choose the appropriate amount of samples.</p>
+<dl class="simple">
+<dt>噪波阈值</dt><dd><p>用于决定是否继续采样的阈值。典型值在0.1至0.001的范围内，较低的值表示较少的噪点。将其设置为0，则Cycles可以基于总采样数来猜测一个自动值。</p>
+</dd>
+<dt>最小采样</dt><dd><p>应用自适应采样前每个像素的最小采样数量。当设置为0（默认）时，它将自动设置为总（最大）采样数的平方根。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="denoising">
+<span id="render-cycles-settings-viewport-denoising"></span><h2>Denoising<a class="headerlink" href="#denoising" title="Permalink to this headline">¶</a></h2>
+<p>Denoising removes noise while previewing scenes in <em>Rendered</em> mode in the 3D Viewport or for final renders.</p>
+<dl>
+<dt>渲染</dt><dd><p>Denoising for the final render can be enabled or disabled for with the checkbox.
+For denoising the image after rendering with the <a class="reference internal" href="../../../compositing/types/filter/denoise.html"><span class="doc">Denoising node</span></a>,
+denoising data render <a class="reference internal" href="../../layers/passes.html#render-cycles-passes"><span class="std std-ref">passes</span></a> also adapt to the selected denoiser.</p>
+<dl class="simple">
+<dt>NLM</dt><dd><p>Uses <a class="reference external" href="https://en.wikipedia.org/wiki/Non-local_means">non-local means</a> to
+denoise the image. Addition properties for this denoising method can be set in
+the <a class="reference internal" href="../../layers/denoising.html#render-layers-denoising-optix"><span class="std std-ref">View Layer Properties</span></a>.</p>
+</dd>
+<dt>Open Image Denoise</dt><dd><p>Uses Intel's <a class="reference external" href="https://www.openimagedenoise.org/">Open Image Denoise</a>,
+an AI denoiser which runs on the CPU.</p>
+</dd>
+<dt>OptiX</dt><dd><p>使用人工智能算法去除渲染中的噪点。它基于 <a class="reference internal" href="../gpu_rendering.html#render-cycles-gpu-optix"><span class="std std-ref">OptiX</span></a> 加速引擎，因此具有与Optix渲染相同的GPU要求。</p>
+</dd>
+</dl>
+</dd>
+<dt>视窗</dt><dd><p>Denoising for the <em>Rendered</em> mode in the 3D Viewport can be enabled or disabled for with the checkbox.</p>
+<dl class="simple">
+<dt>Automatic</dt><dd><p>Uses the faster available denoiser for 3D Viewport rendering
+(<em>OptiX</em> if available, otherwise <em>OpenImageDenoise</em>).</p>
+</dd>
+<dt>OpenImageDenoise</dt><dd><p>Uses Intel's <a class="reference external" href="https://www.openimagedenoise.org/">Open Image Denoise</a>,
+an AI denoiser which runs on the CPU.</p>
+</dd>
+<dt>OptiX</dt><dd><p>使用人工智能算法去除渲染中的噪点。它基于 <a class="reference internal" href="../gpu_rendering.html#render-cycles-gpu-optix"><span class="std std-ref">OptiX</span></a> 加速引擎，因此具有与Optix渲染相同的GPU要求。</p>
+</dd>
+</dl>
+</dd>
+<dt>Start Sample</dt><dd><p>Sample to start <a class="reference internal" href="#render-cycles-settings-viewport-denoising"><span class="std std-ref">denoising</span></a> in the 3D Viewport.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="advanced">
+<h2>高级<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>随机种</dt><dd><p>不同的采样种的值积分器会给出不同的噪点模式。</p>
+<dl class="simple">
+<dt>动画种子(时钟图标)</dt><dd><p>为每一帧给出不同的种子值。制作动画时启用此功能是一个好主意，因为在现实世界中，每个帧都有不同的噪声模式。</p>
+</dd>
+</dl>
+</dd>
+<dt>模式</dt><dd><p>积分器使用的随机采样模式。</p>
+<dl class="simple">
+<dt>Sobol</dt><dd><p>使用 Sobol 模式确定积分器使用的随机采样模式。有关详细信息，请参阅维基百科上的 <a class="reference external" href="https://en.wikipedia.org/wiki/Sobol_sequence">Sobol sequence</a> 。</p>
+</dd>
+<dt>关联式多重抖动</dt><dd><p>使用相关的多抖动模式来确定积分器使用的随机采样模式。有关详细信息，请参阅 <a class="reference external" href="http://graphics.pixar.com/library/MultiJitteredSampling/paper.pdf">this Pixar paper</a>。</p>
+</dd>
+<dt>渐进式多重抖动</dt><dd><p>使用渐进式多抖动模式来确定积分器使用的随机采样模式。它的优点是在迭代的样本数上提供良好的样本分布。由于其在不同样本数量范围内的良好分布，因此该样本模式可用于 <a class="reference internal" href="#adaptive-sampling">Adaptive Sampling</a>。有关更多信息，请参见 <a class="reference external" href="https://graphics.pixar.com/library/ProgressiveMultiJitteredSampling/paper.pdf">this Pixar paper</a> 。</p>
+</dd>
+</dl>
+</dd>
+<dt>二次方采样</dt><dd><p>采样数量取平方。</p>
+</dd>
+<dt>最小光线反弹</dt><dd><p>每个路径的光反弹数最小，之后积分器使用俄语轮盘终止对图像贡献较少的路径。设置较高的噪声会减少噪点，但也可能大大增加渲染时间。对于低反弹次数，强烈建议将其设置为等于最大反弹数。</p>
+</dd>
+<dt>最小透明反弹</dt><dd><p>透明反弹的最小数量。设置较高的设置可降低第一次反弹时的噪音，但对于头发和体积等更复杂的几何形状，效率也会降低。</p>
+</dd>
+<dt>光照阈值</dt><dd><p>当光贡献低于此阈值(噪声较多但渲染速度更快)时，可概率终止光样本。零禁用测试，从不忽略灯光。这很有用，因为在具有许多光源的大型场景中，有些场景可能只对最终图像贡献少量，并增加渲染时间。使用此设置可以减少计算光线所需的渲染时间，最终对图像的影响很小。</p>
+</dd>
+<dt>采样所有直接光照</dt><dd><p>启用后，Cycles 将对场景中的所有灯光进行采样以进行直接反弹，而不是随机选取一个灯光。禁用此选项可以提高性能，但需要大量的 <em>样本</em> 来清除渲染。</p>
+<p>仅在使用 <em>分支路径追踪</em> 时可见。</p>
+</dd>
+<dt>采样所有间接光照</dt><dd><p>和直接光照相似的间接照明方法。这样可以对多光源场景降噪。</p>
+<p>仅在使用 <em>分支路径追踪</em> 时可见。</p>
+</dd>
+</dl>
+<dl id="render-cycles-integrator-layer-samples">
+<dt>层采样</dt><dd><p>当渲染图层设置了每个样本图层数时，此选项指定如何使用它们。</p>
+<dl class="simple">
+<dt>使用</dt><dd><p>渲染图层样本将覆盖设置的场景样本。</p>
+</dd>
+<dt>绑定</dt><dd><p>按场景样本绑定渲染图层样本。</p>
+</dd>
+<dt>忽略</dt><dd><p>忽略渲染图层采样设置。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="light_paths.html" class="btn btn-neutral float-right" title="光程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="grease_pencil.html" class="btn btn-neutral float-left" title="蜡笔" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/cycles/render_settings/sampling.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/cycles/render_settings/sampling%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

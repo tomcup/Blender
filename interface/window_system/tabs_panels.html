@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>选项卡 &amp; 面板 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/interface/window_system/tabs_panels.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="通用快捷键" href="../keymap/introduction.html" />
+    <link rel="prev" title="区块" href="regions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">用户界面</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../splash.html">启动画面</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#window-system">窗口系统</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="topbar.html">顶栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workspaces.html">工作区</a></li>
+<li class="toctree-l3"><a class="reference internal" href="status_bar.html">状态栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="areas.html">区域</a></li>
+<li class="toctree-l3"><a class="reference internal" href="regions.html">区块</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">选项卡 &amp; 面板</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tabs">选项卡</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#switching-cycling">切换/循环</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#panels">面板</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#collapsing-and-expanding">折叠与展开</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#position">位置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#pinning">钉住</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#zoom">缩放</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#keymap">键位映射</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#interface-controls">界面控件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#tools">工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">用户界面</a> &raquo;</li>
+        
+      <li>选项卡 &amp; 面板</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tabs-panels">
+<h1>选项卡 &amp; 面板<a class="headerlink" href="#tabs-panels" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tabs">
+<h2>选项卡<a class="headerlink" href="#tabs" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id1" style="width: 300px">
+<img alt="../../_images/interface_window-system_tabs-panels_tabs.png" src="../../_images/interface_window-system_tabs-panels_tabs.png" />
+<p class="caption"><span class="caption-text">Top: Horizontal Tab header in the Topbar.
+Bottom: Vertical Tab header shows tab icons in the Properties.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>选项卡是用户界面中的重叠区域。选项卡可以是垂直(工具栏)或者水平的(属性编辑器、用户设置)。</p>
+<div class="section" id="switching-cycling">
+<h3>切换/循环<a class="headerlink" href="#switching-cycling" title="Permalink to this headline">¶</a></h3>
+<p>Vertical tabs can be switched with <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Wheel</kbd></kbd> from anywhere in the tab.
+You can also cycle through tabs with <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd> and
+<kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Tab</kbd></kbd>, or press down <kbd class="kbd docutils literal notranslate">LMB</kbd> and move mouse over tab header icons.
+(Workspace tabs do not use this keymap. See <a class="reference internal" href="workspaces.html#workspaces-controls"><span class="std std-ref">Workspace controls</span></a>.)</p>
+<div class="lead docutils container">
+</div>
+</div>
+</div>
+<div class="section" id="panels">
+<span id="bpy-types-panel"></span><span id="ui-panels"></span><h2>面板<a class="headerlink" href="#panels" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-right" id="id2" style="width: 200px">
+<img alt="../../_images/interface_window-system_tabs-panels_panels.png" src="../../_images/interface_window-system_tabs-panels_panels.png" />
+<p class="caption"><span class="caption-text">Panels in Properties.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p>A panel is highlighted in yellow and a subpanel in red.</p>
+</div>
+</div>
+<p>The smallest organizational unit in the user interface is a panel.
+The panel header show the title of the panel. It is always visible.
+Some panels also include subpanels.</p>
+<div class="section" id="collapsing-and-expanding">
+<h3>折叠与展开<a class="headerlink" href="#collapsing-and-expanding" title="Permalink to this headline">¶</a></h3>
+<p>面板既可以展开显示面板的内容,也可以收起隐藏面板的内容.在面板标题头部,显示向下箭头(▼)表示当前是展开面板,显示向右箭头(►)表示当前是收起面板.</p>
+<ul class="simple">
+<li><p>在面板标题栏 <kbd class="kbd docutils literal notranslate">LMB</kbd> 单击可以展开或收起。</p></li>
+<li><p>按下 <kbd class="kbd docutils literal notranslate">A</kbd> 展开/收起鼠标指针下方的面板。</p></li>
+<li><p>在面板标题栏 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> 单击，将收起其余面板，仅展开该面板。</p></li>
+<li><p>A <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> click on the header of a specific panel that contains subpanels
+will expand / collapse all subpanels.</p></li>
+<li><p><kbd class="kbd docutils literal notranslate">LMB</kbd> 在标题栏上方拖动可以一次展开或收起多个面板。</p></li>
+</ul>
+</div>
+<div class="section" id="position">
+<h3>位置<a class="headerlink" href="#position" title="Permalink to this headline">¶</a></h3>
+<p>You can change the position of a panel within its region by clicking
+and dragging it with the <kbd class="kbd docutils literal notranslate">LMB</kbd> on the grip widget (::::)
+located in on the right side of the panel header.</p>
+</div>
+<div class="section" id="pinning">
+<h3>钉住<a class="headerlink" href="#pinning" title="Permalink to this headline">¶</a></h3>
+<p>有时需要在不同的选项卡中查看同一个面板，这个需求可以通过钉住面板实现。</p>
+<p>A pinned panel remains visible regardless of which tab has been selected.
+You can pin a panel by clicking on the pin icon in its header.
+Panels that do not have a pin icon can also be pinned by <kbd class="kbd docutils literal notranslate">RMB</kbd> and selecting <em>Pin</em>,
+or you use <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">LMB</kbd></kbd> on the panel.</p>
+</div>
+<div class="section" id="zoom">
+<h3>缩放<a class="headerlink" href="#zoom" title="Permalink to this headline">¶</a></h3>
+<p>在区块上 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">MMB</kbd></kbd> 单击并移动鼠标，或者在区块上按下 <kbd class="kbd docutils literal notranslate">NumpadPlus</kbd> 与 <kbd class="kbd docutils literal notranslate">NumpadMinus</kbd> 可以改变区块的缩放比例，实现区块内容缩放。 按下 <kbd class="kbd docutils literal notranslate">Home</kbd> (显示所有) 可以重置鼠标指针所在屏幕/面板的缩放比例。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../keymap/introduction.html" class="btn btn-neutral float-right" title="通用快捷键" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="regions.html" class="btn btn-neutral float-left" title="区块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/interface/window_system/tabs_panels.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60interface/window_system/tabs_panels%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

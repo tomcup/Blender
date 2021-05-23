@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>编辑 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/metas/editing.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="属性" href="properties.html" />
+    <link rel="prev" title="基本体" href="primitives.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meshes/index.html">网格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../curves/index.html">曲线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">融球</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolbar/index.html">工具栏</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="primitives.html">基本体</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">编辑</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#active-element">活动元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-elements">删除元素</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#conversion">转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#object-families">物体族</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="properties.html">属性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="index.html">融球</a> &raquo;</li>
+        
+      <li>编辑</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="editing">
+<span id="meta-ball-editing"></span><h1>编辑<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h1>
+<p>除了能够在同一个族中有几个融球之外，还可以在单个物体中有几个融球基本体(只是在编辑模式中添加更多的融球基本体)。每个融球都是一个元素，都具有自己的形状、编辑环(在视图中)和设置。</p>
+<div class="section" id="active-element">
+<h2>活动元素<a class="headerlink" href="#active-element" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties) ‣ 融球(Metaball) ‣ 活动元素(Active Element)</span></p>
+</dd>
+</dl>
+</div>
+<div class="figure align-right" id="id1">
+<img alt="../../_images/modeling_metas_properties_active-element-panel.png" src="../../_images/modeling_metas_properties_active-element-panel.png" />
+<p class="caption"><span class="caption-text">活动元素面板。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>这些设置只适用于所选的融球元素。</p>
+<dl>
+<dt>结构类型</dt><dd><p>更改融球物体的 <a class="reference internal" href="primitives.html"><span class="doc">基本体形状</span></a> 。</p>
+</dd>
+<dt>刚度</dt><dd><p>控制各融球元素的影响范围，不像 <em>影响阈值</em> 那样控制对整个 <a class="reference internal" href="#meta-ball-object-families"><span class="std std-ref">融球族</span></a> 的影响。这本质上定义了融球对受其他融球影响的敏感性。在低刚度时，融球会在更远的地方开始形变。更高的值意味着融球需要更接近另一个融球才能开始合并。 <em>硬度</em> 表现为 <em>绿色环</em> ，可以对该环 <a class="reference internal" href="../../scene_layout/object/editing/transform/basics.html#bpy-ops-transform-resize"><span class="std std-ref">缩放</span></a> 来改变 <em>硬度</em> 值。</p>
+<p>要看得见融球，<em>刚度</em> 必须大于 <em>影响阈值</em> 。</p>
+<div class="figure align-center" id="id2">
+<span id="fig-meta-edit-stiffness"></span><a class="reference internal image-reference" href="../../_images/modeling_metas_editing_stiffness.png"><img alt="../../_images/modeling_metas_editing_stiffness.png" src="../../_images/modeling_metas_editing_stiffness.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">左边的融球的 <em>刚度</em> 值比右边的要小。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</dd>
+<dt>半径</dt><dd><p>控制融球的物理尺寸。这与在物体模式下缩放融球相同。 <em>半径</em> 通过 <em>白色环</em> 表现出来，可以选择白色环并 <a class="reference internal" href="../../scene_layout/object/editing/transform/basics.html#bpy-ops-transform-resize"><span class="std std-ref">缩放</span></a> 改变 <em>半径</em> 值。</p>
+</dd>
+</dl>
+<dl id="meta-ball-editing-negative-influence">
+<dt>负向</dt><dd><p>控制影响是 <em>正</em> 还是 <em>负</em> 。</p>
+<p><em>正向</em> 影响被定义为一种吸引力，这意味着当 <em>影响之环</em> 相交时，网格将向彼此延伸。相反的效果是 <em>负向</em> 影响，即物体相互排斥。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果融球具有 <em>负向</em> 影响，则融球在3D视图中不可见，只显示周围的圆圈。</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="../../_images/modeling_metas_editing_family.png" src="../../_images/modeling_metas_editing_family.png" />
+<p class="caption"><span class="caption-text">正向影响的三个融球。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="../../_images/modeling_metas_editing_negative-influence.png" src="../../_images/modeling_metas_editing_negative-influence.png" />
+<p class="caption"><span class="caption-text">负向影响的融球；第一个是负向的，第二个是正向的。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>隐藏</dt><dd><p>类似在物体模式里的 <a class="reference internal" href="../../scene_layout/object/editing/show_hide.html#object-show-hide"><span class="std std-ref">Show/Hide</span></a>，可以隐藏选中的融球，以及恢复被隐藏的物体.。这对于稍微清理视图非常方便。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>隐藏一个融球不是 <em>仅仅</em> 隐藏它，而且在融球计算中禁用它，这将影响最终的几何形状。</p></li>
+<li><p>在编辑模式下，红色和绿色的圆圈始终可见，在物体模式下，选择圆圈也始终保持可见。</p></li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="deleting-elements">
+<h2>删除元素<a class="headerlink" href="#deleting-elements" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">快捷键</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate">X</kbd>, <kbd class="kbd docutils literal notranslate">Delete</kbd></p>
+</dd>
+</dl>
+</div>
+<p>只能删除活动元素，这里没有其他的选项。</p>
+</div>
+<div class="section" id="conversion">
+<h2>转换<a class="headerlink" href="#conversion" title="Permalink to this headline">¶</a></h2>
+<p>在物体模式下使用 <a class="reference internal" href="../../scene_layout/object/editing/convert.html#object-convert-to"><span class="std std-ref">Convert To</span></a> 转换融球为真正的网格。</p>
+</div>
+<div class="section" id="object-families">
+<span id="meta-ball-object-families"></span><h2>物体族<a class="headerlink" href="#object-families" title="Permalink to this headline">¶</a></h2>
+<p>“物体族”可以用于重组几个融球，产生的效果类似于同一个物体里包含有几个融球。</p>
+<p>族由物体名称左侧部分定义(第一个点前面的部分)。请记住，物体的名称是 <em>物体名称</em> 字段中的一个，在大多数面板中，<strong>不是</strong> <em>融球名称</em> 字段，这是融球数据块的名称……例如，“MetaPlane.001”的族是 <code class="docutils literal notranslate"><span class="pre">MetaPlane</span></code> 。 在同一“族”里的每个融球彼此相互关联，如如下讨论所述。</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/modeling_metas_editing_family.png"><img alt="../../_images/modeling_metas_editing_family.png" src="../../_images/modeling_metas_editing_family.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">融球族。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>融球族由一个 <em>基元</em> 融球物体控制，该物体由一个 <strong>没有</strong> 点的物体名称标识。例如，如果我们有三个融球，分别叫做 <code class="docutils literal notranslate"><span class="pre">MetaThing</span></code>, <code class="docutils literal notranslate"><span class="pre">MetaThing.001</span></code>, <code class="docutils literal notranslate"><span class="pre">MetaThing.round</span></code> ，基元物体将是 <code class="docutils literal notranslate"><span class="pre">MetaThing</span></code> 。</p>
+<p><em>基元</em> 融球物体确定基础、分辨率、阈值、 <em>和</em> 变换。它也有材质和纹理区域。在某种程度上， <em>基元</em> 融球是族中其他融球的“所有者”(也就是说，其他融球似乎被“包含”或加入到基元中)。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>当在多场景中工作时，注意好命名融球，来使 <em>基元</em> 总是与其他融球在同一场景中。</p>
+<p>如果不这样做，将会产生令人困惑的行为(比如不可见的融球)。</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>示例<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>图 <a class="reference internal" href="#fig-meta-ball-base"><span class="std std-ref">基元融球。</span></a> 展示了标记为“B”的 <em>基元</em> 融球物体。其他两个 <em>融球</em> 是 <em>子级</em> 。 子物体的选择环总是黑的，而编组的网格是橙色的。因为融球被分组了，他们形成一个统一的网格，它总可以由选择编组内任意融球物体的网格的方式来选择。</p>
+<div class="figure align-center" id="id6">
+<span id="fig-meta-ball-base"></span><a class="reference internal image-reference" href="../../_images/modeling_metas_editing_base-example.png"><img alt="../../_images/modeling_metas_editing_base-example.png" src="../../_images/modeling_metas_editing_base-example.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">基元融球。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>例如，在图 <a class="reference internal" href="#fig-meta-ball-base"><span class="std std-ref">基元融球。</span></a> 中，只选择了较低的球体(父球体)，可以看到父球体的网格 <em>和</em> 所有子球体的网格现在都被突出显示。</p>
+<div class="figure align-center" id="id7">
+<span id="fig-meta-ball-scale"></span><a class="reference internal image-reference" href="../../_images/modeling_metas_editing_base-example-scale.png"><img alt="../../_images/modeling_metas_editing_base-example-scale.png" src="../../_images/modeling_metas_editing_base-example-scale.png" style="width: 450px;" /></a>
+<p class="caption"><span class="caption-text">缩放“基元融球”。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>基元</em> 融球控制编组的 <em>多边形化程度</em> (网格结构)，而且也控制子级(非基元)融球的多边形化程度。 如果我们变换 <em>基元</em> 融球，子级的多边形化也随之改变.。然而，如果我们变换子级，多边形化保持不变。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>这种关于“多边形化”的讨论 <em>并不</em> 意味着不同的网格彼此之间不会形变(在同一个族中融球总是以一般的方式相互影响)。</p>
+<p>相反，它意味着只有在 <em>基元</em> 物体转换时，底层网格结构才会更改。例如，如果缩放 <em>基元</em> 物体，子元素的网格结构将发生变化。</p>
+<p>在图 <a class="reference internal" href="#fig-meta-ball-scale"><span class="std std-ref">缩放“基元融球”。</span></a> 中， <em>基元</em> 被缩小了，这就产生了缩放每个子物体网格结构的效果。如您所见，子物体网格的分辨率增加了，而 <em>基元</em> 降低了。子物体的大小没有改变！</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="properties.html" class="btn btn-neutral float-right" title="属性" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="primitives.html" class="btn btn-neutral float-left" title="基本体" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/metas/editing.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/metas/editing%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Blender 2.90 参考手册 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/index.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Blender入门" href="getting_started/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Blender 2.90 参考手册</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blender-blender-version-reference-manual">
+<h1>Blender 2.90 参考手册<a class="headerlink" href="#blender-blender-version-reference-manual" title="Permalink to this headline">¶</a></h1>
+<p>欢迎来到 <a class="reference external" href="https://www.blender.org">Blender</a> 自由开源3D创作套件的用户手册。</p>
+<p>可以下载离线手册使用: <a class="reference external" href="blender_manual.zip">下载全本手册 (HTML文件压缩包)</a>。</p>
+<div class="section" id="getting-started">
+<h2>入门<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<div class="tocdescr docutils container">
+<div class="descr docutils container">
+<p><a class="reference internal" href="getting_started/about/index.html"><span class="doc">关于Blender</span></a></p>
+</div>
+<div class="descr docutils container">
+<p><a class="reference internal" href="getting_started/installing/index.html"><span class="doc">安装Blender</span></a></p>
+</div>
+<div class="descr docutils container">
+<p><a class="reference internal" href="getting_started/configuration/index.html"><span class="doc">配置Blender</span></a></p>
+</div>
+<div class="descr docutils container">
+<p><a class="reference internal" href="getting_started/help.html"><span class="doc">帮助系统</span></a></p>
+</div>
+</div>
+</div>
+<div class="section" id="sections">
+<h2>部分<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
+<div class="tocdescr docutils container">
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="interface/index.html"><img alt="_images/index_interface.jpg" src="_images/index_interface.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="interface/index.html"><span class="doc">用户界面</span></a></dt><dd><p>介绍Blender的窗口系统、小部件和工具。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="editors/index.html"><img alt="_images/index_editors.jpg" src="_images/index_editors.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="editors/index.html"><span class="doc">编辑器</span></a></dt><dd><p>各编辑器界面及功能概览。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="scene_layout/index.html"><img alt="_images/index_scene.jpg" src="_images/index_scene.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="scene_layout/index.html"><span class="doc">场景 &amp; 物体</span></a></dt><dd><p>物体及其在场景, 视图层与集合中的管理。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="modeling/index.html"><img alt="_images/index_modeling.jpg" src="_images/index_modeling.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="modeling/index.html"><span class="doc">制作模型</span></a></dt><dd><p>网格、曲线、融球、文本、建模工具以及修改器。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="sculpt_paint/index.html"><img alt="_images/index_painting.jpg" src="_images/index_painting.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="sculpt_paint/index.html"><span class="doc">雕刻 &amp; 绘制</span></a></dt><dd><p>雕刻模式, 纹理绘制和顶点绘制。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="grease_pencil/index.html"><img alt="_images/index_grease-pencil.jpg" src="_images/index_grease-pencil.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="grease_pencil/index.html"><span class="doc">蜡笔</span></a></dt><dd><p>蜡笔的2D绘制和动画。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="animation/index.html"><img alt="_images/index_animation.jpg" src="_images/index_animation.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="animation/index.html"><span class="doc">动画 &amp; 绑定</span></a></dt><dd><p>关键帧, 驱动器, 约束, 骨架与形态键。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="physics/index.html"><img alt="_images/index_physics.jpg" src="_images/index_physics.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="physics/index.html"><span class="doc">物理</span></a></dt><dd><p>物理模拟, 粒子系统和动态绘制。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="render/index.html"><img alt="_images/index_render.jpg" src="_images/index_render.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="render/index.html"><span class="doc">渲染</span></a></dt><dd><p>使用Eevee, Cycles与Freestyle渲染与着色。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="compositing/index.html"><img alt="_images/index_compositing.jpg" src="_images/index_compositing.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="compositing/index.html"><span class="doc">合成</span></a></dt><dd><p>使用合成节点进行后期处理。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="movie_clip/index.html"><img alt="_images/index_movie-clip.jpg" src="_images/index_movie-clip.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="movie_clip/index.html"><span class="doc">跟踪 &amp; 遮罩</span></a></dt><dd><p>视频跟踪 &amp; 遮罩。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<div class="figure align-default">
+<a class="reference external image-reference" href="video_editing/index.html"><img alt="_images/index_sequencer.jpg" src="_images/index_sequencer.jpg" /></a>
+</div>
+<dl class="simple">
+<dt><a class="reference internal" href="video_editing/index.html"><span class="doc">视频编辑</span></a></dt><dd><p>使用序列编辑器编辑视频。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="files/index.html"><span class="doc">文件 &amp; 数据系统</span></a></dt><dd><p>数据块管理及blend文件结构。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="addons/index.html"><span class="doc">插件</span></a></dt><dd><p>其他可用的功能插件。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="advanced/index.html"><span class="doc">高级应用</span></a></dt><dd><p>Python脚本，如何编写脚本和命令行参数参考。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="troubleshooting/index.html"><span class="doc">问题排查</span></a></dt><dd><p>解决闪退, 显卡问题及Python错误，恢复文件与回报bug。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="glossary/index.html"><span class="doc">词汇表</span></a></dt><dd><p>Blender和手册中用到的术语及其定义。</p>
+</dd>
+</dl>
+</div>
+<div class="descr docutils container">
+<dl class="simple">
+<dt><a class="reference internal" href="genindex.html"><span class="std std-ref">手册索引</span></a></dt><dd><p>链接到词汇表的术语列表。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="get-involved">
+<h2>参与<a class="headerlink" href="#get-involved" title="Permalink to this headline">¶</a></h2>
+<p>手册主要由志愿者维护，中文翻译组QQ群号：620831153，欢迎加入。</p>
+<p>请考虑参与这份工作并 <a class="reference internal" href="about/index.html#about-user-contribute"><span class="std std-ref">为手册出力</span></a> 。针对中文手册中的问题，请 <a class="reference external" href="https://github.com/sfire/scbm">点此报错</a> 。</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="getting_started/index.html" class="btn btn-neutral float-right" title="Blender入门" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/index.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60index%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

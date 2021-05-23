@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Windows上安装 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/about/contribute/install/windows.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="编译" href="../build/index.html" />
+    <link rel="prev" title="在macOS上安装" href="macos.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">贡献文档</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html#getting-started">入门</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">安装</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="macos.html">macOS</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Windows</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#installing-python">安装Python</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#installing-svn-and-downloading-the-repository">安装SVN与下载代码库</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#setting-up-the-build-environment">设置编译环境</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../build/index.html">编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing.html">编辑手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../patch_commit.html">补丁 &amp; 提交</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../release_cycle.html">发布周期</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../todo_list.html">待办事项清单</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#guidelines">指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#translations">翻译</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#contacts">联系</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">贡献文档</a> &raquo;</li>
+        
+          <li><a href="index.html">安装</a> &raquo;</li>
+        
+      <li>Windows上安装</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-on-windows">
+<h1>Windows上安装<a class="headerlink" href="#installation-on-windows" title="Permalink to this headline">¶</a></h1>
+<p>本指南包含以下主题：</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#installing-python">安装Python</a> (用于 <em>转换</em> 原始文件为HTML)</p></li>
+<li><p><a class="reference internal" href="#installing-svn-and-downloading-the-repository">安装SVN与下载代码库</a></p></li>
+<li><p><a class="reference internal" href="#setting-up-the-build-environment">设置编译环境</a></p></li>
+</ol>
+<div class="section" id="installing-python">
+<h2>安装Python<a class="headerlink" href="#installing-python" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>下载Windows下的 <a class="reference external" href="https://www.python.org/downloads/">Python安装包</a> 。 本指南使用的版本是3.6.x。</p></li>
+<li><p>使用安装向导安装Python。记得勾选 &quot;Add Python to PATH&quot; 选项:</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../_images/about_contribute_install_windows_installer.png" src="../../../_images/about_contribute_install_windows_installer.png" />
+<p class="caption"><span class="caption-text">该选项必须勾选，这样才能使用脚本编译手册。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>其余所有设置维持默认。</p>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-svn-and-downloading-the-repository">
+<h2>安装SVN与下载代码库<a class="headerlink" href="#installing-svn-and-downloading-the-repository" title="Permalink to this headline">¶</a></h2>
+<p>尽管还有很多Subversion客户端，在本指南中, 我们使用 TortoiseSVN。</p>
+<ol class="arabic simple">
+<li><p>下载Windows下的 <a class="reference external" href="https://tortoisesvn.net/downloads.html">TortoiseSVN</a> 。</p></li>
+<li><p>使用安装向导安装TortoiseSVN。在选择安装特性时，推荐启用 <em>command line client tools</em> ，这样你可以在命令行使用SVN(这没有任何害处，并且可能在你遇到麻烦的时候帮到你)。</p></li>
+<li><p>一旦安装完成，创建一个新的文件夹，用于存储Blender手册所有相关内容。这里，我们使用 <code class="docutils literal notranslate"><span class="pre">C:\blender_docs</span></code> 。</p></li>
+<li><p>打开新建的文件夹，右键单击，然后弹出菜单中选择 <em>SVN Checkout...</em> 。</p></li>
+<li><p>在 <em>URL of repository</em> 文本框中，输入： <code class="docutils literal notranslate"><span class="pre">https://svn.blender.org/svnroot/bf-manual/trunk/blender_docs</span></code> 。</p></li>
+<li><p>在 <em>Checkout directory</em> 文本框，输入： <code class="docutils literal notranslate"><span class="pre">C:\blender_docs</span></code>.</p></li>
+<li><p>点击 <em>OK</em> ——几分钟过后代码库就下载下来了，具体耗时取决于你的网络连接。</p></li>
+</ol>
+</div>
+<div class="section" id="setting-up-the-build-environment">
+<h2>设置编译环境<a class="headerlink" href="#setting-up-the-build-environment" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>打开命令行提示符。(使用管理员启动)</p></li>
+<li><p>进入刚刚SVN检出新建的 <code class="docutils literal notranslate"><span class="pre">blender_docs</span></code> 文件夹:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> C:<span class="se">\b</span>lender_docs
+</pre></div>
+</div>
+</li>
+<li><p>夹中有一个名为 <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> 的文件，包含了一系列需要安装的依赖关系。要安装这些依赖关系，可以使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 命令:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>如果一切顺利，完成后会显示以下信息：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>Successfully installed Jinja2 MarkupSafe Pygments Sphinx docutils sphinx-rtd-theme Cleaning up...
+</pre></div>
+</div>
+</li>
+</ul>
+<p>在安装过程中，可能会显示一些警告，但不要担心。但是如果发生任何错误，则可能会造成一些问题。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>时不时使用下面的命令确认你的依赖库是不是最新的:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt --upgrade
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<p>继续下一步: <a class="reference internal" href="../build/windows.html"><span class="doc">编译</span></a>。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../build/index.html" class="btn btn-neutral float-right" title="编译" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macos.html" class="btn btn-neutral float-left" title="在macOS上安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/about/contribute/install/windows.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60about/contribute/install/windows%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

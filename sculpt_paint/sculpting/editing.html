@@ -1,0 +1,512 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Editing &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/sculpt_paint/sculpting/editing.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="隐藏 &amp; 遮罩" href="hide_mask.html" />
+    <link rel="prev" title="自适应雕刻" href="adaptive.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">雕刻 &amp; 绘制</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../brush/index.html">笔刷</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigation.html">视图切换</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#modes">模式</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">雕刻</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolbar.html">Toolbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tools/index.html">Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tool_settings/index.html">工具设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adaptive.html">自适应雕刻</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Editing</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#sculpt">Sculpt</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mask">Mask</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#face-sets">Face Sets</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#face-set-from-masked">Face Set from Masked</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#face-set-from-visible">Face Set from Visible</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#face-set-from-edit-mode-selection">Face Set from Edit Mode Selection</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#init-face-sets">Init Face Sets</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#grow-shrink-face-sets">Grow/Shrink Face Sets</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#invert-visible-face-sets">Invert Visible Face Sets</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#show-all-face-sets">Show All Face Sets</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#randomize-colors">Randomize Colors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="hide_mask.html">隐藏 &amp; 遮罩</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../texture_paint/index.html">纹理绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vertex_paint/index.html">顶点绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../weight_paint/index.html">权重绘制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">雕刻 &amp; 绘制</a> &raquo;</li>
+        
+          <li><a href="index.html">雕刻</a> &raquo;</li>
+        
+      <li>Editing</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="editing">
+<h1>Editing<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sculpt">
+<h2>Sculpt<a class="headerlink" href="#sculpt" title="Permalink to this headline">¶</a></h2>
+<dl id="bpy-ops-sculpt-set-pivot-position">
+<dt>Set Pivot</dt><dd><p>Like Object and Edit Mode, Sculpt Mode also has a <a class="reference internal" href="../../glossary/index.html#term-Pivot-Point"><span class="xref std std-term">Pivot Point</span></a>.
+This is because the basic move, scale, rotate transforms are also possible in Sculpt Mode.</p>
+<dl>
+<dt>Origin</dt><dd><p>Sets the pivot to the origin of the sculpt.</p>
+</dd>
+<dt>Unmasked</dt><dd><p>Sets the pivot position to the average position of the unmasked vertices.</p>
+</dd>
+<dt>Mask Border</dt><dd><p>Sets the pivot position to the center of the mask's border.</p>
+</dd>
+<dt>Active Vertex</dt><dd><p>Sets the pivot position to the active vertex position.</p>
+</dd>
+<dt>Surface</dt><dd><p>Sets the pivot position to the surface under the cursor.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../../editors/3dview/controls/pivot_point/index.html"><span class="doc">Object and Edit Mode Pivot</span></a></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple" id="bpy-ops-sculpt-optimize">
+<dt>Rebuild BVH</dt><dd><p>Recalculates the <a class="reference internal" href="../../glossary/index.html#term-BVH"><span class="xref std std-term">BVH</span></a> used by <a class="reference internal" href="tool_settings/dyntopo.html"><span class="doc">动态拓扑</span></a>
+which can improve performance which might degrade over time while using Dyntopo.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="mask">
+<h2>Mask<a class="headerlink" href="#mask" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="hide_mask.html"><span class="doc">隐藏 &amp; 遮罩</span></a>.</p>
+</div>
+<div class="section" id="face-sets">
+<span id="sculpting-editing-facesets"></span><h2>Face Sets<a class="headerlink" href="#face-sets" title="Permalink to this headline">¶</a></h2>
+<p>Face Sets are another way to control the visibility state of the mesh in Sculpt Mode.
+They are designed to work in modes where brushes are the primary way of interaction and they provide
+much more control when working with meshes with complex shapes and overlapping surfaces.
+Geometry can be assigned to a Face Set and each Face Set is represented as a different color in the 3D Viewport.
+A pie menu to edit Face Sets can be accessed with <kbd class="kbd docutils literal notranslate">W</kbd>.</p>
+<div class="section" id="face-set-from-masked">
+<span id="bpy-ops-sculpt-face-sets-create"></span><h3>Face Set from Masked<a class="headerlink" href="#face-set-from-masked" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Face Set from Masked</span></p>
+</dd>
+</dl>
+</div>
+<p>Creates a new Face Set from <a class="reference internal" href="hide_mask.html#sculpt-mask-menu"><span class="std std-ref">Masked Geometry</span></a>.</p>
+</div>
+<div class="section" id="face-set-from-visible">
+<h3>Face Set from Visible<a class="headerlink" href="#face-set-from-visible" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Face Set from Visible</span></p>
+</dd>
+</dl>
+</div>
+<p>Creates a new Face Set from all visible geometry.</p>
+</div>
+<div class="section" id="face-set-from-edit-mode-selection">
+<h3>Face Set from Edit Mode Selection<a class="headerlink" href="#face-set-from-edit-mode-selection" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Face Set from Edit Mode Selection</span></p>
+</dd>
+</dl>
+</div>
+<p>Creates a new Face Set corresponding to the Edit Mode face selection.</p>
+</div>
+<div class="section" id="init-face-sets">
+<span id="bpy-ops-sculpt-face-sets-init"></span><h3>Init Face Sets<a class="headerlink" href="#init-face-sets" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Init Face Sets</span></p>
+</dd>
+</dl>
+</div>
+<p>Initializes all Face Sets on the mesh at once based off one of several mesh attribute properties.</p>
+<dl>
+<dt>Mode</dt><dd><p>The mesh data attribute used to define the boundaries for the Face Sets.</p>
+<dl class="simple">
+<dt>By Loose Parts</dt><dd><p>Creates a new Face Set per discontinuous part of the mesh.</p>
+</dd>
+<dt>By Materials</dt><dd><p>Creates a Face Set per <a class="reference internal" href="../../render/materials/assignment.html#material-slots"><span class="std std-ref">Material Slot</span></a>.</p>
+</dd>
+<dt>By Normals</dt><dd><p>Creates Face Sets for Faces that have similar <a class="reference internal" href="../../modeling/meshes/structure.html#modeling-meshes-structure-normals"><span class="std std-ref">Normals</span></a>.</p>
+</dd>
+<dt>By UV Seams</dt><dd><p>Creates Face Sets using <a class="reference internal" href="../../modeling/meshes/uv/unwrapping/seams.html"><span class="doc">UV Seams</span></a> as boundaries.</p>
+</dd>
+<dt>By Edge Creases</dt><dd><p>Creates Face Sets using <a class="reference internal" href="../../modeling/meshes/editing/edge/edge_data.html#bpy-ops-transform-edge-crease"><span class="std std-ref">Edge Creases</span></a> as boundaries.</p>
+</dd>
+<dt>By Edge Bevel Weight</dt><dd><p>Creates Face Sets using <a class="reference internal" href="../../modeling/meshes/editing/edge/edge_data.html#bpy-ops-transform-edge-bevelweight"><span class="std std-ref">Bevel Weights</span></a> as boundaries.</p>
+</dd>
+<dt>By Sharp Edges</dt><dd><p>Creates Face Sets using <a class="reference internal" href="../../modeling/meshes/editing/edge/edge_data.html#bpy-ops-mesh-mark-sharp"><span class="std std-ref">Sharp Edges</span></a> as boundaries.</p>
+</dd>
+<dt>By Face Maps</dt><dd><p>Creates a Face Set per <a class="reference internal" href="../../modeling/meshes/properties/object_data.html#bpy-types-facemaps"><span class="std std-ref">Face Map</span></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt>Threshold</dt><dd><p>The minimum value to consider a certain attribute a boundary when creating the Face Sets.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="grow-shrink-face-sets">
+<span id="bpy-ops-sculpt-face-set-edit"></span><h3>Grow/Shrink Face Sets<a class="headerlink" href="#grow-shrink-face-sets" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Grow/Shrink Face Sets</span></p>
+</dd>
+<dt class="field-odd">Hotkey</dt>
+<dd class="field-odd"><p><kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">W</kbd></kbd>, <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">W</kbd></kbd></p>
+</dd>
+</dl>
+</div>
+<p>Expands or contracts the area of face set under the cursor by adding or removing surrounding faces.</p>
+</div>
+<div class="section" id="invert-visible-face-sets">
+<span id="bpy-ops-sculpt-face-set-change-visibility"></span><h3>Invert Visible Face Sets<a class="headerlink" href="#invert-visible-face-sets" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Invert Visible Face Sets</span></p>
+</dd>
+</dl>
+</div>
+<p>Hides all geometry that is part of a Face Set and makes all hidden geometry that is part of a face set visible.</p>
+</div>
+<div class="section" id="show-all-face-sets">
+<h3>Show All Face Sets<a class="headerlink" href="#show-all-face-sets" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Show All Face Sets</span></p>
+</dd>
+</dl>
+</div>
+<p>Shows all hidden geometry that is part of a Face Set.</p>
+</div>
+<div class="section" id="randomize-colors">
+<span id="bpy-ops-sculpt-face-sets-randomize-colors"></span><h3>Randomize Colors<a class="headerlink" href="#randomize-colors" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">Reference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Mode</dt>
+<dd class="field-odd"><p>Sculpt Mode</p>
+</dd>
+<dt class="field-even">Menu</dt>
+<dd class="field-even"><p><span class="menuselection">Face Sets ‣ Randomize Colors</span></p>
+</dd>
+</dl>
+</div>
+<p>Generates a new set of random colors to render the Face Sets in the 3D Viewport.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hide_mask.html" class="btn btn-neutral float-right" title="隐藏 &amp; 遮罩" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adaptive.html" class="btn btn-neutral float-left" title="自适应雕刻" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/sculpt_paint/sculpting/editing.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60sculpt_paint/sculpting/editing%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

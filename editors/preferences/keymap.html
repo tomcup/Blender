@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>键位映射 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/editors/preferences/keymap.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="系统" href="system.html" />
+    <link rel="prev" title="视图切换" href="navigation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">编辑器</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../3dview/index.html">3D视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image/index.html">图像编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../uv/index.html">UV编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_editor.html">着色器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../compositing/index.html">Compositor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../texture_node/index.html">纹理节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../video_editing/index.html">Video Sequencer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../clip/index.html">影片剪辑编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dope_sheet/index.html">动画摄影表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../timeline.html">时间线</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../graph_editor/index.html">曲线编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../drivers_editor.html">驱动器编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nla/index.html">非线性动画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text_editor.html">文本编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_console.html">Python 控制台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../info_editor.html">信息编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../outliner.html">大纲视图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../properties_editor.html">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../file_browser.html">文件浏览器</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">偏好设置</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="interface.html">界面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="themes.html">主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="viewport.html">视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lights.html">灯光</a></li>
+<li class="toctree-l3"><a class="reference internal" href="editing.html">编辑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="addons.html">插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="input.html">输入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="navigation.html">视图切换</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">键位映射</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preset-management">预设管理</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#filtering">过滤</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#preferences">偏好设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editor">编辑器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#restoring">恢复</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#known-limitations">已知局限</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#blender-versions">Blender 版本</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="system.html">系统</a></li>
+<li class="toctree-l3"><a class="reference internal" href="save_load.html">保存和加载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_paths.html">文件路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="experimental.html">试验特性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">编辑器</a> &raquo;</li>
+        
+          <li><a href="index.html">偏好设置</a> &raquo;</li>
+        
+      <li>键位映射</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="keymap">
+<span id="prefs-input-keymap-editor"></span><h1>键位映射<a class="headerlink" href="#keymap" title="Permalink to this headline">¶</a></h1>
+<p>键位映射编辑器可让你通过以下方式调整键位映射：</p>
+<dl class="field-list simple">
+<dt class="field-odd">预设</dt>
+<dd class="field-odd"><p>Blender附带的预定义键位映射。</p>
+</dd>
+<dt class="field-even">偏好设置</dt>
+<dd class="field-even"><p>键位映射可以定义自己的偏好设置以更改功能或添加其他按键绑定。</p>
+</dd>
+<dt class="field-odd">键位映射条目</dt>
+<dd class="field-odd"><p>你可以添加/删除/编辑单个键位映射条目。</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/editors_preferences_section_keymap.png" src="../../_images/editors_preferences_section_keymap.png" />
+<p class="caption"><span class="caption-text">Blender偏好设置键位映射部分。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="preset-management">
+<span id="bpy-ops-preferences-keyconfig"></span><h2>预设管理<a class="headerlink" href="#preset-management" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>键位映射预设</dt><dd><p>从预定义的键位映射列表中选择键位映射。</p>
+</dd>
+<dt>导入</dt><dd><p>导入按钮打开文件浏览器，选择要添加到键位映射预设列表中的 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 文件。</p>
+</dd>
+<dt>导出</dt><dd><p>将当前的键位映射配置保存为其他人可以使用的预设。</p>
+<dl>
+<dt>全部键位映射</dt><dd><p>禁用后，仅导出用户修改过的键位映射和分类。另外，插件可能会为各个功能注册键位映射，不过，这些键位映射不会被导出，除非用户做过修改。导出的文件可以当做是 <strong>键位映射变化</strong> ，而非全键位映射导出。</p>
+<p>启用后，将写入整个密钥映射。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="filtering">
+<h3>过滤<a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<dl id="bpy-types-spacepreferences-filter-type">
+<dt>过滤类型</dt><dd><dl>
+<dt>名称</dt><dd><p>按运行的操作名称查找键位映射项。</p>
+</dd>
+<dt>按键绑定</dt><dd><p>用激活键查找键位映射项。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>比如，你可以使用 <code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">Shift</span> <span class="pre">C</span></code> 查找使用所有这些键的键位映射项。</p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-spacepreferences-filter-text">
+<dt>搜索</dt><dd><p>要搜索的文本(留空以禁用)。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="preferences">
+<h2>偏好设置<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h2>
+<p>键位映射可以定义自己的偏好设置，这些是您可以对键位映射进行的预定义调整，而无需手动调整那些可能导致更新的 <a class="reference internal" href="#blender-versions">Blender版本</a> 出现问题的单个键位映射项。</p>
+<p>有关默认键位映射中可用的选项，参见 <a class="reference internal" href="../../interface/keymap/blender_default.html#keymap-blender-default-prefs"><span class="std std-ref">默认键位映射偏好设置</span></a> 。</p>
+</div>
+<div class="section" id="editor">
+<span id="bpy-ops-preferences-keyitem"></span><h2>编辑器<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h2>
+<p>键位映射编辑器允许修改默认快捷键。可以更改每个Blender编辑器的键位映射。</p>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/editors_preferences_keymap_keymap-editor.png" src="../../_images/editors_preferences_keymap_keymap-editor.png" />
+<p class="caption"><span class="caption-text">键位映射编辑器。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p class="rubric">用法</p>
+<ol class="arabic simple">
+<li><p>选择要更改的键位映射，然后点击白色箭头以打开键位映射树。</p></li>
+<li><p>选择哪个输入将控制该功能。</p></li>
+<li><p>根据需要更改快捷键。只需点击快捷方式输入字段并输入新的快捷方式。</p></li>
+</ol>
+<dl>
+<dt>活动</dt><dd><p>Uncheck to disable this keymap item.</p>
+</dd>
+<dt>映射类型</dt><dd><dl class="simple">
+<dt>键盘</dt><dd><p>单个快捷键或组合键。</p>
+</dd>
+<dt>鼠标</dt><dd><p>鼠标按钮、绘图板或触控板输入的操作。</p>
+</dd>
+<dt>NDOF</dt><dd><p>从3D鼠标 (<a class="reference internal" href="../../glossary/index.html#term-NDOF"><span class="xref std std-term">NDOF</span></a>) 设备移动。</p>
+</dd>
+<dt>拖拽</dt><dd><p>鼠标点击并拖动 <em>(可选将拖动方向映射到不同的操作)</em>。</p>
+</dd>
+<dt>文本输入</dt><dd><p>输入文本即可使用此功能。</p>
+</dd>
+<dt>计时器</dt><dd><p>Used to control actions based on a time period.
+E.g. by default, <em>Animation Step</em> uses &quot;Timer 0&quot;, <em>Smooth View</em> uses &quot;Timer 1&quot;.</p>
+</dd>
+</dl>
+</dd>
+<dt>操作ID名称</dt><dd><p>要调用的操作的标识符。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>参见 <code class="xref py py-mod docutils literal notranslate"><span class="pre">bpy.ops</span></code> 查看操作列表(删除标识符的 <code class="docutils literal notranslate"><span class="pre">bpy.</span></code> 前缀)。</p>
+</div>
+</dd>
+<dt>事件</dt><dd><dl class="simple">
+<dt>类型</dt><dd><p>激活此键位映射项的键或按钮(取决于映射类型)。</p>
+</dd>
+<dt>值</dt><dd><p>操作(如按下、释放、点击、拖动等)，(取决于映射类型)。</p>
+</dd>
+<dt>修饰键</dt><dd><p>要按住的其他键(例如 <kbd class="kbd docutils literal notranslate">Ctrl</kbd>, <kbd class="kbd docutils literal notranslate">Shift</kbd>, <kbd class="kbd docutils literal notranslate">Alt</kbd>)。</p>
+</dd>
+</dl>
+</dd>
+<dt>操作属性</dt><dd><p>对此操作激活的默认属性的更改</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>有关键位映射编辑的更多信息见 <a class="reference internal" href="../../advanced/keymap_editing.html#keymap-customize"><span class="std std-ref">键位映射自定义</span></a> 。</p>
+</div>
+<div class="section" id="restoring">
+<h3>恢复<a class="headerlink" href="#restoring" title="Permalink to this headline">¶</a></h3>
+<p>如果要恢复键位映射的默认设置，只需点击此键位映射右上角的 <em>恢复</em> 按钮即可。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>可以为鼠标和键盘添加新的 <em>预设</em>，而非删除默认键位映射来创建自定义键位。</p>
+</div>
+</div>
+</div>
+<div class="section" id="known-limitations">
+<h2>已知局限<a class="headerlink" href="#known-limitations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="blender-versions">
+<h3>Blender 版本<a class="headerlink" href="#blender-versions" title="Permalink to this headline">¶</a></h3>
+<p>修改自己的键位映射的一个问题是新的Blender 版本键可能会更改访问工具的方式，从而破坏自定义键位映射。</p>
+<p>虽然键位映射可以手动更新，但是你所做的自定义键位越多，在新版本Blender 中发生冲突的可能性就越高。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="system.html" class="btn btn-neutral float-right" title="系统" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="navigation.html" class="btn btn-neutral float-left" title="视图切换" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/editors/preferences/keymap.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60editors/preferences/keymap%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

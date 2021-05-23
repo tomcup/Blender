@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>限制 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/render/eevee/limitations.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Cycles" href="../cycles/index.html" />
+    <link rel="prev" title="反射平面" href="light_probes/reflection_planes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">渲染</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Eevee</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="render_settings/index.html">渲染设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="world.html">世界环境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lighting.html">灯光设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="light_probes/index.html">光照探头</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">限制</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cameras">相机</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lights">灯光</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#light-probes">光照探针</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indirect-lighting">间接光照明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shadows">阴影</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#volumetrics">体积</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#depth-of-field">景深</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#screen-space-effects">屏幕空间效果</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ambient-occlusion">环境光遮蔽(AO)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#screen-space-reflections">屏幕空间反射</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#screen-space-refraction">屏幕空间折射</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#subsurface-scattering">次表面散射</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#materials">材质</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shader-nodes">着色器节点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#memory-management">内存管理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpu-rendering">CPU渲染</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiple-gpu-support">多GPU支持</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#headless-rendering">无头(窗)渲染</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cycles/index.html">Cycles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workbench/index.html">Workbench</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cameras.html">相机</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lights/index.html">Lights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shader_nodes/index.html">着色器节点</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../color_management.html">色彩管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../freestyle/index.html">Freestyle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../layers/index.html">层 &amp; 通道</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../output/index.html">渲染输出</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">渲染</a> &raquo;</li>
+        
+          <li><a href="index.html">Eevee</a> &raquo;</li>
+        
+      <li>限制</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="limitations">
+<h1>限制<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h1>
+<p>Eevee的目标是成为交互式渲染引擎。在不影响性能的前提下，一些功能还没有加入或不可能整合进Eevee的架构中。</p>
+<p>以下是在使用Eevee时你可以预见到的功能限制详尽列表。</p>
+<div class="section" id="cameras">
+<h2>相机<a class="headerlink" href="#cameras" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>目前只支持透视和正交。</p></li>
+</ul>
+</div>
+<div class="section" id="lights">
+<h2>灯光<a class="headerlink" href="#lights" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Eevee场景中仅支持最多128个激活灯光。</p></li>
+<li><p>只能同时支持8个投影阳光。</p></li>
+<li><p>到目前为止, 灯光只能有一种颜色, 不支持灯光节点组。</p></li>
+</ul>
+</div>
+<div class="section" id="light-probes">
+<h2>光照探针<a class="headerlink" href="#light-probes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Eevee仅支持至多128个活动立方体反射贴图。</p></li>
+<li><p>Eevee仅支持至多64个活动的体积辐射。</p></li>
+<li><p>在相机视野内，Eevee仅支持最多16个活动的反射平面。</p></li>
+</ul>
+</div>
+<div class="section" id="indirect-lighting">
+<h2>间接光照明<a class="headerlink" href="#indirect-lighting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>体积不接收体积辐射光但接收世界环境漫射照明。</p></li>
+<li><p>Eevee既不支持“镜面到漫反射”的光反弹，也不支持“镜面到镜面”的光反弹。</p></li>
+<li><p>在烘焙过程中，所有镜面照明都会关闭。</p></li>
+</ul>
+</div>
+<div class="section" id="shadows">
+<span id="eevee-limitations-shadows"></span><h2>阴影<a class="headerlink" href="#shadows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Eevee场景中仅支持最多128个激活灯光。</p></li>
+<li><p>只能同时支持8个投影阳光。</p></li>
+</ul>
+</div>
+<div class="section" id="volumetrics">
+<span id="eevee-limitations-volumetrics"></span><h2>体积<a class="headerlink" href="#volumetrics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>仅支持一次散射。</p></li>
+<li><p>只在相机光线中渲染体积。 它们在屏幕空间反射/屏幕空间折射和光照探针不可见。</p></li>
+<li><p>体积不接收体积辐射光但接收世界环境漫射照明。</p></li>
+<li><p>体积阴影仅在体积物体上有效。它们不能在场景实物上投射阴影。</p></li>
+<li><p>仅在视锥体(视野)中的体积会有阴影。</p></li>
+<li><p>体积光照明不支持设置灯光形状。它们都被视为点光。</p></li>
+</ul>
+</div>
+<div class="section" id="depth-of-field">
+<span id="eevee-limitations-dof"></span><h2>景深<a class="headerlink" href="#depth-of-field" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>以一半的分辨率渲染，因此靠近焦点的微小细节会产生块状伪像</p></li>
+<li><p>实际上，近和远散焦缓冲区是一个连续的纹理。这会使图像的左侧和右侧出现一些渗色。可以使用 <em>过扫描</em> 功能解决此问题。</p></li>
+</ul>
+</div>
+<div class="section" id="screen-space-effects">
+<h2>屏幕空间效果<a class="headerlink" href="#screen-space-effects" title="Permalink to this headline">¶</a></h2>
+<p>Eevee不是光线追踪引擎，不会计算全部的光线反弹。而是使用深度缓冲区作为近似场景表示，这会降低场景缩放效果的复杂性并实现了更高的性能。 eevee计算那些效果时，仅计算视图范围的内容。另外它只利用一层深度，因此仅知道最前面的像素距离。</p>
+<p>这些限制会产生一些问题：</p>
+<ul class="simple">
+<li><p>屏幕空间效果会在屏幕(视图)边框消失。可以使用 <em>过扫描</em> 功能来修复此问题。</p></li>
+<li><p>屏幕空间效果缺乏深层信息(或者物体的厚度)。这就是为什么大多数效果都有厚度参数来控制如何考虑潜在的相交像素。</p></li>
+<li><p>这些效果不考虑混合表面。 它们不是深度预处理的一部分，不会出现在深度缓冲区中。</p></li>
+</ul>
+<div class="section" id="ambient-occlusion">
+<span id="eevee-limitations-ao"></span><h3>环境光遮蔽(AO)<a class="headerlink" href="#ambient-occlusion" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>对象被视为无限厚，如果距离非常大，投影会混叠。</p></li>
+</ul>
+</div>
+<div class="section" id="screen-space-reflections">
+<span id="eevee-limitations-reflections"></span><h3>屏幕空间反射<a class="headerlink" href="#screen-space-reflections" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>仅光泽BSDF支持屏幕空间反射。</p></li>
+<li><p>目前任意选择评估的BSDF。</p></li>
+<li><p>屏幕空间反射将使用屏幕空间折射反射透明对象和对象，但由于单层深度缓冲区而没有精确定位。</p></li>
+</ul>
+</div>
+<div class="section" id="screen-space-refraction">
+<span id="eevee-limitations-refraction"></span><h3>屏幕空间折射<a class="headerlink" href="#screen-space-refraction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>只有第一个折射是精确的。</p></li>
+<li><p>只能折射不透明或者alpha hashed材质的物体。</p></li>
+</ul>
+</div>
+<div class="section" id="subsurface-scattering">
+<span id="eevee-limitations-sss"></span><h3>次表面散射<a class="headerlink" href="#subsurface-scattering" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>只有一个BSSRDF可以产生屏幕空间次表面散射。</p></li>
+<li><p>目前任意选择评估的BSSRDF。</p></li>
+<li><p>最多254个次表面散射材质的物体。</p></li>
+<li><p>每个像素只能调整缩放比例。 单个RGB半径可在插槽默认值中调整。</p></li>
+<li><p>在模糊期间，每个表面的输入辐射不被隔离，导致光从表面泄漏到表面。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="materials">
+<span id="eevee-limitations-materials"></span><h2>材质<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>折射</dt><dd><p>通过对光泽 BSDF使用的相同反射探头进行采样，但使用折射视图方向而不是反射视图方向来折射。 只有第一次折射事件才是精确的。 使用折射深度可以将第二折射事件的近似用于相对较薄的物体。 使用屏幕空间折射将折射视图内部可见的内容，并在没有命中时使用最近的探测器。</p>
+<p>屏幕空间反射和环境光屏蔽(AO)与屏幕空间折射不兼容; 它们将在使用它的表面上禁用。 使用屏幕空间折射的曲面不会出现在屏幕空间反射的反射中。 使用屏幕空间折射的曲面不会将环境光屏蔽(AO)投射到其他曲面上。</p>
+</dd>
+<dt>凹凸贴图</dt><dd><p>截至目前，使用OpenGL派生工具支持凹凸贴图，每个2×2像素块都相同。这意味着凹凸输出值将显示为像素化。建议改用法线映射。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果您绝对需要使用Bump节点进行渲染，请以目标分辨率的两倍渲染并缩小最终输出。</p>
+</div>
+</dd>
+<dt>体积物体</dt><dd><p>体积着色器将影响对象的整个边缘。 必须使用着色器内的程序纹理调整形状。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="shader-nodes">
+<h2>着色器节点<a class="headerlink" href="#shader-nodes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>所有BSDF都使用近似值来实现实时性能，因此Cycles和Eevee之间总会存在细微差别。</p></li>
+<li><p>某些实用节点尚未与Eevee兼容(例如 天空贴图节点)。</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>不支持节点完整列表 <a class="reference internal" href="materials/nodes_support.html"><span class="doc">节点支持</span></a>.</p>
+</div>
+</div>
+<div class="section" id="memory-management">
+<h2>内存管理<a class="headerlink" href="#memory-management" title="Permalink to this headline">¶</a></h2>
+<p>目前为止Eevee使用OpenGL，而且 <abbr title="图形处理器，一般叫做显卡">GPU</abbr> 内存处理由OpenGL驱动实现。理论上，只需要贴图和网格(现在称为“资源”)作为一次(例如 一个物体)合理的GPU内存的请求。</p>
+<p>如果场景非常大，驱动会交换切换物体进出来保证所有物体被正确渲染。</p>
+<p>在实践中，使用太多的GPU内存会导致GPU驱动崩溃，冻结，或终止其它应用程序。所以请小心做出您的请求。</p>
+<p>目前没有好办法估计资源是否适合GPU内存，或者GPU是否能成功渲染它们。</p>
+</div>
+<div class="section" id="cpu-rendering">
+<h2>CPU渲染<a class="headerlink" href="#cpu-rendering" title="Permalink to this headline">¶</a></h2>
+<p>作为光栅化引擎，Eevee仅使用 :abbr：<cite>GPU(图形处理器，也叫显卡)</cite> 的功能进行渲染。不打算支持 :abbr：<cite>CPU(中央处理单元)</cite> 渲染，因为效率太低。但工作中仍然需要CPU来处理场景的复杂任务，因为在渲染每个帧之前必须由CPU准备几何数据。</p>
+</div>
+<div class="section" id="multiple-gpu-support">
+<h2>多GPU支持<a class="headerlink" href="#multiple-gpu-support" title="Permalink to this headline">¶</a></h2>
+<p>目前不支持多 <abbr title="图形处理器，也叫做显卡">GPU</abbr> 系统</p>
+</div>
+<div class="section" id="headless-rendering">
+<h2>无头(窗)渲染<a class="headerlink" href="#headless-rendering" title="Permalink to this headline">¶</a></h2>
+<p>目前Eevee不支持无头渲染系统(例如没有显示管理器)。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cycles/index.html" class="btn btn-neutral float-right" title="Cycles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="light_probes/reflection_planes.html" class="btn btn-neutral float-left" title="反射平面" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/render/eevee/limitations.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60render/eevee/limitations%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

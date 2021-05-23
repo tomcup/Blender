@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>缓存 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/fluid/type/domain/cache.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../../copyright.html" />
+    <link rel="next" title="力场权重" href="field_weights.html" />
+    <link rel="prev" title="集合" href="collections.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../soft_body/index.html">软体</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Fluid</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">类型</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">域</a><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="settings.html">设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="gas/index.html">气体设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="liquid/index.html">Liquid Settings</a></li>
+<li class="toctree-l5"><a class="reference internal" href="guides.html">辅助(引导)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="collections.html">集合</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">缓存</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#advanced">高级</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="field_weights.html">力场权重</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../flow.html">流</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../effector.html">效果器</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../material.html">材质</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Fluid</a> &raquo;</li>
+        
+          <li><a href="../index.html">类型</a> &raquo;</li>
+        
+          <li><a href="index.html">域</a> &raquo;</li>
+        
+      <li>缓存</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cache">
+<h1>缓存<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 流体 ‣ 缓存</span></p>
+</dd>
+<dt class="field-even">类型</dt>
+<dd class="field-even"><p>域</p>
+</dd>
+</dl>
+</div>
+<p>The <em>Cache</em> panel is used to <a class="reference internal" href="../../../../glossary/index.html#term-Baking"><span class="xref std std-term">Bake</span></a> the fluid simulation and stores the outcome of
+a simulation so it does not need to be recalculated.</p>
+<p>Baking takes a <strong>lot</strong> of compute power (hence time). Depending on the scene, it is recommended
+to allocate enough time for the baking process.</p>
+<p>如果网格有修改器，渲染设置会用于将网格数据导出到流体解算器内。根据设置的不同，计算时间和内存使用量可能会呈指数增长。例如，当使用带有 <em>表面细分</em> 的运动网格对象时，可以通过关闭或降低细分级别来减少模拟时间。当设置/绑定正确时，你总是可以通过提高设置来产生更逼真的模拟结果。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fluid simulations use their own cache. All other physics simulations make use of
+the <a class="reference internal" href="../../../baking.html"><span class="doc">General Baking</span></a> operators.</p>
+</div>
+<dl class="simple" id="bpy-types-fluiddomainsettings-cache-directory">
+<dt>缓存目录</dt><dd><p>Directory to store baked simulation files in. Inside this directory each simulation type
+(i.e. mesh, particles, noise) will have its own directory containing the simulation data.</p>
+</dd>
+</dl>
+<dl id="bpy-types-fluiddomainsettings-cache-type">
+<dt>类型</dt><dd><p>The type of the cache determines how the cache can be baked.</p>
+<dl class="simple">
+<dt>重播</dt><dd><p>The cache will be baked as the simulation is being played in the viewport.</p>
+</dd>
+<dt>模块化</dt><dd><p>The cache will be baked step by step: The bake operators for this type are spread across various panels within
+the domain settings (e.g. the bake tool for the mesh can be found in the Mesh panel).</p>
+</dd>
+<dt>All</dt><dd><p>The cache will be baked with a single tool. All selected settings will be considered during this bake.
+The bake tool for this type can be found in the Cache panel.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-fluiddomainsettings-cache-frame-start">
+<dt>起始</dt><dd><p>Frame on which to start the simulation. This is the first frame that will be baked.</p>
+</dd>
+</dl>
+<dl id="bpy-types-fluiddomainsettings-cache-frame-end">
+<dt>结束点</dt><dd><p>Frame on which to stop the simulation. This is the last frame that will be baked.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The simulation is only calculated for positive frames between the <em>Start</em> and <em>End</em> frames
+of the <em>Cache</em> panel. So if you want a simulation that is longer than the default frame range
+you have to change the <em>End</em> frame.</p>
+</div>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-fluiddomainsettings-cache-frame-offset">
+<dt>Offset</dt><dd><p>Frame offset that is used when loading the simulation from the cache.
+It is not considered when baking the simulation, only when loading it.</p>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-fluiddomainsettings-use-resumable-cache">
+<dt>Use Resumable Cache</dt><dd><p>Extra data will be saved so that you can resumed baking after pausing. Since more data will be written
+to drive it is recommended to avoid enabling this option when baking at high resolutions.</p>
+</dd>
+</dl>
+<dl id="bpy-types-fluiddomainsettings-cache-data-format">
+<dt>Volume File Format</dt><dd><p>File format for volume based simulation data (i.e. grids and particles).</p>
+<dl class="simple">
+<dt>Uni缓存</dt><dd><p>Blender's own caching format with some compression.
+Each simulation object is stored in its own <code class="docutils literal notranslate"><span class="pre">.uni</span></code> cache file.</p>
+</dd>
+<dt>OpenVDB</dt><dd><p>Advanced and efficient storage format.
+All simulation objects (i.e. grids and particles) are stored in a single <code class="docutils literal notranslate"><span class="pre">.vdb</span></code> file per frame.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="bpy-types-fluiddomainsettings-cache-mesh-format">
+<dt>Mesh File Format <span class="guilabel">Liquids Only</span></dt><dd><p>File format for the mesh cache files.</p>
+<dl class="simple">
+<dt>二进制对象</dt><dd><p>Mesh data files with some compression.</p>
+</dd>
+<dt>物体</dt><dd><p>Simple, standard data format for mesh data.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<span id="bpy-ops-fluid-bake-all"></span><dl id="bpy-ops-fluid-free-all">
+<dt>Bake All, Free All</dt><dd><p>This option is only available when using the <a class="reference internal" href="#bpy-types-fluiddomainsettings-cache-type"><span class="std std-ref">Final</span></a> cache type.
+<em>Bake All</em> will run the simulation considering all parameters from
+the settings (i.e. it will bake all steps that can be baked individually with
+the <a class="reference internal" href="#bpy-types-fluiddomainsettings-cache-type"><span class="std std-ref">Modular</span></a> cache type at once).</p>
+<p>The progress will be displayed in the status bar. Pressing <kbd class="kbd docutils literal notranslate">Esc</kbd> will abort the simulation.</p>
+<p>Once the simulation has been baked, the cache can be deleted by pressing <em>Free All</em>.
+It is not possible to pause or resume a <em>Bake All</em> process as
+only the most essential cache files are stored on drive.</p>
+</dd>
+</dl>
+<div class="section" id="advanced">
+<h2>高级<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h2>
+<dl id="bpy-types-fluiddomainsettings-openvdb-cache-compress-type">
+<dt>Compression Volumes <span class="guilabel">OpenVDB Only</span></dt><dd><p>Compression method that is used when writing OpenVDB cache files.</p>
+<dl class="simple">
+<dt>None</dt><dd><p>Cache files will be written without any compression.</p>
+</dd>
+<dt>Zip</dt><dd><p>Cache files will be written with <code class="docutils literal notranslate"><span class="pre">Zip</span></code> compression. Effective but slower than <code class="docutils literal notranslate"><span class="pre">Blosc</span></code>.</p>
+</dd>
+<dt>Blosc</dt><dd><p>Cache files will be written with <code class="docutils literal notranslate"><span class="pre">Blosc</span></code> compression. Multithreaded compression,
+similar in size and quality to <code class="docutils literal notranslate"><span class="pre">Zip</span></code> compression.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl id="bpy-types-fluiddomainsettings-openvdb-data-depth">
+<dt>Precision Volumes <span class="guilabel">OpenVDB Only</span></dt><dd><p>Precision level that is used when writing OpenVDB cache files.</p>
+<dl class="simple">
+<dt>Float (Full)</dt><dd><p>Volumetric data (e.g. grid values, particle positions) will be written with full precision (32 bit).</p>
+</dd>
+<dt>Float (Half)</dt><dd><p>Volumetric data (e.g. grid values, particle positions) will be written with half precision (16 bit).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="simple" id="bpy-types-fluiddomainsettings-export-manta-script">
+<dt>导出Mantaflow脚本</dt><dd><p>Export the simulation as a standalone Mantaflow script when baking the scene (exported on &quot;Bake Data&quot;).
+Usually, only developers and advanced users who know how to use the Mantaflow GUI will
+make use of this functionality. Use a <a class="reference internal" href="../../../../advanced/operators.html#bpy-ops-wm-debug-menu"><span class="std std-ref">Debug Value</span></a> of <code class="docutils literal notranslate"><span class="pre">3001</span></code> to enable.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="field_weights.html" class="btn btn-neutral float-right" title="力场权重" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="collections.html" class="btn btn-neutral float-left" title="集合" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/fluid/type/domain/cache.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/fluid/type/domain/cache%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

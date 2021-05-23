@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>粒子编辑模式 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/particles/mode.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="软体" href="../soft_body/index.html" />
+    <link rel="prev" title="纹理影响" href="texture_influence.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soft_body/index.html">软体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Particle System</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="particle_system_panel.html">粒子系统面板</a></li>
+<li class="toctree-l3"><a class="reference internal" href="emitter/index.html">发射体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hair/index.html">毛发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="texture_influence.html">纹理影响</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">粒子编辑模式</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#usage">用法</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#setup-for-hair-particles">毛发粒子系统的设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#setup-for-particle-cloth-and-soft-body-simulations">粒子，布料，软体模拟的设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#bake-the-simulation">烘焙模拟</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#edit-the-simulation">编辑模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting">选择</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#select-random">随机选择</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#select-modes">选择模式</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#brush">笔刷</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#common-options">常用选项</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#options">选项</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#viewport-display">视图显示</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#editing">编辑</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#moving-keypoints-or-particles">移动关键点或粒子</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mirror">镜像</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#unify-length">长度统一</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#show-hide">显示/隐藏</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="index.html">Particle System</a> &raquo;</li>
+        
+      <li>粒子编辑模式</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="particle-edit-mode">
+<span id="bpy-types-particleedit"></span><h1>粒子编辑模式<a class="headerlink" href="#particle-edit-mode" title="Permalink to this headline">¶</a></h1>
+<p>使用 <em>粒子系统编辑模式</em> 编辑关键点 (关键帧) 和 路径 <em>烘焙</em> <a class="reference internal" href="hair/index.html"><span class="doc">毛发</span></a>, <a class="reference internal" href="index.html"><span class="doc">粒子</span></a>, <a class="reference internal" href="../cloth/index.html"><span class="doc">布料</span></a>, 和 <a class="reference internal" href="../soft_body/index.html"><span class="doc">软体</span></a> 模拟器. (烘焙前你可以编辑毛发的造型。)</p>
+<p>Since working in Particle Edit Mode is pretty easy and very similar
+to working with vertices in the 3D Viewport, we will show how to set up
+a particle system and then give a reference of the various functions.</p>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>只有烘焙进内存的帧是可编辑的！</p>
+<p>如果您无法编辑粒子，请检查您是否正在烘焙 <a class="reference internal" href="emitter/cache.html"><span class="doc">磁盘缓存</span></a>。</p>
+</div>
+<div class="section" id="setup-for-hair-particles">
+<h3>毛发粒子系统的设置<a class="headerlink" href="#setup-for-hair-particles" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>创建一个 <em>毛发</em> 粒子系统。</p></li>
+<li><p>在 <em>法线</em> 方向给一个初始速度。</p></li>
+<li><p>创建一个模拟。</p></li>
+<li><p>检查 <em>毛发动态</em> 框。</p></li>
+</ol>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/physics_particles_mode_example.png" src="../../_images/physics_particles_mode_example.png" />
+<p class="caption"><span class="caption-text">在粒子编辑模式下编辑发束。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="setup-for-particle-cloth-and-soft-body-simulations">
+<h3>粒子，布料，软体模拟的设置<a class="headerlink" href="#setup-for-particle-cloth-and-soft-body-simulations" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>使用 <em>毛发</em> 粒子，或布料/软体模拟。</p></li>
+<li><p>通过设置对象或发射器来创建模拟，设置您的时间范围(如果您刚刚开始并尝试，请使用小范围)，使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd> 预览来模拟设置。</p></li>
+</ol>
+</div>
+<div class="section" id="bake-the-simulation">
+<h3>烘焙模拟<a class="headerlink" href="#bake-the-simulation" title="Permalink to this headline">¶</a></h3>
+<p>当对模拟满意后，在物体模式开始 <a class="reference internal" href="emitter/cache.html"><span class="doc">烘焙</span></a> 模拟。模拟必须烘焙后才可编辑。</p>
+</div>
+<div class="section" id="edit-the-simulation">
+<h3>编辑模拟<a class="headerlink" href="#edit-the-simulation" title="Permalink to this headline">¶</a></h3>
+<p>从 <em>3D视图</em> 标题栏的 <em>模式选择菜单</em> 切换到 <em>粒子编辑</em> ，以编辑粒子的路径/关键帧。您可能需要在3D视图中按下 <kbd class="kbd docutils literal notranslate">T</kbd> 以查看 <em>粒子编辑</em> 面板。移动到要编辑的帧，然后使用各种 <em>粒子编辑</em> 工具编辑模拟。 使用 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">A</kbd></kbd> 缓慢预览更改，并经常保存，以防意外发生或当不喜欢所做的最新更改，可以回到之前的版本。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>为了更清楚的看到你在做什么：</p>
+<ol class="arabic simple">
+<li><p>在工具栏中打开选项面板。</p></li>
+<li><p>Select <em>Point select mode</em> (see below) in the header of the 3D Viewport.
+This will display key points along the particle path.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="selecting">
+<h2>选择<a class="headerlink" href="#selecting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>单选： <kbd class="kbd docutils literal notranslate">LMB</kbd>.</p></li>
+<li><p>全选: <kbd class="kbd docutils literal notranslate">A</kbd>.</p></li>
+<li><p>链接：移动鼠标在关键点上按 <kbd class="kbd docutils literal notranslate">L</kbd>.</p></li>
+<li><p>框选: <kbd class="kbd docutils literal notranslate">B</kbd>.</p></li>
+<li><p>根部/尖端: <span class="menuselection">选择‣ 根部/尖端</span>.</p></li>
+</ul>
+<p>你还可以使用 <em>选择</em> 菜单。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>选择</p>
+<p>选择对于仅修改所需的粒子非常有用。将鼠标悬停在粒子路径上并按下 <kbd class="kbd docutils literal notranslate">L</kbd> 以进行链接选择，将鼠标悬停在下一个上，然后按 <kbd class="kbd docutils literal notranslate">L</kbd> 将该路径添加到选择中。要删除路径，请按住 <kbd class="kbd docutils literal notranslate">Shift</kbd> 并按 <kbd class="kbd docutils literal notranslate">L</kbd> 。取消选择所有按下 <kbd class="kbd docutils literal notranslate">A</kbd> 。</p>
+<p>选择单个点的方法与编辑模式中的方法相同。 <kbd class="kbd docutils literal notranslate">RMB</kbd> 选择， <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">RMB</kbd></kbd> 加/减选。</p>
+</div>
+<div class="section" id="select-random">
+<h3>随机选择<a class="headerlink" href="#select-random" title="Permalink to this headline">¶</a></h3>
+<p>随机选择粒子。</p>
+<dl class="simple">
+<dt>百分比</dt><dd><p>按百分比随机选择。</p>
+</dd>
+<dt>随机种子</dt><dd><p>随机选择的可选种子。</p>
+</dd>
+<dt>操作</dt><dd><p>随机选择或者取消选择粒子。</p>
+</dd>
+<dt>类型</dt><dd><p>选择毛发或点。这里的这些属于可能会令人困惑，因为毛发/点不是指粒子类型，而是指毛发/粒子的路径/点。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="select-modes">
+<h3>选择模式<a class="headerlink" href="#select-modes" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-default" id="id2">
+<img alt="../../_images/physics_particles_mode_select-modes.png" src="../../_images/physics_particles_mode_select-modes.png" />
+<p class="caption"><span class="caption-text">选择模式。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>路径</dt><dd><p>没有关键点可见，只有全部粒子可以选择或者取消选择。</p>
+</dd>
+<dt>点</dt><dd><p>查看所有关键点。</p>
+</dd>
+<dt>尖端</dt><dd><p>查看并编辑(包括笔刷)粒子的尖端，即最后一个关键点。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="brush">
+<span id="bpy-types-particlebrush"></span><h2>笔刷<a class="headerlink" href="#brush" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>粒子编辑模式</p>
+</dd>
+<dt class="field-even">Tool</dt>
+<dd class="field-even"><p><span class="menuselection">Toolbar</span></p>
+</dd>
+</dl>
+</div>
+<p>点击 “梳子” 按钮选择需要的工具集。</p>
+<dl>
+<dt>无</dt><dd><p>没有指定工具，只作为 “普通” 顶点编辑关键帧。</p>
+</dd>
+<dt>梳子</dt><dd><p>移动关键点(类似于比例编辑工具)。</p>
+</dd>
+<dt>平滑</dt><dd><p>平行视觉相邻的细分。</p>
+</dd>
+<dt>添加</dt><dd><p>添加新粒子。</p>
+<dl class="simple">
+<dt>计数</dt><dd><p>每步的新粒子数。</p>
+</dd>
+<dt>插入</dt><dd><p>从现有的毛发中插入新毛发的形状。</p>
+</dd>
+<dt>步数</dt><dd><p>梳子步骤的数量。</p>
+</dd>
+<dt>关键帧</dt><dd><p>制作新粒子的关键帧数量。</p>
+</dd>
+</dl>
+</dd>
+<dt>长度</dt><dd><p>缩放部分，使毛发的长度不再 <em>增长</em> 或 变短的 <em>收缩</em>。</p>
+</dd>
+<dt>喷发</dt><dd><p>围绕第一个关键点(根)旋转毛发，使毛发 <em>添加</em> 后立起来或者到 <em>减少</em> 后平压。</p>
+<dl class="simple">
+<dt>体积喷发</dt><dd><p>应用喷发到未选择的终点，(帮助在膨胀根步时保持毛发量)</p>
+</dd>
+</dl>
+</dd>
+<dt>切断</dt><dd><p>缩放段直到最后一个关键点到达画笔。</p>
+</dd>
+<dt>权重</dt><dd><p>这对于软体动画特别有用，因为权重定义了软体的 <em>目标</em>。一个关键点的权重为1将不能移动，权重为0的关键点完全是软体动画。该值按照强度 <em>最小</em> 至 <em>最大</em> 的软体目标范围缩放。</p>
+</dd>
+</dl>
+<div class="section" id="common-options">
+<h3>常用选项<a class="headerlink" href="#common-options" title="Permalink to this headline">¶</a></h3>
+<p>在画笔类型下方，会显示起设置：</p>
+<dl class="simple">
+<dt>半径 <kbd class="kbd docutils literal notranslate">F</kbd></dt><dd><p>设置画笔半径。</p>
+</dd>
+<dt>强度 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd>-<kbd class="kbd docutils literal notranslate">F</kbd></kbd></dt><dd><p>设置画笔效果的强度(不适用于添加画笔)。</p>
+</dd>
+<dt>添加/拉长/缩短</dt><dd><p>设置画笔的添加效果或反转效果。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="options">
+<h2>选项<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>粒子编辑模式</p>
+</dd>
+<dt class="field-even">面板</dt>
+<dd class="field-even"><p><span class="menuselection">侧栏 ‣ 工具</span></p>
+</dd>
+</dl>
+</div>
+<dl>
+<dt>偏转发射器</dt><dd><p>仅限毛发粒子--不要通过发射网格移动关键点。</p>
+<dl class="simple">
+<dt>距离</dt><dd><p>与发射器保持距离。</p>
+</dd>
+</dl>
+</dd>
+<dt>保持</dt><dd><dl class="simple">
+<dt>长度</dt><dd><p>在梳理或平滑头发时，保持关键点之间的片段长度。这是通过移动所有其他关键点来完成的。</p>
+</dd>
+<dt>根</dt><dd><p>保持第一个关键点不变，这就不能移动毛发了。</p>
+</dd>
+</dl>
+</dd>
+<dt>矫正</dt><dd><dl class="simple">
+<dt>速度</dt><dd><p>根据编辑的路径重新计算粒子的速度。否则，无论粒子移动的实际距离如何，原始速度值都保持不变。</p>
+</dd>
+</dl>
+</dd>
+<dt>X 镜像</dt><dd><p>在本地X轴上启用镜像编辑。</p>
+</dd>
+<dt>对象形状</dt><dd><p>一个网格对象，其边界由 <em>形状切割</em> 工具使用。</p>
+<dl class="simple">
+<dt>形状切割</dt><dd><p>此修饰工具将毛发修剪为由 <em>形状对象</em> 定义的形状。与使用切割工具相比，这是避免突出毛发部分延长的更快方法。它适用于具有大量毛发的角色，使用切割工具在单个平面中工作变得乏味。</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">形状切割示例。</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id4">
+<img alt="../../_images/physics_particles_mode_shapecut-before.png" src="../../_images/physics_particles_mode_shapecut-before.png" />
+<p class="caption"><span class="caption-text">之前。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id5">
+<img alt="../../_images/physics_particles_mode_shapecut-after.png" src="../../_images/physics_particles_mode_shapecut-after.png" />
+<p class="caption"><span class="caption-text">之后。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="viewport-display">
+<h3>视图显示<a class="headerlink" href="#viewport-display" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>路径步骤</dt><dd><p>用于绘制路径的步骤数；改善了粒子路径的平滑度。</p>
+</dd>
+<dt>粒子</dt><dd><p>显示路径顶部的实际粒子。</p>
+</dd>
+<dt>淡出时间</dt><dd><p>淡出远离当前时间的路径和关键点。</p>
+<dl class="simple">
+<dt>帧</dt><dd><p>多少帧参与淡出。</p>
+</dd>
+</dl>
+</dd>
+<dt>显示子集</dt><dd><p>也显示粒子的子集，这允许微调粒子并查看它们对结果的影响，但如果有许多的子集，可能会降低系统运行的速度。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="editing">
+<h2>编辑<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="moving-keypoints-or-particles">
+<h3>移动关键点或粒子<a class="headerlink" href="#moving-keypoints-or-particles" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>要移动选定的关键点，请按 <kbd class="kbd docutils literal notranslate">G</kbd> 或使用其他各种方法之一移动顶点。</p></li>
+<li><p>要移动粒子根，您必须关闭工具栏中的 <em>保持根</em> 。</p></li>
+<li><p>可以执行许多操作，例如顶点，包括缩放，旋转和移除(完整粒子或单个键)。</p></li>
+<li><p>可能无法复制或挤出键或粒子，但可以细分添加新关键点的 <span class="menuselection">粒子 ‣ 减去</span>。</p></li>
+<li><p>可选，可以重新键入粒子 <span class="menuselection">粒子 ‣ 重键入</span> 。</p></li>
+</ul>
+<p>显示毛发和粒子路径的平滑程度取决于 工具栏中的 <em>路径步骤</em> 设置。低设置会在点之间产生块状插值，而高设置会产生平滑的曲线。</p>
+</div>
+<div class="section" id="mirror">
+<h3>镜像<a class="headerlink" href="#mirror" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>粒子编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">粒子 ‣ 镜像</span></p>
+</dd>
+</dl>
+</div>
+<p>如果要创建X轴对称修发，则必须执行以下步骤：</p>
+<ol class="arabic simple">
+<li><p>选择所有粒子 <kbd class="kbd docutils literal notranslate">A</kbd>.</p></li>
+<li><p>镜像粒子在 <span class="menuselection">粒子 ‣ 镜像</span>.</p></li>
+<li><p>在 <span class="menuselection">侧栏区域 ‣ 工具 ‣ 选项</span> 打开 <em>X 镜像</em>。</p></li>
+</ol>
+<p>镜像后两个粒子可能会占据几乎相同的位置。由于这会浪费内存和渲染时间，因此可以使用 <em>粒子</em> 菜单中的 <em>按距离合并</em>。</p>
+</div>
+<div class="section" id="unify-length">
+<h3>长度统一<a class="headerlink" href="#unify-length" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>粒子编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">粒子 ‣ 长度统一</span></p>
+</dd>
+</dl>
+</div>
+<p>此工具用于通过查找平均长度使所有选定的毛发均匀长度。</p>
+</div>
+<div class="section" id="show-hide">
+<h3>显示/隐藏<a class="headerlink" href="#show-hide" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>粒子编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">粒子 ‣ 显示/隐藏</span></p>
+</dd>
+</dl>
+</div>
+<p>Hiding and unhiding of particles works similar as with vertices in the 3D Viewport.
+Select one or more keypoints of the particle you want to hide and press <kbd class="kbd docutils literal notranslate">H</kbd>.
+The particle in fact does not vanish, only the key points.</p>
+<p>隐藏的粒子(即隐藏关键点的粒子)不会对各种画笔产生反应。但：</p>
+<p>如果使用 <em>镜像编辑</em>，即使移动了镜像对应物，也可以移动具有隐藏关键点的粒子。</p>
+<p>要取消隐藏所有隐藏的粒子 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>-<kbd class="kbd docutils literal notranslate">H</kbd></kbd>。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../soft_body/index.html" class="btn btn-neutral float-right" title="软体" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="texture_influence.html" class="btn btn-neutral float-left" title="纹理影响" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/particles/mode.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/particles/mode%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

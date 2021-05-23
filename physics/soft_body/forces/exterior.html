@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>外力 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/physics/soft_body/forces/exterior.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="内力" href="interior.html" />
+    <link rel="prev" title="力" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">物理</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rigid_body/index.html">刚体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cloth/index.html">Cloth</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">软体</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../settings.html">设置</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">力</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">外力</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#example">示例</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#force-fields">力场</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#soft-body-field-weights">软体力场权重</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#aerodynamics">空气动力学</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#goal">结果</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#goal-strength">目标强度</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#technical-details">技术细节</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="interior.html">内力</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../collision.html">碰撞</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples.html">范例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../fluid/index.html">Fluid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../particles/index.html">Particle System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../dynamic_paint/index.html">动态绘画</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../forces/index.html">力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collision.html">Collision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../baking.html">烘焙物理模拟</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../../modeling/index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../../../modeling/modifiers/index.html">修改器</a> &raquo;</li>
+        
+          <li><a href="../index.html">软体</a> &raquo;</li>
+        
+          <li><a href="index.html">力</a> &raquo;</li>
+        
+      <li>外力</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exterior">
+<h1>外力<a class="headerlink" href="#exterior" title="Permalink to this headline">¶</a></h1>
+<p>外部作用力作用于软体对象的顶点(并且几乎只作用于顶点)。遵循牛顿三大定律：</p>
+<ul class="simple">
+<li><p>如果没有外力作用，顶点保持不动或匀速直线运动。</p></li>
+<li><p>顶点的加速度却决于它的质量和受到的力。质量越大，加速度越小。力越大，加速度越大。</p></li>
+<li><p>对每个力都存在大小相等、方向相反的反作用力。</p></li>
+</ul>
+<p>当然，这些条件只在计算精度允许的范围内成立，实际计算时总会存在一些误差避免过度计算。</p>
+<div class="section" id="example">
+<h2>示例<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>我们将从一个非常简单的示例开始：默认立方体。</p>
+<ul class="simple">
+<li><p>为了观察到外力的效果，你应该首先关闭 <em>结果</em>，这样顶点才不会回到其原始位置。</p></li>
+<li><p>播放动画以运行模拟。</p></li>
+</ul>
+<p>发生了什么？立方体向Z轴的负方向移动。它的八个顶点均受到全局、恒定的引力的影响。无摩擦的引力与物体重量无关，因此每个设置为软体的物体都会以相同的加速度掉落。物体不会产生形变，因为每个顶点都以相同的方向、速度移动。</p>
+</div>
+<div class="section" id="force-fields">
+<h2>力场<a class="headerlink" href="#force-fields" title="Permalink to this headline">¶</a></h2>
+<p>软体的顶点可以与图层中应用的所有力场 <a class="reference internal" href="../../forces/force_fields/index.html"><span class="doc">力场</span></a> (通常应用于粒子)产生相互作用，例如风、常力等等，只要它们位于同一图层。</p>
+<div class="section" id="soft-body-field-weights">
+<h3>软体力场权重<a class="headerlink" href="#soft-body-field-weights" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">面板</dt>
+<dd class="field-odd"><p><span class="menuselection">物理 ‣ 软体 ‣ 力场权重</span></p>
+</dd>
+</dl>
+</div>
+<p><em>力场权重</em> 面板可以控制各个类型的外部力场对软体系统的影响程度。</p>
+<dl class="simple">
+<dt>效果器集合</dt><dd><p>限制效果器至特定的集合。只有该集合中的效果器会对当前系统产生影响。</p>
+</dd>
+<dt>重力</dt><dd><p>全局重力的影响。</p>
+</dd>
+<dt>全部</dt><dd><p>缩放所有效果器权重。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="aerodynamics">
+<span id="physics-softbody-forces-exterior-aerodynamics"></span><h2>空气动力学<a class="headerlink" href="#aerodynamics" title="Permalink to this headline">¶</a></h2>
+<p>边线在移动时会受到风的影响，例如在微风中飘动或颤动。在风中飘扬的旗帜就是一个简单的空气动力学模型。</p>
+<p>这种特殊的外力作用于连接顶点的边而非顶点。从技术角度来说，这种力是垂直于边线方向的。力随边线相对速度的投影而变化(点积)。请注意，风力吹动和你用相同的速度在空中滑动边线的效果是一样的。朝自身方向移动的边线不受力，朝垂直于自身方向移动的边线受力最大。</p>
+<p>媒介与边线之间的角度和相对速度被用于计算边线的受力。该力导致具有较少连接边(平面的前部)的顶点比具有更多连接边(平面的中间)的顶点下降得更快。如果所有顶点在一个方向上具有相同数量的边，则它们以相同的速度下降。</p>
+<p><em>空气动力学</em> 设置在 <a class="reference internal" href="../settings.html#physics-softbody-settings-aerodynamics"><span class="std std-ref">软体边</span></a> 面板。</p>
+</div>
+<div class="section" id="goal">
+<span id="physics-softbody-forces-exterior-goal"></span><h2>结果<a class="headerlink" href="#goal" title="Permalink to this headline">¶</a></h2>
+<p><em>结果</em> 是软体对象试图符合的形状。它就像一组选定顶点上的一个别针，控制柔体效果对它们的作用程度。</p>
+<p>开启 <em>软体结果</em> 会在模拟中使用顶点的坐标(或运动着的坐标)。在应用软体模拟之前，可以任何使用常见的方式(函数曲线、骨架、父级、晶格等)给顶点添加动画。“结果”指顶点在动画结束时的期望位置。可以使用硬度和阻尼来定义软体达到目标位置的方式。</p>
+<p>详见 <a class="reference internal" href="../settings.html#physics-softbody-settings-goal"><span class="std std-ref">软体结果设置</span></a>。</p>
+<div class="section" id="goal-strength">
+<h3>目标强度<a class="headerlink" href="#goal-strength" title="Permalink to this headline">¶</a></h3>
+<p><em>目标强度</em> 用来定义物体的动画受到软体模拟的影响程度。</p>
+<p>1.0的值表示没有软体模拟，物体按照常规状态运动(例如，顶点保持它的原始位置)。当 <em>目标</em> 值为0.0(或没有目标时)，顶点只会受到软体模拟中物理法则的影响。</p>
+<p>设置目标值在0.0与1.0之间，你可以平衡物体受动画系统影响和软体效果影响的程度。</p>
+<p>目标也可以用作记忆，确保软体即使在经过剧烈的动画后也不会发生太多形变。使用 <em>顶点组</em> 权重系统，你可以单独定义每个点的 <em>目标</em> 权重。为了使结果更加自然，可以通过调整弹簧的力度控制顶点偏离原始位置的距离。</p>
+<p><a class="reference internal" href="../../../sculpt_paint/weight_paint/index.html#painting-weight-index"><span class="std std-ref">权重绘制</span></a> 通常用于舒适地调节权重。 对于非网格物体，使用其顶点/控制点的 <em>权重</em> 参数替代。使用编辑模式下的上下文菜单或者侧栏中的 <em>变换</em> 面板。毛发的权重还可以在 <a class="reference internal" href="../../particles/mode.html"><span class="doc">粒子编辑模式</span></a> 下绘制。</p>
+</div>
+</div>
+<div class="section" id="technical-details">
+<h2>技术细节<a class="headerlink" href="#technical-details" title="Permalink to this headline">¶</a></h2>
+<p>在软体世界中，网格的顶点被当作具有质量的粒子。它们的位移由受到的力决定。除了外部的力之外，这些独立的粒子通过边线与其相邻的粒子交互的方式非常接近汽车中避震器的物理模型。相似之处是：</p>
+<ul class="simple">
+<li><p>弹簧尽量保持粒子始终在中心位置。弹簧的软硬则却决于软体参数中的 <em>硬度</em>。</p></li>
+<li><p>阻尼元件负责稳定、静止粒子的运动。这个原件对抗位移的力度大小由软体参数中的 <em>阻尼</em> 控制。</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="interior.html" class="btn btn-neutral float-right" title="内力" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="力" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/physics/soft_body/forces/exterior.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60physics/soft_body/forces/exterior%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

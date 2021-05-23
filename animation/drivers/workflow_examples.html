@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>工作流程 &amp; 范例 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/animation/drivers/workflow_examples.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="问题排查" href="troubleshooting.html" />
+    <link rel="prev" title="驱动器面板" href="drivers_panel.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">动画 &amp; 绑定</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../keyframes/index.html">关键帧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../armatures/index.html">骨架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lattice.html">晶格</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../constraints/index.html">约束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../actions.html">动作</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">驱动器</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="usage.html">用法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drivers_panel.html">驱动器面板</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">工作流程 &amp; 范例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transform-driver">变换驱动器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scripted-expression-orbit-a-point">脚本表达式——轨道点</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-function-square-value">自定义函数 - 数值平方</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shape-key-drivers">形态键驱动器</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#improved-mesh-deformation">改进网络变形</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#chained-relative-shape-keys">链式相对形态键</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">问题排查</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../markers.html">标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shape_keys/index.html">形态键</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../motion_paths.html">运动路径</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">动画 &amp; 绑定</a> &raquo;</li>
+        
+          <li><a href="index.html">驱动器</a> &raquo;</li>
+        
+      <li>工作流程 &amp; 范例</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="workflow-examples">
+<h1>工作流程 &amp; 范例<a class="headerlink" href="#workflow-examples" title="Permalink to this headline">¶</a></h1>
+<p>简单驱动器可以通过弹窗添加。</p>
+<p>当有多个驱动器或者更高级的设置时，可以使用 <a class="reference internal" href="../../editors/drivers_editor.html"><span class="doc">驱动器编辑器</span></a> 。</p>
+<div class="section" id="transform-driver">
+<h2>变换驱动器<a class="headerlink" href="#transform-driver" title="Permalink to this headline">¶</a></h2>
+<p>利用物体的变换来控制属性。在此例中，物体2的Y轴旋转被物体1的X轴位移驱动。</p>
+<p>首先，简单设置下两个物体：</p>
+<ol class="arabic">
+<li><p>通过上下文菜单(右键菜单)或使用快捷键 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">D</kbd></kbd> ，在第二个物体的Y轴旋转属性上添加驱动器。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_transform-driver-1.png" src="../../_images/animation_drivers_workflow-examples_transform-driver-1.png" />
+</div>
+</li>
+<li><p>打开 <em>驱动器编辑器</em> ，然后在左侧通道里选择 <em>Y欧拉旋转</em> 。</p></li>
+<li><p>按下 <kbd class="kbd docutils literal notranslate">N</kbd> 打开侧栏，选择 <em>驱动器</em> 选项卡。</p></li>
+<li><p>驱动器类型选择平均化值，选择 <em>变换通道</em> ，在 物体一栏里选择第一个物体。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_transform-driver-2.png" src="../../_images/animation_drivers_workflow-examples_transform-driver-2.png" />
+</div>
+</li>
+<li><p>试着移动物体1，并注意它是如何影响物体2的。</p></li>
+</ol>
+</div>
+<div class="section" id="scripted-expression-orbit-a-point">
+<h2>脚本表达式——轨道点<a class="headerlink" href="#scripted-expression-orbit-a-point" title="Permalink to this headline">¶</a></h2>
+<p>使用 <em>脚本表达式</em> ，控制物体在轨道上运动。当时间轴移动时，物体发生位置变化。</p>
+<p>利用三角函数，可以使用正弦和余弦函数在2D中定义圆周运动。 (详见 <a class="reference external" href="https://en.wikipedia.org/wiki/Unit_circle">单位圆</a>.)</p>
+<p>在此例中，当前帧作为控制变量。 <code class="docutils literal notranslate"><span class="pre">frame</span></code> 是一个 <a class="reference internal" href="drivers_panel.html#drivers-simple-expressions"><span class="std std-ref">简单表达式</span></a> 对应 <code class="docutils literal notranslate"><span class="pre">bpy.context.scene.frame_current</span></code>。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_object-rotation.png" src="../../_images/animation_drivers_workflow-examples_object-rotation.png" />
+</div>
+<ol class="arabic simple">
+<li><p>在物体X轴位置属性上添加驱动器。</p>
+<ol class="arabic simple">
+<li><p>将驱动器 <em>类型</em> 设置为 <em>脚本表达式</em> 。</p></li>
+<li><p>添加表达式 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">(sin(frame</span> <span class="pre">/</span> <span class="pre">8)</span> <span class="pre">*</span> <span class="pre">4)</span></code>：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">frame/8</span></code> : 是但前帧数除以8，除8是为了减速。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(sin(</span> <span class="pre">)*4)</span></code> : 将结果 <code class="docutils literal notranslate"><span class="pre">sin(frame/8)</span></code> 乘以4得到一个更大的圆形。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span></code> : 控制偏移量。</p></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>用同样的方法，在物体Y轴位置属性上添加驱动器，脚本公式为 <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">(sin(frame</span> <span class="pre">/</span> <span class="pre">8)</span> <span class="pre">*</span> <span class="pre">4)</span></code>。</p></li>
+<li><p>移动时间轴观察物体位移变化，尝试改变变量来影响轨道大小和中心。</p></li>
+</ol>
+</div>
+<div class="section" id="custom-function-square-value">
+<span id="driver-namespace"></span><h2>自定义函数 - 数值平方<a class="headerlink" href="#custom-function-square-value" title="Permalink to this headline">¶</a></h2>
+<p>创建自定义函数以获取值的平方（即 <em>值</em><sup>2</sup>）。将函数添加到 <em>驱动器命名空间</em> 允许从驱动器表达式使用它。</p>
+<p><em>驱动器命名空间</em> 具有用于驱动器表达式的内置函数的列表，以及常量（如 π 和 e）。可通过 Python 控制台检查：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bpy</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">driver_namespace</span><span class="p">[</span><span class="s1">&#39; &lt;tab&gt;</span>
+<span class="go">                              acos&#39;]</span>
+<span class="go">                              acosh&#39;]</span>
+<span class="go">                              asin&#39;]</span>
+<span class="go">                              asinh&#39;]</span>
+<span class="go">                              atan&#39;]</span>
+<span class="go">                              ...</span>
+</pre></div>
+</div>
+<p>要向 <em>[驱动器命名空间</em> 添加新函数，需要实现该函数本身，然后添加到 <code class="docutils literal notranslate"><span class="pre">bpy.app.driver_namespace</span></code>。</p>
+<ol class="arabic">
+<li><p>将以下内容添加到 Blender 内的文本编辑器中，然后按下 <em>运行脚本</em>。:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">bpy</span>
+
+<span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+   <span class="sd">&quot;&quot;&quot;Returns the square of the given value&quot;&quot;&quot;</span>
+   <span class="k">return</span> <span class="n">val</span> <span class="o">*</span> <span class="n">val</span>
+
+<span class="c1"># Add function to driver_namespace.</span>
+<span class="n">bpy</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">driver_namespace</span><span class="p">[</span><span class="s1">&#39;square&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">square</span>
+</pre></div>
+</div>
+</li>
+<li><p>添加带有 <em>脚本表达式</em> 的驱动器，如 <code class="docutils literal notranslate"><span class="pre">square(frame)</span></code>。</p></li>
+<li><p>观察滑动时间线时的效果。</p></li>
+</ol>
+<p>Blender 的文本编辑器 <em>菜单</em> <span class="menuselection">模板 ‣ Python ‣ Driver Functions</span> 中提供了更多自定义函数示例。</p>
+<p>由于 <a class="reference internal" href="drivers_panel.html#drivers-simple-expressions"><span class="std std-ref">简单表达式s</span></a> 无法访问自定义函数，因此使用它们仅对复杂计算有意义。</p>
+</div>
+<div class="section" id="shape-key-drivers">
+<span id="shapekey-driver-example"></span><h2>形态键驱动器<a class="headerlink" href="#shape-key-drivers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="improved-mesh-deformation">
+<h3>改进网络变形<a class="headerlink" href="#improved-mesh-deformation" title="Permalink to this headline">¶</a></h3>
+<p>修复在使用骨骼和绘制权重时发生的交叉点问题，特别是在关节处。形态键可以调整和改进物体，例如形成肌肉。在该示例中，形态键用于改善手臂弯曲时肘部的变形。</p>
+<div class="figure align-default" id="id1">
+<img alt="../../_images/animation_drivers_workflow-examples_shape-key-improved-deformation.png" src="../../_images/animation_drivers_workflow-examples_shape-key-improved-deformation.png" />
+<p class="caption"><span class="caption-text">左：网络变形未修正。 右：应用形态键修正</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<dl>
+<dt>新建</dt><dd><ol class="arabic simple">
+<li><p>添加一个物体(此例中，圆柱体进行了环切)。</p></li>
+<li><p>添加骨骼链。</p></li>
+<li><p>在物体上添加权重。</p></li>
+</ol>
+<p>(注意：先选择物体，按住shift，再选择骨骼，按下 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>-<kbd class="kbd docutils literal notranslate">P</kbd></kbd> ，选择自动权重。)</p>
+</dd>
+</dl>
+<p>尝试改变骨骼姿态并观察关节处的形变。要修复看起来不满的交叉点或角度，可以将 <a class="reference internal" href="../shape_keys/index.html"><span class="doc">形态键</span></a> 与姿态关联。</p>
+<dl class="simple">
+<dt>形态键</dt><dd><ol class="arabic simple">
+<li><p>调整骨骼姿态，把骨骼调整带你需要弯曲的最大值。</p></li>
+<li><p>选择物体，添加形态键，除 <em>Basis</em> 外再添加一个形态 <em>Key 1</em> 。. <span class="menuselection">Properties ‣ Mesh tab ‣ Shape Keys</span></p></li>
+<li><p>要在骨架变形基础上创作形态键，请启用骨架修改器中的 <em>编辑模式显示</em> 和 <em>编辑模式</em>。<span class="menuselection">属性 ‣ 修改器选项卡 ‣ 骨架修改器 ‣ 标题栏</span></p></li>
+<li><p>进入编辑模式，然后在属性面板中选择新的形态键“Key1”，根据需要调整顶点。选择 <em>Basis</em> 键可在原始形状和编辑之后的形状之间切换。(注意：只对需要调整的地方进行编辑，而不是对原始网络或其它形态键进行编辑。)</p></li>
+</ol>
+</dd>
+</dl>
+<p>当你调整好形状后，要配置一个驱动器，以便可以平滑的改变形状。</p>
+<dl>
+<dt>驱动器</dt><dd><ol class="arabic simple">
+<li><p>在形态键的值上添加驱动器。</p></li>
+<li><p>打开驱动器编辑器并选择驱动通道。</p></li>
+</ol>
+<dl>
+<dt>方法1 — 直接映射到骨骼旋转值</dt><dd><p>一种简单的方法是将骨骼的旋转属性直接与形态键 <em>值</em> 对应。缺点是依赖单一数值，不足以精确的控制形态键的激活条件。</p>
+<ol class="arabic">
+<li><p>在“驱动器”选项卡中，选择控制器类型为“平均值”。</p>
+<p>通过观察骨骼的旋转属性的值来了解你感兴趣的旋转轴。</p>
+<p>选择旋转通道，间隔设置为自身空间，即骨骼相对于父骨骼的旋转值。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_shape-key-method1.png" src="../../_images/animation_drivers_workflow-examples_shape-key-method1.png" />
+</div>
+</li>
+<li><p>选择曲线控制柄并拖动它或者在 <em>函数曲线</em> 选项卡中输入数值。Y轴表示形态键的 <em>值</em> ，范围是0.0到1.0。X轴通常是帧数，但在此驱动器中它表示以弧度制的旋转值。曲线中有两个以上的点，使用曲线视图中的控制柄调整过度 (<kbd class="kbd docutils literal notranslate">G</kbd> 抓取)。</p></li>
+<li><p>要验证驱动器是否正确运行，请取消选择选项以仅显示所选物体的驱动器。这样，你可以摆好骨架，并留意驱动器。</p></li>
+</ol>
+</dd>
+<dt>方法二：与目标骨骼的旋转差值</dt><dd><p>这种方法需要额外的 <em>目标</em> 或 <em>矫正</em> 骨骼，但它能更好地表示骨骼在3D空间中的条件。</p>
+<ol class="arabic">
+<li><p>在骨骼编辑模式中，从骨骼1中挤出新骨骼，在骨骼2形态键值为1的位置。目标骨骼通常有约定的命名方法，例如“TAR-”(目标)或“COR-”(矫正)。</p></li>
+<li><p>在“驱动器”选项卡中，选择驱动类型为“平均化”值，驱动器变量类型为“旋转差值”。旋转差值是世界空间中连个物体之间最小角度。因此，骨骼具有相同根基是很重要的，所以影响这个差值的唯一因素是其中一个骨骼旋转。当变形骨(骨2)到达目标骨骼(TAR-Bone 2)时，旋转差为0°。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_shape-key-method2.png" src="../../_images/animation_drivers_workflow-examples_shape-key-method2.png" />
+</div>
+</li>
+<li><p>手动调整函数曲线，使当旋转差(X轴)为0°时，形态键值(Y轴)为1.0。当臂伸直时，形态键值为0.0，此时旋转差值约为90°或更大(以弧度制表示)。</p></li>
+<li><p>请参照方法1中有关如何调整控制柄并确认功能正确的步骤。调整骨骼查看设置范围是否正常。</p></li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="chained-relative-shape-keys">
+<h3>链式相对形态键<a class="headerlink" href="#chained-relative-shape-keys" title="Permalink to this headline">¶</a></h3>
+<p>连续激活不同的形态键。在此例中，移动单个骨骼将激活第一个 <em>Key 1</em> 后激活 <em>Key 2</em> 。另参见 <a class="reference internal" href="../shape_keys/introduction.html#animation-shapekeys-relative-vs-absolute"><span class="std std-ref">相对或绝对形态键</span></a> 。</p>
+<dl class="simple">
+<dt>形态键</dt><dd><p>除了 <em>Basis</em> 之外，还为物体添加了两个形态键。</p>
+</dd>
+</dl>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/animation_drivers_workflow-examples_chained-shape-keys-basis.png"><img alt="../../_images/animation_drivers_workflow-examples_chained-shape-keys-basis.png" src="../../_images/animation_drivers_workflow-examples_chained-shape-keys-basis.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">Basis.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key1.png"><img alt="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key1.png" src="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key1.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">键1：顶面向上移动1米.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key2.png"><img alt="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key2.png" src="../../_images/animation_drivers_workflow-examples_chained-shape-keys-key2.png" style="width: 200px;" /></a>
+<p class="caption"><span class="caption-text">键2：内顶面向上移动1米。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>驱动器</dt><dd><p>添加单段骨骼用来控制形态键。目的是骨骼向上移动的过程中连续激活形态键。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_chained-shape-keys-result.png" src="../../_images/animation_drivers_workflow-examples_chained-shape-keys-result.png" />
+</div>
+<p>如上图所示，当骨骼处于一半位置时， <em>Key 1</em> 和 <em>Key 2</em> 都会产生影响。这是一个偏好问题，如果 <em>Key 1</em> 在达到最大值之前， <em>Key 2</em> 便被激活，那这俩还是多少有些重叠的部分。此例是无缝混合。</p>
+<p>对于有重叠的无缝混合，当骨骼在低位置时， <em>Key 1</em> 的值为0.0，随着骨骼升高到中点高度，线性增加至1.0。 <em>Key 2</em> 在骨骼到达中点高度之前的值为0.0，然后与 <em>Key 1</em> 相同的速率增加，直到骨骼到达最高点，其值变为1.0.</p>
+<ol class="arabic">
+<li><p>在 <em>Key 1</em> 和 <em>Key 2</em> 上添加驱动器。在“ <em>驱动器</em> ”选项卡中，类型选择“平均化值”，驱动器变量类型为”变换通道“，物体为骨骼，类型Z位置。</p></li>
+<li><p>向上移动骨骼来确定骨骼Z轴的运动范围，使其当两个Key都在激活状态时，与物体顶部对齐。这里我们使用[0.0,0.25]。</p></li>
+<li><p>配置驱动器，形态键(Y轴)与骨骼期望的高度(X轴)对应。</p>
+<p>驱动函数应该是线性的，因此，它们可以脚本表达式来定义 <span class="math notranslate nohighlight">\(y = a + bx\)</span> ，其中 <span class="math notranslate nohighlight">\(b\)</span> 是斜率， :math:`` 是截距。</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>在 <em>修改器</em> 选项卡中，为两个驱动器添加 <em>生成器</em> 修改器。</p></li>
+<li><p>设置 <span class="math notranslate nohighlight">\(a\)</span> 和 <span class="math notranslate nohighlight">\(b\)</span> 的值，因为Key 2 X轴范围为[1.0,2.5],Y轴范围为[0.0,1.0]，因此Key 2 的曲线经过(1.0，0.0)和(2.5，1.0)两点；Key 1 经过(0.0，0.0)，斜率与Key 2相同。</p>
+<p>得出公式  <em>Key 1</em> ：: <span class="math notranslate nohighlight">\(y = 0.0 + 0.6x\)</span> 和 <em>Key 2</em>: <span class="math notranslate nohighlight">\(y = -0.5 + 0.6x\)</span> 。</p>
+<div class="figure align-default">
+<img alt="../../_images/animation_drivers_workflow-examples_chained-shape-keys-driver-setup.png" src="../../_images/animation_drivers_workflow-examples_chained-shape-keys-driver-setup.png" />
+</div>
+<p>请注意，对于形态键的 <em>值</em> ，如果超出[0.0,1.0]，不会产生多余的效果，因为 <em>值</em> 已经被限制在”形态键“ <em>面板</em> 的范围中。</p>
+</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="问题排查" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="drivers_panel.html" class="btn btn-neutral float-left" title="驱动器面板" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/animation/drivers/workflow_examples.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60animation/drivers/workflow_examples%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

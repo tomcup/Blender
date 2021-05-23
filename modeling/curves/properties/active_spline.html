@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>活动样条线 &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/modeling/curves/properties/active_spline.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="next" title="曲线显示" href="../curve_display.html" />
+    <link rel="prev" title="路径动画" href="path_animation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">制作模型</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../introduction.html">简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../meshes/index.html">网格</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">曲线</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">简介</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tools/index.html">工具</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../structure.html">结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../primitives.html">基本体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../selecting.html">选择</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../editing/index.html">编辑</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">属性</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="shape.html">形状</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geometry.html">几何</a></li>
+<li class="toctree-l4"><a class="reference internal" href="path_animation.html">路径动画</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">活动样条线</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#poly">多段线</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#bezier">贝塞尔</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#nurbs">NURBS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../curve_display.html">曲线显示</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../surfaces/index.html">曲面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metas/index.html">融球</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../texts/index.html">文本物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../volumes/index.html">体积(卷标)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../empties.html">空物体</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modifiers/index.html">修改器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../addons/index.html">插件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">制作模型</a> &raquo;</li>
+        
+          <li><a href="../index.html">曲线</a> &raquo;</li>
+        
+          <li><a href="index.html">属性</a> &raquo;</li>
+        
+      <li>活动样条线</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="active-spline">
+<span id="bpy-types-spline"></span><h1>活动样条线<a class="headerlink" href="#active-spline" title="Permalink to this headline">¶</a></h1>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>编辑模式</p>
+</dd>
+<dt class="field-even">菜单</dt>
+<dd class="field-even"><p><span class="menuselection">属性编辑器(Properties) ‣ 物体数据(Object Data) ‣ 活动样条线(Active Spline)</span></p>
+</dd>
+</dl>
+</div>
+<p><em>活动样条线</em> 面板在编辑模式下用于控制当前选定样条的属性。</p>
+<p class="rubric" id="bpy-types-spline-use-smooth"><span id="bpy-types-spline-resolution-u"></span><span id="bpy-types-spline-use-cyclic-u"></span><span id="spline-common-options"></span>通用选项</p>
+<dl>
+<dt>U向循环</dt><dd><p>闭合活动样条线。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" />
+<p class="caption"><span class="caption-text">默认NURBS曲线。</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id2">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-cyclic.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-cyclic.png" />
+<p class="caption"><span class="caption-text">开启了闭合的NURNBS曲线。</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>分辨率U</dt><dd><p>通过改变细分数来调整每一线段的 <a class="reference internal" href="shape.html#bpy-types-curve-resolution-u"><span class="std std-ref">分辨率</span></a> 。</p>
+</dd>
+<dt>平滑</dt><dd><p>为任何3D几何体应用 <a class="reference internal" href="../../meshes/editing/mesh/shading.html#modeling-meshes-editing-normals-shading"><span class="std std-ref">平滑着色</span></a> 。</p>
+</dd>
+</dl>
+<div class="section" id="poly">
+<h2>多段线<a class="headerlink" href="#poly" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id3">
+<img alt="../../../_images/modeling_curves_properties_active-spline_panel-poly.png" src="../../../_images/modeling_curves_properties_active-spline_panel-poly.png" />
+<p class="caption"><span class="caption-text">活动样条线面板：多段线样条。</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>U向循环</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+<dt>平滑</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="bezier">
+<span id="bpy-types-spline-radius-interpolation"></span><span id="bpy-types-spline-tilt-interpolation"></span><h2>贝塞尔<a class="headerlink" href="#bezier" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id4">
+<img alt="../../../_images/modeling_curves_properties_active-spline_panel-bezier.png" src="../../../_images/modeling_curves_properties_active-spline_panel-bezier.png" />
+<p class="caption"><span class="caption-text">活动样条线面板：贝塞尔样条。</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<dl class="simple">
+<dt>U向循环</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+<dt>分辨率U</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+<dt>倾斜插值</dt><dd><p>改变计算线段倾斜度的方法。</p>
+</dd>
+<dt>半径</dt><dd><p>改变倒角曲线半径的计算方法。在 <a class="reference internal" href="../editing/curve.html#modeling-curve-radius"><span class="std std-ref">增大半径</span></a> 之后，效果更容易看到。</p>
+</dd>
+<dt>平滑</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="nurbs">
+<span id="bpy-types-spline-order-u"></span><span id="bpy-types-spline-use-endpoint-u"></span><span id="bpy-types-spline-use-bezier-u"></span><h2>NURBS<a class="headerlink" href="#nurbs" title="Permalink to this headline">¶</a></h2>
+<p>NURBS物体的特征之一是 <em>结点向量</em> 。这是一个数列，用来确定控制点对曲线的影响。虽然不能直接编辑结点向量，但可以通过活动样条线面板中的 <em>端点</em> 和 <em>贝塞尔</em> 选项来影响它们。注意，<em>端点</em> 和 <em>贝塞尔</em> 设置只适用于开放的NURBS曲线。</p>
+<div class="figure align-center" id="id5">
+<img alt="../../../_images/modeling_curves_properties_active-spline_panel-nurbs.png" src="../../../_images/modeling_curves_properties_active-spline_panel-nurbs.png" />
+<p class="caption"><span class="caption-text">活动样条线：NURBS样条。</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<dl id="modeling-curve-knot">
+<dt>U向循环</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+<dt>贝塞尔U</dt><dd><p>使NURBS曲线像贝塞尔曲线一样。NURBS控制点就像贝塞尔曲线的 <em>自由</em> 控制柄。根据 <em>阶数</em> ，3或4个控制点构成一个曲线段。必须禁用 <em>循环</em> 和 <em>端点</em> 才能使此选项生效。</p>
+</dd>
+<dt>端点U</dt><dd><p>使曲线与末端控制点接触。必须禁用 <em>循环</em> 才能使此选项生效。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id6">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" />
+<p class="caption"><span class="caption-text">默认NURBS曲线。</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id7">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-endpoint.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-endpoint.png" />
+<p class="caption"><span class="caption-text">启用端点的NURBS曲线。</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<dl id="modeling-curve-order">
+<dt>阶数U</dt><dd><p>NURBS曲线的阶数决定了控制点对曲线的影响区域。高阶值意味着单个控制点对曲线的较大相对比例具有更大的影响。<em>阶数</em> 值的有效范围为2-6，根据曲线中出现的控制点数量而定。</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id8">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-default.png" />
+<p class="caption"><span class="caption-text">NURBS曲线的阶数为4。</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id9">
+<img alt="../../../_images/modeling_curves_properties_active-spline_nurbs-order.png" src="../../../_images/modeling_curves_properties_active-spline_nurbs-order.png" />
+<p class="caption"><span class="caption-text">NURBS曲线的阶数为2。</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt>分辨率U</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+<dt>平滑</dt><dd><p>参见 <a class="reference internal" href="#spline-common-options"><span class="std std-ref">通用选项</span></a> 。</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../curve_display.html" class="btn btn-neutral float-right" title="曲线显示" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="path_animation.html" class="btn btn-neutral float-left" title="路径动画" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/modeling/curves/properties/active_spline.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60modeling/curves/properties/active_spline%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

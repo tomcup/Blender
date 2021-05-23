@@ -1,0 +1,501 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>添加相机绑定(Add Camera Rigs) &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/camera/camera_rigs.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="开发" href="../development/index.html" />
+    <link rel="prev" title="相机" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_mesh/index.html">添加网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">相机</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">添加相机绑定(Add Camera Rigs)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#description">描述</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#usage">用法</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#d-rigs-dolly-crane">3D 绑定 (Dolly &amp; Crane)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#d-rig">2D 绑定(2D Rig)</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#modes">模式(Modes)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#limitations">局限(Limitations)</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#interface">界面(Interface)</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#widgets">控件(Widgets)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#panel">面板(Panel)</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#multiple-cameras">多机位(Multiple Cameras)</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#camera-switching">相机切换(Camera Switching)</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#troubleshooting">问题排查</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mesh/index.html">网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">相机</a> &raquo;</li>
+        
+      <li>添加相机绑定(Add Camera Rigs)</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="add-camera-rigs">
+<h1>添加相机绑定(Add Camera Rigs)<a class="headerlink" href="#add-camera-rigs" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<img alt="../../_images/addons_camera_camera-rigs_ui.png" src="../../_images/addons_camera_camera-rigs_ui.png" />
+</div>
+<p>This add-on extends the functionality of a camera by creating control rigs with widgets
+and adds a panel to quickly access the camera's settings from the 3D Viewport.</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>下拉框选择相机(Camera )然后勾选添加相机绑定( Add Camera Rigs)来开启插件。</p></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>描述<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>激活插件后，它会在  <span class="menuselection">添加 ‣ 相机</span> 菜单中新增三个菜单项，移动式绑定(Dolly Rig)，吊臂绑定(Crane Rig)和2D相机绑定(2D Camera Rig)。</p>
+<p>前两个绑定都差不多，只不过“吊臂绑定(Crane Rig)”多了两个可调整的骨骼（臂高(Arm Height)和臂长(Arm Length)）来更容易实现电影式的吊臂拍摄。</p>
+<p>2D相机绑定(2D Camera Rig)主要对2D拍摄比较有用，当相机是静态的并且活动都在它前面发生（像是戏院的舞台）。</p>
+</div>
+<div class="section" id="usage">
+<h2>用法<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>添加一个  <span class="menuselection">添加 ‣ 相机 ‣ 移动相机绑定(Dolly Camera Rig) 或 吊臂相机绑定(Crane Camera Rig)或2D相机绑定(2D Camera Rig)</span>。这会在光标位置创建绑定骨骼，添加一个相机，把它设置为场景的激活相机。</p>
+<p>当绑定骨骼被选中时，相机属性会显示在侧边栏中。</p>
+</div>
+<div class="section" id="d-rigs-dolly-crane">
+<h2>3D 绑定 (Dolly &amp; Crane)<a class="headerlink" href="#d-rigs-dolly-crane" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>根骨骼(Root Bone)</dt><dd><p>这是整个绑定的父级。</p>
+</dd>
+<dt>控制骨(Control Bone)</dt><dd><p>这是控制相机移动的骨骼(名称是``Ctrl``)。默认情况下它指向目标骨骼(aim bone)。</p>
+</dd>
+<dt>目标骨骼(Aim Bone)</dt><dd><p>相机会指向这个骨骼 (名称是 <code class="docutils literal notranslate"><span class="pre">Aim</span></code>)。你能通过在Y轴旋转目标骨骼来倾斜相机。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="d-rig">
+<h2>2D 绑定(2D Rig)<a class="headerlink" href="#d-rig" title="Permalink to this headline">¶</a></h2>
+<p>这套绑定的主要功能是像舞台摄影机（stage camera）一样，对准一个方向。有了它，你可以通过移动摄像机的两个角来对动作进行定格，而不是移动和旋转。它通过使用复杂的驱动器来计算适当的摄像机设置，从而产生平滑的动作，如果没有它就很难实现。</p>
+<p>下面的视频展示了一个没有（上图）和有（下图）在绑定帮助下的动画摄像机运动的对比。在左下角可以看到，你可以实现更流畅的摄像机运动，而不需要画面移动。</p>
+<iframe src="https://player.vimeo.com/video/280727941" style="border: 0; height: 480px; width: 800px">
+</iframe><dl class="simple">
+<dt>根骨骼(Root Bone)</dt><dd><p>这是整个绑定的父级。这是唯一可以用旋转来调整大约摄影方向的骨头。</p>
+</dd>
+<dt>左角和右角骨骼(Left_corner and Right_corner Bones)</dt><dd><p>它们是这个绑定中最重要的骨头。你可以通过移动它们来快速设置和动画化取景。摄像机将调整其参数以适应这个取景（焦距、旋转/位移）。它们应该始终处于同一高度（相机坐标系中的Y轴）。</p>
+</dd>
+<dt>相机骨骼(Camera Bone)</dt><dd><p>你可以将相机左右移动，它就会对相机的设置进行补偿，将两边的角进行定格。比如说，如果你把角固定在被摄体的两边，然后把相机向前移动，就可以实现高效的多莉变焦(dolly zoom)效果。</p>
+</dd>
+</dl>
+<div class="section" id="modes">
+<h3>模式(Modes)<a class="headerlink" href="#modes" title="Permalink to this headline">¶</a></h3>
+<p>2D绑定有两种操作模式：旋转和位移模式。你可以在插件的界面(<a class="reference internal" href="#interface">Interface</a>)中切换这两种模式。</p>
+<p>旋转模式是默认模式，会旋转相机对准并保持画面中的边角。而移位模式则是利用相机上的移动(Shift)属性来实现裁剪效果，而不是平移。</p>
+</div>
+<div class="section" id="limitations">
+<h3>局限(Limitations)<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>在旋转模式下，当角向一侧移动太远时，透视会使绑定的精度大大降低。</p></li>
+<li><p>旋转模式不支持正交相机。</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="interface">
+<h2>界面(Interface)<a class="headerlink" href="#interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="widgets">
+<h3>控件(Widgets)<a class="headerlink" href="#widgets" title="Permalink to this headline">¶</a></h3>
+<p>绑定建立后，插件会为所有的自定义骨骼形状创建一个集合 (名称是 <code class="docutils literal notranslate"><span class="pre">Widgets</span></code>)。当自定义形状(widgets)建立后它们会使用前缀 <code class="docutils literal notranslate"><span class="pre">WGT-</span></code> 。如果场景中有不只一个绑定，它会用相同集合中的控件而不是复制它们。默认的集合名和控件前缀可以在插件的设置页面设置。（这不会改变A已经存在的控件和集合，只会影响到设置修改后创建的。）</p>
+<div class="figure align-center">
+<img alt="../../_images/addons_camera_camera-rigs_prefs.png" src="../../_images/addons_camera_camera-rigs_prefs.png" />
+</div>
+</div>
+<div class="section" id="panel">
+<h3>面板(Panel)<a class="headerlink" href="#panel" title="Permalink to this headline">¶</a></h3>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">模式</dt>
+<dd class="field-odd"><p>所有模式</p>
+</dd>
+<dt class="field-even">面板(Panel)</dt>
+<dd class="field-even"><p><span class="menuselection">3D Viewport ‣ Sidebar ‣ Item ‣ Camera Rig</span></p>
+</dd>
+</dl>
+</div>
+<p>这个面板会显示大部分有用的相机设置。这里只会解释添加的特性，要了解更多内容可以查看  <a class="reference internal" href="../../render/cameras.html"><span class="doc">相机</span></a> 章节.</p>
+<dl>
+<dt>添加DOF空物体(Add DOF Empty)</dt><dd><p>按钮 <em>添加景深空物体(Add DOF Empty)</em> 会自动在目标骨骼的位置添加一个空物体，并把它设置为景深(depth of field)(DOF)物体。</p>
+<p>空物体是目标骨骼的子级，所以你可以为它作动画而不必直接给空物体做动画。因为景深(DOF)只能以物体不能以骨骼作为目标，这算是一个变通方法。</p>
+</dd>
+<dt>焦距/F光圈/焦距(Focal Distance/F-Stop/Focal Length)</dt><dd><p>相机骨骼上有一些自定义属性可以用来驱动真正相机上的相应设置。这让它可以在骨架物体中进行动画，不必在骨架和相机中都做动画。</p>
+</dd>
+<dt>前端显示(Show in Front)</dt><dd><p>可以让绑定物体透过其它物体显示。（在你需要穿过场景或者有其它网格遮挡时很有用。）</p>
+</dd>
+<dt>相机选择锁定(Lock Camera Select)</dt><dd><p>按钮 <em>相机选择锁定(Lock Camera Select)</em> 是用来切换状态的，可以让相机不可选（这样你就不会意外地删掉它了）。</p>
+</dd>
+<dt>跟踪(目标锁定) Tracking (Aim Lock)</dt><dd><p>这个滑块控制“控制骨”上的跟踪(Track To)约束。关掉它，控制骨骼将不再指向目标骨骼。</p>
+</dd>
+</dl>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../../_images/addons_camera_camera-rigs_crane-arm.png"><img alt="../../_images/addons_camera_camera-rigs_crane-arm.png" src="../../_images/addons_camera_camera-rigs_crane-arm.png" style="width: 240px;" /></a>
+</div>
+<dl class="simple">
+<dt>吊臂高度、臂长(Crane Rig Height, Arm Length)</dt><dd><p>UI底部的*臂高(Arm Height)*和*臂长(Arm Length)*滑块显示了相关骨骼的Y轴比例。默认情况下，高度和臂长都是1个单位的大小。这些值只有在选择了吊臂绑定时才会在界面上显示，它们也是可动画化的。</p>
+</dd>
+<dt>旋转/转移(Rotation/Shift)</dt><dd><p>旋转/平移滑块可以让你在旋转和平移模式(<a class="reference internal" href="#modes">Modes</a>)之间切换2D相机绑定的旋转和平移模式。你也可以选择一个中间值，让两者都有一点。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="multiple-cameras">
+<h2>多机位(Multiple Cameras)<a class="headerlink" href="#multiple-cameras" title="Permalink to this headline">¶</a></h2>
+<p>可以根据你的场景需要添加任意数量的摄像机。如果连接到所选绑定上的摄像机 <strong>不是</strong> 活动的摄像机，则会出现 <em>激活相机(Make Camera Active)</em> 。按这个键，就会使该摄像机成为活动中的摄像机。</p>
+<div class="section" id="camera-switching">
+<h3>相机切换(Camera Switching)<a class="headerlink" href="#camera-switching" title="Permalink to this headline">¶</a></h3>
+<p>If you wish to switch cameras during an animation you can do this with the <em>Add Marker and Bind</em> button.
+This uses Blender's built-in camera binding tool to a Timeline marker.
+When pressed, it will add a marker to the Timeline and bind it to the camera controlled by the selected rig.
+Go to another frame, select a different camera rig and press it again.
+Now you have two markers and when you scrub the time line you will see the active camera switch accordingly.
+(Repeat this process as many times as needed).
+These markers can then also be dragged around in the timeline to change the frame at which they will switch.</p>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>问题排查<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>如果目标跟踪或2D绑定无法运行，请检查你是否在设置 <span class="menuselection">偏好设置 ‣ 保存<span class="accelerator">加</span>载 ‣ 自动运行Python脚本</span> 中启用了 &quot;自动运行Python脚本(Auto Run Python Scripts)&quot;。</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/waylow/add_camera_rigs">作者的GitHub仓库</a> 。</p></li>
+<li><p>一个 <a class="reference external" href="http://lacuisine.tech/blog/2018/07/19/2d-camera-rig/">博客帖子</a>，作者对2D绑定进行了解释。</p></li>
+</ul>
+</div>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">目录</dt>
+<dd class="field-odd"><p>相机</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>添加一个带有UI的相机绑定。</p>
+</dd>
+<dt class="field-odd">位置</dt>
+<dd class="field-odd"><p><span class="menuselection">3D Viewport ‣ Add ‣ Camera</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>camera_dolly_crane_rigs.py</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Wayne Dixon, Brian Raschko, Kris Wittig, Damien Picard, Flavio Perez</p>
+</dd>
+<dt class="field-even">维护人员</dt>
+<dd class="field-even"><p>to do</p>
+</dd>
+<dt class="field-odd">许可证</dt>
+<dd class="field-odd"><p>GPL</p>
+</dd>
+<dt class="field-even">支持级别</dt>
+<dd class="field-even"><p>社区版</p>
+</dd>
+<dt class="field-odd">提示</dt>
+<dd class="field-odd"><p>这个插件和Blender捆绑在一起。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../development/index.html" class="btn btn-neutral float-right" title="开发" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="相机" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/camera/camera_rigs.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/camera/camera_rigs%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

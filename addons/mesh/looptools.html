@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-hans" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Loop Tools &mdash; Blender Manual</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme_overrides.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+  
+  
+    <link rel="canonical" href="https://docs.blender.org/manual/en/latest/addons/mesh/looptools.html"/>
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/js/version_switch.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="Search within Blender Manual"
+          href="../../_static/opensearch.xml"/>
+    <link rel="alternate" hreflang="en" href="https://docs.blender.org/manual/en/latest/">
+    <link rel="alternate" hreflang="de" href="https://docs.blender.org/manual/de/latest/">
+    <link rel="alternate" hreflang="es" href="https://docs.blender.org/manual/es/latest/">
+    <link rel="alternate" hreflang="fi" href="https://docs.blender.org/manual/fi/latest/">
+    <link rel="alternate" hreflang="fr" href="https://docs.blender.org/manual/fr/latest/">
+    <link rel="alternate" hreflang="it" href="https://docs.blender.org/manual/it/latest/">
+    <link rel="alternate" hreflang="ja" href="https://docs.blender.org/manual/ja/latest/">
+    <link rel="alternate" hreflang="ko" href="https://docs.blender.org/manual/ko/latest/">
+    <link rel="alternate" hreflang="nb" href="https://docs.blender.org/manual/nb/latest/">
+    <link rel="alternate" hreflang="pt" href="https://docs.blender.org/manual/pt/latest/">
+    <link rel="alternate" hreflang="ru" href="https://docs.blender.org/manual/ru/latest/">
+    <link rel="alternate" hreflang="sl" href="https://docs.blender.org/manual/sl/latest/">
+    <link rel="alternate" hreflang="sr" href="https://docs.blender.org/manual/sr/latest/">
+    <link rel="alternate" hreflang="uk" href="https://docs.blender.org/manual/uk/latest/">
+    <link rel="alternate" hreflang="vi" href="https://docs.blender.org/manual/vi/latest/">
+    <link rel="alternate" hreflang="zh-Hans" href="https://docs.blender.org/manual/zh-hans/latest/">
+    <link rel="alternate" hreflang="zh-Hant" href="https://docs.blender.org/manual/zh-hant/latest/">
+    <link rel="alternate" hreflang="x-default" href="https://docs.blender.org/manual/en/latest/">
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="next" title="Relax" href="relax.html" />
+    <link rel="prev" title="Inset Straight Skeleton" href="inset_straight_skeleton.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> Blender 2.90 Manual
+          
+
+          
+            
+            <img src="../../_static/blender-logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started/index.html">Blender入门</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface/index.html">用户界面</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../editors/index.html">编辑器</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scene_layout/index.html">场景 &amp; 物体</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modeling/index.html">制作模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sculpt_paint/index.html">雕刻 &amp; 绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grease_pencil/index.html">蜡笔</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../animation/index.html">动画 &amp; 绑定</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../render/index.html">渲染</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compositing/index.html">合成</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../movie_clip/index.html">跟踪 &amp; 遮罩</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../video_editing/index.html">视频编辑</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../files/index.html">文件 &amp; 数据系统</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">插件</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#add-ons-category-listings">插件类别列表</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../3d_view/index.html">3D视图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_curve/index.html">添加曲线</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../add_mesh/index.html">添加网格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../animation/index.html">动画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../camera/index.html">相机</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../development/index.html">开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../import_export/index.html">导入 - 导出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface/index.html">界面插件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lighting/index.html">光照</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../materials/index.html">材质</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">网格</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="3d_print_toolbox.html">3D Print Toolbox</a></li>
+<li class="toctree-l4"><a class="reference internal" href="auto_mirror.html">Auto Mirror</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bsurfaces.html">Bsurfaces GPL Edition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edit_mesh_tools.html">Edit Mesh Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="f2.html">F2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="inset_straight_skeleton.html">Inset Straight Skeleton</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Loop Tools</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#activation">激活</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#description">描述</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#bridge">桥接(Bridge)</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#creating-holes">创建孔(Creating Holes)</a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="#circle">圆圈(Circle)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#curve">曲线</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#flatten">扁平化(Flatten)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#loft">放样(Loft)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#relax">松弛(Relax)</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#space">空间(Space)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="relax.html">Relax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="snap_utilities_line.html">Snap Utilities Line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tinycad.html">tinyCAD Mesh Tools</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tissue.html">(Tissue)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../node/index.html">节点</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../object/index.html">物体</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../paint/index.html">绘制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../render/index.html">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rigging/index.html">绑定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sequencer/index.html">序列编辑器</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../system/index.html">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../uv/index.html">UV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../video_tools/index.html">视频工具</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">高级应用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/index.html">问题排查</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary/index.html">词汇表</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">贡献文档</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Blender 2.90 Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">插件</a> &raquo;</li>
+        
+          <li><a href="index.html">网格</a> &raquo;</li>
+        
+      <li>Loop Tools</li>
+    
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="loop-tools">
+<h1>Loop Tools<a class="headerlink" href="#loop-tools" title="Permalink to this headline">¶</a></h1>
+<p>待完成.</p>
+<div class="section" id="activation">
+<h2>激活<a class="headerlink" href="#activation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>打开Blender，打开用户偏好设置下的插件栏。</p></li>
+<li><p>选择 Mesh 然后选择 Loop Tools 以启用插件。</p></li>
+</ul>
+</div>
+<div class="section" id="description">
+<h2>描述<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bridge">
+<h3>桥接(Bridge)<a class="headerlink" href="#bridge" title="Permalink to this headline">¶</a></h3>
+<p>There are two main ways to use the Bridge tool.
+The first method is to select two groups of faces and then run the tool.
+The second method is to select two (closed) loops of edges.
+Both methods can be mixed and you can even Bridge multiple groups at the same time.
+The script will try to make an educated guess on which groups should be connected.</p>
+<p>Bridge与 <em>Loft</em> 工具共享其设置，所以改变其中一个工具的设置，也会改变另一个工具的设置。</p>
+<dl>
+<dt>段数(Segments)</dt><dd><p>用来桥接两个循环之间的距离的面数。一段意味着只创建面。两段(或更多)意味着要创建一个中间线(或多线)的顶点，因此可以在两个循环之间定义两个或更多的面。如果值被设置为0，脚本会自动计算出最佳的段数，以保持面尽可能的正方形。</p>
+</dd>
+<dt>最小宽度（Minimum Width）</dt><dd><p>这个选项没有标签，而是直接位于分段设置的右侧。简单的解释一下。0%很多三角形，100%大部分是方形面。但它的作用还有点多。它决定了何时需要创建一个新的顶点，或者何时使用它旁边的顶点。它是根据这些顶点之间的距离与原始循环中的顶点之间的距离进行比较。所以50%意味着，如果新创建的两个顶点之间的距离小于原始循环中的两个顶点之间的距离的一半，那么它们就会被合并在一起，从而只产生一个新的顶点。这一点在上面的视频中也有体现。</p>
+</dd>
+<dt>插值(Interpolation)</dt><dd><p>这可以设置为立方体或线性。线性只是一个平面插值，而立方体试图保留表面的切线，从而得到更多的流体曲线。</p>
+</dd>
+<dt>强度(Strength)</dt><dd><p>只有当插值模式设置为立方体时，强度选项才可用。将强度设置为零，得到的结果与线性插值非常相似，而较高的强度会使曲线更加流畅。设置负强度会改变曲线的方向。或者用更直观的方式来描述：它使缩减的体积膨胀，反之亦然。该选项的软限制范围为-3至+3，但你可以通过手动输入一个数字，而不是使用滑块，轻松地指定更大或更小的值。这与Blender中的普通滑块的工作原理相同。</p>
+</dd>
+<dt>移除面(Remove Faces)</dt><dd><p>当使用面选择输入时，桥接后的内部面将被移除。</p>
+<p>由于Blender中的一些限制，当启用此选项时，分配给倒角修改器的权重值可能会略有改变（约0.01）。</p>
+</dd>
+<dt>扭曲(Twist)</dt><dd><p>决定两个循环中的哪些顶点是相互连接的。这可能是出于艺术上的原因，或者是为了纠正脚本给出的错误结果。</p>
+</dd>
+<dt>反转(Reverse)</dt><dd><p>这个选项只有在脚本给出错误的结果时才可以使用。它可以颠倒连接顶点的顺序，当脚本给出的结果看起来是颠倒的时候，它可以修复问题。这有点难以描述，但只要尝试一次就会立刻明白它的作用。</p>
+</dd>
+</dl>
+<div class="section" id="creating-holes">
+<h4>创建孔(Creating Holes)<a class="headerlink" href="#creating-holes" title="Permalink to this headline">¶</a></h4>
+<p>你还可以通过Bridge工具在物体上创建孔。选择两个或更多的面，然后运行Bridge工具。</p>
+</div>
+</div>
+<div class="section" id="circle">
+<h3>圆圈(Circle)<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
+<p>圆形工具有两种正确的输入：选择一个单一的顶点，或者选择一个封闭或开放的循环边。你也可以让该工具同时在多个输入上操作，混合输入类型。</p>
+<dl class="simple">
+<dt>方法(Method)</dt><dd><dl class="simple">
+<dt>最适合(Best Fit)</dt><dd><p>当 <em>Best Fit</em> 被选中时，将使用非线性最小二乘法计算出一个圆。这基本上意味着用这个选项计算出的圆是最适合你选择的顶点的。</p>
+</dd>
+<dt>内部适合(Fit Inside)</dt><dd><p>选择 <em>Fit Inside</em> 将以这样的方式计算圆，即没有一个顶点会离开计算出的圆的中心。当你想保留周围网格的拓扑结构时，这很有用。</p>
+</dd>
+</dl>
+</dd>
+<dt>扁平化(Flatten)</dt><dd><p>启用后，输入将被拉平到最佳平面。如果输入是由单个顶点组成，则包括中心顶点。当禁用时，输入将被投影到现有的网格上。</p>
+</dd>
+<dt>半径</dt><dd><p>这将覆盖脚本计算出的半径。如果你想创建几个相同大小的圆，或者需要更高的精度，这很有用。</p>
+</dd>
+<dt>规则的(Regular)</dt><dd><p>当选择此选项时，圆上的顶点之间都会有相同的距离。</p>
+</dd>
+<dt>影响(Influence)</dt><dd><p>工具的强度。0％的影响意味着不会对网格进行任何改变。100%的影响意味着输入将被完全转化为一个圆形。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="curve">
+<h3>曲线<a class="headerlink" href="#curve" title="Permalink to this headline">¶</a></h3>
+<p>曲线工具有两种有效的输入方法。第一种是在同一个循环中选择两个或两个以上的顶点。你可以对多个循环同时进行，以节省时间。</p>
+<p>第二种方法是选择一个或多个完整的环路。如果选择了一个完整的环路，曲线工具不会对该环路进行操作，而是对所有垂直于该环路的环路进行操作，并使用所选环路上的顶点作为控制点。</p>
+<dl class="simple">
+<dt>插值(Interpolation)</dt><dd><p>Cubic给出了一条平滑的曲线，使用自然三次样条算法计算。线性通过控制点计算直线。</p>
+</dd>
+<dt>限制(Restriction)</dt><dd><p>这就把顶点的移动限制在一个方向上。缩进只允许向网格移动，而挤压只允许远离网格（法线方向）移动。</p>
+</dd>
+<dt>边界(Boundaries)</dt><dd><p>如果启用，曲线不会延伸到输入顶点之外。这将限制该工具只限于网格中的一个部分。</p>
+</dd>
+<dt>规则的(Regular)</dt><dd><p>这将使曲线上的顶点均匀分布。有时这可能会产生奇怪的结果，因为平均分布并不总是可能的（因为所选的输入顶点并没有移动）。如果是这种情况，只需取消勾选这个复选框即可。</p>
+</dd>
+<dt>影响(Influence)</dt><dd><p>工具的强度。0％的影响意味着不会对网格进行任何改变。100%的影响意味着该工具将产生最大的效果。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="flatten">
+<h3>扁平化(Flatten)<a class="headerlink" href="#flatten" title="Permalink to this headline">¶</a></h3>
+<p>任何选择都被认为是可接受的扁平化工具的输入。</p>
+<dl>
+<dt>平面(Plane)</dt><dd><p>用来计算平面的方法，此平面用来将输入平坦化。</p>
+<dl class="simple">
+<dt>最适合(Best Fit)</dt><dd><p>计算一个平面，这样平均下来，顶点的移动量最少，才会被拉平。</p>
+</dd>
+<dt>正常的(Normal)</dt><dd><p>当方向设置为正常时，与在局部Z上将输入缩放为零的方法相同（所以 <kbd class="kbd docutils literal notranslate"><kbd class="kbd docutils literal notranslate">G</kbd> <kbd class="kbd docutils literal notranslate">Z</kbd> <kbd class="kbd docutils literal notranslate">Z</kbd> <kbd class="kbd docutils literal notranslate">0</kbd></kbd>  ）。它主要是为了方便地比较各种扁平化方法。</p>
+</dd>
+<dt>视图(View)</dt><dd><p>在垂直于视口角度的平面上，将输入端平坦化。因此，当你运行该工具时，它看起来没有任何变化，但当你旋转视口时，你会看到发生了什么。</p>
+</dd>
+</dl>
+</dd>
+<dt>影响(Influence)</dt><dd><p>工具的强度。0％的影响意味着不会对网格进行任何改变。100%的影响意味着输入将被完全拉平。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="loft">
+<h3>放样(Loft)<a class="headerlink" href="#loft" title="Permalink to this headline">¶</a></h3>
+<p>对于loft，你可以使用与 <em>Bridge</em> 相同的输入方法：选择面组，或选择（封闭）循环。你可以混合输入法。与桥接输入方法相反，你可以选择两个以上的输入组，并让它们连续桥接。</p>
+<p>Loft与Bridge工具共享其设置，因此更改其中一个工具的设置，也会改变另一个工具的设置。有关所有设置的完整讨论，请查看 Bridge 设置。下面你会发现一些关于LOFT工具的具体信息。</p>
+<dl class="simple">
+<dt>段数(Segments)</dt><dd><p>这与Bridge工具的 <em>Segments</em> 设置相同，但设置为自动（ segments = 0）对loft工具有好处。当让脚本决定需要的段数时，它可能会在不同的循环之间创建不同的段数。</p>
+</dd>
+<dt>循环(Loop)</dt><dd><p>将第一个环路和最后一个环路相互连接起来。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="relax">
+<h3>松弛(Relax)<a class="headerlink" href="#relax" title="Permalink to this headline">¶</a></h3>
+<p>放松工具的输入由一个（部分）循环组成。</p>
+<dl>
+<dt>插值(Interpolation)</dt><dd><p>决定了顶点的最终位置是如何计算的。Cubic使用自然三次样条算法将顶点投影在自然立方体上，线性将顶点投影在直线上。</p>
+<p>需要注意的是：当你在一个闭合的循环中使用放松工具时（一个循环中所有顶点都连接到同一个循环中的其他两个顶点的循环），你最好使用立方体插值而不是线性插值。如果你使用线性插值，循环的体积会迅速减小。</p>
+</dd>
+<dt>输入</dt><dd><dl class="simple">
+<dt>选择(Selection)</dt><dd><p>当设置为 <em>选择(Selection)</em> 时，该工具将只对所选顶点进行操作。</p>
+</dd>
+<dt>平行(Parallel(All) )</dt><dd><p>将其设置为 <em>Parallel (all)</em> ，也将包括所有平行循环的顶点。</p>
+</dd>
+</dl>
+</dd>
+<dt>迭代(Iterations)</dt><dd><p>该工具的运行次数。数字越高，结果越顺畅。</p>
+</dd>
+<dt>规则的(Regular)</dt><dd><p>如果选择了这个选项，顶点将沿着循环均匀分布。</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="space">
+<h3>空间(Space)<a class="headerlink" href="#space" title="Permalink to this headline">¶</a></h3>
+<p>空间工具的输入由一个（部分）循环组成。</p>
+<dl class="simple">
+<dt>插值(Interpolation)</dt><dd><p>Cubic沿着三次样条算法分布顶点，而线性则将顶点投射到已有的边上。</p>
+</dd>
+<dt>输入</dt><dd><dl class="simple">
+<dt>选择(Selection)</dt><dd><p>当设置为 <em>选择(Selection)</em> 时，该工具将只对所选顶点进行操作。</p>
+</dd>
+<dt>平行(Parallel(All) )</dt><dd><p>将其设置为 <em>Parallel (all)</em> ，也将包括所有平行循环的顶点。</p>
+</dd>
+</dl>
+</dd>
+<dt>影响(Influence)</dt><dd><p>工具的强度。0％的影响意味着不会对网格进行任何改变。100%的影响意味着该工具将产生最大的效果。</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For an illustrated explanation of all the tool settings visit
+the <a class="reference external" href="https://sites.google.com/site/bartiuscrouch/looptools">script homepage</a>.</p>
+<p>请参见 <a class="reference external" href="https://archive.blender.org/wiki/index.php/Extensions:2.6/Py/Scripts/Modeling/LoopTools/">旧维基</a> ，以获取存档的原始文档。</p>
+</div>
+<div class="refbox admonition">
+<p class="admonition-title">参考</p>
+<dl class="field-list simple">
+<dt class="field-odd">目录</dt>
+<dd class="field-odd"><p>网格(Mesh)</p>
+</dd>
+<dt class="field-even">描述</dt>
+<dd class="field-even"><p>网格建模工具箱。几个辅助建模的工具。</p>
+</dd>
+<dt class="field-odd">位置</dt>
+<dd class="field-odd"><p><span class="menuselection">3D Viewport ‣ Sidebar ‣ Edit tab</span>,
+<span class="menuselection">3D Viewport Edit Mode ‣ context menu</span></p>
+</dd>
+<dt class="field-even">文件</dt>
+<dd class="field-even"><p>mesh_looptools.py</p>
+</dd>
+<dt class="field-odd">作者</dt>
+<dd class="field-odd"><p>Bart Crouch</p>
+</dd>
+<dt class="field-even">许可证</dt>
+<dd class="field-even"><p>GPL</p>
+</dd>
+<dt class="field-odd">说明</dt>
+<dd class="field-odd"><p>该插件为Blender自带插件。</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="relax.html" class="btn btn-neutral float-right" title="Relax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="inset_straight_skeleton.html" class="btn btn-neutral float-left" title="Inset Straight Skeleton" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        
+        &copy; <a href="../../copyright.html">Copyright</a> : This page is licensed under a CC-BY-SA 4.0 Int. License
+
+    </p>
+  </div>
+      <div class="footer-contribute">
+         <ul>
+            <li>
+               <a href="https://developer.blender.org/diffusion/BM/browse/trunk/blender_docs/manual/addons/mesh/looptools.rst" class="fa fa-edit"> 编辑页面</a>
+            </li>
+            <li>
+               <a href="https://developer.blender.org/maniphest/task/edit/form/default/?description=Pagename%3A%20%60addons/mesh/looptools%60&project=PHID-PROJ-c4nvvrxuczix2326vlti" class="fa fa-bug"> 报告错误</a>
+            </li>
+         <ul>
+      </div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="document versions">
+<ul id="versionwrap" role="presentation">
+   <li style="float:left" role="presentation">
+		<span id="version-dropdown" class="version-btn" tabindex="0" role="button" aria-label="versions selector" aria-haspopup="true" aria-controls="version-vsnlist" aria-disabled="true">
+		2.90 
+		</span>
+		<ul id="version-vsnlist" class="version-list" role="menu" aria-labelledby="version-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+   <li style="float:right" role="presentation">
+		<span id="lang-dropdown" class="version-btn" tabindex="0" role="button"  aria-label="language selector" aria-haspopup="true" aria-controls="version-langlist">
+			 zh-hans 
+		</span>
+		<ul id="version-langlist" class="version-list" role="menu" aria-labelledby="lang-dropdown" aria-hidden="true">
+			<li role="presentation">Loading...</li>
+		</ul>
+	</li>
+</ul>
+</div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+ 
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-1418081-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
